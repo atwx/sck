@@ -1,10 +1,10 @@
 {
-    "name": "silverstripe-module/skeleton",
-    "description": "A skeleton for Silverstripe CMS modules.",
+    "name": "atwx/sck",
+    "description": "A creator kit for silverstripe",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
-        "CMS"
+        "SCK"
     ],
     "license": "BSD-3-Clause",
     "require": {
