@@ -1,0 +1,97 @@
+.two-column-text-element {
+    padding: 80px 0;
+    background-color: #ffffff;
+    
+    .container {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .two-column-content {
+        display: grid;
+        grid-template-columns: 3fr 2fr; 
+        gap: 80px;
+        align-items: center;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+    }
+    
+    .title-column {
+        .element-title {
+            font-size: 52px;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0;
+            color: var(--ColorPrimary);
+            
+            @media (max-width: 1000px) {
+                font-size: 48px;
+            }
+            
+            @media (max-width: 768px) {
+                font-size: 42px;
+            }
+            
+            @media (max-width: 500px) {
+                font-size: 38px;
+            }
+        }
+    }
+    
+    .text-column {
+        .element-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #464F54;
+            
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+            
+            p {
+                margin-bottom: 1rem;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+    &.title-right {
+        .two-column-content {
+            grid-template-columns: 2fr 3fr; 
+            
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                
+                .title-column {
+                    order: -1;
+                }
+            }
+        }
+    }
+    
+    &.title-vertical-top {
+        .two-column-content {
+            align-items: flex-start;
+        }
+    }
+    
+    &.title-vertical-center {
+        .two-column-content {
+            align-items: center;
+        }
+    }
+    
+    &.title-vertical-bottom {
+        .two-column-content {
+            align-items: flex-end;
+        }
+    }
+}

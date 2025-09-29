@@ -1,0 +1,12 @@
+{
+  "client/src/bundles/bundle.js": {
+    "file": "assets/bundle.js-BUOKP93v.js",
+    "isEntry": true,
+    "src": "client/src/bundles/bundle.js"
+  },
+  "client/src/styles/bundle.scss": {
+    "file": "assets/bundle-RdCQtPHN.css",
+    "isEntry": true,
+    "src": "client/src/styles/bundle.scss"
+  }
+}

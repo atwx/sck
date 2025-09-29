@@ -1,0 +1,202 @@
+.section--IconCardElement {
+    position: relative;
+    overflow: hidden;
+
+    .section_content {
+        width: $maxWidthContent;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        @include media("<medium") {
+            flex-direction: column;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .has-bg {
+            position: relative;
+
+            .background_image {
+                width: $maxWidthContent;
+                top: 0;
+                left: 0;
+                z-index: 0;
+
+                @include media("<medium") {
+                    width: 100%;
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 16px;
+
+                    @include media("<medium") {
+                        border-radius: 10px;
+                        min-height: 180px;
+                    }
+                }
+            }
+
+            .content {
+                position: absolute;
+                z-index: 1;
+                left: 15px;
+                min-width: 30%;
+                max-width: 50%;
+                border-radius: 16px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+                @include media("<medium") {
+                    position: static;
+                    min-width: 0;
+                    max-width: 100%;
+                    padding: 1rem;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+                    &.vertical-top,
+                    &.vertical-middle,
+                    &.vertical-bottom,
+                    &.horizontal-left,
+                    &.horizontal-center,
+                    &.horizontal-right {
+                        top: unset;
+                        left: unset;
+                        right: unset;
+                        bottom: unset;
+                        transform: unset;
+                    }
+                }
+
+                &.vertical-top {
+                    top: 20px;
+                }
+                &.vertical-middle {
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include media("<medium") {
+                        transform: unset;
+                    }
+                }
+                &.vertical-bottom {
+                    bottom: 20px;
+                }
+
+                &.horizontal-left {
+                    left: 20px;
+                }
+                &.horizontal-center {
+                    left: 25%;
+
+                }
+                &.horizontal-right {
+                    left: 45%;
+                }
+
+                .icon {
+                    margin-bottom: 1rem;
+
+                    &.align-left {
+                        text-align: left;
+                    }
+                    &.align-center {
+                        text-align: center;
+                    }
+                    &.align-right {
+                        text-align: right;
+                    }
+
+                    img,
+                    svg {
+                        width: 64px;
+                        height: 64px;
+
+                        @include media("<medium") {
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+
+                    &.align-left {
+                        text-align: left;
+                    }
+                    &.align-center {
+                        text-align: center;
+                    }
+                    &.align-right {
+                        text-align: right;
+                    }
+
+                    @include media("<medium") {
+                        font-size: 1.15rem;
+                    }
+                }
+
+                .text {
+                    font-size: 0.95rem;
+                    margin-bottom: 1rem;
+                    line-height: 1.5;
+
+                    &.align-left {
+                        text-align: left;
+                    }
+                    &.align-center {
+                        text-align: center;
+                    }
+                    &.align-right {
+                        text-align: right;
+                    }
+
+                    @include media("<medium") {
+                        font-size: 0.95rem;
+                    }
+                }
+
+                .button {
+                    &.align-left {
+                        text-align: left;
+                    }
+                    &.align-center {
+                        text-align: center;
+                    }
+                    &.align-right {
+                        text-align: right;
+                    }
+
+                    a {
+                        font-weight: 500;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.25rem;
+                        text-decoration: none;
+                        padding: 5px;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &::after {
+                            content: '→';
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

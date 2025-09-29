@@ -1,0 +1,84 @@
+.section.section--GalleryElement {
+    padding: 40px 0;
+
+    .section_content{
+        h2{
+            margin-top: 0;
+        }
+
+        .gallery{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 16px;
+            margin: 0 auto;
+
+            .gallery-item{
+                width: 100%;
+                aspect-ratio: 1;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+
+            &.gallerysize--extrasmall {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            &.gallerysize--small{
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            &.gallerysize--medium{
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+
+            &.gallerysize--large{
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+
+            &.galleryformat--square {
+                .gallery-item {
+                    aspect-ratio: 1;
+                }
+            }
+
+            &.galleryformat--rectangle{
+                .gallery-item {
+                    aspect-ratio: 16/12;
+                }
+            }
+
+            &.galleryformat--original {
+                .gallery-item {
+                    aspect-ratio: unset;
+                    width: auto;
+                    height: auto;
+                    img{
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    &.gallerybackground--transparent {
+        background: transparent;
+        padding: 0;
+    }
+    &.gallerybackground--white {
+        background: white;
+    }
+    &.gallerybackground--black {
+        background: black;
+    }
+    &.gallerybackground--primary {
+        background: var(--ColorPrimary);
+    }
+    &.gallerybackground--secondary {
+        background: var(--ColorSecondary);
+    }
+}

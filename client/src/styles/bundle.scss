@@ -1,5 +1,22 @@
+@import "include-media";
+
 // Import core variables from silverstripe/admin
 @import 'variables';
 
 // Import other legacy SCSS stylesheets that don't relate to react components
 @import 'admin/pages/pages';
+
+@import "elements/TextImageElement.scss";
+@import "elements/TeaserElement.scss";
+@import "elements/GalleryElement.scss";
+@import 'elements/HeroElement.scss';
+@import "elements/IconCardElement.scss";
+@import "elements/SliderElement.scss";
+@import "elements/SpacerElement.scss";
+@import "elements/TwoColumnTextElement.scss";
+@import "elements/ServicesSliderElement.scss";
+@import "elements/ContactPersonsElement.scss";
+@import "elements/ShowcaseElement.scss";
+@import "elements/BranchesElement.scss";
+@import "elements/NewsElement.scss";
+@import "elements/BigPictureElement.scss";

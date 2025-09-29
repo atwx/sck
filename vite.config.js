@@ -20,8 +20,8 @@ export default defineConfig(({command}) => {
       sourcemap: true,
       rollupOptions: {
         input: {
-          'bundle.js': './app/client/src/bundles/bundle.js',
-          'bundle.scss': './app/client/src/styles/bundle.scss',
+          'bundle.js': './client/src/bundles/bundle.js',
+          'bundle.scss': './client/src/styles/bundle.scss',
         },
       },
     },

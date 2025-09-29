@@ -1,2 +1,2 @@
 // Include boot entrypoint
-import 'boot';
+import '../boot/index.js';

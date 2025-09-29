@@ -1,0 +1,213 @@
+.section.section--TextImageElement {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    .section_content {
+        min-height: 60vh;
+        display: flex;
+        align-items: stretch;
+        max-width: 100%;
+    }
+    
+    .section_text {
+        background: var(--ColorPrimary);
+        color: white;
+        padding: 80px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        min-width: 50%;
+        
+        @include media("<desktop") {
+            padding: 60px 30px;
+        }
+    }
+    
+    .section_title {
+        color: white;
+    }
+    
+    .section_button .btn {
+        background: white;
+        color: var(--ColorPrimary);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 0;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        &:hover {
+            background: #f0f0f0;
+            color: var(--ColorPrimary);
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section_content {
+        display: flex;
+        align-items: stretch;
+        min-height: 60vh;
+
+        @include media("<desktop") {
+            flex-direction: column;
+            min-height: auto;
+        }
+    }
+
+    .section_image {
+        flex: 0 0 50%;
+        max-width: 50vw;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @include media("<desktop") {
+            order: 2;
+            flex: none;
+            max-width: none;
+            width: 100%;
+            min-height: 300px;
+        }
+    }
+
+    .section_text {
+        flex: 1;
+        min-width: 50%;
+        
+        @include media("<desktop") {
+            order: 1;
+        }
+    }
+
+    .section_title {
+        align-self: end;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        color: white;
+        letter-spacing: -0.02em;
+        width: 80%;
+    }
+
+    .section_text_content {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        margin-bottom: 3rem;
+        color: white;
+        width: 80%;
+        align-self: end;
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        @include media("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .section_button {
+        align-self: end;
+        .btn {
+            background: white;
+            color: var(--ColorPrimary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            
+            &:hover {
+                background: #AB0044;
+                text-decoration: none;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                color: white;
+            }
+        }
+    }
+    &.image--right {
+        .section_content {
+            flex-direction: row;
+            @include media("<desktop") {
+                flex-direction: column;
+            }
+        }
+
+        .section_title {
+            align-self: flex-start;
+        }
+        .section_text_content {
+            align-self: flex-start;
+        }
+
+        .section_image {
+            margin-left: auto;
+        }
+    }
+    
+    &:not(.image--right) {
+        .section_content {
+            flex-direction: row-reverse;
+            
+            @include media("<desktop") {
+                flex-direction: column;
+            }
+        }
+        
+        .section_image {
+            margin-right: auto;
+        }
+    }
+
+    @include media("<desktop") {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        
+        .section_content {
+            min-height: auto;
+        }
+        
+        .section_text {
+            padding: 60px 30px;
+            text-align: center;
+        }
+        
+        .section_image {
+            margin: 0 !important;
+        }
+    }
+}

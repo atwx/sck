@@ -1,0 +1,18 @@
+.section--SpacerElement {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+
+    min-height: 1px;
+    
+    transition: background-color 0.3s ease;
+
+    &[style*="var(--color-primary)"] {
+        background-color: $ColorPrimary;
+    }
+    
+    &[style*="var(--color-secondary)"] {
+        background-color: $ColorSecondary;
+    }
+}

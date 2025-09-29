@@ -1,0 +1,93 @@
+.section.section--HeroElement {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: var(--ColorBackgroundLight);
+
+    &.highlight {
+        background-color: var(--ColorHighlight);
+    }
+
+    .hero_content {
+        max-width: var(--MaxWidth);
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        .hero_image {
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+
+                @include media("<desktop") {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .darkness {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--HeroDarkness);
+        }
+
+        .hero_text_wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .hero_text {
+                color: var(--ColorWhite);
+
+                h1 {
+                    font-size: 2.5rem;
+                    margin-bottom: 20px;
+                }
+
+                .hero_text_content {
+                    font-size: 1.125rem;
+                    line-height: 1.6;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .button {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    @include media(">desktop") {
+        .hero_content {
+            text-align: left;
+
+            .hero_image {
+                margin-bottom: 0;
+            }
+
+            .hero_text_wrapper {
+                .hero_text {
+                    h1 {
+                        font-size: 3rem;
+                    }
+
+                    .hero_text_content {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}

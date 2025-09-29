@@ -8,6 +8,14 @@ use SilverStripe\Forms\DropdownField;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
+/**
+ * Class Atwx\Sck\Elements\BigPictureElement
+ *
+ * @property int $Height
+ * @property string $HeightUnit
+ * @property int $ImageID
+ * @method Image Image()
+ */
 class BigPictureElement extends BaseElement
 {
     private static $db = [

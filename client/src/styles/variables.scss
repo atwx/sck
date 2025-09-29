@@ -1,0 +1,64 @@
+// Layout Variables - werden zur Kompilezeit gesetzt, können zur Laufzeit durch CSS-Variablen überschrieben werden
+$maxWidth: 1200px;
+$maxWidthContent: 980px;
+
+$breakpoints: (
+    'smartphone': 480px,
+    'medium': 700px,
+    'desktop': 1000px,
+    'maxWidth': $maxWidth,
+);
+
+$HeaderHeight: 120px;
+
+$ColorPrimary: #03395E;
+$ColorSecondary: #63819C;
+$ColorMenuBand: #F7F7F7;
+
+$ColorBlack: #131F42;
+$ColorBlackTrans: #131f42b4;
+$ColorWhite: #F7F7F7;
+
+$ColorGrey: #666;
+$ColorLightGrey: #999;
+
+//Set CSS Variables to modify at runtime
+:root {
+    --maxWidth: #{$maxWidth};
+    --maxWidthContent: #{$maxWidthContent};
+    --ColorPrimary: #{$ColorPrimary};
+    --ColorSecondary: #{$ColorSecondary};
+    --ColorMenuBand: #{$ColorMenuBand};
+    --ColorMenuButton: #{$ColorMenuBand};
+    --ColorMenuText: #{$ColorWhite};
+    --ColorMenuTextHover: #{$ColorGrey};
+
+    --ColorPrimaryLight: #466892;
+    --ColorPrimaryTextDark: #193860;
+    --ColorPrimaryDark: #0f1d30;
+    --ColorSecondaryLight: #fad47a;
+    --ColorSecondaryDark: #806934;
+
+    --ColorBlack: #{$ColorBlack};
+    --ColorWhite: #{$ColorWhite};
+    --ColorLightGrey: #{$ColorLightGrey};
+    --ColorGrey: #{$ColorGrey};
+
+    --ColorFont: #000000;
+    --ColorButton: var(--ColorPrimary);
+    --ColorButtonText: var(--ColorWhite);
+    --ColorPrimaryHover: var(--ColorPrimaryDark);
+    --ColorSecondaryHover: var(--ColorSecondaryDark);
+
+    --HeroDarkness: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+}
+
+.container-content {
+    max-width: var(--maxWidthContent);
+    margin: 0 auto;
+}
