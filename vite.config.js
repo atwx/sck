@@ -15,13 +15,13 @@ export default defineConfig(({command}) => {
     publicDir: 'app/client/public',
     build: {
       // cssCodeSplit: false,
-      outDir: './app/client/dist',
+      outDir: './client/dist',
       manifest: true,
       sourcemap: true,
       rollupOptions: {
         input: {
           'bundle.js': './client/src/bundles/bundle.js',
-          'bundle.scss': './client/src/styles/bundle.scss',
+          'bundle.scss': './client/dist/styles/bundle.css',
         },
       },
     },

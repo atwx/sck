@@ -1,1 +1,24 @@
 # see https://docs.silverstripe.org/en/developer_guides/configuration/configuration/
+
+Atwx\Sck\Elements\GalleryElement:
+  extensions:
+    - PurpleSpider\BasicGalleryExtension\PhotoGalleryExtension
+
+Silverstripe\SiteConfig\SiteConfig:
+  extensions:
+    - Atwx\Sck\Extensions\CustomSiteConfig
+
+SilverStripe\LinkField\Models\Link:
+  extensions:
+    - Atwx\Sck\Extensions\LinkExtension
+
+Atwx\Sck\Elements\SliderElement:
+  extensions:
+    - PurpleSpider\BasicGalleryExtension\PhotoGalleryExtension
+  gallery-title: Bilder
+  gallery-cms-tab: Main
+  content-cms-tab: Top Content
+
+PurpleSpider\BasicGalleryExtension\PhotoGalleryImage:
+  extensions:
+    - Atwx\Sck\Extensions\PhotoGalleryExtension

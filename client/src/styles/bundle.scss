@@ -3,9 +3,6 @@
 // Import core variables from silverstripe/admin
 @import 'variables';
 
-// Import other legacy SCSS stylesheets that don't relate to react components
-@import 'admin/pages/pages';
-
 @import "elements/TextImageElement.scss";
 @import "elements/TeaserElement.scss";
 @import "elements/GalleryElement.scss";
@@ -20,3 +17,12 @@
 @import "elements/BranchesElement.scss";
 @import "elements/NewsElement.scss";
 @import "elements/BigPictureElement.scss";
+
+@import "layout/footer.scss";
+@import "layout/header.scss";
+
+@import "fonts.scss";
+@import "normalize.scss";
+@import "variables.scss";
+@import "typography.scss";
+@import "forms.scss";
