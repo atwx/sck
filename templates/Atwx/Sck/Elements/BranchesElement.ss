@@ -3,7 +3,7 @@
         <% if $ShowTitle && $Title %>
             <h2 class="branches-title">$Title</h2>
         <% end_if %>
-        
+
         <% if $BranchItems %>
             <div class="branches-grid">
                 <% loop $BranchItems %>
@@ -13,21 +13,21 @@
                                 $Image.ScaleWidth(1200)
                             </div>
                         <% end_if %>
-                        
+
                         <div class="branch-item-content">
                             <% if $Title %>
                                 <h3 class="branch-item-title">$Title</h3>
                             <% end_if %>
-                            
+
                             <% if $Content %>
                                 <div class="branch-item-text">
                                     $Content
                                 </div>
                             <% end_if %>
-                            
+
                             <% if $Button && $Button.exists() %>
                                 <div class="branch-item-button">
-                                    <% include Button Link=$Button %>
+                                    <% include Atwx/Sck/Includes/Button Link=$Button %>
                                 </div>
                             <% end_if %>
                         </div>

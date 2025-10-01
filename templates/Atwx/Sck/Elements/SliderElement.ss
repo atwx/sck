@@ -5,7 +5,7 @@
                 <div class="element-content">
                     <div class="section_text">
                         <% if $Title %>
-                            <h2 
+                            <h2
                                 class="slider-title"
                                 style="color: $TitleColor;">
                                 $Title
@@ -13,10 +13,10 @@
                         <% end_if %>
                         $Content
                         <% if $Button %>
-                            <% include Button Link=$Button %>
+                            <% include Atwx/Sck/Includes/Button Link=$Button %>
                         <% end_if %>
                     </div>
-                    <div 
+                    <div
                         class="section_swiper swiper swiper-arrows--$ArrowsPosition"
                         data-behaviour="swiper"
                         data-autoplay="$Autoplay"
@@ -51,13 +51,13 @@
                 </div>
             <% else %>
                 <% if $Title %>
-                    <h2 
+                    <h2
                         class="slider-title"
                         style="color: $TitleColor;">
                         $Title
                     </h2>
                 <% end_if %>
-                <div 
+                <div
                     class="swiper swiper-arrows--$ArrowsPosition"
                     data-behaviour="swiper"
                     data-autoplay="$Autoplay"

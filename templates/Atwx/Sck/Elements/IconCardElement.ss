@@ -26,7 +26,7 @@
                 <% end_if %>
                 <% if $Button %>
                     <div class="button align-{$Alignment}" style="color: {$ButtonColor}">
-                        <% include Button Link=$Button %>
+                        <% include Atwx/Sck/Includes/Button Link=$Button %>
                     </div>
                 <% end_if %>
             </div>

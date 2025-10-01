@@ -1,9 +1,9 @@
 <header class="site_header">
     <% if $HeaderNavPosition == "above" %>
         <% if $NavStripVersion == "alternative" %>
-            <% include NavStripAlternative %>
+            <% include Atwx/Sck/Includes/NavStripAlternative %>
         <% else %>
-            <% include NavStripDefault %>
+            <% include Atwx/Sck/Includes/NavStripDefault %>
         <% end_if %>
     <% end_if %>
 
@@ -25,9 +25,9 @@
 
     <% if $HeaderNavPosition == "below" %>
         <% if $NavStripVersion == "alternative" %>
-            <% include NavStripAlternative %>
+            <% include Atwx/Sck/Includes/NavStripAlternative %>
         <% else %>
-            <% include NavStripDefault %>
+            <% include Atwx/Sck/Includes/NavStripDefault %>
         <% end_if %>
     <% end_if %>
 </header>

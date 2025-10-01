@@ -35,22 +35,6 @@
         <link rel="icon" type="image/png" sizes="16x16" href="_resources/app/client/icons/favicon_16.png"/>
 
         <% include Atwx/Sck/Includes/SCKStylings %>
-
-        <style>
-            :root {
-                --maxWidth: $SiteConfig.MaxWidthValue;
-                --maxWidthContent: $SiteConfig.MaxWidthContentValue;
-                --ColorPrimary: $SiteConfig.PrimaryColorValue;
-                --ColorSecondary: $SiteConfig.SecondaryColorValue;
-                --ColorPrimaryLight: $SiteConfig.ColorPrimaryLightValue;
-                --ColorPrimaryDark: $SiteConfig.ColorPrimaryDarkValue;
-                --ColorSecondaryLight: $SiteConfig.ColorSecondaryLightValue;
-                --ColorSecondaryDark: $SiteConfig.ColorSecondaryDarkValue;
-            }
-            <% if $SiteConfig.CustomCSS %>
-                $SiteConfig.CustomCSS
-            <% end_if %>
-        </style>
     </head>
     <body>
         <div class="area_header">

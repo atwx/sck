@@ -13,7 +13,7 @@
                 </div>
             <% end_if %>
         </div>
-        
+
         <% if $NewsItems %>
             <div class="news_list">
                 <% loop $NewsItems %>
@@ -40,10 +40,10 @@
                 <% end_loop %>
             </div>
         <% end_if %>
-        
+
         <% if $MainButton %>
             <div class="section_button">
-                <% include Button Link=$MainButton %>
+                <% include Atwx/Sck/Includes/Button Link=$MainButton %>
             </div>
         <% end_if %>
     </div>

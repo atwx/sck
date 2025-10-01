@@ -21,7 +21,7 @@
                     $Content
                 </div>
                 <% if $Button %>
-                    <% include Button Link=$Button %>
+                    <% include Atwx/Sck/Includes/Button Link=$Button %>
                 <% end_if %>
             </div>
         </div>
