@@ -22,3 +22,10 @@ Atwx\Sck\Elements\SliderElement:
 PurpleSpider\BasicGalleryExtension\PhotoGalleryImage:
   extensions:
     - Atwx\Sck\Extensions\PhotoGalleryExtension
+
+SilverStripe\View\SSViewer:
+  themes:
+    - '$default'
+    - '$public'
+    - 'depot'
+    - 'silverstripe-elemental-suite-foundation-6'

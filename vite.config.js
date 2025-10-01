@@ -21,8 +21,13 @@ export default defineConfig(({command}) => {
       rollupOptions: {
         input: {
           'bundle.js': './client/src/bundles/bundle.js',
-          'bundle.scss': './client/dist/styles/bundle.css',
+          'bundle.scss': './client/src/styles/bundle.scss',
         },
+        output: {
+          entryFileNames: `[name].js`,
+          chunkFileNames: `assets/[name].js`,
+          assetFileNames: `assets/[name].[ext]`
+        }
       },
     },
     css: {

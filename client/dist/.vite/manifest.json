@@ -1,12 +1,44 @@
 {
-  "client/dist/styles/bundle.css": {
-    "file": "assets/bundle-BVgSmJKa.css",
-    "isEntry": true,
-    "src": "client/dist/styles/bundle.css"
-  },
   "client/src/bundles/bundle.js": {
-    "file": "assets/bundle.js-KOShFMEH.js",
+    "file": "bundle.js.js",
     "isEntry": true,
     "src": "client/src/bundles/bundle.js"
+  },
+  "client/src/fonts/roboto-v30-latin-100.woff": {
+    "file": "assets/roboto-v30-latin-100.woff",
+    "src": "client/src/fonts/roboto-v30-latin-100.woff"
+  },
+  "client/src/fonts/roboto-v30-latin-100.woff2": {
+    "file": "assets/roboto-v30-latin-100.woff2",
+    "src": "client/src/fonts/roboto-v30-latin-100.woff2"
+  },
+  "client/src/fonts/roboto-v30-latin-300.woff": {
+    "file": "assets/roboto-v30-latin-300.woff",
+    "src": "client/src/fonts/roboto-v30-latin-300.woff"
+  },
+  "client/src/fonts/roboto-v30-latin-300.woff2": {
+    "file": "assets/roboto-v30-latin-300.woff2",
+    "src": "client/src/fonts/roboto-v30-latin-300.woff2"
+  },
+  "client/src/fonts/roboto-v30-latin-700.woff": {
+    "file": "assets/roboto-v30-latin-700.woff",
+    "src": "client/src/fonts/roboto-v30-latin-700.woff"
+  },
+  "client/src/fonts/roboto-v30-latin-700.woff2": {
+    "file": "assets/roboto-v30-latin-700.woff2",
+    "src": "client/src/fonts/roboto-v30-latin-700.woff2"
+  },
+  "client/src/fonts/roboto-v30-latin-regular.woff": {
+    "file": "assets/roboto-v30-latin-regular.woff",
+    "src": "client/src/fonts/roboto-v30-latin-regular.woff"
+  },
+  "client/src/fonts/roboto-v30-latin-regular.woff2": {
+    "file": "assets/roboto-v30-latin-regular.woff2",
+    "src": "client/src/fonts/roboto-v30-latin-regular.woff2"
+  },
+  "client/src/styles/bundle.scss": {
+    "file": "assets/bundle.css",
+    "isEntry": true,
+    "src": "client/src/styles/bundle.scss"
   }
 }
