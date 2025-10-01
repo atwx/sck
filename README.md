@@ -19,5 +19,7 @@ You can use ```<% include Atwx/Sck/Includes/SCKHeader %>``` for importing the SC
 
 Or you can use ```<% include Atwx/Sck/Includes/SCKFooter %>``` for importing the SCK edited Footer in your ```<body>```
 
-Keep in mind that you have to use the Styling import if you want to use one of the Header, Footer or Elements if you don't plan of styling them yourself.
-The Styling also includes the javascript files required for example for the mobile Navigation, the Slider-Element or other interactive parts
+> [!IMPORTANT]
+> Keep in mind that you have to use the Styling import if you want to use one of the Header, Footer or Elements if you don't plan of styling them yourself.
+> The Styling also includes the javascript files required for example for the mobile Navigation, the Slider-Element or other interactive parts
+
