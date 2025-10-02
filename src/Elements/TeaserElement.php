@@ -32,7 +32,7 @@ class TeaserElement extends BaseElement
         "Text" => "Text",
     ];
 
-    private static $table_name = 'TeaserElement';
+    private static $table_name = 'SCK_TeaserElement';
     private static $icon = 'font-icon-block-promo-3';
     private static $inline_editable = false;
 

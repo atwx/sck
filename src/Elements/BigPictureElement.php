@@ -43,7 +43,7 @@ class BigPictureElement extends BaseElement
         "HeightUnit" => "Höhen-Einheit",
     ];
 
-    private static $table_name = 'BigPictureElement';
+    private static $table_name = 'SCK_BigPictureElement';
     private static $icon = 'font-icon-block-banner';
     private static $inline_editable = false;
 
@@ -77,14 +77,14 @@ class BigPictureElement extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        
-        $fields->addFieldToTab('Root.Main', 
+
+        $fields->addFieldToTab('Root.Main',
             UploadField::create('Image', 'Hintergrundbild')
                 ->setFolderName('big-picture-images')
                 ->setAllowedFileCategories('image')
                 ->setDescription('Das Bild für das Big Picture Element')
         );
-        
+
         $fields->addFieldsToTab('Root.Main', [
             NumericField::create('Height', 'Höhe')
                 ->setDescription('Die Höhe des Big Picture Elements')
@@ -95,7 +95,7 @@ class BigPictureElement extends BaseElement
                 'vw' => 'Viewport Width (vw) - Prozent der Bildschirmbreite'
             ])->setDescription('Die Einheit für die Höhenangabe')
         ]);
-        
+
         return $fields;
     }
     public function getHeightStyle()

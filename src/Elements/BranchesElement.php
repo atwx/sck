@@ -29,7 +29,7 @@ class BranchesElement extends BaseElement
         'BranchItems' => 'Branchen-Einträge',
     ];
 
-    private static $table_name = 'BranchesElement';
+    private static $table_name = 'SCK_BranchesElement';
     private static $icon = 'font-icon-block-layout';
     private static $inline_editable = false;
 

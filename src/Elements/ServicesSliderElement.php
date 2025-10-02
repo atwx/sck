@@ -65,7 +65,7 @@ class ServicesSliderElement extends BaseElement
         'ServiceSlides' => 'Service Kacheln',
     ];
 
-    private static $table_name = 'ServicesSliderElement';
+    private static $table_name = 'SCK_ServicesSliderElement';
     private static $icon = 'font-icon-block-carousel';
     private static $singular_name = 'Services Slider';
     private static $plural_name = 'Services Slider';

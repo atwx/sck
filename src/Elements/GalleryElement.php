@@ -41,7 +41,7 @@ class GalleryElement extends BaseElement
         "ImageSize" => "Bildgröße",
     ];
 
-    private static $table_name = 'GalleryElement';
+    private static $table_name = 'SCK_GalleryElement';
     private static $icon = 'font-icon-picture';
     private static $inline_editable = false;
 

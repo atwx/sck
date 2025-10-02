@@ -62,7 +62,7 @@ class ServiceSlide extends DataObject
         'SortOrder' => 'Reihenfolge',
     ];
 
-    private static $table_name = 'ServiceSlide';
+    private static $table_name = 'SCK_ServiceSlide';
     private static $singular_name = 'Service Kachel';
     private static $plural_name = 'Service Kacheln';
 

@@ -45,7 +45,7 @@ class BranchItem extends DataObject
         'Button' => 'Button',
     ];
 
-    private static $table_name = 'BranchItem';
+    private static $table_name = 'SCK_BranchItem';
 
     private static $summary_fields = [
         'Image.CMSThumbnail' => 'Bild',

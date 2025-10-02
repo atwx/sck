@@ -50,7 +50,7 @@ class NewsElement extends BaseElement
         "NewsItems" => "News Einträge",
     ];
 
-    private static $table_name = 'NewsElement';
+    private static $table_name = 'SCK_NewsElement';
     private static $icon = 'font-icon-news';
     private static $inline_editable = false;
 

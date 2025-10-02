@@ -46,7 +46,7 @@ class NewsItem extends DataObject
         'Content.Summary' => 'Beschreibung',
     ];
 
-    private static $table_name = 'NewsItem';
+    private static $table_name = 'SCK_NewsItem';
     private static $singular_name = "News Eintrag";
     private static $plural_name = "News Einträge";
 

@@ -32,7 +32,7 @@ class TwoColumnTextElement extends BaseElement
         'TitleVerticalPosition' => 'Titel vertikale Position',
     ];
 
-    private static $table_name = 'TwoColumnTextElement';
+    private static $table_name = 'SCK_TwoColumnTextElement';
     private static $icon = 'font-icon-block-content';
     private static $singular_name = 'Zwei-Spalten Text Element';
     private static $plural_name = 'Zwei-Spalten Text Elemente';

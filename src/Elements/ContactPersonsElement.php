@@ -81,7 +81,7 @@ class ContactPersonsElement extends BaseElement
         'Person2Image' => 'Foto Person 2',
     ];
 
-    private static $table_name = 'ContactPersonsElement';
+    private static $table_name = 'SCK_ContactPersonsElement';
     private static $icon = 'font-icon-torsos-all';
     private static $singular_name = 'Kontaktpersonen Element';
     private static $plural_name = 'Kontaktpersonen Elemente';

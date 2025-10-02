@@ -26,7 +26,7 @@ use DNADesign\Elemental\Models\BaseElement;
  */
 class SliderElement extends BaseElement
 {
-    private static $table_name = 'SliderElement';
+    private static $table_name = 'SCK_SliderElement';
     private static $icon = 'font-icon-picture';
     private static $inline_editable = false;
 

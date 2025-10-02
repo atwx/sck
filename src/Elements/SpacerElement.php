@@ -40,7 +40,7 @@ class SpacerElement extends BaseElement
         'ColorMode' => 'custom',
     ];
 
-    private static $table_name = 'SpacerElement';
+    private static $table_name = 'SCK_SpacerElement';
     private static $icon = 'font-icon-resize';
     private static $inline_editable = false;
 

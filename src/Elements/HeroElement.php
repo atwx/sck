@@ -39,7 +39,7 @@ class HeroElement extends BaseElement
         "Title" => "Titel",
     ];
 
-    private static $table_name = 'HeroElement';
+    private static $table_name = 'SCK_HeroElement';
     private static $icon = 'font-icon-block-promo-3';
     private static $inline_editable = false;
 
@@ -53,29 +53,29 @@ class HeroElement extends BaseElement
     public function getSummary(): string
     {
         $summary = [];
-        
+
         if ($this->Title) {
             $summary[] = "Titel: " . $this->Title;
         }
-        
+
         if ($this->Content) {
             $plainText = strip_tags($this->Content);
             $textPreview = strlen($plainText) > 50 ? substr($plainText, 0, 50) . "..." : $plainText;
             $summary[] = "Inhalt: " . $textPreview;
         }
-        
+
         if ($this->Image && $this->Image->exists()) {
             $summary[] = "Bild: " . $this->Image->Name;
         }
-        
+
         if ($this->Button && $this->Button->exists()) {
             $summary[] = "Button: " . $this->Button->Title;
         }
-        
+
         if ($this->DarknessOverlay > 0) {
             $summary[] = "Dunkelheit: " . $this->DarknessOverlay;
         }
-        
+
         return implode(" | ", $summary) ?: "Hero Element";
     }
 

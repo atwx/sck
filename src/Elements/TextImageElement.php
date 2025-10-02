@@ -43,7 +43,7 @@ class TextImageElement extends BaseElement
         "Button" => "Button",
     ];
 
-    private static $table_name = 'TextImageElement';
+    private static $table_name = 'SCK_TextImageElement';
     private static $icon = 'font-icon-block-promo-3';
 
     #[Override]

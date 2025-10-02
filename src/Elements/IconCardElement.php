@@ -81,7 +81,7 @@ class IconCardElement extends BaseElement
         "BackgroundContentColor" => "Hintergrundfarbe für Content",
     ];
 
-    private static $table_name = 'IconCardElement';
+    private static $table_name = 'SCK_IconCardElement';
     private static $icon = 'font-icon-block-content';
 
     #[Override]

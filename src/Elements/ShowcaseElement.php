@@ -44,7 +44,7 @@ class ShowcaseElement extends BaseElement
         "Button" => "Button",
     ];
 
-    private static $table_name = 'ShowcaseElement';
+    private static $table_name = 'SCK_ShowcaseElement';
     private static $icon = 'font-icon-block-promo-2';
     private static $inline_editable = false;
 
