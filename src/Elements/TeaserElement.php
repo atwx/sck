@@ -4,7 +4,7 @@ namespace Atwx\Sck\Elements;
 
 use Override;
 use SilverStripe\ORM\DataList;
-use App\Elements\TeaserItem;
+use Atwx\Sck\Elements\TeaserItem;
 use DNADesign\Elemental\Models\BaseElement;
 
 /**

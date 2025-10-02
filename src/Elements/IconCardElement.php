@@ -61,7 +61,7 @@ class IconCardElement extends BaseElement
 
     private static $defaults = [
         "BackgroundIntensity" => "0.4",
-        "BackgroundColor" => "SitePrimaryColor",
+        "BackgroundColor" => "SiteColorPrimary",
     ];
 
     private static $field_labels = [
@@ -136,8 +136,8 @@ class IconCardElement extends BaseElement
         return $blockSchema;
     }
 
-    public function SitePrimaryColor() {
-        return SiteConfig::current_site_config()->PrimaryColor;
+    public function SiteColorPrimary() {
+        return SiteConfig::current_site_config()->ColorPrimary;
     }
 
     #[Override]

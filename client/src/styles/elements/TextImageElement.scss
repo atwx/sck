@@ -7,14 +7,14 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    
+
     .section_content {
         min-height: 60vh;
         display: flex;
         align-items: stretch;
         max-width: 100%;
     }
-    
+
     .section_text {
         background: var(--ColorPrimary);
         color: white;
@@ -24,16 +24,16 @@
         justify-content: center;
         flex: 1;
         min-width: 50%;
-        
+
         @include media("<desktop") {
             padding: 60px 30px;
         }
     }
-    
+
     .section_title {
         color: white;
     }
-    
+
     .section_button .btn {
         background: white;
         color: var(--ColorPrimary);
@@ -46,7 +46,7 @@
         transition: all 0.3s ease;
         display: inline-block;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        
+
         &:hover {
             background: #f0f0f0;
             color: var(--ColorPrimary);
@@ -97,7 +97,7 @@
     .section_text {
         flex: 1;
         min-width: 50%;
-        
+
         @include media("<desktop") {
             order: 1;
         }
@@ -121,11 +121,11 @@
         color: white;
         width: 80%;
         align-self: end;
-        
+
         p {
             margin-bottom: 1.5rem;
         }
-        
+
         @include media("<desktop") {
             width: 100%;
         }
@@ -145,7 +145,7 @@
             transition: all 0.3s ease;
             display: inline-block;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            
+
             &:hover {
                 background: #AB0044;
                 text-decoration: none;
@@ -174,16 +174,16 @@
             margin-left: auto;
         }
     }
-    
+
     &:not(.image--right) {
         .section_content {
             flex-direction: row-reverse;
-            
+
             @include media("<desktop") {
                 flex-direction: column;
             }
         }
-        
+
         .section_image {
             margin-right: auto;
         }
@@ -196,16 +196,16 @@
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        
+
         .section_content {
             min-height: auto;
         }
-        
+
         .section_text {
             padding: 60px 30px;
             text-align: center;
         }
-        
+
         .section_image {
             margin: 0 !important;
         }

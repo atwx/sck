@@ -25,6 +25,8 @@ class TextImageElement extends BaseElement
     private static $db = [
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
+        "Highlight" => "Varchar(20)",
+        "ImgWidth" => "Varchar(20)",
     ];
 
     private static $has_one = [
@@ -78,7 +80,7 @@ class TextImageElement extends BaseElement
             $summary[] = "Button: " . $this->Button->Title;
         }
 
-        return implode(" | ", $summary) ?: "Text & Bild Element";
+        return implode(" | ", $summary) ?: "Element mit Text und Bild";
     }
 
     #[Override]
@@ -96,6 +98,17 @@ class TextImageElement extends BaseElement
         $fields->replaceField('Variant', new DropdownField('Variant', 'Variante', [
             "" => "Bild rechts",
             "image--right" => "Bild links",
+        ]));
+        $fields->replaceField('ImgWidth', new DropdownField('ImgWidth', 'Bildbreite', [
+            "image--30" => "30%",
+            "image--40" => "40%",
+            "image--50" => "50%",
+            "image--60" => "60%",
+            "image--70" => "70%",
+        ]));
+        $fields->replaceField('Highlight', new DropdownField('Highlight', 'Highlight', [
+            "" => "Kein Highlight",
+            "highlighted" => "Highlight",
         ]));
 
         $fields->removeByName('ButtonID');

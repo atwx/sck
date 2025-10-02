@@ -21,8 +21,8 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
  * @property string $LinkFacebook
  * @property string $LinkTwitter
  * @property string $LinkDiscord
- * @property string $PrimaryColor
- * @property string $SecondaryColor
+ * @property string $ColorPrimary
+ * @property string $ColorSecondary
  * @property string $ColorPrimaryLight
  * @property string $ColorSecondaryLight
  * @property string $ColorPrimaryDark
@@ -46,12 +46,16 @@ class CustomSiteConfig extends Extension
         'LinkFacebook' => 'Varchar(255)',
         'LinkTwitter' => 'Varchar(255)',
         'LinkDiscord' => 'Varchar(255)',
-        'PrimaryColor' => 'Varchar(7)',
-        'SecondaryColor' => 'Varchar(7)',
+        'ColorPrimary' => 'Varchar(7)',
+        'ColorSecondary' => 'Varchar(7)',
         'ColorPrimaryLight' => 'Varchar(7)',
         'ColorSecondaryLight' => 'Varchar(7)',
         'ColorPrimaryDark' => 'Varchar(7)',
         'ColorSecondaryDark' => 'Varchar(7)',
+        'MenuBackgroundColor' => 'Varchar(7)',
+        'MenuButtonColor' => 'Varchar(7)',
+        'MenuTextColor' => 'Varchar(7)',
+        'MenuTextHoverColor' => 'Varchar(7)',
         'MaxWidth' => 'Varchar(10)',
         'MaxWidthContent' => 'Varchar(10)',
         'FooterText' => 'HTMLText',
@@ -83,10 +87,10 @@ class CustomSiteConfig extends Extension
             ->setDescription("Maximale Breite für Text-Content (z.B. 980px, 800px)")
             ->setAttribute('placeholder', '980px'));
 
-        $fields->addFieldToTab("Root.Styling", TextField::create("PrimaryColor", "Primärfarbe")
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")
             ->setDescription("Hauptfarbe der Website")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("SecondaryColor", "Sekundärfarbe")
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondary", "Sekundärfarbe")
             ->setDescription("Sekundärfarbe der Website")
             ->setAttribute('type', 'color'));
 
@@ -119,14 +123,14 @@ class CustomSiteConfig extends Extension
         return $this->owner->MaxWidthContent ?: '980px';
     }
 
-    public function getPrimaryColorValue()
+    public function getColorPrimaryValue()
     {
-        return $this->owner->PrimaryColor ?: '#03395E';
+        return $this->owner->ColorPrimary ?: '#03395E';
     }
 
-    public function getSecondaryColorValue()
+    public function getColorSecondaryValue()
     {
-        return $this->owner->SecondaryColor ?: '#63819C';
+        return $this->owner->ColorSecondary ?: '#63819C';
     }
 
     public function getColorPrimaryLightValue()

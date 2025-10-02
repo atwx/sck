@@ -2,8 +2,8 @@
 :root {
     --maxWidth: $SiteConfig.MaxWidthValue;
     --maxWidthContent: $SiteConfig.MaxWidthContentValue;
-    --ColorPrimary: $SiteConfig.PrimaryColorValue;
-    --ColorSecondary: $SiteConfig.SecondaryColorValue;
+    --ColorPrimary: $SiteConfig.ColorPrimaryValue;
+    --ColorSecondary: $SiteConfig.ColorSecondaryValue;
     --ColorPrimaryLight: $SiteConfig.ColorPrimaryLightValue;
     --ColorPrimaryDark: $SiteConfig.ColorPrimaryDarkValue;
     --ColorSecondaryLight: $SiteConfig.ColorSecondaryLightValue;
