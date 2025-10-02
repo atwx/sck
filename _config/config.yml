@@ -29,3 +29,7 @@ SilverStripe\View\SSViewer:
     - '$public'
     - 'depot'
     - 'silverstripe-elemental-suite-foundation-6'
+
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - Atwx\Sck\Extensions\PageExtension

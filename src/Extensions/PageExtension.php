@@ -93,7 +93,7 @@ class PageExtension extends Extension
                 ->setDescription('Untertitel im Hero-Bereich (z.B. "Maritime Stadt mit Zukunft")'),
             NumericField::create('HeroHeight', 'Hero Höhe')
                 ->setDescription('Die Höhe des Hero-Bereichs')
-                ->setValue($this->HeroHeight ?: 60),
+                ->setValue($this->owner->HeroHeight ?: 60),
             DropdownField::create('HeroHeightUnit', 'Hero Höhen-Einheit', [
                 'vh' => 'Viewport Height (vh) - Prozent der Bildschirmhöhe',
                 'px' => 'Pixel (px) - Feste Pixelangabe',
@@ -104,8 +104,8 @@ class PageExtension extends Extension
 
     public function getHeroHeightStyle()
     {
-        if ($this->HeroHeight) {
-            return "height: {$this->HeroHeight}{$this->HeroHeightUnit};";
+        if ($this->owner->HeroHeight) {
+            return "height: {$this->owner->HeroHeight}{$this->owner->HeroHeightUnit};";
         }
         return "height: 60vh;";
     }
