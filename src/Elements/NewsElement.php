@@ -5,7 +5,6 @@ namespace Atwx\Sck\Elements;
 use Override;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataList;
-use App\Elements\NewsItem;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
