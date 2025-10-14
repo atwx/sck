@@ -72,7 +72,6 @@
         }
         
         &:hover {
-            transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
     }
@@ -97,10 +96,6 @@
             bottom: 0;
             background: linear-gradient(45deg, rgba(30, 58, 138, 0.3), rgba(30, 64, 175, 0.1));
         }
-        
-        &:hover img {
-            transform: scale(1.05);
-        }
     }
     
     .service-slide-content {
@@ -118,6 +113,7 @@
             margin-bottom: 20px;
             color: var(--ColorPrimary);
             line-height: 1.3;
+            hyphens: auto;
         }
         
         .service-slide-text {
@@ -144,7 +140,7 @@
                 transition: background-color 0.3s ease;
                 
                 &:hover {
-                    background-color: #AB0044;
+                    background-color: var(--ColorSecondary);
                     text-decoration: none;
                     color: white;
                 }
@@ -173,7 +169,7 @@
             position: absolute;
             top: 15%;
             transform: translateY(-50%);
-            background: #AB0044;
+            background: var(--ColorSecondary);
             border: none;
             width: 50px;
             height: 50px;
@@ -186,7 +182,6 @@
             margin: 0 auto;
             
             span {
-                justify-content: center;
                 align-items: center;
                 font-size: 48px;
                 color: white;
@@ -196,6 +191,9 @@
             &:hover {
                 background: white;
                 transform: translateY(-50%) scale(1.1);
+                span{
+                    color: var(--ColorSecondary);
+                }
             }
             
             &.slider-arrow-prev {
@@ -242,7 +240,7 @@
             
             &.active,
             &:hover {
-                background: #AB0044;
+                background: var(--ColorSecondary);
                 transform: scale(1.2);
             }
         }

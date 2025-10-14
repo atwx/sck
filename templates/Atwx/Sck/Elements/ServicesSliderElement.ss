@@ -15,10 +15,18 @@
                     <% loop $ServiceSlides %>
                     <div class="service-slide">
                         <% if $BackgroundImage %>
-                        <div class="service-slide-image">
-                            <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
-                            <div class="service-slide-overlay"></div>
-                        </div>
+                            <% if $Button %>
+                                <a href="$Button.URL" class="service-slide-image"
+                                <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
+                                    <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
+                                    <div class="service-slide-overlay"></div>
+                                </a>
+                            <% else %>
+                                <div class="service-slide-image">
+                                    <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
+                                    <div class="service-slide-overlay"></div>
+                                </div>                        
+                            <% end_if %>
                         <% end_if %>
                         
                         <div class="service-slide-content">
@@ -32,11 +40,11 @@
                             </div>
                             <% end_if %>
                             
-                            <% if $ButtonLink && $ButtonText %>
+                            <% if $Button %>
                             <div class="service-slide-button">
-                                <a href="$ButtonLink.URL" class="btn btn-service" 
-                                   <% if $ButtonLink.OpenInNew %>target="_blank"<% end_if %>>
-                                    $ButtonText
+                                <a href="$Button.URL" class="btn btn-service" 
+                                   <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
+                                    $Button.Title
                                 </a>
                             </div>
                             <% end_if %>

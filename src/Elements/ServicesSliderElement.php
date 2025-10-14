@@ -11,6 +11,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\LiteralField;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class \Atwx\Sck\Elements\ServicesSliderElement
@@ -76,7 +77,7 @@ class ServicesSliderElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName('Title');
+        $fields->removeByName(['Title', 'ServiceSlides']);
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('SliderTitle', 'Slider Titel')
@@ -105,8 +106,10 @@ class ServicesSliderElement extends BaseElement
                 $this->ServiceSlides(),
                 $slidesConfig
             );
+            $slidesField->getConfig()->addComponent(GridFieldOrderableRows::create('SortOrder'));
 
             $fields->addFieldToTab('Root.Main', $slidesField);
+
         } else {
             $fields->addFieldToTab('Root.Main',
                 LiteralField::create(
