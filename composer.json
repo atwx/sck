@@ -14,7 +14,8 @@
         "silverstripe/linkfield": "^5.0",
         "jonom/focuspoint": "^6.0",
         "symbiote/silverstripe-gridfieldextensions": "^5.0",
-        "purplespider/silverstripe-basic-gallery-extension": "^5.0"
+        "purplespider/silverstripe-basic-gallery-extension": "^5.0",
+        "tractorcow/silverstripe-fluent": "^8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.3",
