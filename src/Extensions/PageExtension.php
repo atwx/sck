@@ -17,7 +17,8 @@ class PageExtension extends Extension
         "MenuPosition" => "Enum('main,footer', 'main')",
         "ShowHeroSection" => "Boolean",
         "HeroTitle" => "Varchar(255)",
-        "HeroSubtitle" => "Varchar(255)",
+        "HeroTopline" => "Varchar(255)",
+        "HeroTopline2" => "Varchar(255)",
         "HeaderNavPosition" => "Enum('above,below', 'above')",
         "NavStripVersion" => "Enum('default,alternative', 'default')",
         "HeroHeight" => "Int",
@@ -89,8 +90,10 @@ class PageExtension extends Extension
             $heroImageField,
             TextField::create('HeroTitle', 'Hero Titel')
                 ->setDescription('Haupttitel im Hero-Bereich (z.B. "Cuxhaven Business")'),
-            TextField::create('HeroSubtitle', 'Hero Untertitel')
-                ->setDescription('Untertitel im Hero-Bereich (z.B. "Maritime Stadt mit Zukunft")'),
+            TextField::create('HeroTopline', 'Hero Topline')
+                ->setDescription('Obertitel im Hero-Bereich (z.B. "Maritime Stadt mit Zukunft")'),
+            TextField::create('HeroTopline2', 'Hero 2. Topline')
+            ->setDescription('2. Obertitel im Hero-Bereich'),
             NumericField::create('HeroHeight', 'Hero Höhe')
                 ->setDescription('Die Höhe des Hero-Bereichs')
                 ->setValue($this->owner->HeroHeight ?: 60),

@@ -12,11 +12,14 @@
         <div class="hero_overlay"></div>
         <div class="hero_content">
             <div class="hero_text_content">
+                <% if $HeroTopline %>
+                <div class="hero_topline">$HeroTopline</div>
+                <% end_if %>
+                <% if $HeroTopline2 %>
+                <div class="hero_second_topline">$HeroTopline2</div>
+                <% end_if %>
                 <% if $HeroTitle %>
                 <div class="hero_title">$HeroTitle</div>
-                <% end_if %>
-                <% if $HeroSubtitle %>
-                <div class="hero_subtitle">$HeroSubtitle</div>
                 <% end_if %>
             </div>
         </div>
