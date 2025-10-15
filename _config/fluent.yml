@@ -1,0 +1,18 @@
+---
+Name: mysitefluent
+After: '#versionedfiles'
+---
+SilverStripe\Assets\File:
+  extensions:
+    - TractorCow\Fluent\Extension\FluentVersionedExtension
+  translate:
+    - Title
+
+DNADesign\Elemental\Models\BaseElement:
+  displays_title_in_template: false
+  extensions:
+    - App\Extensions\BaseElementFluentExtension
+    - App\Extensions\FluentArchiveAllLocales
+  translate:
+    - Title
+

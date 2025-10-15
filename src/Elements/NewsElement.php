@@ -2,6 +2,7 @@
 
 namespace Atwx\Sck\Elements;
 
+use Atwx\Sck\News\NewsEntry;
 use Override;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataList;
@@ -33,10 +34,6 @@ class NewsElement extends BaseElement
         'MainButton' => Link::class,
     ];
 
-    private static $has_many = [
-        "NewsItems" => NewsItem::class,
-    ];
-
     private static $owns = [
         'MainButton',
     ];
@@ -46,7 +43,6 @@ class NewsElement extends BaseElement
         "Subtitle" => "Untertitel",
         "Description" => "Beschreibung",
         "MainButton" => "Haupt-Button",
-        "NewsItems" => "News Einträge",
     ];
 
     private static $table_name = 'SCK_NewsElement';
@@ -104,26 +100,6 @@ class NewsElement extends BaseElement
                 ->setDescription('Der "Mehr darüber" Button')
         ]);
 
-        // News Einträge GridField
-        if ($this->ID) {
-            $newsConfig = GridFieldConfig_RelationEditor::create();
-            $newsField = GridField::create(
-                'NewsItems',
-                'News Einträge',
-                $this->NewsItems(),
-                $newsConfig
-            );
-
-            $fields->addFieldToTab('Root.NewsItems', $newsField);
-        } else {
-            $fields->addFieldToTab('Root.NewsItems',
-                LiteralField::create(
-                    'FirstSave',
-                    '<p>Speichern Sie dieses Element zuerst, um News Einträge hinzufügen zu können.</p>'
-                )
-            );
-        }
-
         return $fields;
     }
 
@@ -131,5 +107,10 @@ class NewsElement extends BaseElement
     public function canCreate($member = null, $context = [])
     {
         return parent::canCreate($member, $context);
+    }
+
+    public function getNewsItems()
+    {
+        return NewsEntry::get()->filter('ShowInNewsElement', true)->sort('Date DESC');
     }
 }

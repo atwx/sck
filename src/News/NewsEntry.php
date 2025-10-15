@@ -13,6 +13,7 @@ class NewsEntry extends TaggableDataObject
         'Title' => 'Varchar(255)',
         'Date' => 'Date',
         'Content' => 'HTMLText',
+        'ShowInNewsElement' => 'Boolean',
     ];
 
     private static $has_one = [
@@ -47,6 +48,9 @@ class NewsEntry extends TaggableDataObject
         'Content' => 'Inhalt',
         'Image' => 'Bild',
         'Links' => 'Links',
+        'Category' => 'Kategorie',
+        'Tags' => 'Tags',
+        'ShowInNewsElement' => 'In News-Elementen anzeigen',
     ];
 
     private static $table_name = 'SCK_NewsEntry';
@@ -58,6 +62,7 @@ class NewsEntry extends TaggableDataObject
         'Title' => 'Titel',
         'FormattedDate' => 'Datum',
         'Content.Summary' => 'Inhalt',
+        'ShowInNewsElement' => 'In News-Elementen anzeigen',
     ];
 
     #[Override]

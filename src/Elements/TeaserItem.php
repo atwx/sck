@@ -50,6 +50,11 @@ class TeaserItem extends DataObject
         'Title' => 'Titel',
     ];
 
+    private static $translate = [
+        'Title',
+        'Content',
+    ];
+
     private static $table_name = 'SCK_TeaserItem';
     private static $singular_name = "Teaser Eintrag";
     private static $plural_name = "Teaser Einträge";
