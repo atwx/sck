@@ -3,7 +3,6 @@
 namespace Atwx\Sck\Elements;
 
 use Override;
-use SilverStripe\ORM\DataList;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
@@ -13,17 +12,7 @@ use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\LiteralField;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
-/**
- * Class \Atwx\Sck\Elements\ServicesSliderElement
- *
- * @property string $SliderTitle
- * @property bool $ShowDots
- * @property bool $ShowArrows
- * @property bool $Autoplay
- * @property int $AutoplaySpeed
- * @method DataList|ServiceSlide[] ServiceSlides()
- */
-class ServicesSliderElement extends BaseElement
+class CardSliderElement extends BaseElement
 {
     private static $db = [
         'SliderTitle' => 'Varchar(255)',
@@ -34,23 +23,23 @@ class ServicesSliderElement extends BaseElement
     ];
 
     private static $has_many = [
-        'ServiceSlides' => ServiceSlide::class,
+        'Cards' => CardSlide::class,
     ];
 
     private static $owns = [
-        'ServiceSlides',
+        'Cards',
     ];
 
     private static $cascade_deletes = [
-        'ServiceSlides',
+        'Cards',
     ];
 
     private static $cascade_duplicate = [
-        'ServiceSlides',
+        'Cards',
     ];
 
     private static $defaults = [
-        'SliderTitle' => 'Services',
+        'SliderTitle' => 'Karten',
         'ShowDots' => true,
         'ShowArrows' => true,
         'Autoplay' => false,
@@ -63,13 +52,13 @@ class ServicesSliderElement extends BaseElement
         'ShowArrows' => 'Pfeile anzeigen',
         'Autoplay' => 'Automatisches Abspielen',
         'AutoplaySpeed' => 'Abspielgeschwindigkeit (ms)',
-        'ServiceSlides' => 'Service Kacheln',
+        'Cards' => 'Service Kacheln',
     ];
 
-    private static $table_name = 'SCK_ServicesSliderElement';
+    private static $table_name = 'SCK_CardSliderElement';
     private static $icon = 'font-icon-block-carousel';
-    private static $singular_name = 'Services Slider';
-    private static $plural_name = 'Services Slider';
+    private static $singular_name = 'Karten Slider';
+    private static $plural_name = 'Karten Slider';
     private static $inline_editable = false;
 
     #[Override]
@@ -77,7 +66,7 @@ class ServicesSliderElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['Title', 'ServiceSlides']);
+        $fields->removeByName(['Title', 'Cards']);
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('SliderTitle', 'Slider Titel')
@@ -101,20 +90,20 @@ class ServicesSliderElement extends BaseElement
             $slidesConfig = GridFieldConfig_RecordEditor::create();
 
             $slidesField = GridField::create(
-                'ServiceSlides',
-                'Service Kacheln',
-                $this->ServiceSlides(),
+                'Cards',
+                'Karten',
+                $this->Cards(),
                 $slidesConfig
             );
             $slidesField->getConfig()->addComponent(GridFieldOrderableRows::create('SortOrder'));
 
             $fields->addFieldToTab('Root.Main', $slidesField);
-
         } else {
-            $fields->addFieldToTab('Root.Main',
+            $fields->addFieldToTab(
+                'Root.Main',
                 LiteralField::create(
-                    'ServiceSlidesNote',
-                    '<p class="message notice">Speichern Sie das Element zuerst, um Service-Kacheln hinzuzufügen.</p>'
+                    'CardSlidesNote',
+                    '<p class="message notice">Speichern Sie das Element zuerst, um Karten hinzuzufügen.</p>'
                 )
             );
         }
@@ -125,13 +114,13 @@ class ServicesSliderElement extends BaseElement
     #[Override]
     public function getType()
     {
-        return 'Services Slider';
+        return 'Karten Slider';
     }
 
     #[Override]
     public function getTitle()
     {
-        return $this->SliderTitle ?: 'Services Slider';
+        return $this->SliderTitle ?: 'Karten Slider';
     }
 
     #[Override]
@@ -143,7 +132,7 @@ class ServicesSliderElement extends BaseElement
             $summary[] = "Titel: " . $this->SliderTitle;
         }
 
-        $slideCount = $this->ServiceSlides()->count();
+        $slideCount = $this->Cards()->count();
         $summary[] = $slideCount . " Slide" . ($slideCount !== 1 ? "s" : "");
 
         $settings = [];
@@ -161,6 +150,6 @@ class ServicesSliderElement extends BaseElement
             $summary[] = "Einstellungen: " . implode(", ", $settings);
         }
 
-        return implode(" | ", $summary) ?: "Services Slider";
+        return implode(" | ", $summary) ?: "Karten Slider";
     }
 }

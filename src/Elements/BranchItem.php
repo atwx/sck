@@ -3,10 +3,15 @@
 namespace Atwx\Sck\Elements;
 
 use Override;
-use SilverStripe\LinkField\Form\LinkField;
-use SilverStripe\ORM\DataObject;
 use SilverStripe\Assets\Image;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
 use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use TractorCow\Fluent\Extension\FluentExtension;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 /**
  * Class \Atwx\Sck\Elements\BranchItem
@@ -45,6 +50,10 @@ class BranchItem extends DataObject
         'Button' => 'Button',
     ];
 
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
     private static $table_name = 'SCK_BranchItem';
 
     private static $summary_fields = [
@@ -56,15 +65,15 @@ class BranchItem extends DataObject
     #[Override]
     public function getCMSFields()
     {
-        $fields = parent::getCMSFields();
+        $fields = FieldList::create(
+            TextField::create('Title', 'Title', null, 255),
+            HTMLEditorField::create('Content', 'Content'),
+            UploadField::create('Image', 'Bild'),
+            LinkField::create('Button', 'Button')
+        );
 
-        $fields->removeByName('BranchesElementID');
-        $fields->removeByName('ButtonID');
-
-        $fields->addFieldToTab('Root.Main', $fields->dataFieldByName('Title'));
-        $fields->addFieldToTab('Root.Main', $fields->dataFieldByName('Image'));
-        $fields->addFieldToTab('Root.Main', $fields->dataFieldByName('Content'));
-        $fields->addFieldToTab('Root.Main', LinkField::create('Button', 'Button'));
+        // This line is necessary, and only AFTER you have added your fields
+        $this->extend('updateCMSFields', $fields);
 
         return $fields;
     }

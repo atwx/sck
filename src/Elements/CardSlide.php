@@ -5,26 +5,15 @@ namespace Atwx\Sck\Elements;
 use Override;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\TextareaField;
-use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use TractorCow\Fluent\Extension\FluentExtension;
 
-/**
- * Class \Atwx\Sck\Elements\ServiceSlide
- *
- * @property string $Title
- * @property string $Content
- * @property int $SortOrder
- * @property int $BackgroundImageID
- * @property int $ServicesSliderElementID
- * @property int $ButtonID
- * @method Image BackgroundImage()
- * @method ServicesSliderElement ServicesSliderElement()
- * @method Link Button()
- */
-class ServiceSlide extends DataObject
+class CardSlide extends DataObject
 {
     private static $db = [
         'Title' => 'Varchar(255)',
@@ -34,7 +23,7 @@ class ServiceSlide extends DataObject
 
     private static $has_one = [
         'BackgroundImage' => Image::class,
-        'ServicesSliderElement' => ServicesSliderElement::class,
+        'CardSliderElement' => CardSliderElement::class,
         'Button' => Link::class,
     ];
 
@@ -62,9 +51,9 @@ class ServiceSlide extends DataObject
         'SortOrder' => 'Reihenfolge',
     ];
 
-    private static $table_name = 'SCK_ServiceSlide';
-    private static $singular_name = 'Service Kachel';
-    private static $plural_name = 'Service Kacheln';
+    private static $table_name = 'SCK_CardSlide';
+    private static $singular_name = 'Karte';
+    private static $plural_name = 'Karten';
 
     private static $summary_fields = [
         'Title' => 'Titel',
@@ -73,31 +62,35 @@ class ServiceSlide extends DataObject
         'SortOrder' => 'Reihenfolge',
     ];
 
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
+    private static $translate = [
+        'Title',
+        'Content',
+    ];
+
     #[Override]
     public function getCMSFields()
     {
-        $fields = parent::getCMSFields();
-
-        $fields->removeByName(['ServicesSliderElementID', 'SortOrder']);
-        $fields->removeByName('ButtonID');
-
-        $fields->addFieldsToTab('Root.Main', [
+        $fields = FieldList::create(
             TextField::create('Title', 'Titel')
                 ->setDescription('Der Haupttitel der Service-Kachel (z.B. "Fördermittelberatung")'),
-
             TextareaField::create('Content', 'Inhalt/Beschreibung')
                 ->setRows(4)
                 ->setDescription('Beschreibungstext für den Service'),
-
             UploadField::create('BackgroundImage', 'Hintergrundbild')
                 ->setAllowedExtensions(['jpg', 'jpeg', 'png', 'webp'])
                 ->setAllowedMaxFileNumber(1)
                 ->setIsMultiUpload(false)
                 ->setDescription('Empfohlene Größe: 400x300px für optimale Darstellung'),
-
             LinkField::create('Button', 'Button')
                 ->setDescription('Button für weitere Informationen'),
-        ]);
+        );
+
+        // This line is necessary, and only AFTER you have added your fields
+        $this->extend('updateCMSFields', $fields);
 
         return $fields;
     }
@@ -109,8 +102,8 @@ class ServiceSlide extends DataObject
 
         // Automatische SortOrder-Vergabe
         if (!$this->SortOrder) {
-            $maxOrder = ServiceSlide::get()
-                ->filter('ServicesSliderElementID', $this->ServicesSliderElementID)
+            $maxOrder = CardSlide::get()
+                ->filter('CardSliderElementID', $this->CardSliderElementID)
                 ->max('SortOrder');
             $this->SortOrder = $maxOrder ? $maxOrder + 1 : 1;
         }
@@ -125,8 +118,8 @@ class ServiceSlide extends DataObject
             return $title;
         }
 
-        // Fallback zu Service Kachel mit ID
-        return 'Service Kachel' . ($this->ID ? ' #' . $this->ID : '');
+        // Fallback zu Karte mit ID
+        return 'Karte' . ($this->ID ? ' #' . $this->ID : '');
     }
 
     /**

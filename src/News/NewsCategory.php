@@ -4,6 +4,7 @@ namespace Atwx\Sck\News;
 
 use Override;
 use SilverStripe\ORM\DataObject;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class NewsCategory extends DataObject
 {
@@ -29,6 +30,10 @@ class NewsCategory extends DataObject
         'Title' => 'Titel',
         'Parent' => 'Übergeordnete Kategorie',
         'Children' => 'Unterkategorien',
+    ];
+
+    private static $extensions = [
+        FluentExtension::class,
     ];
 
     private static $table_name = 'SCK_NewsCategory';

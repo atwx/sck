@@ -2,10 +2,11 @@
 
 namespace Atwx\Sck\News;
 
-use Atwx\Sck\Tags\TaggableDataObject;
 use Override;
 use SilverStripe\Assets\Image;
+use Atwx\Sck\Tags\TaggableDataObject;
 use SilverStripe\LinkField\Models\Link;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class NewsEntry extends TaggableDataObject
 {

@@ -5,8 +5,11 @@ namespace Atwx\Sck\Elements;
 use Override;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
 use SilverStripe\LinkField\Models\Link;
-use SilverStripe\LinkField\Form\LinkField;
+use TractorCow\Fluent\Extension\FluentExtension;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 /**
  * Class \Atwx\Sck\Elements\TeaserItem
@@ -55,17 +58,24 @@ class TeaserItem extends DataObject
         'Content',
     ];
 
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
     private static $table_name = 'SCK_TeaserItem';
     private static $singular_name = "Teaser Eintrag";
     private static $plural_name = "Teaser Einträge";
 
-    #[Override]
     public function getCMSFields()
     {
-        $fields = parent::getCMSFields();
-        $fields->removeByName('ParentID');
-        $fields->removeByName('ButtonID');
-        $fields->addFieldToTab('Root.Main', LinkField::create('Button'));
+        // Note the absence of any parent::getCMSFields
+        $fields = FieldList::create(
+            TextField::create('Title', 'Title', null, 255),
+            HTMLEditorField::create('Content', 'Content')
+        );
+
+        // This line is necessary, and only AFTER you have added your fields
+        $this->extend('updateCMSFields', $fields);
         return $fields;
     }
 }

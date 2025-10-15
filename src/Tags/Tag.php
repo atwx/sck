@@ -4,6 +4,7 @@ namespace Atwx\Sck\Tags;
 
 use Override;
 use SilverStripe\ORM\DataObject;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class Tag extends DataObject
 {
@@ -19,6 +20,10 @@ class Tag extends DataObject
 
     private static $field_labels = [
         'Title' => 'Titel',
+    ];
+
+    private static $extensions = [
+        FluentExtension::class,
     ];
 
     private static $table_name = 'SCK_Tag';

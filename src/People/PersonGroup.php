@@ -5,6 +5,7 @@ namespace Atwx\Sck\People;
 use Override;
 use Atwx\Sck\People\Person;
 use SilverStripe\ORM\DataObject;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class PersonGroup extends DataObject
 {
@@ -29,6 +30,10 @@ class PersonGroup extends DataObject
 
     private static $summary_fields = [
         'Title' => 'Titel',
+    ];
+
+    private static $extensions = [
+        FluentExtension::class,
     ];
 
     #[Override]

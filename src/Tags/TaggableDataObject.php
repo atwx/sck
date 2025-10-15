@@ -3,6 +3,7 @@
 namespace Atwx\Sck\Tags;
 
 use SilverStripe\ORM\DataObject;
+use TractorCow\Fluent\Extension\FluentExtension;
 use SilverStripe\Forms\SearchableMultiDropdownField;
 
 class TaggableDataObject extends DataObject
@@ -34,6 +35,10 @@ class TaggableDataObject extends DataObject
         ));
         return $fields;
     }
+
+    private static $extensions = [
+        FluentExtension::class,
+    ];
 
     private static $table_name = 'SCK_TaggableDataObject';
 }
