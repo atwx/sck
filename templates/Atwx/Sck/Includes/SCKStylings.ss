@@ -11,6 +11,8 @@
         --ColorPrimaryDark: $SiteConfig.ColorPrimaryDarkValue;
         --ColorSecondaryLight: $SiteConfig.ColorSecondaryLightValue;
         --ColorSecondaryDark: $SiteConfig.ColorSecondaryDarkValue;
+        --ColorText: $SiteConfig.ColorTextValue;
+        --ColorHeadline: $SiteConfig.ColorHeadlineValue;
         <% if $SiteConfig.MenuBackgroundColor %>
             --ColorMenuBand: $SiteConfig.MenuBackgroundColor;
         <% end_if %>

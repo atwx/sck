@@ -27,6 +27,8 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
  * @property string $ColorSecondaryLight
  * @property string $ColorPrimaryDark
  * @property string $ColorSecondaryDark
+ * @property string $ColorText
+ * @property string $ColorHeadline
  * @property string $MaxWidth
  * @property string $MaxWidthContent
  * @property string $FooterText
@@ -52,6 +54,8 @@ class CustomSiteConfig extends Extension
         'ColorSecondaryLight' => 'Varchar(7)',
         'ColorPrimaryDark' => 'Varchar(7)',
         'ColorSecondaryDark' => 'Varchar(7)',
+        'ColorText' => 'Varchar(7)',
+        'ColorHeadline' => 'Varchar(7)',
         'MenuBackgroundColor' => 'Varchar(7)',
         'MenuButtonColor' => 'Varchar(7)',
         'MenuTextColor' => 'Varchar(7)',
@@ -106,6 +110,12 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondaryDark", "Sekundärfarbe Dunkel")
             ->setDescription("Dunkle Variante der Sekundärfarbe")
             ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorHeadline", "Überschriftfarbe")
+            ->setDescription("Farbe der Überschriften")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorText", "Textfarbe")
+            ->setDescription("Farbe des Fließtextes")
+            ->setAttribute('type', 'color'));
 
         $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
         $fields->addFieldToTab("Root.Main", new UploadField("Logo", "Logo"));
@@ -151,5 +161,15 @@ class CustomSiteConfig extends Extension
     public function getColorSecondaryDarkValue()
     {
         return $this->owner->ColorSecondaryDark ?: '#806934';
+    }
+
+    public function getColorTextValue()
+    {
+        return $this->owner->ColorText ?: '#464F54';
+    }
+
+    public function getColorHeadlineValue()
+    {
+        return $this->owner->ColorHeadline ?: '#03395E';
     }
 }

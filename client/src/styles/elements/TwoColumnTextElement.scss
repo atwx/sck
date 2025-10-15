@@ -47,13 +47,14 @@
         .element-text {
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #464F54;
+            color: var(--ColorHeadline);
             
             @media (max-width: 768px) {
                 font-size: 1rem;
             }
             
             p {
+                color: var(--ColorText);
                 margin-bottom: 1rem;
                 
                 &:last-child {
