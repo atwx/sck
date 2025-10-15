@@ -21,7 +21,6 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
  * @property string $Description
  * @property int $MainButtonID
  * @method Link MainButton()
- * @method DataList|NewsItem[] NewsItems()
  */
 class NewsElement extends BaseElement
 {
@@ -68,7 +67,7 @@ class NewsElement extends BaseElement
             $summary[] = "Untertitel: " . $this->Subtitle;
         }
 
-        $newsCount = $this->NewsItems()->count();
+        $newsCount = $this->getNewsItems()->count();
         $summary[] = $newsCount . " News Eintrag" . ($newsCount !== 1 ? "e" : "");
 
         return implode(" | ", $summary) ?: "Aktuelles Element";
@@ -80,6 +79,7 @@ class NewsElement extends BaseElement
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = ($this->Subtitle ?: $this->Title) ?: "Aktuelles";
         return $blockSchema;
+        
     }
 
     #[Override]
