@@ -3,37 +3,35 @@
 namespace Atwx\Sck\Elements;
 
 use Override;
+use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataList;
-use Atwx\Sck\Elements\TeaserItem;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class \Atwx\Sck\Elements\TeaserElement
  *
- * @property string $Text
- * @method DataList|TeaserItem[] Teaser()
+ * @method DataList|TeaserItem[] TeaserItems()
  */
 class TeaserElement extends BaseElement
 {
-
-    private static $db = [
-        "Text" => "HTMLText",
-    ];
-
-    private static $has_one = [];
-
     private static $has_many = [
-        "Teaser" => TeaserItem::class,
+        'TeaserItems' => TeaserItem::class,
     ];
 
-    private static $owns = [];
+    private static $owns = [
+        'TeaserItems',
+    ];
 
     private static $field_labels = [
-        "Text" => "Text",
+        'Title' => 'Überschrift',
+        'TeaserItems' => 'Teaser-Einträge',
     ];
 
     private static $table_name = 'SCK_TeaserElement';
-    private static $icon = 'font-icon-block-promo-3';
+    private static $icon = 'font-icon-block-layout';
     private static $inline_editable = false;
 
     #[Override]
@@ -51,30 +49,41 @@ class TeaserElement extends BaseElement
             $summary[] = "Titel: " . $this->Title;
         }
 
-        if ($this->Text) {
-            $plainText = strip_tags($this->Text);
-            $textPreview = strlen($plainText) > 40 ? substr($plainText, 0, 40) . "..." : $plainText;
-            $summary[] = "Text: " . $textPreview;
+        $itemCount = $this->TeaserItems()->count();
+        if ($itemCount > 0) {
+            $summary[] = $itemCount . " Einträge";
         }
 
-        $teaserCount = $this->Teaser()->count();
-        $summary[] = $teaserCount . " Teaser" . ($teaserCount !== 1 ? "" : "");
-
         return implode(" | ", $summary) ?: "Teaser Element";
-    }
-
-    #[Override]
-    public function provideBlockSchema()
-    {
-        $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = $this->Text ? $this->dbObject('Text')->Plain() : "Kein Text";
-        return $blockSchema;
     }
 
     #[Override]
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+
+        
+        $fields->removeByName(['TeaserItems']);
+
+        if ($this->ID) {
+            $config = GridFieldConfig_RecordEditor::create();
+            $gridField = GridField::create(
+                'TeaserItems',
+                'Teaser-Einträge',
+                $this->TeaserItems(),
+                $config
+            );
+            $gridField->getConfig()->addComponent(GridFieldOrderableRows::create('SortOrder'));
+            $fields->addFieldToTab('Root.Main', $gridField);
+        } else {
+            $fields->addFieldToTab('Root.Main',
+                LiteralField::create(
+                    'TeaserItemsNote',
+                    '<p class="message notice">Speichern Sie das Element zuerst, um Einträge hinzuzufügen.</p>'
+                )
+            );
+        }
+
         return $fields;
     }
 }

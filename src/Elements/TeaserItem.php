@@ -8,6 +8,8 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use TractorCow\Fluent\Extension\FluentExtension;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
@@ -18,22 +20,23 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
  * @property string $Content
  * @property int $ImageID
  * @property int $ButtonID
- * @property int $ParentID
+ * @property int $TeaserElementID
  * @method Image Image()
  * @method Link Button()
- * @method TeaserElement Parent()
+ * @method TeaserElement TeaserElement()
  */
 class TeaserItem extends DataObject
 {
     private static $db = [
-        "Title" => "Varchar(255)",
-        "Content" => "HTMLText",
+        'Title' => 'Varchar(255)',
+        'Content' => 'HTMLText',
+        'SortOrder' => 'Int'
     ];
 
     private static $has_one = [
         'Image' => Image::class,
         'Button' => Link::class,
-        'Parent' => TeaserElement::class,
+        'TeaserElement' => TeaserElement::class,
     ];
 
     private static $owns = [
@@ -42,20 +45,10 @@ class TeaserItem extends DataObject
     ];
 
     private static $field_labels = [
-        'Title' => 'Titel',
-        "Content" => "Text",
+        'Title' => 'Überschrift',
+        'Content' => 'Text',
         'Image' => 'Bild',
         'Button' => 'Button',
-    ];
-
-    private static $summary_fields = [
-        'Image.CMSThumbnail' => 'Bild',
-        'Title' => 'Titel',
-    ];
-
-    private static $translate = [
-        'Title',
-        'Content',
     ];
 
     private static $extensions = [
@@ -63,19 +56,27 @@ class TeaserItem extends DataObject
     ];
 
     private static $table_name = 'SCK_TeaserItem';
-    private static $singular_name = "Teaser Eintrag";
-    private static $plural_name = "Teaser Einträge";
+    private static $default_sort = 'SortOrder ASC';
 
+    private static $summary_fields = [
+        'Image.CMSThumbnail' => 'Bild',
+        'Title' => 'Titel',
+        'Content.Summary' => 'Inhalt',
+    ];
+
+    #[Override]
     public function getCMSFields()
     {
-        // Note the absence of any parent::getCMSFields
         $fields = FieldList::create(
             TextField::create('Title', 'Title', null, 255),
-            HTMLEditorField::create('Content', 'Content')
+            HTMLEditorField::create('Content', 'Content'),
+            UploadField::create('Image', 'Bild'),
+            LinkField::create('Button', 'Button')
         );
 
         // This line is necessary, and only AFTER you have added your fields
         $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 }
