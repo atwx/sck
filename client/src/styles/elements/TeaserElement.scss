@@ -8,7 +8,6 @@
             text-align: left;
             margin: 0 0 40px 0;
             font-size: 44px;
-            font-weight: 500;
             color: var(--ColorHeadline);
             
             @include media("<medium") {
@@ -67,7 +66,6 @@
         &-title {
             margin: 0 0 15px 0;
             font-size: 26px;
-            font-weight: 500;
             color: var(--ColorHeadline);
             line-height: 1.3;
             
@@ -80,7 +78,6 @@
             margin: 0 0 20px 0;
             color: var(--ColorText);
             line-height: 1.6;
-            font-weight: 400;
             
             p {
                 margin: 0 0 12px 0;

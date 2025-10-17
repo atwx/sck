@@ -52,7 +52,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => 'Pfeile anzeigen',
         'Autoplay' => 'Automatisches Abspielen',
         'AutoplaySpeed' => 'Abspielgeschwindigkeit (ms)',
-        'Cards' => 'Service Kacheln',
+        'Cards' => 'Kacheln',
     ];
 
     private static $table_name = 'SCK_CardSliderElement';

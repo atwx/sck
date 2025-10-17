@@ -1,11 +1,11 @@
-<div class="services-slider-element">
+<div class="cards-slider-element">
     <div class="container">
         <% if $SliderTitle %>
             <h2 class="slider-title">$SliderTitle</h2>
         <% end_if %>
 
-        <div class="services-slider-wrapper">
-            <div class="services-slider"
+        <div class="cards-slider-wrapper">
+            <div class="cards-slider"
                  data-autoplay="$Autoplay"
                  data-autoplay-speed="$AutoplaySpeed"
                  data-show-dots="$ShowDots"
@@ -13,36 +13,36 @@
 
                 <% if $Cards %>
                     <% loop $Cards %>
-                    <div class="service-slide">
+                    <div class="card-slide">
                         <% if $BackgroundImage %>
                             <% if $Button %>
-                                <a href="$Button.URL" class="service-slide-image"
+                                <a href="$Button.URL" class="card-slide-image"
                                 <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
                                     <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
-                                    <div class="service-slide-overlay"></div>
+                                    <div class="card-slide-overlay"></div>
                                 </a>
                             <% else %>
-                                <div class="service-slide-image">
+                                <div class="card-slide-image">
                                     <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
-                                    <div class="service-slide-overlay"></div>
+                                    <div class="card-slide-overlay"></div>
                                 </div>
                             <% end_if %>
                         <% end_if %>
 
-                        <div class="service-slide-content">
+                        <div class="card-slide-content">
                             <% if $Title %>
-                            <h3 class="service-slide-title">$Title</h3>
+                            <h3 class="card-slide-title">$Title</h3>
                             <% end_if %>
 
                             <% if $Content %>
-                            <div class="service-slide-text">
+                            <div class="card-slide-text">
                                 <p>$Content</p>
                             </div>
                             <% end_if %>
 
                             <% if $Button %>
-                            <div class="service-slide-button">
-                                <a href="$Button.URL" class="btn btn-service"
+                            <div class="card-slide-button">
+                                <a href="$Button.URL" class="btn btn-card"
                                    <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
                                     $Button.Title
                                 </a>
@@ -52,8 +52,8 @@
                     </div>
                     <% end_loop %>
                 <% else %>
-                    <div class="service-slide service-slide-placeholder">
-                        <div class="service-slide-content">
+                    <div class="card-slide card-slide-placeholder">
+                        <div class="card-slide-content">
                             <h3>Noch keine Karten</h3>
                             <p>Fügen Sie Karten über das Backend hinzu.</p>
                         </div>

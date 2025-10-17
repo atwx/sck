@@ -1,4 +1,4 @@
-.services-slider-element {
+.cards-slider-element {
     padding: 80px 0;
     background: var(--ColorPrimary);
     color: white;
@@ -17,7 +17,6 @@
     
     .slider-title {
         font-size: 2.5rem;
-        font-weight: 300;
         text-align: left;
         margin-bottom: 40px;
         color: white;
@@ -29,13 +28,13 @@
         }
     }
     
-    .services-slider-wrapper {
+    .cards-slider-wrapper {
         position: relative;
         overflow: hidden;
         width: 100%; 
     }
     
-    .services-slider {
+    .cards-slider {
         display: flex;
         transition: transform 0.5s ease;
         gap: 20px;
@@ -48,7 +47,7 @@
         }
     }
     
-    .service-slide {
+    .card-slide {
         flex: 0 0 calc(25% - 15px); 
         background: white;
         overflow: hidden;
@@ -76,7 +75,7 @@
         }
     }
     
-    .service-slide-image {
+    .card-slide-image {
         position: relative;
         height: 240px;
         overflow: hidden;
@@ -88,7 +87,7 @@
             transition: transform 0.3s ease;
         }
         
-        .service-slide-overlay {
+        .card-slide-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -98,7 +97,7 @@
         }
     }
     
-    .service-slide-content {
+    .card-slide-content {
         padding: 35px 25px; 
         color: #333;
         flex: 1; 
@@ -106,17 +105,16 @@
         flex-direction: column;
         justify-content: space-between;
         
-        .service-slide-title {
+        .card-slide-title {
             font-size: 26px;
             margin-top: 0px;
-            font-weight: 600;
             margin-bottom: 20px;
             color: var(--ColorHeadline);
             line-height: 1.3;
             hyphens: auto;
         }
         
-        .service-slide-text {
+        .card-slide-text {
             margin-bottom: 25px;
             flex: 1;
 
@@ -128,14 +126,13 @@
             }
         }
         
-        .service-slide-button {
-            .btn-service {
+        .card-slide-button {
+            .btn-card {
                 background-color: var(--ColorPrimary);
                 color: white;
                 padding: 10px 20px;
                 text-decoration: none;
                 font-size: 0.9rem;
-                font-weight: 500;
                 display: inline-block;
                 transition: background-color 0.3s ease;
                 
@@ -148,8 +145,8 @@
         }
     }
     
-    .service-slide-placeholder {
-        .service-slide-content {
+    .card-slide-placeholder {
+        .card-slide-content {
             text-align: center;
             padding: 60px 25px;
             
@@ -185,7 +182,6 @@
                 align-items: center;
                 font-size: 48px;
                 color: white;
-                font-weight: bold;
             }
             
             &:hover {
@@ -250,10 +246,10 @@
     @media (max-width: 768px) {
         padding: 60px 0;
         
-        .service-slide-content {
+        .card-slide-content {
             padding: 25px 20px;
             
-            .service-slide-title {
+            .card-slide-title {
                 font-size: 1.3rem;
             }
         }

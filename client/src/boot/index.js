@@ -93,9 +93,9 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // INIT SERVICES SLIDER
-    document.querySelectorAll('.services-slider').forEach(slider => {
-        const slides = slider.querySelectorAll('.service-slide');
+    // INIT CARDS SLIDER
+    document.querySelectorAll('.cards-slider').forEach(slider => {
+        const slides = slider.querySelectorAll('.card-slide');
         const dots = slider.parentElement.querySelectorAll('.slider-dot');
         const prevBtn = slider.parentElement.querySelector('.slider-arrow-prev');
         const nextBtn = slider.parentElement.querySelector('.slider-arrow-next');

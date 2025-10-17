@@ -76,10 +76,10 @@ class CardSlide extends DataObject
     {
         $fields = FieldList::create(
             TextField::create('Title', 'Titel')
-                ->setDescription('Der Haupttitel der Service-Kachel (z.B. "Fördermittelberatung")'),
+                ->setDescription('Der Haupttitel der Kachel (z.B. "Fördermittelberatung")'),
             TextareaField::create('Content', 'Inhalt/Beschreibung')
                 ->setRows(4)
-                ->setDescription('Beschreibungstext für den Service'),
+                ->setDescription('Beschreibungstext für die Kachel'),
             UploadField::create('BackgroundImage', 'Hintergrundbild')
                 ->setAllowedExtensions(['jpg', 'jpeg', 'png', 'webp'])
                 ->setAllowedMaxFileNumber(1)
