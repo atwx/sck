@@ -7,23 +7,26 @@
         <% end_if %>
     <% end_if %>
 
-    <% if $ShowHeroSection && $HeroImage %>
-    <div class="hero_section" style="background-image: url('$HeroImage.AbsoluteURL'); $HeroHeightStyle">
-        <div class="hero_overlay"></div>
-        <div class="hero_content">
-            <div class="hero_text_content">
-                <% if $HeroTopline %>
-                <div class="hero_topline">$HeroTopline</div>
-                <% end_if %>
-                <% if $HeroTopline2 %>
-                <div class="hero_second_topline">$HeroTopline2</div>
-                <% end_if %>
-                <% if $HeroTitle %>
-                <div class="hero_title">$HeroTitle</div>
-                <% end_if %>
+    <% if $ShowHeroSection && $HeroSlides.Count > 0 %>
+        <div class="hero_section swiper swiper--horizontal swiper--auto" style="$HeroHeightStyle">
+            <div class="hero_overlay"></div>
+            <div class="swiper-wrapper">
+                <% loop $HeroSlides %>
+                    <div class="swiper-slide">
+                        <div class="swiper-text">
+                            <% if $Title %>
+                                <div class="hero_topline">$Title</div>
+                            <% end_if %>
+                            <% if $SubTitle %>
+                                <div class="hero_second_topline">$SubTitle</div>
+                            <% end_if %>
+                        </div>
+                        $Image.FocusFill(1000,400)
+                    </div>
+                <% end_loop %>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-    </div>
     <% end_if %>
 
     <% if $HeaderNavPosition == "below" %>

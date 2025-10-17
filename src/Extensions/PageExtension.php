@@ -2,43 +2,34 @@
 
 namespace Atwx\Sck\Extensions;
 
-use SilverStripe\Assets\Image;
+use Atwx\Sck\Elements\HeroSlide;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
-use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 class PageExtension extends Extension
 {
     private static $db = [
         "MenuPosition" => "Enum('main,footer', 'main')",
         "ShowHeroSection" => "Boolean",
-        "HeroTitle" => "Varchar(255)",
-        "HeroTopline" => "Varchar(255)",
-        "HeroTopline2" => "Varchar(255)",
         "HeaderNavPosition" => "Enum('above,below', 'above')",
         "NavStripVersion" => "Enum('default,alternative', 'default')",
         "HeroHeight" => "Int",
         "HeroHeightUnit" => "Enum('px,vh,vw','vh')",
     ];
 
-    private static $has_one = [
-        "HeroImage" => Image::class,
+    private static $has_many = [
+        "HeroSlides" => HeroSlide::class,
     ];
 
     private static $owns = [
-        'HeroImage',
-    ];
-
-    private static $cascade_deletes = [
-        'HeroImage',
-    ];
-
-    private static $cascade_duplicate = [
-        'HeroImage',
+        "HeroSlides",
     ];
 
     private static $defaults = [
@@ -53,13 +44,6 @@ class PageExtension extends Extension
             "main" => "Hauptmenü",
             "footer" => "Footer",
         ]), "Content");
-
-        $fields->addFieldToTab(
-            "Root.Main",
-            CheckboxField::create('ShowHeroSection', 'Hero-Bereich anzeigen')
-                ->setDescription('Aktivieren Sie diese Option, um den Hero-Bereich auf dieser Seite anzuzeigen'),
-            "Content"
-        );
 
         $headerNavPositionField = DropdownField::create('HeaderNavPosition', 'Navigation Position', [
             'above' => 'Über dem Hero-Bereich',
@@ -77,23 +61,18 @@ class PageExtension extends Extension
 
         $fields->addFieldToTab("Root.Main", $navStripVersionField, "Content");
 
-        $heroImageField = UploadField::create('HeroImage', 'Hero Hintergrundbild');
-        $heroImageField->setFolderName('Uploads/hero-images');
-        $heroImageField->setAllowedExtensions(['jpg', 'jpeg', 'png', 'webp']);
-        $heroImageField->setAllowedMaxFileNumber(1);
-        $heroImageField->setIsMultiUpload(false);
-        $heroImageField->setDescription('Empfohlene Größe: 1920x800px für optimale Darstellung');
-
-        $heroImageField->getValidator()->setAllowedExtensions(['jpg', 'jpeg', 'png', 'webp']);
-
+        $fields->removeByName("HeroSlides");
         $fields->addFieldsToTab("Root.Hero", [
-            $heroImageField,
-            TextField::create('HeroTitle', 'Hero Titel')
-                ->setDescription('Haupttitel im Hero-Bereich (z.B. "Cuxhaven Business")'),
-            TextField::create('HeroTopline', 'Hero Topline')
-                ->setDescription('Obertitel im Hero-Bereich (z.B. "Maritime Stadt mit Zukunft")'),
-            TextField::create('HeroTopline2', 'Hero 2. Topline')
-            ->setDescription('2. Obertitel im Hero-Bereich'),
+            CheckboxField::create('ShowHeroSection', 'Hero-Bereich anzeigen')
+                ->setDescription('Aktivieren Sie diese Option, um den Hero-Bereich auf dieser Seite anzuzeigen'),
+            GridField::create(
+                'HeroSlides',
+                'Hero Slides',
+                $this->owner->HeroSlides(),
+                GridFieldConfig_RecordEditor::create()
+                    ->addComponent(new GridFieldOrderableRows('SortOrder'))
+            ),
+            $headerNavPositionField,
             NumericField::create('HeroHeight', 'Hero Höhe')
                 ->setDescription('Die Höhe des Hero-Bereichs')
                 ->setValue($this->owner->HeroHeight ?: 60),

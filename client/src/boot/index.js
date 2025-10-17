@@ -72,7 +72,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
             fadeEffect: {
                 crossFade: true
             },
-            direction: 'vertical',
+            direction: 'horizontal',
             loop: true,
 
             autoplay: autoSwiper ? {
