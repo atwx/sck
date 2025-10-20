@@ -6,6 +6,7 @@ use Override;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataList;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -17,6 +18,11 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
  */
 class TeaserElement extends BaseElement
 {
+
+    private static $db = [    
+        'BackgroundColor' => 'Varchar(32)',
+    ];
+
     private static $has_many = [
         'TeaserItems' => TeaserItem::class,
     ];
@@ -63,6 +69,15 @@ class TeaserElement extends BaseElement
         $fields = parent::getCMSFields();
 
         
+        $fields->addFieldToTab('Root.Main',
+            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
+                '' => 'Keine',
+                'bgc-primary' => 'Primärfarbe',
+                'bgc-secondary' => 'Sekundärfarbe'
+            ])
+            ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
+        );
+        
         $fields->removeByName(['TeaserItems']);
 
         if ($this->ID) {
@@ -80,8 +95,7 @@ class TeaserElement extends BaseElement
                 LiteralField::create(
                     'TeaserItemsNote',
                     '<p class="message notice">Speichern Sie das Element zuerst, um Einträge hinzuzufügen.</p>'
-                )
-            );
+                ));
         }
 
         return $fields;

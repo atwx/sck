@@ -1,6 +1,23 @@
 .two-column-text-element {
     padding: 80px 0;
-    background-color: #ffffff;
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+        .title-column .element-title,
+        .text-column .element-text,
+        .text-column .element-text p {
+            color: var(--ColorWhite);
+        }
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+        .title-column .element-title,
+        .text-column .element-text,
+        .text-column .element-text p {
+            color: var(--ColorWhite);
+        }
+    }
     
     .container {
         max-width: $maxWidth;

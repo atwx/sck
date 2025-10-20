@@ -1,4 +1,4 @@
-<div class="section section--TeaserElement">
+<div class="section section--TeaserElement $BackgroundColor">
     <div class="section_content">
         <% if $Title %>
             <h2 class="teaser-title">$Title</h2>

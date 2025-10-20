@@ -1,4 +1,4 @@
-<div class="two-column-text-element $Layout title-vertical-$TitleVerticalPosition">
+<div class="two-column-text-element $Layout title-vertical-$TitleVerticalPosition $BackgroundColor">
     <div class="container">
         <div class="two-column-content">
             <% if $Layout == 'title-left' %>

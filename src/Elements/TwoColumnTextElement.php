@@ -23,6 +23,7 @@ class TwoColumnTextElement extends BaseElement
         'RightText' => 'HTMLText',
         'Layout' => "Enum('title-left,title-right', 'title-left')",
         'TitleVerticalPosition' => "Enum('top,center,bottom', 'center')",
+        'BackgroundColor' => 'Varchar(32)',
     ];
 
     private static $field_labels = [
@@ -63,7 +64,13 @@ class TwoColumnTextElement extends BaseElement
                 'center' => 'Mittig',
                 'bottom' => 'Unten'
             ])
-                ->setDescription('Bestimmt die vertikale Ausrichtung des Titels')
+                ->setDescription('Bestimmt die vertikale Ausrichtung des Titels'),
+            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
+                '' => 'Keine',
+                'bgc-primary' => 'Primärfarbe',
+                'bgc-secondary' => 'Sekundärfarbe'
+            ])
+                ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
         ]);
 
         return $fields;

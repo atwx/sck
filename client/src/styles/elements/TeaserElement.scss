@@ -1,4 +1,19 @@
 .section.section--TeaserElement {
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+        .teaser-title {
+            color: var(--ColorWhite);
+        }
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+        .teaser-title {
+            color: var(--ColorWhite);
+        }
+    }
+
     .section_content {
         max-width: $maxWidth;
     }
@@ -19,7 +34,7 @@
         &-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 10px;
             
             @include media("<medium") {
                 grid-template-columns: 1fr;
@@ -32,7 +47,8 @@
         background: var(--ColorWhite);
         overflow: hidden;
         transition: transform 0.3s ease;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+        padding: 10px;
         
         &-image {
             width: 100%;
