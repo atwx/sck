@@ -174,26 +174,6 @@
                     &.align-right {
                         text-align: right;
                     }
-
-                    a {
-                        font-weight: 500;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 0.25rem;
-                        text-decoration: none;
-                        padding: 5px;
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-
-                        &::after {
-                            content: '→';
-                            font-weight: bold;
-                            font-size: 1.2em;
-                            display: inline-block;
-                        }
-                    }
                 }
             }
         }

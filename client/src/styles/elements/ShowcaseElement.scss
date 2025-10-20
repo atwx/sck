@@ -140,23 +140,6 @@
                 }
             }
         }
-        
-        &__button {
-            margin-top: 20px;
-            
-            .link--button {
-                display: inline-block;
-                margin: 0;
-                border-radius: 0;
-                transition: all 0.3s ease;
-                
-                &:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-                    background-color: #AB0044;
-                }
-            }
-        }
     }
     
     @include media("<medium") {
@@ -213,23 +196,6 @@
                     margin-bottom: 8px;
                 }
             }
-            
-            &__button {
-                margin-top: 15px;
-                
-                .link--button {
-                    font-size: 0.9rem;
-                    padding: 10px 20px;
-                    width: 100%;
-                    text-align: center;
-                    box-sizing: border-box;
-                    
-                    &:hover {
-                        transform: none;
-                        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-                    }
-                }
-            }
         }
     }
     @include media("<smartphone") {
@@ -278,15 +244,6 @@
             &__text {
                 font-size: 0.85rem;
                 margin-bottom: 12px;
-            }
-            
-            &__button {
-                margin-top: 12px;
-                
-                .link--button {
-                    font-size: 0.85rem;
-                    padding: 8px 16px;
-                }
             }
         }
     }

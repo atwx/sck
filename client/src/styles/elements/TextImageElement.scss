@@ -34,25 +34,19 @@
         color: white;
     }
 
-    .section_button .btn {
-        background: white;
-        color: var(--ColorPrimary);
-        border: none;
-        padding: 12px 30px;
-        border-radius: 0;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        display: inline-block;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .section_button {
+        width: 80%;
+        align-self: flex-end;
 
-        &:hover {
-            background: #f0f0f0;
-            color: var(--ColorPrimary);
-            text-decoration: none;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        .btn {
+
+            background-color: var(--ColorButtonText);
+            color: var(--ColorButton);        
+
+            &:hover {
+                background-color: var(--ColorSecondary);
+                color: var(--ColorButtonText);
+            }
         }
     }
 
@@ -117,7 +111,6 @@
     .section_text_content {
         font-size: 1.125rem;
         line-height: 1.7;
-        margin-bottom: 3rem;
         color: white;
         width: 80%;
         align-self: end;
@@ -131,30 +124,6 @@
         }
     }
 
-    .section_button {
-        align-self: end;
-        .btn {
-            background: white;
-            color: var(--ColorPrimary);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-            &:hover {
-                background: #AB0044;
-                text-decoration: none;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-                color: white;
-            }
-        }
-    }
     &.image--right {
         .section_content {
             flex-direction: row;
@@ -167,6 +136,9 @@
             align-self: flex-start;
         }
         .section_text_content {
+            align-self: flex-start;
+        }
+        .section_button{
             align-self: flex-start;
         }
 

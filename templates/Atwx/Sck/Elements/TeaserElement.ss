@@ -26,9 +26,9 @@
                             <% end_if %>
 
                             <% if $Button && $Button.exists() %>
-                                <div class="teaser-item-button">
+                                <%-- <div class="teaser-item-button"> --%>
                                     <% include Atwx/Sck/Includes/Button Link=$Button %>
-                                </div>
+                                <%-- </div> --%>
                             <% end_if %>
                         </div>
                     </div>

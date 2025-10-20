@@ -41,12 +41,7 @@
                             <% end_if %>
 
                             <% if $Button %>
-                            <div class="card-slide-button">
-                                <a href="$Button.URL" class="btn btn-card"
-                                   <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
-                                    $Button.Title
-                                </a>
-                            </div>
+                                <% include Atwx/Sck/Includes/Button Link=$Button %>
                             <% end_if %>
                         </div>
                     </div>

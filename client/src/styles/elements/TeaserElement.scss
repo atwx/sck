@@ -87,24 +87,5 @@
                 }
             }
         }
-
-        &-button {
-            margin-top: 20px;
-            
-            .link--button {
-                display: inline-block;
-                font-size: 0.9rem;
-                padding: 10px 20px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                border-radius: 0;
-                
-                &:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-                    background-color: #AB0044;
-                }
-            }
-        }
     }
 }

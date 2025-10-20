@@ -24,11 +24,11 @@
                         $Text
                     </div>
                 <% end_if %>
-                <% if $Button %>
-                    <div class="button align-{$Alignment}" style="color: {$ButtonColor}">
-                        <% include Atwx/Sck/Includes/Button Link=$Button %>
-                    </div>
-                <% end_if %>
+                <div class="button align-{$Alignment}">
+                    <% if $Button %>
+                            <% include Atwx/Sck/Includes/Button Link=$Button %>
+                    <% end_if %>
+                </div>
             </div>
         </div>
     </div>
