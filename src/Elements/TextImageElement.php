@@ -25,7 +25,6 @@ class TextImageElement extends BaseElement
     private static $db = [
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
-        "Highlight" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
         "BackgroundColor" => "Varchar(32)",
     ];
@@ -106,10 +105,6 @@ class TextImageElement extends BaseElement
             "image--50" => "50%",
             "image--60" => "60%",
             "image--70" => "70%",
-        ]));
-        $fields->replaceField('Highlight', new DropdownField('Highlight', 'Highlight', [
-            "" => "Kein Highlight",
-            "highlighted" => "Highlight",
         ]));
         $fields->addFieldToTab('Root.Main',
             DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [

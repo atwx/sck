@@ -1,4 +1,4 @@
-<div class="section section--TextImageElement $Highlight $Variant $ImgWidth $BackgroundColor">
+<div class="section section--TextImageElement $Variant $ImgWidth $BackgroundColor">
     <div class="container">
         <div class="section_content">
             <% if $Image %>

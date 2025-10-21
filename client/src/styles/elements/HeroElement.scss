@@ -7,10 +7,6 @@
     padding: 50px 20px;
     background-color: var(--ColorBackgroundLight);
 
-    &.highlight {
-        background-color: var(--ColorHighlight);
-    }
-
     .hero_content {
         max-width: var(--MaxWidth);
         width: 100%;

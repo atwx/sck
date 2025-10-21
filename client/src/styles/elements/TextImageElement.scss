@@ -17,17 +17,16 @@
 
     .section_text {
         color: var(--ColorText);
-        padding: 80px 60px;
+        padding: 80px 30px 80px 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex: 1;
-        min-width: 50%;
-    }
 
-    .section_button {
-        width: 80%;
-        align-self: flex-end;
+        @include media(">=desktop") {
+            max-width: calc($maxWidth / 2);
+            margin-left: auto;
+        }
     }
 
     .container {
@@ -51,20 +50,18 @@
 
     .section_title {
         align-self: end;
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
         font-weight: 500;
         line-height: 1.1;
         margin-bottom: 2rem;
         color: var(--ColorHeadline);
         letter-spacing: -0.02em;
-        width: 80%;
     }
 
     .section_text_content {
         font-size: 1.125rem;
         line-height: 1.7;
         color: var(--ColorText);
-        width: 80%;
         align-self: end;
 
         p {
@@ -93,9 +90,12 @@
         .section_button{
             align-self: flex-start;
         }
-
-        .section_image {
-            margin-left: auto;
+        .section_text{
+            @include media(">=desktop") {
+                max-width: calc($maxWidth / 2);
+                margin-left: unset;
+                margin-right: auto;
+            }
         }
     }
 
@@ -106,10 +106,6 @@
             @include media("<desktop") {
                 flex-direction: column;
             }
-        }
-
-        .section_image {
-            margin-right: auto;
         }
     }
 
@@ -147,27 +143,20 @@
             flex: none;
             max-width: none;
             width: 100%;
-            min-height: 300px;
         }
     }    
 
     &.bgc-primary {
-        .section_text {
-            background-color: var(--ColorPrimary);
-
-            .section_text_content, .section_title {
-                color: var(--ColorWhite);
-            }
+        background-color: var(--ColorPrimary);
+        .section_text  .section_text_content, .section_title {
+            color: var(--ColorWhite);
         }
     }
 
     &.bgc-secondary {
-        .section_text {
-            background-color: var(--ColorSecondary);
-
-            .section_text_content, .section_title {
-                color: var(--ColorWhite);
-            }
+        background-color: var(--ColorSecondary);
+        .section_text .section_text_content, .section_title {
+            color: var(--ColorWhite);
         }
     }
 }
