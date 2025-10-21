@@ -33,11 +33,7 @@ $ColorLightGrey: #999;
     --ColorMenuText: #{$ColorWhite};
     --ColorMenuTextHover: #{$ColorGrey};
 
-    --ColorPrimaryLight: #466892;
     --ColorPrimaryTextDark: #193860;
-    --ColorPrimaryDark: #0f1d30;
-    --ColorSecondaryLight: #fad47a;
-    --ColorSecondaryDark: #806934;
 
     --ColorBlack: #{$ColorBlack};
     --ColorWhite: #{$ColorWhite};
@@ -47,8 +43,8 @@ $ColorLightGrey: #999;
     --ColorFont: #000000;
     --ColorButton: var(--ColorPrimary);
     --ColorButtonText: var(--ColorWhite);
-    --ColorPrimaryHover: var(--ColorPrimaryDark);
-    --ColorSecondaryHover: var(--ColorSecondaryDark);
+    --ColorPrimaryHover: #0f1d30;
+    --ColorSecondaryHover: #806934;
 
     --HeroDarkness: rgba(0, 0, 0, 0.2);
 }
