@@ -20,7 +20,7 @@ class LinkExtension extends Extension
     ];
 
     private static $defaults = [
-        "Variant" => "default"
+        "Variant" => "primary"
     ];
 
     private static $field_labels = [
@@ -35,7 +35,6 @@ class LinkExtension extends Extension
                 'Variant',
                 _t(self::class . '.Variant', self::$field_labels['Variant']),
                 [
-                    'default' => 'Standard',
                     'primary' => 'Primärer Button',
                     'secondary' => 'Sekundärer Button',
                     'success' => 'Erfolg',
@@ -44,7 +43,8 @@ class LinkExtension extends Extension
                     'info' => 'Info',
                     'text' => 'Text',
                 ]
-            )->setEmptyString('Variante auswählen')
+            )
         );
+        return $fields;
     }
 }

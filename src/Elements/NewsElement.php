@@ -4,15 +4,12 @@ namespace Atwx\Sck\Elements;
 
 use Atwx\Sck\News\NewsEntry;
 use Override;
-use SilverStripe\Forms\LiteralField;
-use SilverStripe\ORM\DataList;
+use SilverStripe\Forms\DropdownField;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 
 /**
  * Class \Atwx\Sck\Elements\NewsElement
@@ -26,6 +23,7 @@ class NewsElement extends BaseElement
 {
     private static $db = [
         "Subtitle" => "Varchar(255)",
+        "BackgroundColor" => "Varchar(32)",
         "Description" => "HTMLText",
     ];
 
@@ -93,6 +91,12 @@ class NewsElement extends BaseElement
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Subtitle', 'Untertitel')
                 ->setDescription('Ein optionaler Untertitel für das Aktuelles-Element'),
+            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
+                '' => 'Keine',
+                'bgc-primary' => 'Primärfarbe',
+                'bgc-secondary' => 'Sekundärfarbe'
+            ])
+            ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
             HTMLEditorField::create('Description', 'Beschreibung')
                 ->setRows(3)
                 ->setDescription('Eine optionale Beschreibung, die unter dem Titel angezeigt wird'),

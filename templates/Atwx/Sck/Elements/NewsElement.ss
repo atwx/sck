@@ -1,4 +1,4 @@
-<div class="section section--NewsElement">
+<div class="section section--NewsElement $BackgroundColor">
     <div class="section_content">
         <div class="section_intro">
             <% if $Title %>
@@ -43,7 +43,7 @@
 
         <% if $MainButton %>
             <div class="section_button">
-                <% include Atwx/Sck/Includes/Button Link=$MainButton %>
+                <% include Atwx/Sck/Includes/Button Link=$MainButton, BackgroundColor=$BackgroundColor %>
             </div>
         <% end_if %>
     </div>

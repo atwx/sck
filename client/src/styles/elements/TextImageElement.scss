@@ -16,55 +16,24 @@
     }
 
     .section_text {
-        background: var(--ColorPrimary);
-        color: white;
+        color: var(--ColorText);
         padding: 80px 60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex: 1;
         min-width: 50%;
-
-        @include media("<desktop") {
-            padding: 60px 30px;
-        }
-    }
-
-    .section_title {
-        color: white;
     }
 
     .section_button {
         width: 80%;
         align-self: flex-end;
-
-        .btn {
-
-            background-color: var(--ColorButtonText);
-            color: var(--ColorButton);        
-
-            &:hover {
-                background-color: var(--ColorSecondary);
-                color: var(--ColorButtonText);
-            }
-        }
     }
 
     .container {
         max-width: none;
         margin: 0;
         padding: 0;
-    }
-
-    .section_content {
-        display: flex;
-        align-items: stretch;
-        min-height: 60vh;
-
-        @include media("<desktop") {
-            flex-direction: column;
-            min-height: auto;
-        }
     }
 
     .section_image {
@@ -78,23 +47,6 @@
             object-fit: cover;
             display: block;
         }
-
-        @include media("<desktop") {
-            order: 2;
-            flex: none;
-            max-width: none;
-            width: 100%;
-            min-height: 300px;
-        }
-    }
-
-    .section_text {
-        flex: 1;
-        min-width: 50%;
-
-        @include media("<desktop") {
-            order: 1;
-        }
     }
 
     .section_title {
@@ -103,7 +55,7 @@
         font-weight: 500;
         line-height: 1.1;
         margin-bottom: 2rem;
-        color: white;
+        color: var(--ColorHeadline);
         letter-spacing: -0.02em;
         width: 80%;
     }
@@ -111,7 +63,7 @@
     .section_text_content {
         font-size: 1.125rem;
         line-height: 1.7;
-        color: white;
+        color: var(--ColorText);
         width: 80%;
         align-self: end;
 
@@ -171,15 +123,51 @@
 
         .section_content {
             min-height: auto;
+            flex-direction: column;
+        }
+
+        .section_title{
+            width: 100%;
+        }
+
+        .section_button{
+            width: 100%;
         }
 
         .section_text {
             padding: 60px 30px;
             text-align: center;
+            order: 1;
+            padding: 60px 30px;
         }
 
         .section_image {
             margin: 0 !important;
+            order: 2;
+            flex: none;
+            max-width: none;
+            width: 100%;
+            min-height: 300px;
+        }
+    }    
+
+    &.bgc-primary {
+        .section_text {
+            background-color: var(--ColorPrimary);
+
+            .section_text_content, .section_title {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
+    &.bgc-secondary {
+        .section_text {
+            background-color: var(--ColorSecondary);
+
+            .section_text_content, .section_title {
+                color: var(--ColorWhite);
+            }
         }
     }
 }

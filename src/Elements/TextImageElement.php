@@ -27,6 +27,7 @@ class TextImageElement extends BaseElement
         "Variant" => "Varchar(20)",
         "Highlight" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
+        "BackgroundColor" => "Varchar(32)",
     ];
 
     private static $has_one = [
@@ -110,6 +111,14 @@ class TextImageElement extends BaseElement
             "" => "Kein Highlight",
             "highlighted" => "Highlight",
         ]));
+        $fields->addFieldToTab('Root.Main',
+            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
+                '' => 'Keine',
+                'bgc-primary' => 'Primärfarbe',
+                'bgc-secondary' => 'Sekundärfarbe'
+            ])
+            ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
+        );
 
         $fields->removeByName('ButtonID');
         $fields->addFieldToTab('Root.Main', LinkField::create('Button'));

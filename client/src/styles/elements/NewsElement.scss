@@ -1,10 +1,19 @@
-.section.section--NewsElement {
-    background: var(--ColorPrimary);
-    color: $ColorWhite;
+.section.section--NewsElement {   
+    
     padding: 60px 20px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+        color: var(--ColorWhite);
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+        color: var(--ColorWhite);
+    }
       
     &:after {
         content: '';
@@ -33,14 +42,12 @@
             .section_title {
                 font-size: 2.5rem;
                 margin: 0 0 15px 0;
-                color: $ColorWhite;
             }
 
             .section_subtitle {
                 font-size: 1.2rem;
                 margin: 0 0 20px 0;
                 opacity: 0.9;
-                color: $ColorWhite;
             }
 
             .section_description {
@@ -50,7 +57,6 @@
 
                 p {
                     margin: 0;
-                    color: $ColorWhite;
                 }
             }
         }
@@ -89,7 +95,6 @@
                     .news_item_title {
                         font-size: 1.1rem;
                         margin: 0 0 8px 0;
-                        color: $ColorWhite;
 
                         a {
                             color: inherit;
@@ -105,11 +110,9 @@
                         font-size: 0.95rem;
                         opacity: 0.8;
                         line-height: 1.5;
-                        color: $ColorWhite;
 
                         p {
                             margin: 0;
-                            color: $ColorWhite;
                             font-size: 15px;
                         }
                     }
@@ -120,60 +123,12 @@
                     margin-left: 20px;
                     opacity: 0.6;
                     transition: all 0.3s ease;
-                    color: $ColorWhite;
 
                     svg {
                         width: 24px;
                         height: 24px;
                         fill: currentColor;
                     }
-                }
-            }
-        }
-
-        .section_button {
-            text-align: left;
-
-            .link--button {
-                background: $ColorWhite;
-                color: var(--ColorPrimary);
-                border: none;
-                padding: 12px 30px;
-                border-radius: 0;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                display: inline-block;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-                &:hover {
-                    background: #f0f0f0;
-                    color: var(--ColorPrimary);
-                    text-decoration: none;
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-                }
-            }
-            
-            .btn {
-                background: $ColorWhite;
-                color: var(--ColorPrimary);
-                border: none;
-                padding: 12px 30px;
-                border-radius: 0;
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s ease;
-                display: inline-block;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-                &:hover {
-                    background: #AB0044;
-                    color: white;
-                    text-decoration: none;
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
                 }
             }
         }
