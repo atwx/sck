@@ -1,3 +1,6 @@
+@use '../variables.scss';
+@use 'NavMenu.scss';
+
 .site_header {
     width: 100%;
     position: relative;
@@ -164,6 +167,50 @@
                 //gap: 20px;
             }
         }
+
+        &.nav_strip--default {
+            background-color: var(--ColorWhite);
+
+            .nav_brand_white {
+                display: none;
+            }
+
+            .nav_brand_color {
+                display: block;
+            }
+        }
+
+        &.nav_strip--alternative {
+            background-color: var(--ColorPrimary);
+
+            .nav_brand_white {
+                display: block;
+            }
+
+            .nav_brand_color {
+                display: none;
+            }
+
+            .nav--show & {
+              background-color: var(--ColorWhite);
+
+              .nav_brand_color {
+                  display: block;
+              }
+
+              .nav_brand_white {
+                  display: none;
+              }
+            }
+        }
+
+        .nav--show & {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
     }
 
     .nav_menu_dropdown {
@@ -188,55 +235,6 @@
 
             .nav_menu_icon {
                 font-size: 16px;
-            }
-        }
-
-        .nav_menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            z-index: 1000;
-
-            &.show {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-
-            .nav_link {
-                display: block;
-                padding: 12px 20px;
-                color: #333;
-                text-decoration: none;
-                font-size: 14px;
-                border-bottom: 1px solid #eee;
-                transition: background-color 0.2s ease;
-
-                &:last-child {
-                    border-bottom: none;
-                }
-
-                &:hover {
-                    background-color: #f8f9fa;
-                }
-
-                &.nav_link--active {
-                    background-color: var(--ColorPrimary);
-                    color: white;
-
-                    &:hover {
-                        filter: brightness(0.9);
-                    }
-                }
             }
         }
     }

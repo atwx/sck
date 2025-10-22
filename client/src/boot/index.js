@@ -4,26 +4,21 @@ import GLightbox from "glightbox";
 /* global window */
 
 window.document.addEventListener('DOMContentLoaded', () => {
-    // INIT NAVIGATION DROPDOWN
-    const navMenuButton = document.querySelector('[data-behaviour="toggle-navigation"]');
-    const navMenu = document.querySelector('.nav_menu');
+    //INIT Sticky Navbar
+    //Set class on body when .header_nav_strip sticky position is at top
+    if (document.querySelector('.header_nav_strip')) {
+        const navStrip = document.querySelector('.header_nav_strip');
+        const navStripOffset = navStrip.offsetTop;
 
-    if (navMenuButton && navMenu) {
-        navMenuButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            navMenu.classList.toggle('show');
-            navMenuButton.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenuButton.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('show');
-                navMenuButton.classList.remove('active');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > navStripOffset) {
+                document.body.classList.add('nav-strip--sticky');
+            } else {
+                document.body.classList.remove('nav-strip--sticky');
             }
         });
     }
+
 
     // INIT LANGUAGE DROPDOWN
     const langButton = document.querySelector('[data-behaviour="toggle-language"]');
@@ -47,10 +42,10 @@ window.document.addEventListener('DOMContentLoaded', () => {
     }
 
     // INIT MENUBUTTON (old functionality - keeping for compatibility)
-    const menu_button = document.querySelector('[data-behaviour="toggle-menu"]');
+    const menu_button = document.querySelector('[data-behaviour="toggle-navigation"]');
     if (menu_button) {
         menu_button.addEventListener('click', () => {
-            document.body.classList.toggle('body--show');
+            document.body.classList.toggle('nav--show');
         });
     }
 
