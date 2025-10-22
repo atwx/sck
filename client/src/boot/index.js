@@ -64,7 +64,6 @@ window.document.addEventListener('DOMContentLoaded', () => {
     // INIT SWIPER
     const sliders = document.querySelectorAll('.swiper');
     sliders.forEach(function (slider) {
-        const autoSwiper = slider.classList.contains('swiper--auto');
         const swiper = new Swiper(slider, {
             // configure Swiper to use modules
             modules: [Pagination, Navigation, Autoplay, EffectFade],
@@ -73,10 +72,10 @@ window.document.addEventListener('DOMContentLoaded', () => {
                 crossFade: true
             },
             direction: 'horizontal',
-            loop: true,
+            loop: slider.dataset.loop === 'true',
 
-            autoplay: autoSwiper ? {
-                delay: 5000,
+            autoplay: slider.dataset.autoplay === 'true' ? {
+                delay: slider.dataset.autoplaydelay || 10000,
             } : false,
 
             // Navigation arrows
@@ -91,6 +90,22 @@ window.document.addEventListener('DOMContentLoaded', () => {
                 clickable: true,
             },
         });
+
+        //Add pause functionality for autoplay sliders
+        if (slider.dataset.autoplay === 'true') {
+            const pauseButton = slider.querySelector('.swiper-button-pause');
+            if (pauseButton) {
+                pauseButton.addEventListener('click', () => {
+                    if (swiper.autoplay.running) {
+                        swiper.autoplay.stop();
+                        pauseButton.classList.add('paused');
+                    } else {
+                        swiper.autoplay.start();
+                        pauseButton.classList.remove('paused');
+                    }
+                });
+            }
+        }
     });
 
     // INIT CARDS SLIDER

@@ -25,6 +25,12 @@
         <% if $SiteConfig.MenuTextHoverColor %>
             --ColorMenuTextHover: $SiteConfig.MenuTextHoverColor;
         <% end_if %>
+        <% if $SiteConfig.HeaderFont %>
+            --FontHeader: '$SiteConfig.HeaderFont', sans-serif;
+        <% end_if %>
+        <% if $SiteConfig.BodyFont %>
+            --FontBody: '$SiteConfig.BodyFont', sans-serif;
+        <% end_if %>
     }
     <% if $SiteConfig.CustomCSS %>
         $SiteConfig.CustomCSS

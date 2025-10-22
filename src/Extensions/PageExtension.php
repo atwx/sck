@@ -22,6 +22,8 @@ class PageExtension extends Extension
         "NavStripVersion" => "Enum('default,alternative', 'default')",
         "HeroHeight" => "Int",
         "HeroHeightUnit" => "Enum('px,vh,vw','vh')",
+        "HeroAutoPlay" => "Boolean",
+        "HeroAutoPlayDelay" => "Int",
     ];
 
     private static $has_many = [
@@ -80,7 +82,12 @@ class PageExtension extends Extension
                 'vh' => 'Viewport Height (vh) - Prozent der Bildschirmhöhe',
                 'px' => 'Pixel (px) - Feste Pixelangabe',
                 'vw' => 'Viewport Width (vw) - Prozent der Bildschirmbreite'
-            ])->setDescription('Die Einheit für die Höhenangabe des Hero-Bereichs')
+            ])->setDescription('Die Einheit für die Höhenangabe des Hero-Bereichs'),
+            CheckboxField::create('HeroAutoPlay', 'Automatisches Abspielen der Hero-Slides')
+                ->setDescription('Aktivieren Sie diese Option, damit die Hero-Slides automatisch wechseln'),
+            NumericField::create('HeroAutoPlayDelay', 'Verzögerung für automatisches Abspielen (in ms)')
+                ->setDescription('Die Verzögerung in Millisekunden zwischen den automatischen Slide-Wechseln')
+                ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),
         ]);
     }
 

@@ -8,24 +8,26 @@
     <% end_if %>
 
     <% if $ShowHeroSection && $HeroSlides.Count > 0 %>
-        <div class="hero_section swiper swiper--horizontal swiper--auto" style="$HeroHeightStyle">
+    <div class="hero_section swiper swiper--horizontal swiper--auto" <% if $HeroAutoPlay %>data-autoplay="true"<% end_if %> style="$HeroHeightStyle" <% if $HeroAutoPlayDelay && $HeroAutoPlayDelay > 0 %>data-autoplayDelay="$HeroAutoPlayDelay"<% end_if %>>
             <div class="hero_overlay"></div>
             <div class="swiper-wrapper">
                 <% loop $HeroSlides %>
                     <div class="swiper-slide">
                         <div class="swiper-text">
-                            <% if $Title %>
-                                <div class="hero_topline">$Title</div>
-                            <% end_if %>
-                            <% if $SubTitle %>
-                                <div class="hero_second_topline">$SubTitle</div>
+                            <% if $HeroText %>
+                                <div class="hero_text">$HeroText</div>
                             <% end_if %>
                         </div>
                         $Image.FocusFill(1000,400)
                     </div>
                 <% end_loop %>
             </div>
-            <div class="swiper-pagination"></div>
+            <% if $HeroAutoPlay %>
+                <!-- If autoplay is enabled, show pause button -->
+                <div class="swiper-button-pause">
+                    <span class="icon-pause"></span>
+                </div>
+            <% end_if %>
         </div>
     <% end_if %>
 

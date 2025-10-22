@@ -9,13 +9,13 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use TractorCow\Fluent\Extension\FluentExtension;
 
 class HeroSlide extends DataObject
 {
     private static $db = [
-        'Title' => 'Varchar(255)',
-        'SubTitle' => 'Varchar(255)',
+        "HeroText" => "HTMLText",
         'SortOrder' => 'Int',
     ];
 
@@ -61,16 +61,15 @@ class HeroSlide extends DataObject
     ];
 
     private static $translate = [
-        'Title',
-        'SubTitle',
+        'HeroText',
     ];
 
     #[Override]
     public function getCMSFields()
     {
         $fields = FieldList::create(
-            TextField::create('Title', 'Titel'),
-            TextField::create('SubTitle', 'Untertitel'),
+            HTMLEditorField::create('HeroText', 'Hero Text')
+                ->setDescription('Der Text, der im Hero-Bereich angezeigt wird.'),
             UploadField::create('Image', 'Bild')
                 ->setFolderName('HeroSlides'),
         );

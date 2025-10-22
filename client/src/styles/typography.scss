@@ -1,11 +1,12 @@
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--FontBody);
     font-size: 16px;
     font-weight: 400;
 }
 
 h1, h2, h3, h4, h5{
     font-weight: 700;
+    font-family: var(--FontHeader);
 
 }
 
@@ -59,14 +60,14 @@ a {
         &.buttonvariant--primary{
             background-color: var(--ColorPrimary);
             color: var(--ColorButtonText);
-            
+
             &:hover {
                 background-color: var(--ColorSecondary);
             }
 
             &.bgc-primary {
                 background-color: var(--ColorButtonText);
-                color: var(--ColorButton);  
+                color: var(--ColorButton);
 
                 &:hover {
                     background-color: var(--ColorSecondary);
@@ -76,14 +77,14 @@ a {
 
             &.bgc-secondary {
                 background-color: var(--ColorButtonText);
-                color: var(--ColorButton);  
+                color: var(--ColorButton);
 
                 &:hover {
                     background-color: var(--ColorPrimary);
                     color: var(--ColorButtonText);
                 }
             }
-        }                       
+        }
 
         &.buttonvariant--secondary{
             border: 2px solid var(--ColorSecondary);

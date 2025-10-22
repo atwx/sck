@@ -86,8 +86,6 @@ class HeroElement extends BaseElement
 
         $fields->removeByName('ButtonID');
         $fields->addFieldToTab('Root.Main', LinkField::create('Button'));
-        //$fields->removeByName('DarknessOverlay');
-        //$fields->addFieldToTab('Root.Main', SliderField::create('DarknessOverlay', 'Dunkelheit (0,X)', 0, 9));
 
         return $fields;
     }

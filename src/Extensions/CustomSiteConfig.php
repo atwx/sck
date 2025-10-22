@@ -10,6 +10,7 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 /**
@@ -64,6 +65,8 @@ class CustomSiteConfig extends Extension
         'MaxWidthContent' => 'Varchar(10)',
         'FooterText' => 'HTMLText',
         'CustomCSS' => 'Text',
+        'HeaderFont' => 'Varchar(100)',
+        'BodyFont' => 'Varchar(100)',
     ];
 
     private static $has_one = [
@@ -121,6 +124,16 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Main", new UploadField("Logo", "Logo"));
         $fields->addFieldToTab("Root.Main", new UploadField("Favicon", "Favicon"));
         $fields->addFieldToTab("Root.Styling", new TextareaField("CustomCSS", "Custom CSS"));
+        $fields->addFieldToTab("Root.Fonts", DropdownField::create('HeaderFont', 'Header Font', [
+            'Roboto' => 'Roboto',
+            'DM Sans' => 'DM Sans',
+            'Open Sans' => 'Open Sans',
+        ]));
+        $fields->addFieldToTab("Root.Fonts", DropdownField::create('BodyFont', 'Body Font', [
+            'Roboto' => 'Roboto',
+            'DM Sans' => 'DM Sans',
+            'Open Sans' => 'Open Sans',
+        ]));
     }
 
     public function getMaxWidthValue()
