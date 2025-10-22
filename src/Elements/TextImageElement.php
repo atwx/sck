@@ -97,7 +97,7 @@ class TextImageElement extends BaseElement
         $fields = parent::getCMSFields();
         $fields->replaceField('Variant', new DropdownField('Variant', 'Variante', [
             "" => "Bild rechts",
-            "image--right" => "Bild links",
+            "image--left" => "Bild links",
         ]));
         $fields->replaceField('ImgWidth', new DropdownField('ImgWidth', 'Bildbreite', [
             "image--30" => "30%",

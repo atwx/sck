@@ -30,14 +30,12 @@
     }
 
     .container {
-        max-width: none;
-        margin: 0;
         padding: 0;
     }
 
     .section_image {
         flex: 0 0 50%;
-        max-width: 50vw;
+        max-width: calc($maxWidth / 2);
         position: relative;
 
         img {
@@ -49,7 +47,6 @@
     }
 
     .section_title {
-        align-self: end;
         font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
         font-weight: 500;
         line-height: 1.1;
@@ -73,7 +70,7 @@
         }
     }
 
-    &.image--right {
+    &.image--left {
         .section_content {
             flex-direction: row;
             @include media("<desktop") {
@@ -92,14 +89,15 @@
         }
         .section_text{
             @include media(">=desktop") {
-                max-width: calc($maxWidth / 2);
+            padding: 80px 20px 80px 30px;
+                max-width: calc(($maxWidth / 2));
                 margin-left: unset;
                 margin-right: auto;
             }
         }
     }
 
-    &:not(.image--right) {
+    &:not(.image--left) {
         .section_content {
             flex-direction: row-reverse;
 
@@ -110,12 +108,6 @@
     }
 
     @include media("<desktop") {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
 
         .section_content {
             min-height: auto;
