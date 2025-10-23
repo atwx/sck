@@ -7,10 +7,8 @@
         --maxWidthContent: $SiteConfig.MaxWidthContentValue;
         --ColorPrimary: $SiteConfig.ColorPrimaryValue;
         --ColorSecondary: $SiteConfig.ColorSecondaryValue;
-        --ColorPrimaryLight: $SiteConfig.ColorPrimaryLightValue;
-        --ColorPrimaryDark: $SiteConfig.ColorPrimaryDarkValue;
-        --ColorSecondaryLight: $SiteConfig.ColorSecondaryLightValue;
-        --ColorSecondaryDark: $SiteConfig.ColorSecondaryDarkValue;
+        --ColorPrimaryFontWhite: $SiteConfig.ColorPrimaryFontWhite;
+        --ColorSecondaryFontWhite: $SiteConfig.ColorSecondaryFontWhite;
         --ColorText: $SiteConfig.ColorTextValue;
         --ColorHeadline: $SiteConfig.ColorHeadlineValue;
         <% if $SiteConfig.MenuBackgroundColor %>

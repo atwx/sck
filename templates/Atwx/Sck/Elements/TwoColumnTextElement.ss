@@ -1,4 +1,4 @@
-<div class="two-column-text-element $Layout title-vertical-$TitleVerticalPosition $BackgroundColor">
+<div class="two-column-text-element $Layout title-vertical-$TitleVerticalPosition $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="container">
         <div class="container-content">
             <div class="two-column-content">

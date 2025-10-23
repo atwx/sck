@@ -3,19 +3,25 @@
 
     &.bgc-primary {
         background-color: var(--ColorPrimary);
-        .title-column .element-title,
-        .text-column .element-text,
-        .text-column .element-text p {
-            color: var(--ColorWhite);
+        
+        &.primary-white-text {
+            .title-column .element-title,
+            .text-column .element-text,
+            .text-column .element-text p {
+                color: var(--ColorWhite);
+            }
         }
     }
 
     &.bgc-secondary {
         background-color: var(--ColorSecondary);
-        .title-column .element-title,
-        .text-column .element-text,
-        .text-column .element-text p {
-            color: var(--ColorWhite);
+                
+        &.secondary-white-text {
+            .title-column .element-title,
+            .text-column .element-text,
+            .text-column .element-text p {
+                color: var(--ColorWhite);
+            }
         }
     }
     

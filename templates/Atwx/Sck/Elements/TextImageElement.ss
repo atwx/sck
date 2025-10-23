@@ -1,4 +1,4 @@
-<div class="section section--TextImageElement $Variant $ImgWidth $BackgroundColor">
+<div class="section section--TextImageElement $Variant $ImgWidth $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="container">
         <div class="section_content">
             <% if $Image %>

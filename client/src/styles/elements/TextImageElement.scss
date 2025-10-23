@@ -134,15 +134,21 @@
 
     &.bgc-primary {
         background-color: var(--ColorPrimary);
-        .section_text  .section_text_content, .section_title {
-            color: var(--ColorWhite);
+
+        &.primary-white-text {
+            .section_text  .section_text_content, .section_title {
+                color: var(--ColorWhite);
+            }
         }
     }
 
     &.bgc-secondary {
         background-color: var(--ColorSecondary);
-        .section_text .section_text_content, .section_title {
-            color: var(--ColorWhite);
+
+        &.secondary-white-text {
+            .section_text .section_text_content, .section_title {
+                color: var(--ColorWhite);
+            }
         }
     }
 }

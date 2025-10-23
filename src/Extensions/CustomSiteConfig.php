@@ -8,6 +8,7 @@ use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\DropdownField;
@@ -24,10 +25,6 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
  * @property string $LinkDiscord
  * @property string $ColorPrimary
  * @property string $ColorSecondary
- * @property string $ColorPrimaryLight
- * @property string $ColorSecondaryLight
- * @property string $ColorPrimaryDark
- * @property string $ColorSecondaryDark
  * @property string $ColorText
  * @property string $ColorHeadline
  * @property string $MaxWidth
@@ -50,11 +47,9 @@ class CustomSiteConfig extends Extension
         'LinkTwitter' => 'Varchar(255)',
         'LinkDiscord' => 'Varchar(255)',
         'ColorPrimary' => 'Varchar(7)',
+        'ColorPrimaryFontWhite' => 'Boolean',
         'ColorSecondary' => 'Varchar(7)',
-        'ColorPrimaryLight' => 'Varchar(7)',
-        'ColorSecondaryLight' => 'Varchar(7)',
-        'ColorPrimaryDark' => 'Varchar(7)',
-        'ColorSecondaryDark' => 'Varchar(7)',
+        'ColorSecondaryFontWhite' => 'Boolean',
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
         'MenuBackgroundColor' => 'Varchar(7)',
@@ -97,22 +92,13 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")
             ->setDescription("Hauptfarbe der Website")
             ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorPrimaryFontWhite", "Weiße Schrift auf Primärfarbe")
+            ->setDescription("Überschreibe die Textfarben mit weiß, wenn sie auf der Primärfarbe liegen"));
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondary", "Sekundärfarbe")
             ->setDescription("Sekundärfarbe der Website")
             ->setAttribute('type', 'color'));
-
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimaryLight", "Primärfarbe Hell")
-            ->setDescription("Helle Variante der Primärfarbe")
-            ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimaryDark", "Primärfarbe Dunkel")
-            ->setDescription("Dunkle Variante der Primärfarbe")
-            ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondaryLight", "Sekundärfarbe Hell")
-            ->setDescription("Helle Variante der Sekundärfarbe")
-            ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondaryDark", "Sekundärfarbe Dunkel")
-            ->setDescription("Dunkle Variante der Sekundärfarbe")
-            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorSecondaryFontWhite", "Weiße Schrift auf Sekundärfarbe")
+            ->setDescription("Überschreibe die Textfarben mit weiß, wenn sie auf der Sekundärfarbe liegen"));
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorHeadline", "Überschriftfarbe")
             ->setDescription("Farbe der Überschriften")
             ->setAttribute('type', 'color'));
@@ -154,26 +140,6 @@ class CustomSiteConfig extends Extension
     public function getColorSecondaryValue()
     {
         return $this->owner->ColorSecondary ?: '#63819C';
-    }
-
-    public function getColorPrimaryLightValue()
-    {
-        return $this->owner->ColorPrimaryLight ?: '#466892';
-    }
-
-    public function getColorPrimaryDarkValue()
-    {
-        return $this->owner->ColorPrimaryDark ?: '#0f1d30';
-    }
-
-    public function getColorSecondaryLightValue()
-    {
-        return $this->owner->ColorSecondaryLight ?: '#fad47a';
-    }
-
-    public function getColorSecondaryDarkValue()
-    {
-        return $this->owner->ColorSecondaryDark ?: '#806934';
     }
 
     public function getColorTextValue()
