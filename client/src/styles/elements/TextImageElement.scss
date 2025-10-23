@@ -1,15 +1,9 @@
 .section.section--TextImageElement {
     margin: 0;
     padding: 0;
-    width: 100vw;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
 
     .section_content {
-        min-height: 60vh;
         display: flex;
         align-items: stretch;
         max-width: 100%;
@@ -24,7 +18,7 @@
         flex: 1;
 
         @include media(">=desktop") {
-            max-width: calc($maxWidth / 2);
+            max-width: calc(($maxWidthContent / 2) + 20px);
             margin-left: auto;
         }
     }
@@ -35,7 +29,7 @@
 
     .section_image {
         flex: 0 0 50%;
-        max-width: calc($maxWidth / 2);
+        max-width: 960px;
         position: relative;
 
         img {
@@ -90,7 +84,7 @@
         .section_text{
             @include media(">=desktop") {
             padding: 80px 20px 80px 30px;
-                max-width: calc(($maxWidth / 2));
+                max-width: calc(($maxWidthContent / 2));
                 margin-left: unset;
                 margin-right: auto;
             }
