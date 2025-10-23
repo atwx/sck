@@ -17,12 +17,15 @@
     .teaser {
         &-title {
             text-align: left;
-            margin: 0 0 40px 0;
-            font-size: 44px;
+            margin: 0 0 40px 0;            
+            font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
             color: var(--ColorHeadline);
+
+            @include media("<desktop") {
+                text-align: center;
+            }
             
             @include media("<medium") {
-                font-size: 2rem;
                 margin: 0 0 30px 0;
             }
         }
