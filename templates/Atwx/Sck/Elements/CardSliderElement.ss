@@ -55,15 +55,23 @@
                     </div>
                 <% end_if %>
             </div>
-
             <% if $ShowArrows %>
             <div class="slider-arrows">
-                <button class="slider-arrow slider-arrow-prev" data-direction="prev">
+                <% if $SiteConfig.Arrow %>
+                    <button class="slider-arrow slider-arrow-prev swiper-button-prev" data-direction="prev">
+                        <img src="$SiteConfig.Arrow.AbsoluteURL" alt="Previous" loading="lazy">
+                    </button>
+                    <button class="slider-arrow slider-arrow-next swiper-button-next" data-direction="next">
+                        <img src="$SiteConfig.Arrow.AbsoluteURL" alt="Next" loading="lazy">
+                    </button>
+                <% else %>
+                    <button class="slider-arrow slider-arrow-prev swiper-button-prev" data-direction="prev">
                     <span>‹</span>
-                </button>
-                <button class="slider-arrow slider-arrow-next" data-direction="next">
-                    <span>›</span>
-                </button>
+                    </button>
+                    <button class="slider-arrow slider-arrow-next swiper-button-next" data-direction="next">
+                        <span>›</span>
+                    </button>
+                <% end_if %>
             </div>
             <% end_if %>
 

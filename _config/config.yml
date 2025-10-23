@@ -33,3 +33,11 @@ SilverStripe\View\SSViewer:
 SilverStripe\CMS\Model\SiteTree:
   extensions:
     - Atwx\Sck\Extensions\PageExtension
+
+SilverStripe\Assets\File:
+  allowed_extensions:
+    - svg
+
+SilverStripe\Assets\Upload_Validator:
+  default_allowed_extensions:
+    - svg

@@ -67,11 +67,13 @@ class CustomSiteConfig extends Extension
     private static $has_one = [
         'Logo' => File::class,
         'Favicon' => Image::class,
+        'Arrow' => File::class
     ];
 
     private static $owns = [
         'Logo',
         'Favicon',
+        'Arrow',
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -109,6 +111,7 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
         $fields->addFieldToTab("Root.Main", new UploadField("Logo", "Logo"));
         $fields->addFieldToTab("Root.Main", new UploadField("Favicon", "Favicon"));
+        $fields->addFieldToTab("Root.Styling", new UploadField("Arrow", "Pfeil nach rechts"));
         $fields->addFieldToTab("Root.Styling", new TextareaField("CustomCSS", "Custom CSS"));
         $fields->addFieldToTab("Root.Fonts", DropdownField::create('HeaderFont', 'Header Font', [
             'Roboto' => 'Roboto',

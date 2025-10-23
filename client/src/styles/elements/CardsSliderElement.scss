@@ -16,7 +16,9 @@
     }
     
     .slider-title {
-        font-size: 2.5rem;
+        font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
+        max-width: $maxWidthContent;
+        margin: 0 auto 40px auto;
         text-align: left;
         margin-bottom: 40px;
         color: white;
@@ -146,7 +148,7 @@
             top: 15%;
             transform: translateY(-50%);
             background: var(--ColorSecondary);
-            border: none;
+            border: 1px solid var(--ColorSecondary);
             width: 50px;
             height: 50px;
             display: flex;
@@ -162,13 +164,28 @@
                 font-size: 48px;
                 color: white;
             }
+
+            img{
+                height: 48px;
+                width: auto;
+                padding: 5px;
+            }
+
+            &.slider-arrow-prev{
+                img{
+                    rotate: 180deg;
+                }
+
+            }
             
             &:hover {
-                background: white;
-                transform: translateY(-50%) scale(1.1);
-                span{
-                    color: var(--ColorSecondary);
-                }
+                background: var(--ColorPrimary);
+                border: 1px solid var(--ColorWhite);
+            }
+            
+            &.swiper-button-prev::after,
+            &.swiper-button-next::after {
+                display: none;
             }
             
             &.slider-arrow-prev {
