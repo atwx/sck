@@ -18,7 +18,7 @@
         flex: 1;
 
         @include media(">=desktop") {
-            max-width: calc(($maxWidthContent / 2) + 20px);
+            max-width: calc((var(--MaxWidthContent) / 2) + 20px);
             margin-left: auto;
         }
     }
@@ -26,7 +26,7 @@
     &.image--30{
         .section_text {
             @include media(">=desktop") {
-                max-width: calc(($maxWidthContent / 2) + (var(--MaxWidth) * 0.2) + 20px);
+                max-width: calc((var(--MaxWidthContent) / 2) + (var(--MaxWidth) * 0.2) + 20px);
             }
         }
         .section_image {
@@ -39,7 +39,7 @@
     &.image--40{
         .section_text {
             @include media(">=desktop") {
-                max-width: calc(($maxWidthContent / 2) + (var(--MaxWidth) * 0.1) + 20px);
+                max-width: calc((var(--MaxWidthContent) / 2) + (var(--MaxWidth) * 0.1) + 20px);
             }
         }
         .section_image {
@@ -52,7 +52,7 @@
     &.image--60{
         .section_text {
             @include media(">=desktop") {
-                max-width: calc(($maxWidthContent / 2) - (var(--MaxWidth) * 0.1) + 20px);
+                max-width: calc((var(--MaxWidthContent) / 2) - (var(--MaxWidth) * 0.1) + 20px);
             }
         }
         .section_image {
@@ -66,7 +66,7 @@
     &.image--70{
         .section_text {
             @include media(">=desktop") {
-                max-width: calc(($maxWidthContent / 2) - (var(--MaxWidth) * 0.2) + 20px);
+                max-width: calc((var(--MaxWidthContent) / 2) - (var(--MaxWidth) * 0.2) + 20px);
             }
         }
         .section_image {
