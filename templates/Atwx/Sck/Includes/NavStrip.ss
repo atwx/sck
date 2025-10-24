@@ -11,11 +11,24 @@
                     Menü
                 </button>
                 <div class="nav_menu">
-                    <% loop $Menu(1) %>
-                        <% if $MenuPosition == "main" %>
-                            <a href="$Link" class="nav_link<% if $LinkOrSection == "section" %> nav_link--active<% end_if %>">$MenuTitle</a>
-                        <% end_if %>
-                    <% end_loop %>
+                    <ul class="nav_menu_wrap">
+                        <% loop $Menu(1) %>
+                            <% if $MenuPosition == "main" %>
+                                <li class="nav_category">
+                                    <a href="$Link" class="nav_category_title<% if $LinkOrSection == "section" %> nav_link--active<% end_if %>">$MenuTitle</a>
+                                    <% if $Children %>
+                                        <ul>
+                                            <li>
+                                                <% loop $Children %>
+                                                    <a href="$Link" class="nav_sublink<% if $LinkOrSection == "section" %> nav_sublink--active<% end_if %>">$MenuTitle</a>
+                                                <% end_loop %>
+                                            </li>
+                                        </ul>
+                                    <% end_if %>
+                                </li>
+                            <% end_if %>
+                        <% end_loop %>
+                    </ul>
                 </div>
             </div>
             <div class="nav_language">

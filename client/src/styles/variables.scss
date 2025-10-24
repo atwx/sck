@@ -24,8 +24,8 @@ $ColorLightGrey: #999;
 
 //Set CSS Variables to modify at runtime
 :root {
-    --maxWidth: #{$maxWidth};
-    --maxWidthContent: #{$maxWidthContent};
+    --MaxWidth: #{$maxWidth};
+    --MaxWidthContent: #{$maxWidthContent};
     --ColorPrimary: #{$ColorPrimary};
     --ColorSecondary: #{$ColorSecondary};
     --ColorMenuBand: #{$ColorMenuBand};
@@ -52,11 +52,11 @@ $ColorLightGrey: #999;
 }
 
 .container {
-    max-width: var(--maxWidth);
+    max-width: var(--MaxWidth);
     margin: 0 auto;
 }
 
 .container-content {
-    max-width: var(--maxWidthContent);
+    max-width: var(--MaxWidthContent);
     margin: 0 auto;
 }

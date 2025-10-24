@@ -7,14 +7,35 @@
     left: 0;
     right: 0;
     background-color: var(--ColorPrimary);
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     min-width: 200px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
     z-index: 1000;
+
+    .nav_menu_wrap {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: stretch;
+      max-width: var(--maxWidth);
+    }
+
+    .nav_category{
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        width: 100%;
+
+        .nav_category_title{
+            padding: 12px 20px;
+            color: var(--ColorWhite);
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid var(--ColorWhite);
+        }
+    }
 
     .nav_link {
         display: block;
