@@ -4,16 +4,6 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-
-    &.bgc-primary {
-        background-color: var(--ColorPrimary);
-        color: var(--ColorWhite);
-    }
-
-    &.bgc-secondary {
-        background-color: var(--ColorSecondary);
-        color: var(--ColorWhite);
-    }
       
     &:after {
         content: '';
@@ -39,25 +29,30 @@
             margin-bottom: 40px;
 
             .section_title {
-                font-size: 2.5rem;
+                font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
                 margin: 0 0 15px 0;
+                color: var(--ColorHeadline);
             }
 
             .section_subtitle {
                 font-size: 1.2rem;
                 margin: 0 0 20px 0;
-                opacity: 0.9;
+                color: var(--ColorText);
             }
 
             .section_description {
                 font-size: 1rem;
-                opacity: 0.85;
+                color: var(--ColorText);
                 line-height: 1.6;
 
                 p {
                     margin: 0;
                 }
             }
+        }
+
+        .news_item_prefix{
+            padding-right: 20px;
         }
 
         .news_list {
@@ -69,23 +64,17 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 20px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 transition: all 0.3s ease;
                 cursor: pointer;
                 z-index: 5;
-
-                &:last-child {
-                    border-bottom: none;
-                }
+                margin-left: -15px;
+                padding-left: 15px;
+                transition: 0.2s ease-in-out;
+                color: var(--ColorText);
 
                 &:hover {
-                    padding-left: 15px;
-                    background: rgba(255, 255, 255, 0.05);
-                    margin: 0 -15px;
-
-                    .news_item_arrow {
-                        transform: translateX(5px);
-                    }
+                    background-color: var(--ColorSecondary);
+                    color: var(--ColorWhite);
                 }
 
                 .news_item_content {
@@ -93,7 +82,7 @@
 
                     .news_item_title {
                         font-size: 1.1rem;
-                        margin: 0 0 8px 0;
+                        margin: 0;
 
                         a {
                             color: inherit;
@@ -102,17 +91,6 @@
                             &:hover {
                                 text-decoration: none;
                             }
-                        }
-                    }
-
-                    .news_item_description {
-                        font-size: 0.95rem;
-                        opacity: 0.8;
-                        line-height: 1.5;
-
-                        p {
-                            margin: 0;
-                            font-size: 15px;
                         }
                     }
                 }
@@ -146,9 +124,7 @@
 
             .news_list {
                 .news_item {
-                    flex-direction: column;
                     align-items: flex-start;
-                    text-align: left;
 
                     .news_item_content {
                         width: 100%;
@@ -203,11 +179,27 @@
                     .news_item_title {
                         font-size: 1rem;
                     }
-
-                    .news_item_description {
-                        font-size: 0.9rem;
-                    }
                 }
+            }
+        }
+    }    
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+
+        &.primary-white-text {
+            .section_title, .section_subtitle, .section_description, .news_item {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+
+        &.secondary-white-text {
+            .section_title, .section_subtitle, .section_description, .news_item {
+                color: var(--ColorWhite);
             }
         }
     }

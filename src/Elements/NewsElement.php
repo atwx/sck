@@ -8,6 +8,8 @@ use SilverStripe\Forms\DropdownField;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\Assets\File;
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
@@ -25,14 +27,21 @@ class NewsElement extends BaseElement
         "Subtitle" => "Varchar(255)",
         "BackgroundColor" => "Varchar(32)",
         "Description" => "HTMLText",
+        "NumberOfItems" => "Int",
+    ];
+
+    private static $defaults = [
+        "NumberOfItems" => 3,
     ];
 
     private static $has_one = [
         'MainButton' => Link::class,
+        'PrefixIcon' => File::class
     ];
 
     private static $owns = [
         'MainButton',
+        'PrefixIcon',
     ];
 
     private static $field_labels = [
@@ -40,6 +49,7 @@ class NewsElement extends BaseElement
         "Subtitle" => "Untertitel",
         "Description" => "Beschreibung",
         "MainButton" => "Haupt-Button",
+        "NumberOfItems" => "Anzahl der News-Einträge",
     ];
 
     private static $table_name = 'SCK_NewsElement';
@@ -100,6 +110,10 @@ class NewsElement extends BaseElement
             HTMLEditorField::create('Description', 'Beschreibung')
                 ->setRows(3)
                 ->setDescription('Eine optionale Beschreibung, die unter dem Titel angezeigt wird'),
+            TextField::create('NumberOfItems', 'Anzahl der News-Einträge')
+                ->setDescription('Die Anzahl der anzuzeigenden News-Einträge'),                
+            UploadField::create("PrefixIcon", "Icon-Prefix")
+                ->setDescription('Ein optionales Icon, das vor dem Titel angezeigt wird'),
             LinkField::create('MainButton', 'Haupt-Button')
                 ->setDescription('Der "Mehr darüber" Button')
         ]);
@@ -115,6 +129,10 @@ class NewsElement extends BaseElement
 
     public function getNewsItems()
     {
-        return NewsEntry::get()->filter('ShowInNewsElement', true)->sort('Date DESC');
+        $limit = $this->NumberOfItems ?: 3;
+        return NewsEntry::get()
+            ->filter('ShowInNewsElement', true)
+            ->sort('Date DESC')
+            ->limit($limit);
     }
 }

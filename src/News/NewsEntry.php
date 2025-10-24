@@ -13,8 +13,13 @@ class NewsEntry extends TaggableDataObject
     private static $db = [
         'Title' => 'Varchar(255)',
         'Date' => 'Date',
+        'ShortContent' => 'Varchar(255)',
         'Content' => 'HTMLText',
         'ShowInNewsElement' => 'Boolean',
+    ];
+
+    private static $defaults = [
+        'ShowInNewsElement' => true,
     ];
 
     private static $has_one = [
@@ -46,6 +51,7 @@ class NewsEntry extends TaggableDataObject
     private static $field_labels = [
         'Title' => 'Titel',
         'Date' => 'Datum',
+        'ShortContent' => 'Kurztext',
         'Content' => 'Inhalt',
         'Image' => 'Bild',
         'Links' => 'Links',
@@ -78,19 +84,6 @@ class NewsEntry extends TaggableDataObject
     public function onBeforeWrite()
     {
         parent::onBeforeWrite();
-    }
-
-    #[Override]
-    public function getTitle()
-    {
-        // Verwende das Standard-Field-Accessor Pattern
-        $title = $this->getField('Title');
-        if (!empty($title)) {
-            return $title;
-        }
-
-        // Fallback zu News Eintrag mit ID
-        return 'News Eintrag' . ($this->ID ? ' #' . $this->ID : '');
     }
 
     /**

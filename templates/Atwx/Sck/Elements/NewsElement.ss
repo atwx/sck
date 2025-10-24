@@ -1,4 +1,4 @@
-<div class="section section--NewsElement $BackgroundColor">
+<div class="section section--NewsElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <div class="section_intro">
             <% if $Title %>
@@ -18,6 +18,11 @@
             <div class="news_list">
                 <% loop $NewsItems %>
                     <div class="news_item">
+                        <% if $Top.PrefixIcon %>
+                            <div class="news_item_prefix">
+                                <img src="$Top.PrefixIcon.URL" alt="$Top.PrefixIcon.Title" />
+                            </div>
+                        <% end_if %>
                         <div class="news_item_content">
                             <% if $Title %>
                                 <h4 class="news_item_title">
@@ -29,11 +34,6 @@
                                         $Title
                                     <% end_if %>
                                 </h4>
-                            <% end_if %>
-                            <% if $Content %>
-                                <div class="news_item_description">
-                                    $Content
-                                </div>
                             <% end_if %>
                         </div>
                     </div>
