@@ -1,16 +1,25 @@
 .section.section--TeaserElement {
 
+    margin: 0px auto;
+    padding: 50px 0;
+
     &.bgc-primary {
         background-color: var(--ColorPrimary);
-        .teaser-title {
-            color: var(--ColorWhite);
+        
+        &.primary-white-text {
+            .teaser-title {
+                color: var(--ColorWhite);
+            }
         }
     }
 
     &.bgc-secondary {
         background-color: var(--ColorSecondary);
-        .teaser-title {
-            color: var(--ColorWhite);
+                
+        &.secondary-white-text {
+            .teaser-title {
+                color: var(--ColorWhite);
+            }
         }
     }
     

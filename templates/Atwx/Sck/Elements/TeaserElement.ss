@@ -1,4 +1,4 @@
-<div class="section section--TeaserElement $BackgroundColor">
+<div class="section section--TeaserElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <% if $Title %>
             <h2 class="teaser-title">$Title</h2>
