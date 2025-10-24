@@ -60,3 +60,57 @@ $ColorLightGrey: #999;
     max-width: var(--MaxWidthContent);
     margin: 0 auto;
 }
+
+@mixin mediasize($size) {
+    @if $size ==smartphone {
+        @media (max-width: 480px) {
+            @content;
+        }
+    }
+
+    @else if $size ==medium {
+        @media (min-width: 700px) {
+            @content;
+        }
+    }
+
+    @else if $size ==desktop {
+        @media (min-width: 1000px) {
+            @content;
+        }
+    }
+
+    @else if $size ==maxwidth {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $size ==max-medium {
+        @media (max-width: 700px) {
+            @content;
+        }
+    }
+
+    @else if $size ==max-smartphone {
+        @media (max-width: 480px) {
+            @content;
+        }
+    }
+
+    @else if $size ==max-desktop {
+        @media (max-width: 1000px) {
+            @content;
+        }
+    }
+
+    @else if $size ==max-maxwidth {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @error "Unknown media size: #{$size}. Please use one of the defined breakpoints: smartphone, medium, desktop, large, maxwidth, max-medium, max-smartphone, max-desktop, max-large, max-maxwidth.";
+    }
+}

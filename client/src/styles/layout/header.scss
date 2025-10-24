@@ -155,9 +155,12 @@
 
             .nav_brand {
                 height: 50px;
+                max-width: 50%;
 
                 img {
                     height: 100%;
+                    width: 100%;
+                    object-fit: contain;
                 }
             }
 

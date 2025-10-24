@@ -1,4 +1,4 @@
-@use '../variables.scss';
+@use '../variables.scss' as *;
 
 .nav_menu {
     position: fixed;
@@ -20,6 +20,10 @@
       display: flex;
       justify-content: stretch;
       max-width: var(--maxWidth);
+
+       @include mediasize(max-desktop) {
+          flex-direction: column;
+      }
     }
 
     .nav_category{
@@ -29,11 +33,46 @@
         width: 100%;
 
         .nav_category_title{
-            padding: 12px 20px;
+            padding: 12px 0;
             color: var(--ColorWhite);
             font-size: 16px;
             font-weight: bold;
             border-bottom: 1px solid var(--ColorWhite);
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+
+            .nav_sublink{
+                display: block;
+                padding: 15px 10px;
+                color: var(--ColorWhite);
+                text-decoration: none;
+                font-size: 14px;
+                transition: background-color 0.2s ease;
+                margin-left: -10px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background-color: var(--ColorMenuTextHover);
+                }
+
+                &.nav_link--active {
+                    background-color: var(--ColorMenuTextHover);
+                    color: var(--ColorWhite);
+
+                    &:hover {
+                        filter: brightness(0.9);
+                    }
+                }
+            }
         }
     }
 

@@ -18,11 +18,11 @@
                                     <a href="$Link" class="nav_category_title<% if $LinkOrSection == "section" %> nav_link--active<% end_if %>">$MenuTitle</a>
                                     <% if $Children %>
                                         <ul>
-                                            <li>
-                                                <% loop $Children %>
+                                            <% loop $Children %>
+                                                <li>
                                                     <a href="$Link" class="nav_sublink<% if $LinkOrSection == "section" %> nav_sublink--active<% end_if %>">$MenuTitle</a>
-                                                <% end_loop %>
-                                            </li>
+                                                </li>
+                                            <% end_loop %>
                                         </ul>
                                     <% end_if %>
                                 </li>
