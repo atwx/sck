@@ -95,12 +95,12 @@ class CustomSiteConfig extends Extension
             ->setDescription("Hauptfarbe der Website")
             ->setAttribute('type', 'color'));
         $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorPrimaryFontWhite", "Weiße Schrift auf Primärfarbe")
-            ->setDescription("Überschreibe die Textfarben mit weiß, wenn sie auf der Primärfarbe liegen"));
+            ->setDescription("Überschreibt die Textfarben mit weiß, wenn sie auf der Primärfarbe liegen"));
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondary", "Sekundärfarbe")
             ->setDescription("Sekundärfarbe der Website")
             ->setAttribute('type', 'color'));
         $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorSecondaryFontWhite", "Weiße Schrift auf Sekundärfarbe")
-            ->setDescription("Überschreibe die Textfarben mit weiß, wenn sie auf der Sekundärfarbe liegen"));
+            ->setDescription("Überschreibt die Textfarben mit weiß, wenn sie auf der Sekundärfarbe liegen"));
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorHeadline", "Überschriftfarbe")
             ->setDescription("Farbe der Überschriften")
             ->setAttribute('type', 'color'));
@@ -111,7 +111,8 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
         $fields->addFieldToTab("Root.Main", new UploadField("Logo", "Logo"));
         $fields->addFieldToTab("Root.Main", new UploadField("Favicon", "Favicon"));
-        $fields->addFieldToTab("Root.Styling", new UploadField("Arrow", "Pfeil nach rechts"));
+        $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
+            ->setDescription("Ein Pfeil zur Navigation in Slidern"));
         $fields->addFieldToTab("Root.Styling", new TextareaField("CustomCSS", "Custom CSS"));
         $fields->addFieldToTab("Root.Fonts", DropdownField::create('HeaderFont', 'Header Font', [
             'Roboto' => 'Roboto',

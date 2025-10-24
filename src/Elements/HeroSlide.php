@@ -39,8 +39,6 @@ class HeroSlide extends DataObject
     private static $default_sort = 'SortOrder ASC';
 
     private static $field_labels = [
-        'Title' => 'Titel',
-        'SubTitle' => 'Untertitel',
         'Image' => 'Bild',
         'SortOrder' => 'Reihenfolge',
     ];
@@ -50,10 +48,7 @@ class HeroSlide extends DataObject
     private static $plural_name = 'Hero-Bilder';
 
     private static $summary_fields = [
-        'Title' => 'Titel',
-        'SubTitle' => 'Untertitel',
         'Image.CMSThumbnail' => 'Bild',
-        'SortOrder' => 'Reihenfolge',
     ];
 
     private static $extensions = [
@@ -73,6 +68,8 @@ class HeroSlide extends DataObject
             UploadField::create('Image', 'Bild')
                 ->setFolderName('HeroSlides'),
         );
+
+        $fields->removeByName('SortOrder');
 
         // This line is necessary, and only AFTER you have added your fields
         $this->extend('updateCMSFields', $fields);

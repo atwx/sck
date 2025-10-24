@@ -21,6 +21,7 @@ class TeaserElement extends BaseElement
 
     private static $db = [    
         'BackgroundColor' => 'Varchar(32)',
+        'NumberColumns' => 'Int',
     ];
 
     private static $has_many = [
@@ -34,6 +35,7 @@ class TeaserElement extends BaseElement
     private static $field_labels = [
         'Title' => 'Überschrift',
         'TeaserItems' => 'Teaser-Einträge',
+        'NumberColumns' => 'Anzahl der Spalten',
     ];
 
     private static $table_name = 'SCK_TeaserElement';
@@ -78,6 +80,16 @@ class TeaserElement extends BaseElement
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
         );
         
+        $fields->addFieldToTab('Root.Main',
+            DropdownField::create('NumberColumns', 'Anzahl der Spalten', [
+                '1' => '1 Spalte',
+                '2' => '2 Spalten',
+                '3' => '3 Spalten',
+                '4' => '4 Spalten',
+            ])
+            ->setDescription('Anzahl der Spalten für die Teaser-Einträge auf großen Bildschirmen')
+        );
+
         $fields->removeByName(['TeaserItems']);
 
         if ($this->ID) {
