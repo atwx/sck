@@ -3,7 +3,7 @@
     overflow: hidden;
 
     .section_content {
-        width: $maxWidthContent;
+        width: var(--MaxWidthContent);
         position: relative;
         display: flex;
         justify-content: center;
@@ -20,7 +20,7 @@
             position: relative;
 
             .background_image {
-                width: $maxWidthContent;
+                width: var(--MaxWidthContent);
                 top: 0;
                 left: 0;
                 z-index: 0;

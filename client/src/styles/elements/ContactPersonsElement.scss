@@ -6,7 +6,7 @@
     overflow: hidden;
     
     .container {
-        max-width: $maxWidth;
+        max-width: var(--MaxWidth);
         margin: 0 auto;
         padding: 0 40px;
         position: relative;

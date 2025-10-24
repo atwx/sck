@@ -145,7 +145,7 @@
         position: relative;
 
         .nav_container {
-            max-width: $maxWidthContent;
+            max-width: var(--MaxWidthContent);
             margin: 0 auto;
             display: flex;
             justify-content: space-between;

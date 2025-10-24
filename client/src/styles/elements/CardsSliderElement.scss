@@ -17,7 +17,7 @@
     
     .slider-title {
         font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
-        max-width: $maxWidthContent;
+        max-width: var(--MaxWidthContent);
         margin: 0 auto 40px auto;
         text-align: left;
         margin-bottom: 40px;

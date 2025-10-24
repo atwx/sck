@@ -23,13 +23,66 @@
         }
     }
 
+    &.image--30{
+        .section_text {
+            @include media(">=desktop") {
+                max-width: calc(($maxWidthContent / 2) + (var(--MaxWidth) * 0.2) + 20px);
+            }
+        }
+        .section_image {
+            @include media(">=desktop") {
+                max-width: calc(var(--MaxWidth) * 0.3);
+            }
+        }
+    }
+
+    &.image--40{
+        .section_text {
+            @include media(">=desktop") {
+                max-width: calc(($maxWidthContent / 2) + (var(--MaxWidth) * 0.1) + 20px);
+            }
+        }
+        .section_image {
+            @include media(">=desktop") {
+                max-width: calc(var(--MaxWidth) * 0.4);
+            }
+        }
+    }
+
+    &.image--60{
+        .section_text {
+            @include media(">=desktop") {
+                max-width: calc(($maxWidthContent / 2) - (var(--MaxWidth) * 0.1) + 20px);
+            }
+        }
+        .section_image {
+            @include media(">=desktop") {
+                max-width: calc(var(--MaxWidth) * 0.6);
+                flex-basis: 60%;
+            }
+        }
+    }
+
+    &.image--70{
+        .section_text {
+            @include media(">=desktop") {
+                max-width: calc(($maxWidthContent / 2) - (var(--MaxWidth) * 0.2) + 20px);
+            }
+        }
+        .section_image {
+            @include media(">=desktop") {
+                max-width: calc(var(--MaxWidth) * 0.7);
+                flex-basis: 70%;
+            }
+        }
+    }
+
     .container {
         padding: 0;
     }
 
     .section_image {
         flex: 0 0 50%;
-        max-width: 960px;
         position: relative;
 
         img {
@@ -84,7 +137,6 @@
         .section_text{
             @include media(">=desktop") {
             padding: 80px 20px 80px 30px;
-                max-width: calc(($maxWidthContent / 2));
                 margin-left: unset;
                 margin-right: auto;
             }
