@@ -11,6 +11,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\DropdownField;
 use TractorCow\Fluent\Extension\FluentExtension;
 
 class CardSlide extends DataObject
@@ -18,6 +19,7 @@ class CardSlide extends DataObject
     private static $db = [
         'Title' => 'Varchar(255)',
         'Content' => 'Text',
+        'BackgroundColor' => 'Varchar(31)',
         'SortOrder' => 'Int',
     ];
 
@@ -87,6 +89,16 @@ class CardSlide extends DataObject
                 ->setDescription('Empfohlene Größe: 400x300px für optimale Darstellung'),
             LinkField::create('Button', 'Button')
                 ->setDescription('Button für weitere Informationen'),
+            DropdownField::create('BackgroundColor', 'Hintergrundfarbe')
+                ->setSource([
+                    '' => 'Keine Farbe',
+                    'bg-color-white' => 'Weiß',
+                    'bg-color-primary' => 'Primärfarbe',
+                    'bg-color-secondary' => 'Sekundärfarbe',
+                    'bg-color-tertiary' => 'Tertiärfarbe',
+                ])
+                ->setEmptyString('-- Bitte wählen --')
+                ->setDescription('Wählen Sie eine Hintergrundfarbe für die Kachel aus'),
         );
 
         // This line is necessary, and only AFTER you have added your fields

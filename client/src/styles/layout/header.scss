@@ -197,6 +197,12 @@
             .nav--show & {
               background-color: var(--ColorWhite);
 
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              z-index: 1000;
+
               .nav_brand_color {
                   display: block;
               }
@@ -207,12 +213,21 @@
             }
         }
 
-        .nav--show & {
+        .nav-strip--sticky & {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
+            background-color: var(--ColorWhite);
+
+            .nav_brand_white {
+                display: none;
+            }
+
+            .nav_brand_color {
+                display: block;
+            }
         }
     }
 

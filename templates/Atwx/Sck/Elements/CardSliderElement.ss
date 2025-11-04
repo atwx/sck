@@ -1,87 +1,84 @@
-<div class="cards-slider-element">
-    <div class="container">
+<div class="section section--CardSliderElement">
+    <div class="section_content">
         <% if $SliderTitle %>
-            <h2 class="slider-title">$SliderTitle</h2>
+            <h2 class="hl2 section_title">$SliderTitle</h2>
         <% end_if %>
+        <% if $Cards %>
+            <div class="swiper cards-slider"
+                data-behaviour="swiper"
+                data-autoplay="$Autoplay"
+                data-autoplay-delay="$AutoplayDelay"
+                data-effect="$TransitionEffect"
+                data-pagination="$ShowPagination"
+                data-pagination-position="$PaginationPosition"
+                data-slidesperview="3"
+                data-centeredslides="true">
 
-        <div class="cards-slider-wrapper">
-            <div class="cards-slider"
-                 data-autoplay="$Autoplay"
-                 data-autoplay-speed="$AutoplaySpeed"
-                 data-show-dots="$ShowDots"
-                 data-show-arrows="$ShowArrows">
-
-                <% if $Cards %>
+                <div class="swiper-wrapper">
                     <% loop $Cards %>
-                    <div class="card-slide">
-                        <% if $BackgroundImage %>
-                            <% if $Button %>
-                                <a href="$Button.URL" class="card-slide-image"
-                                <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
-                                    <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
-                                    <div class="card-slide-overlay"></div>
-                                </a>
+                        <div class="swiper-slide card-slide $BackgroundColor">
+                            <% if $BackgroundImage %>
+                                <% if $Button %>
+                                    <a href="$Button.URL" class="card-slide-image" <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
+                                        <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
+                                        <div class="card-slide-overlay"></div>
+                                    </a>
+                                <% else %>
+                                    <div class="card-slide-image">
+                                        <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
+                                        <div class="card-slide-overlay"></div>
+                                    </div>
+                                <% end_if %>
                             <% else %>
-                                <div class="card-slide-image">
-                                    <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
-                                    <div class="card-slide-overlay"></div>
+                                <div class="card-slide-image"></div>
+                            <% end_if %>
+
+                            <div class="card-slide-content">
+                                <% if $Title %>
+                                <h3 class="card-slide-title">$Title</h3>
+                                <% end_if %>
+
+                                <% if $Content %>
+                                <div class="card-slide-text">
+                                    <p>$Content</p>
                                 </div>
-                            <% end_if %>
-                        <% end_if %>
+                                <% end_if %>
 
-                        <div class="card-slide-content">
-                            <% if $Title %>
-                            <h3 class="card-slide-title">$Title</h3>
-                            <% end_if %>
-
-                            <% if $Content %>
-                            <div class="card-slide-text">
-                                <p>$Content</p>
+                                <% if $Button %>
+                                    <% include Atwx/Sck/Includes/Button Link=$Button %>
+                                <% end_if %>
                             </div>
-                            <% end_if %>
-
-                            <% if $Button %>
-                                <% include Atwx/Sck/Includes/Button Link=$Button %>
-                            <% end_if %>
                         </div>
-                    </div>
                     <% end_loop %>
-                <% else %>
-                    <div class="card-slide card-slide-placeholder">
+                </div>
+
+                <% if $ShowArrows %>
+                    <button class="swiper-button-prev">
+                    </button>
+                    <button class="swiper-button-next">
+                    </button>
+                <% end_if %>
+
+                <% if $ShowPagination && $Cards.Count > 1 %>
+                    <div class="slider-dots">
+                        <div class="swiper-pagination swiper-pagination--$PaginationPosition"></div>
+                    </div>
+                <% end_if %>
+            </div>
+        <% else %>
+            <div class="swiper cards-slider"
+                data-autoplay="false"
+                data-show-dots="false"
+                data-show-arrows="false">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide card-slide card-slide-placeholder">
                         <div class="card-slide-content">
                             <h3>Noch keine Karten</h3>
                             <p>Fügen Sie Karten über das Backend hinzu.</p>
                         </div>
                     </div>
-                <% end_if %>
+                </div>
             </div>
-            <% if $ShowArrows %>
-            <div class="slider-arrows">
-                <% if $SiteConfig.Arrow %>
-                    <button class="slider-arrow slider-arrow-prev swiper-button-prev" data-direction="prev">
-                        <img src="$SiteConfig.Arrow.AbsoluteURL" alt="Previous" loading="lazy">
-                    </button>
-                    <button class="slider-arrow slider-arrow-next swiper-button-next" data-direction="next">
-                        <img src="$SiteConfig.Arrow.AbsoluteURL" alt="Next" loading="lazy">
-                    </button>
-                <% else %>
-                    <button class="slider-arrow slider-arrow-prev swiper-button-prev" data-direction="prev">
-                    <span>‹</span>
-                    </button>
-                    <button class="slider-arrow slider-arrow-next swiper-button-next" data-direction="next">
-                        <span>›</span>
-                    </button>
-                <% end_if %>
-            </div>
-            <% end_if %>
-
-            <% if $ShowDots && $Cards.Count > 1 %>
-            <div class="slider-dots">
-                <% loop $Cards %>
-                <button class="slider-dot<% if $IsFirst %> active<% end_if %>" data-slide="$Pos"></button>
-                <% end_loop %>
-            </div>
-            <% end_if %>
-        </div>
+        <% end_if %>
     </div>
 </div>

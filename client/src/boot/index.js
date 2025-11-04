@@ -68,10 +68,25 @@ window.document.addEventListener('DOMContentLoaded', () => {
             },
             direction: 'horizontal',
             loop: slider.dataset.loop === 'true',
+            slidesPerView: parseInt(slider.dataset.slidesperview) || 1,
+            spaceBetween: parseInt(slider.dataset.spacebetween) || 10,
+            centeredSlides: slider.dataset.centeredslides === 'true',
 
             autoplay: slider.dataset.autoplay === 'true' ? {
                 delay: slider.dataset.autoplaydelay || 10000,
             } : false,
+
+            breakpoints: {
+                1024: {
+                    slidesPerView: Math.min(parseInt(slider.dataset.slidesperview) || 1, parseInt(slider.dataset.slidesperview))
+                },
+                768: {
+                    slidesPerView: Math.min(parseInt(slider.dataset.slidesperview) || 1, 3)
+                },
+                0: {
+                    slidesPerView: 1
+                }
+            },
 
             // Navigation arrows
             navigation: {
@@ -100,92 +115,6 @@ window.document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }
-        }
-    });
-
-    // INIT CARDS SLIDER
-    document.querySelectorAll('.cards-slider').forEach(slider => {
-        const slides = slider.querySelectorAll('.card-slide');
-        const dots = slider.parentElement.querySelectorAll('.slider-dot');
-        const prevBtn = slider.parentElement.querySelector('.slider-arrow-prev');
-        const nextBtn = slider.parentElement.querySelector('.slider-arrow-next');
-
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        const slidesToShow = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1200 ? 2 : 3);
-        const maxSlide = Math.max(0, totalSlides - slidesToShow);
-
-        // Autoplay settings
-        const autoplay = slider.dataset.autoplay === 'true';
-        const autoplaySpeed = parseInt(slider.dataset.autoplaySpeed) || 5000;
-        let autoplayInterval;
-
-        function updateSlider() {
-            const translateX = -(currentSlide * (100 / slidesToShow));
-            slider.style.transform = `translateX(${translateX}%)`;
-
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            currentSlide = currentSlide <= 0 ? maxSlide : currentSlide - 1;
-            updateSlider();
-        }
-
-        function goToSlide(index) {
-            currentSlide = Math.min(index, maxSlide);
-            updateSlider();
-        }
-
-        // Event listeners
-        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
-        });
-
-        // Autoplay
-        if (autoplay && totalSlides > slidesToShow) {
-            autoplayInterval = setInterval(nextSlide, autoplaySpeed);
-
-            slider.parentElement.addEventListener('mouseenter', () => {
-                clearInterval(autoplayInterval);
-            });
-
-            slider.parentElement.addEventListener('mouseleave', () => {
-                autoplayInterval = setInterval(nextSlide, autoplaySpeed);
-            });
-        }
-
-        // Responsive update
-        window.addEventListener('resize', () => {
-            const newSlidesToShow = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1200 ? 2 : 3);
-            const newMaxSlide = Math.max(0, totalSlides - newSlidesToShow);
-            if (currentSlide > newMaxSlide) {
-                currentSlide = newMaxSlide;
-            }
-            updateSlider();
-        });
-
-        // Initialize
-        updateSlider();
-    });
-
-    // FIXED HEADER
-    window.addEventListener('scroll', () => {
-        if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30){
-            document.body.classList.add('menu--fixed');
-        } else {
-            document.body.classList.remove('menu--fixed');
         }
     });
 });
