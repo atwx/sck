@@ -35,7 +35,7 @@
 
         <% include Atwx/Sck/Includes/SCKStylings %>
     </head>
-    <body>
+    <body class="project-body">
         <div class="area_header">
             <% include Atwx/Sck/Includes/SCKHeader %>
         </div>
