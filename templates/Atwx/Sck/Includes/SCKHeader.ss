@@ -14,7 +14,7 @@
                                 <div class="hero_text">$HeroText</div>
                             <% end_if %>
                         </div>
-                        $Image.FocusFill(1000,400)
+                        $Image.FocusFill(2000,1200)
                     </div>
                 <% end_loop %>
             </div>
