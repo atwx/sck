@@ -15,39 +15,31 @@
                         <% end_if %>
                         
                         <div class="contact-info">
-                            <h3 class="contact-name">$Name</h3>
-                            <% if $Position %>
-                            <div class="contact-position">$Position</div>
+                            <h3 class="contact-name">$Title</h3>
+                            <% if $Function %>
+                                <div class="contact-function">$Function</div>
                             <% end_if %>
                             
-                            <% if $Department %>
-                            <div class="contact-department">$Department</div>
+                            <% if $Groups.Count > 0 %>
+                                <div class="contact-group"> 
+                                    <% loop $Groups %>$Title<% if not $IsLast %>, <% end_if %><% end_loop %>
+                                </div>
+                                
+                                <div class="contact-department">$Department</div>
                             <% end_if %>
                             
                             <div class="contact-details">
-                                <% if $Person1Phone %>
-                                <div class="contact-phone">
-                                    <strong>Tel.:</strong> $Person1Phone
-                                </div>
+                                <% if $Telephone %>
+                                    <div class="contact-phone">
+                                        <strong>Tel.:</strong> $Telephone
+                                    </div>
                                 <% end_if %>
                                 
-                                <% if $Person1Mobile %>
-                                <div class="contact-mobile">
-                                    <strong>Mobil:</strong> $Person1Mobile
-                                </div>
+                                <% if $Email %>
+                                    <div class="contact-email">
+                                        <a href="mailto:$Email">$Email</a>
+                                    </div>
                                 <% end_if %>
-                                
-                                <% if $Person1Email %>
-                                <div class="contact-email">
-                                    <a href="mailto:$Person1Email">$Person1Email</a>
-                                </div>
-                                <% end_if %>
-                            </div>
-                            
-                            <div class="contact-button">
-                                <span class="btn-contact">
-                                    > Kontakt
-                                </span>
                             </div>
                         </div>
                     </div>

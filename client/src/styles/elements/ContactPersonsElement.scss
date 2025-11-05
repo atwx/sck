@@ -34,62 +34,63 @@
         grid-template-columns: 1fr 1fr;
         gap: 80px;
         
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             grid-template-columns: 1fr;
             gap: 60px;
         }
-    }
-    
-    .contact-person {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        
-        @media (max-width: 768px) {
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-            gap: 25px;
-        }
-    }
-    
-    .contact-photo {
-        flex: 0 0 180px;
-        
-        img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        @media (max-width: 768px) {
-            flex: 0 0 140px;
-            
-            img {
-                width: 140px;
-                height: 140px;
+
+        .contact-person {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+
+            .contact-photo {
+                flex: 0 0 180px;
+                
+                img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                
+                @media (max-width: 768px) {
+                    flex: 0 0 140px;
+                    
+                    img {
+                        width: 140px;
+                        height: 140px;
+                    }
+                }
             }
-        }
-    }
-    
-    .contact-info {
-        flex: 1;
-        
-        @media (max-width: 768px) {
-            text-align: center;
-        }
-    }
-    
-    .contact-name {
-        font-size: 26px;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: white;
-        line-height: 1.2;
-        
-        @media (max-width: 768px) {
-            font-size: 1.6rem;
+
+            .contact-info {
+                flex: 1;
+
+                .contact-name {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 1.6rem;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 25px;
+            }
         }
     }
     

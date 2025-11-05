@@ -7,7 +7,6 @@ use SilverStripe\Assets\Image;
 use Atwx\Sck\People\PersonGroup;
 use Atwx\Sck\Elements\PersonElement;
 use Atwx\Sck\Tags\TaggableDataObject;
-use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\CheckboxSetField;
 
 class Person extends TaggableDataObject
@@ -76,19 +75,6 @@ class Person extends TaggableDataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        //Replace DoctoralDegree field with DropdownField
-        $fields->replaceField('DoctoralDegree', DropdownField::create(
-            'DoctoralDegree',
-            _t(self::class . '.DoctoralDegree', self::$field_labels['DoctoralDegree']),
-            [
-                '' => '',
-                'Dr.' => 'Dr.',
-                'Prof. Dr.' => 'Prof. Dr.',
-                'Prof. Dr. Dr.' => 'Prof. Dr. Dr.',
-                'Prof.' => 'Prof.',
-                'Dr. med.' => 'Dr. med.',
-            ]
-        )->setEmptyString('-- Bitte wählen --'));
         //Replace Personengruppen field with CheckboxSetField
         $fields->replaceField('Groups', CheckboxSetField::create(
             'Groups',
