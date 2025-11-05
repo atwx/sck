@@ -1,0 +1,7 @@
+---
+Name: addtagcontroller
+After: "#adminroutes"
+---
+SilverStripe\Control\Director:
+  rules:
+    'admin/addTag': 'Atwx\Sck\Control\AddTagController'

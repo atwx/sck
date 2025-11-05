@@ -5,6 +5,7 @@ namespace Atwx\Sck\People;
 use Override;
 use SilverStripe\Assets\Image;
 use Atwx\Sck\People\PersonGroup;
+use Atwx\Sck\Elements\PersonElement;
 use Atwx\Sck\Tags\TaggableDataObject;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\CheckboxSetField;
@@ -32,6 +33,10 @@ class Person extends TaggableDataObject
 
     private static $many_many = [
         'Groups' => PersonGroup::class,
+    ];
+
+    private static $belongs_many_many = [
+        'Elements' => PersonElement::class,
     ];
 
     private static $owns = [

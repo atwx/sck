@@ -5,51 +5,53 @@
         <% end_if %>
         
         <div class="contact-persons-grid">
-            <% if $Person1Name %>
-            <div class="contact-person">
-                <% if $Person1Image %>
-                <div class="contact-photo">
-                    <img src="$Person1Image.URL" alt="$Person1Name" loading="lazy" />
-                </div>
-                <% end_if %>
-                
-                <div class="contact-info">
-                    <h3 class="contact-name">$Person1Name</h3>
-                    <% if $Person1Position %>
-                    <div class="contact-position">$Person1Position</div>
-                    <% end_if %>
-                    
-                    <% if $Person1Department %>
-                    <div class="contact-department">$Person1Department</div>
-                    <% end_if %>
-                    
-                    <div class="contact-details">
-                        <% if $Person1Phone %>
-                        <div class="contact-phone">
-                            <strong>Tel.:</strong> $Person1Phone
-                        </div>
+            <% if $Persons.Count > 0 %>
+                <% loop $Persons %>
+                    <div class="contact-person">
+                        <% if $Image %>
+                            <div class="contact-photo">
+                                <img src="$Image.URL" alt="$Name" loading="lazy" />
+                            </div>
                         <% end_if %>
                         
-                        <% if $Person1Mobile %>
-                        <div class="contact-mobile">
-                            <strong>Mobil:</strong> $Person1Mobile
+                        <div class="contact-info">
+                            <h3 class="contact-name">$Name</h3>
+                            <% if $Position %>
+                            <div class="contact-position">$Position</div>
+                            <% end_if %>
+                            
+                            <% if $Department %>
+                            <div class="contact-department">$Department</div>
+                            <% end_if %>
+                            
+                            <div class="contact-details">
+                                <% if $Person1Phone %>
+                                <div class="contact-phone">
+                                    <strong>Tel.:</strong> $Person1Phone
+                                </div>
+                                <% end_if %>
+                                
+                                <% if $Person1Mobile %>
+                                <div class="contact-mobile">
+                                    <strong>Mobil:</strong> $Person1Mobile
+                                </div>
+                                <% end_if %>
+                                
+                                <% if $Person1Email %>
+                                <div class="contact-email">
+                                    <a href="mailto:$Person1Email">$Person1Email</a>
+                                </div>
+                                <% end_if %>
+                            </div>
+                            
+                            <div class="contact-button">
+                                <span class="btn-contact">
+                                    > Kontakt
+                                </span>
+                            </div>
                         </div>
-                        <% end_if %>
-                        
-                        <% if $Person1Email %>
-                        <div class="contact-email">
-                            <a href="mailto:$Person1Email">$Person1Email</a>
-                        </div>
-                        <% end_if %>
                     </div>
-                    
-                    <div class="contact-button">
-                        <span class="btn-contact">
-                            > Kontakt
-                        </span>
-                    </div>
-                </div>
-            </div>
+                <% end_loop %>
             <% end_if %>
             
             <% if $Person2Name %>

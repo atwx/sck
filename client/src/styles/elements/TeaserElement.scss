@@ -61,6 +61,14 @@
                     }
                 }
             }
+            &.columns-5 {
+                grid-template-columns: repeat(5, 1fr);
+                .teaser-item {
+                    &-image {
+                        height: 200px;
+                    }
+                }
+            }
 
             @include media("<medium") {
                 &.columns-1,

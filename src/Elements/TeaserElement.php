@@ -86,6 +86,7 @@ class TeaserElement extends BaseElement
                 '2' => '2 Spalten',
                 '3' => '3 Spalten',
                 '4' => '4 Spalten',
+                '5' => '5 Spalten',
             ])
             ->setDescription('Anzahl der Spalten für die Teaser-Einträge auf großen Bildschirmen')
         );
