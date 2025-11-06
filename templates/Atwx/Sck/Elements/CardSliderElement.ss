@@ -3,6 +3,9 @@
         <% if $SliderTitle %>
             <h2 class="hl2 section_title">$SliderTitle</h2>
         <% end_if %>
+        <% if $IntroText %>
+            <div class="section_intro_text">$IntroText</div>
+        <% end_if %>
         <% if $Cards %>
             <div class="swiper cards-slider"
                 data-behaviour="swiper"

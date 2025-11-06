@@ -20,6 +20,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => 'Boolean',
         'Autoplay' => 'Boolean',
         'AutoplaySpeed' => 'Int',
+        'IntroText' => 'HTMLText',
     ];
 
     private static $has_many = [
