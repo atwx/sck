@@ -9,9 +9,10 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Model\List\ArrayList;
 use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
 class PageExtension extends Extension
 {
@@ -89,6 +90,25 @@ class PageExtension extends Extension
                 ->setDescription('Die Verzögerung in Millisekunden zwischen den automatischen Slide-Wechseln')
                 ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),
         ]);
+    }
+
+    /*
+    * LocaleMenu
+    *
+    * Returns the locale menu for the current subsite
+    */
+    public function LocaleMenu() {
+        $subsite = $this->CurrentSubsite();
+        if (!$subsite) {
+            return null;
+        }
+        $availableLocales =  $subsite->getActiveLocales();
+        $menu = new ArrayList();
+        foreach ($availableLocales as $locale) {
+            $recordLocale = ExtensibleRecordLocale::create($this->data(), $locale, $this->SubURLSegment);
+            $menu->push($recordLocale);
+        }
+        return $menu;
     }
 
     public function getHeroHeightStyle()

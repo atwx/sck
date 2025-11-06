@@ -13,6 +13,8 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\Tab;
+use SilverStripe\Forms\TabSet;
 
 /**
  * Class \Atwx\Sck\Extensions\CustomSiteConfig
@@ -52,6 +54,7 @@ class CustomSiteConfig extends Extension
         'ColorSecondaryFontWhite' => 'Boolean',
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
+        'ColorBackground' => 'Varchar(7)',
         'MenuBackgroundColor' => 'Varchar(7)',
         'MenuButtonColor' => 'Varchar(7)',
         'MenuTextColor' => 'Varchar(7)',
@@ -65,24 +68,35 @@ class CustomSiteConfig extends Extension
     ];
 
     private static $has_one = [
-        'Logo' => File::class,
+        'Logo' => Image::class,
         'Favicon' => Image::class,
+        'SocialImage' => Image::class,
+        'AppleTouchIcon' => Image::class,
         'Arrow' => File::class
     ];
 
     private static $owns = [
         'Logo',
         'Favicon',
+        'SocialImage',
+        'AppleTouchIcon',
         'Arrow',
     ];
 
     public function updateCMSFields(FieldList $fields)
     {
+
+
         $fields->addFieldToTab("Root.Socials", new TextField("LinkYouTube", "YouTube"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkInstagram", "Instagram"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkFacebook", "Facebook"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkTwitter", "Twitter"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkDiscord", "Discord"));
+
+        $fields->addFieldToTab("Root.Icons", new UploadField("Logo", "Logo"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("Favicon", "Favicon"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("AppleTouchIcon", "Apple Touch Icon"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("SocialImage", "Social Image"));
 
         $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidth", "Maximale Breite")
             ->setDescription("Maximale Breite des Contents (z.B. 1200px, 100%, 1400px)")
@@ -90,6 +104,8 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidthContent", "Maximale Content-Breite")
             ->setDescription("Maximale Breite für Text-Content (z.B. 980px, 800px)")
             ->setAttribute('placeholder', '980px'));
+
+        $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
 
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")
             ->setDescription("Hauptfarbe der Website")
@@ -108,22 +124,24 @@ class CustomSiteConfig extends Extension
             ->setDescription("Farbe des Fließtextes")
             ->setAttribute('type', 'color'));
 
-        $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
-        $fields->addFieldToTab("Root.Main", new UploadField("Logo", "Logo"));
-        $fields->addFieldToTab("Root.Main", new UploadField("Favicon", "Favicon"));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorBackground", "Hintergrundfarbe")
+            ->setDescription("Hintergrundfarbe der Website")
+            ->setAttribute('type', 'color'));
+
         $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
-        $fields->addFieldToTab("Root.Styling", new TextareaField("CustomCSS", "Custom CSS"));
-        $fields->addFieldToTab("Root.Fonts", DropdownField::create('HeaderFont', 'Header Font', [
+        $fields->addFieldToTab("Root.Schriften.Header", DropdownField::create('HeaderFont', 'Header Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
         ]));
-        $fields->addFieldToTab("Root.Fonts", DropdownField::create('BodyFont', 'Body Font', [
+        $fields->addFieldToTab("Root.Schriften.Body", DropdownField::create('BodyFont', 'Body Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
         ]));
+
+        $fields->addFieldToTab("Root.Custom", new TextareaField("CustomCSS", "Custom CSS"));
     }
 
     public function getMaxWidthValue()

@@ -32,16 +32,18 @@
                 </div>
             </div>
             <div class="nav_language">
-                <div class="nav_language_dropdown">
-                    <button class="nav_language_button" data-behaviour="toggle-language">
-                        Deutsch
-                        <span class="nav_language_arrow">▼</span>
-                    </button>
-                    <div class="nav_language_menu">
-                        <a href="#" class="nav_language_item active">Deutsch</a>
-                        <a href="#" class="nav_language_item">English</a>
+                <% if $Locales %>
+                    <div class="nav-select nav_language_dropdown">
+                        <select data-behaviour="select-redirect" class="nav_language_button">
+                            <% loop $Locales %>
+                                <option class="$LinkingMode nav_language_item"
+                                        <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link">
+                                    $Title.XML
+                                </option>
+                            <% end_loop %>
+                        </select>
                     </div>
-                </div>
+                <% end_if %>
             </div>
         </div>
     </div>

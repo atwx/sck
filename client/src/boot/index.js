@@ -118,4 +118,15 @@ window.document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+
+    //Select as Redirect Menu
+    const selectMenus = document.querySelectorAll('[data-behaviour="select-redirect"]');
+    if (selectMenus) {
+        selectMenus.forEach((selectMenu) => {
+            selectMenu.addEventListener('change', () => {
+                window.location.href = selectMenu.value;
+            });
+        });
+    }
 });
