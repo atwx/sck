@@ -143,15 +143,15 @@
         background-color: var(--ColorPrimary);
         width: 100%;
         position: relative;
+        padding: 0 20px;
 
         .nav_container {
-            max-width: var(--MaxWidth);
+            max-width: var(--MaxWidthContent);
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 85px;
-            padding: 0 20px;
 
             .nav_brand {
                 height: 50px;
