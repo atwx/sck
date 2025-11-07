@@ -17,12 +17,6 @@
       img{
         width: 100%;
         height: auto;
-
-        @include media("<medium") {
-          max-height: unset;
-          width: 100%;
-          height: auto;
-        }
       }
 
       @include media(">=medium") {
