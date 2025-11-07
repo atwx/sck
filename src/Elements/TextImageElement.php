@@ -4,10 +4,12 @@ namespace Atwx\Sck\Elements;
 
 use Override;
 use SilverStripe\Assets\Image;
+use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\LinkField\Form\MultiLinkField;
 
 /**
  * Class \Atwx\Sck\Elements\TextImageElement
@@ -27,6 +29,7 @@ class TextImageElement extends BaseElement
         "Variant" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
         "BackgroundColor" => "Varchar(32)",
+        "LinksTitle" => "Varchar(255)",
     ];
 
     private static $has_one = [
@@ -34,9 +37,14 @@ class TextImageElement extends BaseElement
         "Button" => Link::class,
     ];
 
+    private static $has_many = [
+        "SideLinks" => Link::class,
+    ];
+
     private static $owns = [
         "Image",
         "Button",
+        "SideLinks",
     ];
 
     private static $field_labels = [
@@ -47,6 +55,7 @@ class TextImageElement extends BaseElement
 
     private static $table_name = 'SCK_TextImageElement';
     private static $icon = 'font-icon-block-promo-3';
+    private static $inline_editable = false;
 
     #[Override]
     public function getType()
@@ -114,6 +123,13 @@ class TextImageElement extends BaseElement
             ])
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
         );
+
+        $fields->removeByName('LinksTitle');
+        $fields->addFieldToTab('Root.Main', TextField::create('LinksTitle', 'Titel der Linkliste')
+            ->setDescription('Titel, der über der Linkliste angezeigt wird'));
+        $fields->replaceField('Links', MultiLinkField::create('Links')
+            ->setTitle('SideLinks')
+            ->setDescription('Fügt Links / Downloads neben dem Text hinzu'));
 
         $fields->removeByName('ButtonID');
         $fields->addFieldToTab('Root.Main', LinkField::create('Button'));

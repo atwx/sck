@@ -43,6 +43,8 @@
                     opacity: 0.5;
                     transition: opacity 0.3s ease-in-out;
                     height: unset;
+                    background-color: var(--ColorWhite);
+                    color: var(--ColorPrimary);
 
                     &.swiper-slide-next, &.swiper-slide-prev,
                     &.swiper-slide-active {
