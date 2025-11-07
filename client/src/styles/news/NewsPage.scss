@@ -1,0 +1,35 @@
+.section.section--News{
+    .section_content{
+        .section_backlink{
+            width: fit-content;
+            margin: 20px 0;
+            &:hover {
+                color: var(--ColorSecondary);
+            }
+        }
+
+        .news_content{
+            display: flex;
+            gap: 20px;
+
+            .news_image{
+                width: 30%;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .news_text{
+                width: 70%;
+            }
+            .news_title{
+                margin-top: unset;
+            }
+
+            .news_link{
+                margin: 10px 0;
+            }
+        }
+    }
+}

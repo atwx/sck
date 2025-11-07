@@ -17,26 +17,20 @@
         <% if $NewsItems %>
             <div class="news_list">
                 <% loop $NewsItems %>
-                    <div class="news_item">
-                        <% if $Top.PrefixIcon %>
-                            <div class="news_item_prefix">
-                                <img src="$Top.PrefixIcon.URL" alt="$Top.PrefixIcon.Title" />
-                            </div>
-                        <% end_if %>
-                        <div class="news_item_content">
-                            <% if $Title %>
-                                <h4 class="news_item_title">
-                                    <% if $Link %>
-                                        <a href="$Link.LinkURL"<% if $Link.OpenInNew %> target="_blank"<% end_if %>>
-                                            $Title
-                                        </a>
-                                    <% else %>
-                                        $Title
-                                    <% end_if %>
-                                </h4>
+                    <a href="$Link" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
+                        <div class="news_item">
+                            <% if $Top.PrefixIcon %>
+                                <div class="news_item_prefix">
+                                    <img src="$Top.PrefixIcon.URL" alt="$Top.PrefixIcon.Title" />
+                                </div>
                             <% end_if %>
+                            <div class="news_item_content">
+                                <% if $Title %>
+                                    <h4 class="news_item_title">$Title</h4>
+                                <% end_if %>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <% end_loop %>
             </div>
         <% end_if %>

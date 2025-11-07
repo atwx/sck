@@ -115,4 +115,13 @@ class NewsEntry extends TaggableDataObject
         }
         return null;
     }
+
+    public function Link()
+    {
+        $page = NewsPage::get()->first();
+        if ($page) {
+            return $page->Link('view/' . $this->ID);
+        }
+        return null;
+    }
 }
