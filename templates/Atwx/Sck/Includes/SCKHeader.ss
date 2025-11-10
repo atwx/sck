@@ -4,27 +4,26 @@
     <% end_if %>
 
     <% if $ShowHeroSection && $HeroSlides.Count > 0 %>
-    <div class="hero_section swiper swiper--horizontal swiper--auto" <% if $HeroAutoPlay %>data-autoplay="true"<% end_if %> style="$HeroHeightStyle" <% if $HeroAutoPlayDelay && $HeroAutoPlayDelay > 0 %>data-autoplayDelay="$HeroAutoPlayDelay"<% end_if %>>
-        <div class="hero_overlay"></div>
-            <div class="swiper-wrapper">
-                <% loop $HeroSlides %>
-                    <div class="swiper-slide">
-                        <div class="swiper-text">
-                            <% if $HeroText %>
-                                <div class="hero_text">$HeroText</div>
-                            <% end_if %>
-                        </div>
-                        $Image.FocusFill(2000,1200)
+    <div class="hero_section swiper" data-loop="true" data-slidesPerView="1" data-autoplay="$HeroAutoPlay" style="$HeroHeightStyle" <% if $HeroAutoPlayDelay && $HeroAutoPlayDelay > 0 %>data-autoplay-delay="$HeroAutoPlayDelay"<% end_if %>>
+        <div class="swiper-wrapper">
+            <% loop $HeroSlides %>
+                <div class="swiper-slide">
+                    <div class="swiper-text">
+                        <% if $HeroText %>
+                            <div class="hero_text">$HeroText</div>
+                        <% end_if %>
                     </div>
-                <% end_loop %>
-            </div>
-            <% if $HeroAutoPlay %>
-                <!-- If autoplay is enabled, show pause button -->
-                <div class="swiper-button-pause">
-                    <span class="icon-pause"></span>
+                    $Image.FocusFill(2000,1200)
                 </div>
-            <% end_if %>
+            <% end_loop %>
         </div>
+        <% if $HeroAutoPlay %>
+            <!-- If autoplay is enabled, show pause button -->
+            <div class="swiper-button-pause">
+                <span class="icon-pause"></span>
+            </div>
+        <% end_if %>
+    </div>
     <% end_if %>
 
     <% if $HeaderNavPosition == "below" %>
