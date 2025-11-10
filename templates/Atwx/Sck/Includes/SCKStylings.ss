@@ -3,8 +3,8 @@
 
 <style>
     :root {
-        --maxWidth: $SiteConfig.MaxWidthValue;
-        --maxWidthContent: $SiteConfig.MaxWidthContentValue;
+        --MaxWidth: $SiteConfig.MaxWidthValue;
+        --MaxWidthContent: $SiteConfig.MaxWidthContentValue;
         --ColorPrimary: $SiteConfig.ColorPrimaryValue;
         --ColorSecondary: $SiteConfig.ColorSecondaryValue;
         --ColorPrimaryFontWhite: $SiteConfig.ColorPrimaryFontWhite;

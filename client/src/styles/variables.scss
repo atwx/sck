@@ -1,12 +1,12 @@
 // Layout Variables - werden zur Kompilezeit gesetzt, können zur Laufzeit durch CSS-Variablen überschrieben werden
-$maxWidth: 1920px;
-$maxWidthContent: 1200px;
+$MaxWidth: 1920px;
+$MaxWidthContent: 1200px;
 
 $breakpoints: (
     'smartphone': 480px,
     'medium': 700px,
     'desktop': 1000px,
-    'maxWidth': $maxWidth,
+    'maxWidth': $MaxWidth,
 );
 
 $HeaderHeight: 120px;
@@ -24,8 +24,8 @@ $ColorLightGrey: #999;
 
 //Set CSS Variables to modify at runtime
 :root {
-    --MaxWidth: #{$maxWidth};
-    --MaxWidthContent: #{$maxWidthContent};
+    --MaxWidth: #{$MaxWidth};
+    --MaxWidthContent: #{$MaxWidthContent};
     --ColorPrimary: #{$ColorPrimary};
     --ColorSecondary: #{$ColorSecondary};
     --ColorMenuBand: #{$ColorMenuBand};
