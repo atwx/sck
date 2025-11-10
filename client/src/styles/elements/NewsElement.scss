@@ -22,6 +22,7 @@
     }
 
     .section_content {
+        max-width: var(--MaxWidthContent);
         position: relative;
         z-index: 2;
 
