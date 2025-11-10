@@ -1,8 +1,6 @@
 <div class="section section--GalleryElement gallerybackground--$BackgroundColor">
     <div class="section_content">
-        <% if $ShowTitle %>
-            <h2>$Title</h2>
-        <% end_if %>
+        <h2 class="hl2">$Title</h2>
         <% if $Text %>
             $Text
         <% end_if %>
@@ -10,7 +8,7 @@
             <% loop $PhotoGalleryImages %>
                 <% if $Image %>
                     <% if $Up.ActivateLightbox %>
-                        <a href="$Image.URL" class="gallery-item" data-gallery="gallery" data-glightbox="title: $Title" data-caption="$Title">
+                        <a href="$Image.URL" class="glightbox" data-gallery="gallery" data-glightbox="title: $Title" data-caption="$Title" data-galleryid="$Up.ID">
                             <% if $Up.ImageFormat == "square" %>
                                 $Image.FocusFillMax(400, 400)
                             <% else_if $Up.ImageFormat == "rectangle" %>
