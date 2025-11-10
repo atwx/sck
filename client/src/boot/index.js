@@ -49,12 +49,27 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // INIT LIGHTBOX
-    const lightbox = GLightbox({
-        selector: '[data-gallery="gallery"]',
-        touchNavigation: true,
-        loop: true,
-    });
+    const lightboxes = document.querySelectorAll('[data-gallery="gallery"]');
+    
+    if (lightboxes.length > 0) {
+        lightboxes.forEach((lightbox) => {
+            const lightboxselector = lightbox.getAttribute('data-galleryid');
+            if (lightbox.getAttribute('data-singleimage') === 'true') {
+                lightbox = GLightbox({
+                    selector: '[data-galleryid="' + lightboxselector + '"]',
+                    draggable: false,
+                    keyboardNavigation: false,
+                    touchNavigation: false,
+                });
+            } else {
+                lightbox = GLightbox({
+                    selector: '[data-galleryid="' + lightboxselector + '"]',
+                    touchNavigation: true,
+                    loop: true,
+                });
+            }
+        });
+    }
 
     // INIT SWIPER
     const sliders = document.querySelectorAll('.swiper');
