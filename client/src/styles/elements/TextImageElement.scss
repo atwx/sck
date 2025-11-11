@@ -117,7 +117,9 @@
 
                 .section_text {
                     grid-column: 2 / 3;
-                    padding: 80px 30px 80px 0px;
+                    padding: 80px 0 80px 30px;
+                    margin-left: unset;
+                    margin-right: auto;
                 }
 
                 &.image--30{
@@ -135,14 +137,6 @@
                 &.image--70{
                     grid-template-columns: 70% 30%;
                 }
-            }
-        }
-
-        .section_text {
-            @include media(">=desktop") {
-                padding: 80px 0 80px 30px;
-                margin-left: unset;
-                margin-right: auto;
             }
         }
     }
