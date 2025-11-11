@@ -59,6 +59,10 @@
         .news_list {
             margin-bottom: 40px;
 
+            .news_link_overlay {
+                text-decoration: none;
+            }
+
             .news_item {
                 max-width: 80%;
                 display: flex;
@@ -68,10 +72,13 @@
                 transition: all 0.3s ease;
                 cursor: pointer;
                 z-index: 5;
-                margin-left: -15px;
-                padding-left: 15px;
                 transition: 0.2s ease-in-out;
                 color: var(--ColorText);
+
+                @include media(">=medium") {
+                    margin-left: -15px;
+                    padding-left: 15px;
+                }
 
                 &:hover {
                     background-color: var(--ColorSecondary);
@@ -126,6 +133,7 @@
             .news_list {
                 .news_item {
                     align-items: flex-start;
+                    max-width: 100%;
 
                     .news_item_content {
                         width: 100%;
@@ -138,8 +146,8 @@
                     }
 
                     &:hover {
-                        padding-left: 0;
-                        padding: 25px 15px 15px 15px;
+                        padding-left: 15px;
+                        // padding: 25px 15px 15px 15px;
                     }
                 }
             }
