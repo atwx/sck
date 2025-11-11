@@ -1,6 +1,6 @@
 {
   "client/src/bundles/bundle.js": {
-    "file": "bundle.js.js",
+    "file": "bundle.js",
     "isEntry": true,
     "src": "client/src/bundles/bundle.js"
   },

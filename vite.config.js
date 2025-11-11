@@ -24,8 +24,8 @@ export default defineConfig(({command}) => {
           'bundle.scss': './client/src/styles/bundle.scss',
         },
         output: {
-          entryFileNames: `[name].js`,
-          chunkFileNames: `assets/[name].js`,
+          entryFileNames: `[name]`,
+          chunkFileNames: `assets/[name]`,
           assetFileNames: `assets/[name].[ext]`
         }
       },
