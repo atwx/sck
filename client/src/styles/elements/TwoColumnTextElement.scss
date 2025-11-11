@@ -1,9 +1,9 @@
-.two-column-text-element {
+.section.section--TwoColumnTextElement {
     padding: 80px 0;
 
     &.bgc-primary {
         background-color: var(--ColorPrimary);
-        
+
         &.primary-white-text {
             .title-column .element-title,
             .text-column .element-text,
@@ -15,7 +15,7 @@
 
     &.bgc-secondary {
         background-color: var(--ColorSecondary);
-                
+
         &.secondary-white-text {
             .title-column .element-title,
             .text-column .element-text,
@@ -24,25 +24,26 @@
             }
         }
     }
-    
-    .container {
-        max-width: var(--MaxWidth);
-        margin: 0 auto;
+
+    .section_content {
         padding: 0 20px;
+        max-width: none;
     }
-    
+
     .two-column-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        
+        max-width: var(--MaxWidthContent);
+        margin: 0 auto;
+
         @include media("<desktop") {
             grid-template-columns: 1fr;
             gap: 40px;
             text-align: center;
         }
     }
-    
+
     .title-column {
         .element-title {
             margin: 0;
@@ -54,28 +55,28 @@
             }
         }
     }
-    
+
     .text-column {
         .element-text {
             font-size: 1.1rem;
             line-height: 1.6;
             color: var(--ColorHeadline);
-            
+
             @media (max-width: 768px) {
                 font-size: 1rem;
             }
-            
+
             p {
                 color: var(--ColorText);
                 margin-bottom: 1rem;
-                
+
                 &:last-child {
                     margin-bottom: 0;
                 }
             }
         }
     }
-    
+
     &.title-right {
         .two-column-content {
             .title-column {
@@ -87,10 +88,10 @@
             .text-column {
                 padding-right: 30px;
             }
-            
+
             @include media("<desktop") {
                 grid-template-columns: 1fr;
-                
+
                 .text-column {
                     padding-right: unset;
                 }
@@ -101,19 +102,19 @@
             }
         }
     }
-    
+
     &.title-vertical-top {
         .two-column-content {
             align-items: flex-start;
         }
     }
-    
+
     &.title-vertical-center {
         .two-column-content {
             align-items: center;
         }
     }
-    
+
     &.title-vertical-bottom {
         .two-column-content {
             align-items: flex-end;
