@@ -6,7 +6,7 @@
     .section_content {
         display: grid;
         align-items: stretch;
-        max-width: 100%;
+        //max-width: 100%;
         grid-template-columns: 1fr;
 
         &:has(.section_links), &:has(.section_image) {
