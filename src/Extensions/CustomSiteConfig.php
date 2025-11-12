@@ -68,15 +68,19 @@ class CustomSiteConfig extends Extension
     ];
 
     private static $has_one = [
-        'Logo' => Image::class,
-        'Favicon' => Image::class,
+        'Logo' => File::class,
+        'WhiteLogo' => File::class,
+        'FooterLogo' => File::class,
+        'Favicon' => File::class,
         'SocialImage' => Image::class,
-        'AppleTouchIcon' => Image::class,
+        'AppleTouchIcon' => File::class,
         'Arrow' => File::class
     ];
 
     private static $owns = [
         'Logo',
+        'WhiteLogo',
+        'FooterLogo',
         'Favicon',
         'SocialImage',
         'AppleTouchIcon',
@@ -85,8 +89,6 @@ class CustomSiteConfig extends Extension
 
     public function updateCMSFields(FieldList $fields)
     {
-
-
         $fields->addFieldToTab("Root.Socials", new TextField("LinkYouTube", "YouTube"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkInstagram", "Instagram"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkFacebook", "Facebook"));
