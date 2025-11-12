@@ -1,4 +1,4 @@
-:root {
+body {
     --MaxWidth: $SiteConfig.MaxWidthValue;
     --MaxWidthContent: $SiteConfig.MaxWidthContentValue;
     --ColorPrimary: $SiteConfig.ColorPrimaryValue;
