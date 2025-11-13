@@ -98,7 +98,6 @@ class ShowcaseElement extends BaseElement
             'Position des Textkastens',
             $this->getContentPositionOptions()
         );
-        $contentPositionField->setDescription('1 = Vertikal, 2 = Horizontal');
 
         $fields->addFieldToTab('Root.Main', $contentPositionField);
 
