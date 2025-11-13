@@ -14,7 +14,7 @@ use SilverStripe\Forms\SearchableMultiDropdownField;
 /**
  * Class \Atwx\Sck\Elements\ContactPersonsElement
  *
- * @property string $MainTitle
+ * @property string $Title
  * @property string $Person1Name
  * @property string $Person1Position
  * @property string $Person1Department
@@ -82,27 +82,18 @@ class PersonElement extends BaseElement
         return 'Personen';
     }
 
-    #[Override]
-    public function getTitle()
-    {
-        return $this->MainTitle ?: 'Personen Element';
-    }
 
     #[Override]
     public function getSummary()
     {
         $summary = [];
 
-        if ($this->MainTitle) {
-            $summary[] = "Titel: " . $this->MainTitle;
-        }
-
         $personCount = $this->Persons()->count();
 
         if ($personCount > 1) {
             $summary[] = $personCount . " Personen";
         } elseif ($personCount === 1) {
-            $summary[] = $personCount . " Person: " . $this->Persons()->first()->Name;
+            $summary[] = $personCount . " Person: " . $this->Persons()->first()->getTitle();
         } else {
             $summary[] = "Keine Personen konfiguriert";
         }

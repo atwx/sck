@@ -1,7 +1,7 @@
 <div class="contact-persons-element">
     <div class="container">
-        <% if $MainTitle %>
-        <h2 class="main-title">$MainTitle</h2>
+        <% if $Title %>
+        <h2 class="hl2 main-title">$Title</h2>
         <% end_if %>
         
         <div class="contact-persons-grid">
@@ -15,7 +15,7 @@
                         <% end_if %>
                         
                         <div class="contact-info">
-                            <h3 class="contact-name">$Title</h3>
+                            <h3 class="contact-name">$getTitle()</h3>
                             <% if $Function %>
                                 <div class="contact-function">$Function</div>
                             <% end_if %>

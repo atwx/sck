@@ -1,6 +1,6 @@
 body{
     font-family: var(--FontBody);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -14,7 +14,7 @@ h1{
 }
 
 .hl2 {
-    font-size: 44px;
+    font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
     font-weight: 500;
 }
 

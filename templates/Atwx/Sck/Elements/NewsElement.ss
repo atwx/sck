@@ -2,7 +2,7 @@
     <div class="section_content">
         <div class="section_intro">
             <% if $Title %>
-                <h2 class="section_title">$Title</h2>
+                <h2 class="hl2 section_title">$Title</h2>
             <% end_if %>
             <% if $Subtitle %>
                 <h3 class="section_subtitle">$Subtitle</h3>
@@ -26,7 +26,7 @@
                             <% end_if %>
                             <div class="news_item_content">
                                 <% if $Title %>
-                                    <h4 class="news_item_title">$Title</h4>
+                                    <p class="news_item_title">$Title</p>
                                 <% end_if %>
                             </div>
                         </div>

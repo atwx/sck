@@ -3,7 +3,7 @@
         <div class="two-column-content">
             <% if $LeftTitle %>
                 <div class="title-column">
-                        <h2 class="element-title">$LeftTitle</h2>
+                        <h2 class="hl2 element-title">$LeftTitle</h2>
                 </div>
             <% end_if %>
             <% if $RightText %>

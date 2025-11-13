@@ -45,7 +45,6 @@
             text-align: left;
 
             .section_title {
-                font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
                 font-weight: 500;
                 line-height: 1.1;
                 margin-bottom: 2rem;
@@ -55,7 +54,6 @@
             }
 
             .section_text_content {
-                font-size: 1.125rem;
                 line-height: 1.7;
                 color: var(--ColorText);
                 align-self: end;

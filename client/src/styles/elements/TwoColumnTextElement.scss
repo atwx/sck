@@ -48,7 +48,6 @@
         .element-title {
             margin: 0;
             color: var(--ColorHeadline);
-            font-size: clamp(2.375rem, 2rem + 1.2vw, 2.75rem);
 
             @include media(">=desktop") {
                 padding-right: 30px;
@@ -58,13 +57,8 @@
 
     .text-column {
         .element-text {
-            font-size: 1.1rem;
             line-height: 1.6;
             color: var(--ColorHeadline);
-
-            @media (max-width: 768px) {
-                font-size: 1rem;
-            }
 
             p {
                 color: var(--ColorText);

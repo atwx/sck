@@ -145,7 +145,6 @@
                 }
 
                 .text {
-                    font-size: 0.95rem;
                     margin-bottom: 1rem;
                     line-height: 1.5;
 
@@ -157,10 +156,6 @@
                     }
                     &.align-right {
                         text-align: right;
-                    }
-
-                    @include media("<medium") {
-                        font-size: 0.95rem;
                     }
                 }
 

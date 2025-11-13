@@ -19,7 +19,6 @@
             padding-left: 0;
 
             @media (max-width: 768px) {
-                font-size: 2rem;
                 text-align: center;
             }
         }
@@ -69,11 +68,10 @@
                         flex-shrink: 1;
                         padding: 20px;
                         font-weight: 400;
-                        font-size: 18px;
 
                         .card-slide-title{
                             font-weight: 500;
-                            font-size: 26px;
+                            font-size: 1.625rem;
                             line-height: 100%;
                             margin-top: 10px;
                             margin-bottom: 20px;

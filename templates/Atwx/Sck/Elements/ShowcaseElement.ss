@@ -9,7 +9,7 @@
         <div class="showcase__content {$ContentPositionClass}">
             <div class="showcase__content-inner">
                 <% if $ShowTitle && $Title %>
-                    <h2 class="showcase__title">$Title</h2>
+                    <h2 class="hl2 showcase__title">$Title</h2>
                 <% end_if %>
 
                 <% if $Content %>
