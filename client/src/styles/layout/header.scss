@@ -24,11 +24,22 @@
 
             .swiper-slide {
                 width: 100%;
+                position: relative;
+
+                .darkness {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                }
 
                 .swiper-text{
                   position: absolute;
                   bottom: 120px;
                   left: 85px;
+                  z-index: 2;
 
                   h2 {
                       margin: 0;
@@ -63,6 +74,8 @@
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  position: relative;
+                  z-index: 0;
                 }
             }
         }

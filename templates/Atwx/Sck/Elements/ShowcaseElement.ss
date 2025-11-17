@@ -6,6 +6,10 @@
             </div>
         <% end_if %>
 
+        <% if $DarknessOverlay > 0 %>
+            <div class="showcase__darkness" style="background-color: rgba(0, 0, 0, {$OpacityValue});"></div>
+        <% end_if %>
+
         <div class="showcase__content {$ContentPositionClass}">
             <div class="showcase__content-inner">
                 <% if $ShowTitle && $Title %>

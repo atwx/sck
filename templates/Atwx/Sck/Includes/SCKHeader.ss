@@ -8,6 +8,9 @@
         <div class="swiper-wrapper">
             <% loop $HeroSlides %>
                 <div class="swiper-slide">
+                    <% if $DarknessOverlay > 0 %>
+                        <div class="darkness" style="background-color: rgba(0, 0, 0, {$OpacityValue});"></div>
+                    <% end_if %>
                     <div class="swiper-text">
                         <% if $HeroText %>
                             <div class="hero_text">$HeroText</div>

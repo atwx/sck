@@ -6,6 +6,7 @@ use Override;
 use SilverStripe\Assets\Image;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\Forms\NumericField;
 use DNADesign\Elemental\Models\BaseElement;
 
 /**
@@ -25,6 +26,10 @@ class HeroElement extends BaseElement
         "DarknessOverlay" => "Float(4)",
     ];
 
+    private static $defaults = [
+        "DarknessOverlay" => 40,
+    ];
+
     private static $has_one = [
         "Image" => Image::class,
         "Button" => Link::class,
@@ -37,6 +42,7 @@ class HeroElement extends BaseElement
 
     private static $field_labels = [
         "Title" => "Titel",
+        "DarknessOverlay" => "Dunkles Overlay (%)",
     ];
 
     private static $table_name = 'SCK_HeroElement';
@@ -73,7 +79,7 @@ class HeroElement extends BaseElement
         }
 
         if ($this->DarknessOverlay > 0) {
-            $summary[] = "Dunkelheit: " . $this->DarknessOverlay;
+            $summary[] = "Dunkelheit: " . $this->DarknessOverlay . "%";
         }
 
         return implode(" | ", $summary) ?: "Hero Element";
@@ -87,6 +93,25 @@ class HeroElement extends BaseElement
         $fields->removeByName('ButtonID');
         $fields->addFieldToTab('Root.Main', LinkField::create('Button'));
 
+        // Replace DarknessOverlay field with NumericField
+        $fields->removeByName('DarknessOverlay');
+        $darknessField = NumericField::create('DarknessOverlay', $this->fieldLabel('DarknessOverlay'))
+            ->setDescription('Geben Sie einen Wert zwischen 0 und 100 ein (z.B. 90 für 90% Dunkelheit)')
+            ->setAttribute('min', 0)
+            ->setAttribute('max', 100)
+            ->setAttribute('step', 1);
+        $fields->addFieldToTab('Root.Main', $darknessField);
+
         return $fields;
+    }
+
+    /**
+     * Converts the percentage value (0-100) to a decimal value (0.0-1.0) for CSS opacity
+     *
+     * @return float
+     */
+    public function getOpacityValue(): float
+    {
+        return $this->DarknessOverlay > 0 ? $this->DarknessOverlay / 100 : 0;
     }
 }

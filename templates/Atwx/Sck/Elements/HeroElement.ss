@@ -7,7 +7,7 @@
         <% end_if %>
         <style>
             :root {
-                --HeroDarkness: rgba(0, 0, 0, 0.{$DarknessOverlay});
+                --HeroDarkness: rgba(0, 0, 0, {$OpacityValue});
             }
         </style>
         <div class="darkness"></div>

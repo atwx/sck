@@ -7,6 +7,7 @@ use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\NumericField;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
@@ -17,6 +18,11 @@ class HeroSlide extends DataObject
     private static $db = [
         "HeroText" => "HTMLText",
         'SortOrder' => 'Int',
+        'DarknessOverlay' => 'Float(4)',
+    ];
+
+    private static $defaults = [
+        "DarknessOverlay" => 40,
     ];
 
     private static $has_one = [
@@ -41,6 +47,7 @@ class HeroSlide extends DataObject
     private static $field_labels = [
         'Image' => 'Bild',
         'SortOrder' => 'Reihenfolge',
+        'DarknessOverlay' => 'Dunkles Overlay (%)',
     ];
 
     private static $table_name = 'SCK_HeroSlide';
@@ -67,6 +74,11 @@ class HeroSlide extends DataObject
                 ->setDescription('Der Text, der im Hero-Bereich angezeigt wird.'),
             UploadField::create('Image', 'Bild')
                 ->setFolderName('HeroSlides'),
+            NumericField::create('DarknessOverlay', $this->fieldLabel('DarknessOverlay'))
+                ->setDescription('Geben Sie einen Wert zwischen 0 und 100 ein (z.B. 90 für 90% Dunkelheit)')
+                ->setAttribute('min', 0)
+                ->setAttribute('max', 100)
+                ->setAttribute('step', 1)
         );
 
         $fields->removeByName('SortOrder');
@@ -102,5 +114,15 @@ class HeroSlide extends DataObject
 
         // Fallback zu HeroSlide mit ID
         return 'HeroSlide' . ($this->ID ? ' #' . $this->ID : '');
+    }
+
+    /**
+     * Converts the percentage value (0-100) to a decimal value (0.0-1.0) for CSS opacity
+     *
+     * @return float
+     */
+    public function getOpacityValue(): float
+    {
+        return $this->DarknessOverlay > 0 ? $this->DarknessOverlay / 100 : 0;
     }
 }
