@@ -82,6 +82,10 @@
                 padding-right: 30px;
             }
 
+            .title-column {
+                order: 1;
+            }
+            
             @include media("<desktop") {
                 grid-template-columns: 1fr;
 
