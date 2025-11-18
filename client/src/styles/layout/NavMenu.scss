@@ -15,15 +15,19 @@
 
     .nav_menu_wrap {
       margin: 0 auto;
-      padding: 0;
+      padding: 0 50px;
       list-style: none;
       display: flex;
       justify-content: stretch;
       max-width: var(--MaxWidth);
 
-       @include mediasize(max-desktop) {
-          flex-direction: column;
-      }
+        @include mediasize(max-desktop) {
+            flex-direction: column;
+            padding: 0 20px;
+        }
+        @include mediasize(max-medium) {
+            padding: 0;
+        }
     }
 
     .nav_category{
