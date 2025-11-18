@@ -176,6 +176,7 @@
 
         &.nav_strip--default {
             background-color: var(--ColorWhite);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
             .nav_brand_white {
                 display: none;
@@ -223,6 +224,7 @@
             right: 0;
             z-index: 1000;
             background-color: var(--ColorWhite);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
             .nav_brand_white {
                 display: none;
@@ -341,6 +343,7 @@
 
     .header_nav_strip--alternative {
         background-color: white;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
         .nav_menu_button {
             background-color: #2c3e50;
