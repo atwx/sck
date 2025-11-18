@@ -189,6 +189,7 @@
 
         &.nav_strip--alternative {
             background-color: var(--ColorPrimary);
+            transition: background-color 0.3s ease;            
 
             .nav_brand_white {
                 display: block;
@@ -225,6 +226,7 @@
             z-index: 1000;
             background-color: var(--ColorWhite);
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
 
             .nav_brand_white {
                 display: none;
