@@ -7,6 +7,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Core\Validation\ValidationResult;
 
 /**
  * Class \Atwx\Sck\Elements\TwoColumnTextElement
@@ -23,7 +24,16 @@ class TwoColumnTextElement extends BaseElement
         'RightText' => 'HTMLText',
         'Layout' => "Enum('title-left,title-right', 'title-left')",
         'TitleVerticalPosition' => "Enum('top,center,bottom', 'center')",
+        'TitleVerticalPositionAlternative' => 'Varchar(16)',
         'BackgroundColor' => 'Varchar(32)',
+        'TitleWidth' => 'Int',
+    ];
+
+    private static $defaults = [
+        'Layout' => 'title-left',
+        'TitleVerticalPosition' => 'center',
+        'BackgroundColor' => '',
+        'TitleWidth' => 50,
     ];
 
     private static $field_labels = [
@@ -64,13 +74,20 @@ class TwoColumnTextElement extends BaseElement
                 'center' => 'Mittig',
                 'bottom' => 'Unten'
             ])
-                ->setDescription('Bestimmt die vertikale Ausrichtung des Titels'),
+                ->setDescription('Bestimmt die vertikale Position des Titels'),
+
+                
+            TextField::create('TitleVerticalPositionAlternative', 'Alternative eigene vertikale Position (in % / px)')
+                ->setDescription('Bestimmt die vertikale Position des Titels in Prozent oder Pixel (z.B. 30% oder 30px). Diese Einstellung überschreibt die Auswahl oben.'),
+
             DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
                 '' => 'Keine',
                 'bgc-primary' => 'Primärfarbe',
                 'bgc-secondary' => 'Sekundärfarbe'
             ])
                 ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
+            TextField::create('TitleWidth', 'Titel Breite (in %)')
+                ->setDescription('Bestimmt die Breite der Titel-Spalte in Prozent (z.B. 30 für 30%)')
         ]);
 
         return $fields;
@@ -115,5 +132,23 @@ class TwoColumnTextElement extends BaseElement
         $summary[] = "Position: " . $positionLabel;
 
         return implode(" | ", $summary) ?: "Zwei-Spalten Text Element";
+    }
+
+    #[Override]
+    public function validate(): ValidationResult
+    {
+        $result = parent::validate();
+
+        if ($this->TitleVerticalPositionAlternative) {
+            $value = trim($this->TitleVerticalPositionAlternative);
+            if (!preg_match('/^(\d+(\.\d+)?)(px|%)$/', $value)) {
+                $result->addFieldError(
+                    'TitleVerticalPositionAlternative',
+                    'Der Wert muss mit % oder px enden (z.B. 30% oder 30px)'
+                );
+            }
+        }
+
+        return $result;
     }
 }

@@ -32,8 +32,7 @@
 
     .two-column-content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+        grid-template-columns: var(--TitleWidth, 50%) calc(100% - var(--TitleWidth, 50%));
         max-width: var(--MaxWidthContent);
         margin: 0 auto;
 
@@ -41,10 +40,20 @@
             grid-template-columns: 1fr;
             gap: 40px;
             text-align: center;
+            min-height: auto;
         }
     }
 
     .title-column {
+        display: flex;
+        flex-direction: column;
+        padding-top: var(--TitleVerticalPosition);
+        box-sizing: border-box;
+
+        &.title-vertical-bottom, &.title-vertical-center, &.title-vertical-top {
+            justify-content: center;
+        }
+        
         .element-title {
             margin: 0;
             color: var(--ColorHeadline);
@@ -100,6 +109,7 @@
         }
     }
 
+
     &.title-vertical-top {
         .two-column-content {
             align-items: flex-start;
@@ -117,4 +127,5 @@
             align-items: flex-end;
         }
     }
+
 }
