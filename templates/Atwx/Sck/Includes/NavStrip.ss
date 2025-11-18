@@ -1,6 +1,6 @@
 <div class="header_nav_strip nav_strip--$Version">
     <div class="nav_container">
-        <a href="/" class="nav_brand">
+        <a href="/" class="nav_brand ignoreLinkPrefix">
             <img class="nav_brand_white" src="_resources/app/client/images/AfW logo neu weiss.png" alt="Cuxhaven Logo"> <!-- TODO: Make Logo changeable -->
             <img class="nav_brand_color" src="_resources/app/client/images/afw_logo_farbig.svg" alt="Alternative Logo"> <!-- TODO: Make Logo changeable -->
         </a>

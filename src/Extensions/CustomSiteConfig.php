@@ -55,6 +55,7 @@ class CustomSiteConfig extends Extension
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
         'ColorBackground' => 'Varchar(7)',
+        'LinkStyle' => 'Varchar(50)',
         'MenuBackgroundColor' => 'Varchar(7)',
         'MenuButtonColor' => 'Varchar(7)',
         'MenuTextColor' => 'Varchar(7)',
@@ -89,17 +90,20 @@ class CustomSiteConfig extends Extension
 
     public function updateCMSFields(FieldList $fields)
     {
+        // Socials Tab
         $fields->addFieldToTab("Root.Socials", new TextField("LinkYouTube", "YouTube"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkInstagram", "Instagram"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkFacebook", "Facebook"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkTwitter", "Twitter"));
         $fields->addFieldToTab("Root.Socials", new TextField("LinkDiscord", "Discord"));
 
+        // Icons Tab
         $fields->addFieldToTab("Root.Icons", new UploadField("Logo", "Logo"));
         $fields->addFieldToTab("Root.Icons", new UploadField("Favicon", "Favicon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("AppleTouchIcon", "Apple Touch Icon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("SocialImage", "Social Image"));
 
+        // Layout Tab
         $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidth", "Maximale Breite")
             ->setDescription("Maximale Breite des Contents (z.B. 1200px, 100%, 1400px)")
             ->setAttribute('placeholder', '1200px'));
@@ -109,6 +113,7 @@ class CustomSiteConfig extends Extension
 
         $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
 
+        // Styling Tab
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")
             ->setDescription("Hauptfarbe der Website")
             ->setAttribute('type', 'color'));
@@ -125,13 +130,19 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorText", "Textfarbe")
             ->setDescription("Farbe des Fließtextes")
             ->setAttribute('type', 'color'));
-
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorBackground", "Hintergrundfarbe")
             ->setDescription("Hintergrundfarbe der Website")
             ->setAttribute('type', 'color'));
-
         $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
+        $fields->addFieldToTab("Root.Styling", DropdownField::create('LinkStyle', 'Link Style', [
+            'underline' => 'Unterstrichen',
+            'triangle_primary' => 'Dreieck Primärfarbe',
+            'triangle_secondary' => 'Dreieck Sekundärfarbe',
+        ])
+            ->setDescription("Stil der Links auf der Website"));
+
+        // Fonts Tab
         $fields->addFieldToTab("Root.Schriften.Header", DropdownField::create('HeaderFont', 'Header Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
@@ -143,6 +154,7 @@ class CustomSiteConfig extends Extension
             'Open Sans' => 'Open Sans',
         ]));
 
+        // Custom Tab
         $fields->addFieldToTab("Root.Custom", new TextareaField("CustomCSS", "Custom CSS"));
     }
 

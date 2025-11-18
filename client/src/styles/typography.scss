@@ -43,31 +43,130 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: var(--ColorPrimary);
+}
 
-    &:hover {
-        color: var(--ColorSecondary);
+body[data-link-style="underline"]{
+
+    a:not(.link--button):not(.ignoreLinkPrefix) {
+        text-decoration: underline;
+        color: var(--ColorPrimary);
+
+        &:hover {
+            color: var(--ColorSecondary);
+        }
+    }
+
+    .bgc-primary a:not(.link--button) {
+        text-decoration: underline;
+        color: var(--ColorWhite);
+
+        &:hover {
+            color: var(--ColorSecondary);
+        }
+    } 
+
+    
+    .bgc-secondary a:not(.link--button) {
+        text-decoration: underline;
+        color: var(--ColorWhite);
+        &:hover {
+            color: var(--ColorPrimary);
+        }
     }
 }
 
-.bgc-primary {
-    a {                
-        &:not(.link--button) {
-            text-decoration: underline;
-            color: var(--ColorWhite);
+body[data-link-style="triangle_primary"]{
 
-            &:hover {
+    a:not(.link--button):not(.ignoreLinkPrefix) {
+                
+        &::before {
+            content: "▶ ";
+            color: var(--ColorPrimary);
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            color: var(--ColorSecondary);
+            
+            &::before {
                 color: var(--ColorSecondary);
+            }
+        }
+    }
+
+    .bgc-primary a:not(.link--button):not(.ignoreLinkPrefix) {
+        color: var(--ColorSecondary);
+
+        &::before {
+            color: var(--ColorSecondary);
+        }
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    
+    .bgc-secondary a:not(.link--button):not(.ignoreLinkPrefix) {
+        color: var(--ColorPrimary);
+        
+        &:hover {
+            text-decoration: underline;
+
+            &::before {
+                color: var(--ColorPrimary);
             }
         }
     }
 }
 
-.bgc-secondary {
-    a {                
-        &:not(.link--button) {
+body[data-link-style="triangle_secondary"]{
+
+    a:not(.link--button):not(.ignoreLinkPrefix) {
+        
+        color: var(--ColorSecondary);
+
+        &::before {
+            content: "▶ ";
+            color: var(--ColorSecondary);
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            color: var(--ColorPrimary);
+            
+            &::before {
+                color: var(--ColorPrimary);
+            }
+        }
+    }
+
+    .bgc-primary a:not(.link--button):not(.ignoreLinkPrefix) {
+        color: var(--ColorSecondary);
+
+        &::before {
+            color: var(--ColorSecondary);
+        }
+        
+        &:hover {
             text-decoration: underline;
-            color: var(--ColorWhite);
-            &:hover {
+        }
+    }
+
+    
+    .bgc-secondary a:not(.link--button):not(.ignoreLinkPrefix) {
+        color: var(--ColorPrimary);
+
+        &::before {
+            color: var(--ColorPrimary);
+        }
+        
+        &:hover {
+            text-decoration: underline;
+
+            &::before {
                 color: var(--ColorPrimary);
             }
         }

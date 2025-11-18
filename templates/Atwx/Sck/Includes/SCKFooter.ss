@@ -10,7 +10,7 @@
                 <div class="footer_text">Telefon +49 (0) 4721 / 599-70 (Stadt Cuxhaven)</div>
                 <div class="footer_text">Telefon +49 (0) 4721 / 599-60 (Landkreis Cuxhaven)</div>
                 <div class="footer_text">Fax +49 (0) 4721 / 599-629</div>
-                <div class="footer_text">E-Mail <a href="mailto:info@afw-cuxhaven.de">info@afw-cuxhaven.de</a></div>
+                <div class="footer_text">E-Mail <a href="mailto:info@afw-cuxhaven.de" class="ignoreLinkPrefix">info@afw-cuxhaven.de</a></div>
             </div>
         </div>
         <div class="footer_right">
@@ -20,15 +20,15 @@
             <div class="footer_menu">
                 <ul role="list" class="footer_menu_list w-list-unstyled">
                     <li class="footer_menu_item">
-                        <a href="/impressum" class="footer_text">Impressum</a>
+                        <a href="/impressum" class="footer_text ignoreLinkPrefix">Impressum</a>
                     </li>
                     <li class="footer_menu_item">
-                        <a href="/datenschutz" class="footer_text">Datenschutz</a>
+                        <a href="/datenschutz" class="footer_text ignoreLinkPrefix">Datenschutz</a>
                     </li>
                     <% loop $Menu(1) %>
                     <% if $MenuPosition == "footer" %>
                     <li class="footer_menu_item">
-                        <a href="$Link" class="footer_text">$MenuTitle</a>
+                        <a href="$Link" class="footer_text ignoreLinkPrefix">$MenuTitle</a>
                     </li>
                     <% end_if %>
                     <% end_loop %>

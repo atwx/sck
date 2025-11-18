@@ -22,7 +22,7 @@
                         <div class="swiper-slide card-slide $BackgroundColor">
                             <% if $BackgroundImage %>
                                 <% if $Button %>
-                                    <a href="$Button.URL" class="card-slide-image" <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
+                                    <a href="$Button.URL" class="card-slide-image ignoreLinkPrefix" <% if $Button.OpenInNew %>target="_blank"<% end_if %>>
                                         <img src="$BackgroundImage.AbsoluteURL" alt="$Title" loading="lazy">
                                         <div class="card-slide-overlay"></div>
                                     </a>

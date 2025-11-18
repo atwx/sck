@@ -35,7 +35,7 @@
 
         <% include Atwx/Sck/Includes/SCKStylings %>
     </head>
-    <body class="project-body">
+    <body class="project-body" data-link-style="$SiteConfig.LinkStyle">
         <div class="area_header">
             <% include Atwx/Sck/Includes/SCKHeader %>
         </div>

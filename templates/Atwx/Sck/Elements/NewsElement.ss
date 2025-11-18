@@ -17,7 +17,7 @@
         <% if $NewsItems %>
             <div class="news_list">
                 <% loop $NewsItems %>
-                    <a href="$Link" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
+                    <a href="$Link" class="news_link_overlay ignoreLinkPrefix" aria-label="Mehr erfahren zu $Title">
                         <div class="news_item">
                             <% if $Top.PrefixIcon %>
                                 <div class="news_item_prefix">
