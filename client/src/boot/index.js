@@ -86,8 +86,9 @@ window.document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: parseInt(slider.dataset.slidesperview) || 1,
             spaceBetween: parseInt(slider.dataset.spacebetween) || 10,
             centeredSlides: slider.dataset.centeredslides === 'true',
-            // centeredSlidesBounds: slider.dataset.centeredslides === 'true',
+            centeredSlidesBounds: slider.dataset.centeredslides === 'true' && !(slider.dataset.loop === 'true' || slider.dataset.loop === '1'),
             loopAdditionalSlides: 3,
+            slidesPerGroup: 1,
             allowTouchMove: slider.dataset.allowtouchmove || 'true',
 
             autoplay: slider.dataset.autoplay === 'true' || slider.dataset.autoplay === '1' ? {

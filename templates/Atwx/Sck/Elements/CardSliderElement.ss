@@ -62,7 +62,7 @@
                     </button>
                 <% end_if %>
 
-                <% if $ShowDots && $Cards.Count > 1 %>
+                <% if $ShowDots && $Cards.Count > 1 && $Loop %>
                     <div class="slider-dots">
                         <div class="swiper-pagination"></div>
                     </div>
