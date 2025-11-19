@@ -15,12 +15,12 @@
                         <% loop $Menu(1) %>
                             <% if $MenuPosition == "main" %>
                                 <li class="nav_category">
-                                    <a href="$Link" class="nav_category_title ignoreLinkPrefix<% if $LinkOrSection == "section" %> nav_link--active<% end_if %>">$MenuTitle</a>
+                                    <a href="$Link" class="nav_category_title ignoreLinkPrefix nav_link--$LinkingMode">$MenuTitle</a>
                                     <% if $Children %>
                                         <ul>
                                             <% loop $Children %>
                                                 <li>
-                                                    <a href="$Link" class="nav_sublink ignoreLinkPrefix<% if $LinkOrSection == "section" %> nav_sublink--active<% end_if %>">$MenuTitle</a>
+                                                    <a href="$Link" class="nav_sublink ignoreLinkPrefix nav_link--$LinkingMode">$MenuTitle</a>
                                                 </li>
                                             <% end_loop %>
                                         </ul>
