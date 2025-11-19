@@ -74,7 +74,6 @@ window.document.addEventListener('DOMContentLoaded', () => {
     // INIT SWIPER
     const sliders = document.querySelectorAll('.swiper');
     sliders.forEach(function (slider) {
-      console.log('Initializing swiper slider', slider.dataset);
         const swiper = new Swiper(slider, {
             // configure Swiper to use modules
             modules: [Pagination, Navigation, Autoplay, EffectFade],
@@ -83,15 +82,16 @@ window.document.addEventListener('DOMContentLoaded', () => {
                 crossFade: true
             },
             direction: slider.dataset.direction || 'horizontal',
-            loop: slider.dataset.loop === 'true',
+            loop: slider.dataset.loop === 'true' || slider.dataset.loop === '1',
             slidesPerView: parseInt(slider.dataset.slidesperview) || 1,
             spaceBetween: parseInt(slider.dataset.spacebetween) || 10,
             centeredSlides: slider.dataset.centeredslides === 'true',
-            centeredSlidesBounds: slider.dataset.centeredslides === 'true',
+            // centeredSlidesBounds: slider.dataset.centeredslides === 'true',
+            loopAdditionalSlides: 3,
             allowTouchMove: slider.dataset.allowtouchmove || 'true',
 
             autoplay: slider.dataset.autoplay === 'true' || slider.dataset.autoplay === '1' ? {
-                delay: slider.dataset.autoplaydelay || 10000,
+                delay: parseInt(slider.dataset.autoplayDelay) || 10000,
             } : false,
 
             breakpoints: {

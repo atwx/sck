@@ -173,6 +173,29 @@
                     transform: translate(-50%, -80%) rotate(45deg);
                 }
             }
+
+            .slider-dots {
+                margin-top: 30px;
+
+                .swiper-pagination {
+                    position: relative;
+                    bottom: auto;
+
+                    .swiper-pagination-bullet {
+                        width: 30px;
+                        height: 10px;
+                        background: var(--ColorWhite);
+                        opacity: 1;
+                        border-radius: 0;
+                        margin: 0 5px;
+                        transition: background-color 0.3s ease;
+
+                        &.swiper-pagination-bullet-active {
+                            background: var(--ColorSecondary);
+                        }
+                    }
+                }
+            }
         }
     }
 }

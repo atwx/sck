@@ -19,6 +19,7 @@ class CardSliderElement extends BaseElement
         'ShowDots' => 'Boolean',
         'ShowArrows' => 'Boolean',
         'Autoplay' => 'Boolean',
+        'Loop' => 'Boolean',
         'AutoplaySpeed' => 'Int',
         'IntroText' => 'HTMLText',
     ];
@@ -45,6 +46,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => true,
         'Autoplay' => false,
         'AutoplaySpeed' => 5000,
+        'Loop' => true,
     ];
 
     private static $field_labels = [
@@ -53,6 +55,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => 'Pfeile anzeigen',
         'Autoplay' => 'Automatisches Abspielen',
         'AutoplaySpeed' => 'Abspielgeschwindigkeit (ms)',
+        'Loop' => 'Endlos-Schleife',
         'Cards' => 'Kacheln',
     ];
 
@@ -78,6 +81,9 @@ class CardSliderElement extends BaseElement
 
             CheckboxField::create('ShowArrows', 'Pfeile anzeigen')
                 ->setDescription('Zeigt Vor/Zurück-Pfeile am Slider'),
+
+            CheckboxField::create('Loop', 'Endlos-Schleife')
+                ->setDescription('Slider läuft nach dem letzten Slide wieder von vorne los'),
 
             CheckboxField::create('Autoplay', 'Automatisches Abspielen')
                 ->setDescription('Slider wechselt automatisch zur nächsten Folie'),

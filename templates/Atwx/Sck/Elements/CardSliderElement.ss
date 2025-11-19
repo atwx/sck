@@ -10,10 +10,10 @@
             <div class="swiper cards-slider"
                 data-behaviour="swiper"
                 data-autoplay="$Autoplay"
-                data-autoplay-delay="$AutoplayDelay"
-                data-effect="$TransitionEffect"
-                data-pagination="$ShowPagination"
-                data-pagination-position="$PaginationPosition"
+                data-autoplay-delay="$AutoplaySpeed"
+                data-loop="$Loop"
+                data-effect="slide"
+                data-pagination="$ShowDots"
                 data-slidesperview="3"
                 data-centeredslides="true">
 
@@ -62,9 +62,9 @@
                     </button>
                 <% end_if %>
 
-                <% if $ShowPagination && $Cards.Count > 1 %>
+                <% if $ShowDots && $Cards.Count > 1 %>
                     <div class="slider-dots">
-                        <div class="swiper-pagination swiper-pagination--$PaginationPosition"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 <% end_if %>
             </div>
