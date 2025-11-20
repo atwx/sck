@@ -75,22 +75,20 @@ class CardSliderElement extends BaseElement
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('SliderTitle', 'Slider Titel')
                 ->setDescription('Der Haupttitel über dem Slider'),
-
-            CheckboxField::create('ShowDots', 'Punkte anzeigen')
-                ->setDescription('Zeigt Navigationspunkte unter dem Slider'),
-
-            CheckboxField::create('ShowArrows', 'Pfeile anzeigen')
-                ->setDescription('Zeigt Vor/Zurück-Pfeile am Slider'),
-
             CheckboxField::create('Loop', 'Endlos-Schleife')
                 ->setDescription('Slider läuft nach dem letzten Slide wieder von vorne los'),
-
             CheckboxField::create('Autoplay', 'Automatisches Abspielen')
                 ->setDescription('Slider wechselt automatisch zur nächsten Folie'),
-
             NumericField::create('AutoplaySpeed', 'Abspielgeschwindigkeit (ms)')
                 ->setDescription('Zeit in Millisekunden zwischen den Folien (z.B. 5000 = 5 Sekunden)')
                 ->setValue(5000),
+        ]);
+
+        $fields->addFieldsToTab('Root.Style', [
+            CheckboxField::create('ShowArrows', 'Pfeile anzeigen')
+                ->setDescription('Zeigt Vor/Zurück-Pfeile am Slider'),
+            CheckboxField::create('ShowDots', 'Punkte anzeigen')
+                ->setDescription('Zeigt Navigationspunkte unter dem Slider'),
         ]);
 
         if ($this->exists()) {

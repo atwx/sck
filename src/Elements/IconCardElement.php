@@ -136,7 +136,8 @@ class IconCardElement extends BaseElement
         return $blockSchema;
     }
 
-    public function SiteColorPrimary() {
+    public function SiteColorPrimary()
+    {
         return SiteConfig::current_site_config()->ColorPrimary;
     }
 
@@ -145,60 +146,35 @@ class IconCardElement extends BaseElement
     {
         $fields = parent::getCMSFields();
         $fields->removeByName('ButtonID');
-        $fields->addFieldToTab('Root.Main', LinkField::create('Button'));
+        $fields->addFieldsToTab('Root.Main', [
+            LinkField::create('Button'),
+        ]);
 
-        $fields->addFieldToTab(
-            'Root.Main',
+        $fields->addFieldsToTab('Root.Style', [
             DropdownField::create('Alignment', self::$field_labels['Alignment'], [
                 'left' => 'Links',
                 'center' => 'Zentriert',
                 'right' => 'Rechts',
             ])->setDescription('Wähle, ob Text und Icon links, zentriert oder rechts angeordnet sind.'),
-            'BackgroundImage'
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
             DropdownField::create('VerticalPosition', self::$field_labels['VerticalPosition'], [
                 'top' => 'Oben',
                 'middle' => 'Mittig',
                 'bottom' => 'Unten',
             ])->setDescription('Wähle, ob der Inhalt oben, mittig oder unten steht.'),
-            'Alignment'
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
             DropdownField::create('HorizontalAlignment', self::$field_labels['HorizontalAlignment'], [
                 'left' => 'Links',
                 'center' => 'Zentriert',
                 'right' => 'Rechts',
             ])->setDescription('Wähle, ob der Inhalt horizontal links, zentriert oder rechts ausgerichtet ist.'),
-            'VerticalPosition'
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
             TextField::create('ButtonColor', self::$field_labels['ButtonColor'])
-                ->setAttribute('type', 'color')
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
+                ->setAttribute('type', 'color'),
             TextField::create('TextColor', self::$field_labels['TextColor'])
-                ->setAttribute('type', 'color')
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
+                ->setAttribute('type', 'color'),
             TextField::create('TitleColor', self::$field_labels['TitleColor'])
-                ->setAttribute('type', 'color')
-        );
-        //$fields->addFieldToTab(
-        //    'Root.Main',
-        //    SliderField::create('BackgroundIntensity', self::$field_labels['BackgroundIntensity'], 0, 1)
-        //        ->setDescription('Stelle die Intensität des Hintergrund-Overlays ein (0 = transparent, 1 = voll sichtbar).')
-        //);
-        $fields->addFieldToTab(
-            'Root.Main',
+                ->setAttribute('type', 'color'),
             TextField::create('BackgroundContentColor', self::$field_labels['BackgroundContentColor'])
                 ->setAttribute('type', 'color')
-        );
+        ]);
 
         return $fields;
     }

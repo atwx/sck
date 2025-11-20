@@ -25,7 +25,6 @@ class TwoColumnTextElement extends BaseElement
         'Layout' => "Enum('title-left,title-right', 'title-left')",
         'TitleVerticalPosition' => "Enum('top,center,bottom', 'center')",
         'TitleVerticalPositionAlternative' => 'Varchar(16)',
-        'BackgroundColor' => 'Varchar(32)',
         'TitleWidth' => 'Int',
     ];
 
@@ -58,34 +57,20 @@ class TwoColumnTextElement extends BaseElement
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('LeftTitle', 'Titel')
                 ->setDescription('Der große Titel'),
-
             HTMLEditorField::create('RightText', 'Text')
                 ->setDescription('Der Beschreibungstext für die Text Spalte')
                 ->setRows(5),
-
             DropdownField::create('Layout', 'Layout', [
                 'title-left' => 'Titel links, Text rechts',
                 'title-right' => 'Titel rechts, Text links'
-            ])
-                ->setDescription('Bestimmt die Position von Titel und Text'),
-
+            ])->setDescription('Bestimmt die Position von Titel und Text'),
             DropdownField::create('TitleVerticalPosition', 'Titel vertikale Position', [
                 'top' => 'Oben',
                 'center' => 'Mittig',
                 'bottom' => 'Unten'
-            ])
-                ->setDescription('Bestimmt die vertikale Position des Titels'),
-
-                
+            ])->setDescription('Bestimmt die vertikale Position des Titels'),
             TextField::create('TitleVerticalPositionAlternative', 'Alternative eigene vertikale Position (in % / px)')
                 ->setDescription('Bestimmt die vertikale Position des Titels in Prozent oder Pixel (z.B. 30% oder 30px). Diese Einstellung überschreibt die Auswahl oben.'),
-
-            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
-                '' => 'Keine',
-                'bgc-primary' => 'Primärfarbe',
-                'bgc-secondary' => 'Sekundärfarbe'
-            ])
-                ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
             TextField::create('TitleWidth', 'Titel Breite (in %)')
                 ->setDescription('Bestimmt die Breite der Titel-Spalte in Prozent (z.B. 30 für 30%)')
         ]);

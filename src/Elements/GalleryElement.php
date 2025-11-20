@@ -26,7 +26,6 @@ class GalleryElement extends BaseElement
         "ActivateLightbox" => "Boolean",
         "ImageSize" => "Enum('extrasmall, small, medium, large', 'medium')",
         "ImageFormat" => "Enum('square, rectangle, original', 'square')",
-        "BackgroundColor" => "Enum('transparent, primary, secondary, black, white', 'transparent')",
     ];
 
     private static $has_one = [];
@@ -105,27 +104,20 @@ class GalleryElement extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->addFieldToTab('Root.Anpassung', new DropdownField('ImageSize', 'Bildgröße', [
+        $fields->addFieldToTab('Root.Style', new DropdownField('ImageSize', 'Bildgröße', [
             'extrasmall' => 'Extra Klein',
             'small' => 'Klein',
             'medium' => 'Mittel',
             'large' => 'Groß'
         ]));
-        $fields->addFieldToTab('Root.Anpassung', new DropdownField('ImageFormat', 'Bildformat', [
+        $fields->addFieldToTab('Root.Style', new DropdownField('ImageFormat', 'Bildformat', [
             'square' => 'Quadratisch',
             'rectangle' => 'Rechteckig',
             'original' => 'Original'
         ]));
-        $fields->addFieldToTab('Root.Anpassung', new DropdownField('ActivateLightbox', 'Lightbox aktivieren', [
+        $fields->addFieldToTab('Root.Main', new DropdownField('ActivateLightbox', 'Lightbox aktivieren', [
             '0' => 'Nein',
             '1' => 'Ja'
-        ]));
-        $fields->addFieldToTab('Root.Anpassung', new DropdownField('BackgroundColor', 'Hintergrundfarbe', [
-            'transparent' => 'Transparent',
-            'primary' => 'Primär',
-            'secondary' => 'Sekundär',
-            'black' => 'Schwarz',
-            'white' => 'Weiß'
         ]));
         return $fields;
     }

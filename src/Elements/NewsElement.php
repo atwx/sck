@@ -25,7 +25,6 @@ class NewsElement extends BaseElement
 {
     private static $db = [
         "Subtitle" => "Varchar(255)",
-        "BackgroundColor" => "Varchar(32)",
         "Description" => "HTMLText",
         "NumberOfItems" => "Int",
     ];
@@ -87,7 +86,7 @@ class NewsElement extends BaseElement
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = ($this->Subtitle ?: $this->Title) ?: "Aktuelles";
         return $blockSchema;
-        
+
     }
 
     #[Override]
@@ -95,27 +94,21 @@ class NewsElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['MainButtonID']);
-
-        // Grundeinstellungen
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Subtitle', 'Untertitel')
                 ->setDescription('Ein optionaler Untertitel für das Aktuelles-Element'),
-            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
-                '' => 'Keine',
-                'bgc-primary' => 'Primärfarbe',
-                'bgc-secondary' => 'Sekundärfarbe'
-            ])
-            ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
             HTMLEditorField::create('Description', 'Beschreibung')
                 ->setRows(3)
                 ->setDescription('Eine optionale Beschreibung, die unter dem Titel angezeigt wird'),
             TextField::create('NumberOfItems', 'Anzahl der News-Einträge')
-                ->setDescription('Die Anzahl der anzuzeigenden News-Einträge'),                
-            UploadField::create("PrefixIcon", "Icon-Prefix")
-                ->setDescription('Ein optionales Icon, das vor dem Titel angezeigt wird'),
+                ->setDescription('Die Anzahl der anzuzeigenden News-Einträge'),
             LinkField::create('MainButton', 'Haupt-Button')
                 ->setDescription('Der "Mehr darüber" Button')
+        ]);
+
+        $fields->addFieldsToTab('Root.Style', [
+            UploadField::create("PrefixIcon", "Icon-Prefix")
+                ->setDescription('Ein optionales Icon, das vor dem Titel angezeigt wird'),
         ]);
 
         return $fields;

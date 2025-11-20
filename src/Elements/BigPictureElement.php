@@ -85,7 +85,7 @@ class BigPictureElement extends BaseElement
                 ->setDescription('Das Bild für das Big Picture Element')
         );
 
-        $fields->addFieldsToTab('Root.Main', [
+        $fields->addFieldsToTab('Root.Style', [
             NumericField::create('Height', 'Höhe')
                 ->setDescription('Die Höhe des Big Picture Elements')
                 ->setValue($this->Height ?: 60),

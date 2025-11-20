@@ -19,8 +19,7 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 class TeaserElement extends BaseElement
 {
 
-    private static $db = [    
-        'BackgroundColor' => 'Varchar(32)',
+    private static $db = [
         'NumberColumns' => 'Int',
     ];
 
@@ -69,18 +68,8 @@ class TeaserElement extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-
-        
-        $fields->addFieldToTab('Root.Main',
-            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
-                '' => 'Keine',
-                'bgc-primary' => 'Primärfarbe',
-                'bgc-secondary' => 'Sekundärfarbe'
-            ])
-            ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
-        );
-        
-        $fields->addFieldToTab('Root.Main',
+        $fields->addFieldToTab(
+            'Root.Main',
             DropdownField::create('NumberColumns', 'Anzahl der Spalten', [
                 '1' => '1 Spalte',
                 '2' => '2 Spalten',
@@ -104,11 +93,13 @@ class TeaserElement extends BaseElement
             $gridField->getConfig()->addComponent(GridFieldOrderableRows::create('SortOrder'));
             $fields->addFieldToTab('Root.Main', $gridField);
         } else {
-            $fields->addFieldToTab('Root.Main',
+            $fields->addFieldToTab(
+                'Root.Main',
                 LiteralField::create(
                     'TeaserItemsNote',
                     '<p class="message notice">Speichern Sie das Element zuerst, um Einträge hinzuzufügen.</p>'
-                ));
+                )
+            );
         }
 
         return $fields;

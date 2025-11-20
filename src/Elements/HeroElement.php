@@ -100,7 +100,7 @@ class HeroElement extends BaseElement
             ->setAttribute('min', 0)
             ->setAttribute('max', 100)
             ->setAttribute('step', 1);
-        $fields->addFieldToTab('Root.Main', $darknessField);
+        $fields->addFieldToTab('Root.Style', $darknessField);
 
         return $fields;
     }

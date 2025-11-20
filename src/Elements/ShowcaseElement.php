@@ -102,26 +102,32 @@ class ShowcaseElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName('ButtonID');
-        $fields->removeByName('ContentPosition');
-        $fields->removeByName('DarknessOverlay');
+        $fields->addFieldsToTab('Root.Main', [
+            LinkField::create('Button', 'Button'),
+        ]);
 
-        $contentPositionField = DropdownField::create(
-            'ContentPosition',
-            'Position des Textkastens',
-            $this->getContentPositionOptions()
-        );
-
-        $fields->addFieldToTab('Root.Main', $contentPositionField);
-
-        $darknessField = NumericField::create('DarknessOverlay', $this->fieldLabel('DarknessOverlay'))
-            ->setDescription('Geben Sie einen Wert zwischen 0 und 100 ein (z.B. 90 für 90% Dunkelheit)')
-            ->setAttribute('min', 0)
-            ->setAttribute('max', 100)
-            ->setAttribute('step', 1);
-        $fields->addFieldToTab('Root.Main', $darknessField);
-
-        $fields->addFieldToTab('Root.Main', LinkField::create('Button', 'Button'));
+        $fields->addFieldsToTab('Root.Style', [
+            DropdownField::create(
+                'ContentPosition',
+                'Position des Textkastens',
+                $this->getContentPositionOptions()
+            ),
+            DropdownField::create(
+                'ContentPosition',
+                'Position des Textkastens',
+                $this->getContentPositionOptions()
+            ),
+            DropdownField::create(
+                'ContentPosition',
+                'Position des Textkastens',
+                $this->getContentPositionOptions()
+            ),
+            NumericField::create('DarknessOverlay', $this->fieldLabel('DarknessOverlay'))
+                ->setDescription('Geben Sie einen Wert zwischen 0 und 100 ein (z.B. 90 für 90% Dunkelheit)')
+                ->setAttribute('min', 0)
+                ->setAttribute('max', 100)
+                ->setAttribute('step', 1),
+        ]);
 
         return $fields;
     }

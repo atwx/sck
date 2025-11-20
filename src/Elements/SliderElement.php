@@ -106,9 +106,12 @@ class SliderElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['Slides']);
-
         $fields->addFieldsToTab('Root.Main', [
+            CheckboxField::create('Autoplay', self::$field_labels['Autoplay']),
+            NumericField::create('AutoplayDelay', self::$field_labels['AutoplayDelay']),
+        ]);
+
+        $fields->addFieldsToTab('Root.Style', [
             CheckboxField::create('ShowArrows', self::$field_labels['ShowArrows']),
             DropdownField::create('ArrowsPosition', self::$field_labels['ArrowsPosition'], [
                 'bottom' => 'Unten',
@@ -124,8 +127,6 @@ class SliderElement extends BaseElement
                 'medium' => 'Max Width',
                 'wide' => 'Full Width',
             ]),
-            CheckboxField::create('Autoplay', self::$field_labels['Autoplay']),
-            NumericField::create('AutoplayDelay', self::$field_labels['AutoplayDelay']),
             TextField::create('OverlayOpacity', self::$field_labels['OverlayOpacity'])
                 ->setDescription('Wert zwischen 0 (keine Verdunklung) und 1 (komplett schwarz) Bsp. 0.2')
                 ->setAttribute('step', '0,01')

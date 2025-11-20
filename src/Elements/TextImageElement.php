@@ -28,7 +28,6 @@ class TextImageElement extends BaseElement
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
-        "BackgroundColor" => "Varchar(32)",
         "LinksTitle" => "Varchar(255)",
     ];
 
@@ -104,35 +103,29 @@ class TextImageElement extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->replaceField('Variant', new DropdownField('Variant', 'Variante', [
-            "" => "Bild rechts",
-            "image--left" => "Bild links",
-        ]));
-        $fields->replaceField('ImgWidth', new DropdownField('ImgWidth', 'Bildbreite', [
-            "image--30" => "30%",
-            "image--40" => "40%",
-            "image--50" => "50%",
-            "image--60" => "60%",
-            "image--70" => "70%",
-        ]));
-        $fields->addFieldToTab('Root.Main',
-            DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
-                '' => 'Keine',
-                'bgc-primary' => 'Primärfarbe',
-                'bgc-secondary' => 'Sekundärfarbe'
-            ])
-            ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
-        );
 
-        $fields->removeByName('LinksTitle');
-        $fields->addFieldToTab('Root.Main', TextField::create('LinksTitle', 'Titel der Linkliste')
-            ->setDescription('Titel, der über der Linkliste angezeigt wird'));
-        $fields->replaceField('Links', MultiLinkField::create('Links')
-            ->setTitle('SideLinks')
-            ->setDescription('Fügt Links / Downloads neben dem Text hinzu'));
+        $fields->addFieldsToTab('Root.Style', [
+            DropdownField::create('ImgWidth', 'Bildbreite', [
+                "image--30" => "30%",
+                "image--40" => "40%",
+                "image--50" => "50%",
+                "image--60" => "60%",
+                "image--70" => "70%",
+            ]),
+            DropdownField::create('Variant', 'Bildausrichtung', [
+                "" => "Bild rechts",
+                "image--left" => "Bild links",
+            ]),
+        ]);
 
-        $fields->removeByName('ButtonID');
-        $fields->addFieldToTab('Root.Main', LinkField::create('Button'));
+        $fields->addFieldsToTab('Root.Main', [
+            TextField::create('LinksTitle', 'Titel der Linkliste')
+                ->setDescription('Titel, der über der Linkliste angezeigt wird'),
+            MultiLinkField::create('SideLinks')
+                ->setTitle('SideLinks')
+                ->setDescription('Fügt Links / Downloads neben dem Text hinzu'),
+            LinkField::create('Button')
+        ]);
         return $fields;
     }
 }

@@ -57,21 +57,19 @@ class PersonElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName('Title');
+        //Remove empty Persons Tab
+        $fields->removeByName('Persons');
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Title', 'Titel')
                 ->setDescription('Der Titel über den Kontaktpersonen'),
-        ]);
-        $fields->addFieldToTab(
-            'Root.Main',
             SearchableMultiDropdownField::create(
                 'Persons',
                 _t(self::class . '.Persons', self::$field_labels['Persons']),
                 Person::get(),
                 $this->Persons()->map('ID', 'ID')->toArray()
             )
-        );
+        ]);
 
         return $fields;
     }

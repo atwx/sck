@@ -26,7 +26,6 @@ class CitationElement extends BaseElement
 
     private static $db = [
         "Text" => "HTMLText",
-        "BackgroundColor" => "Varchar(32)",
     ];
 
     private static $has_one = [];
@@ -84,19 +83,16 @@ class CitationElement extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->addFieldToTab('Root.Settings', new DropdownField('BackgroundColor', 'Hintergrundfarbe', [
-            '' => 'Keine',
-            'bgc-primary' => 'Primärfarbe',
-            'bgc-secondary' => 'Sekundärfarbe'
-        ]));
         $fields->removeByName('CitationItems');
-        $fields->addFieldToTab('Root.Main', new GridField(
-            'CitationItems',
-            'Zitate',
-            $this->CitationItems(),
-            GridFieldConfig_RecordEditor::create()
-                ->addComponent(GridFieldOrderableRows::create('SortOrder'))
-        ));
+        $fields->addFieldsToTab('Root.Main', [
+            GridField::create(
+                'CitationItems',
+                'Zitate',
+                $this->CitationItems(),
+                GridFieldConfig_RecordEditor::create()
+                    ->addComponent(GridFieldOrderableRows::create('SortOrder'))
+            )
+        ]);
         return $fields;
     }
 }

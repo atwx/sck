@@ -44,3 +44,7 @@ SilverStripe\Assets\File:
       - svg
   class_for_file_extension:
     svg: SilverStripe\Assets\Image
+
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - App\Extensions\ElementExtension
