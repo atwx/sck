@@ -15,7 +15,8 @@
                 data-effect="slide"
                 data-pagination="$ShowDots"
                 data-slidesperview="3"
-                data-centeredslides="true">
+                data-centeredslides="true"
+                data-speed="$SwipeSpeed">
 
                 <div class="swiper-wrapper">
                     <% loop $Cards %>

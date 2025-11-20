@@ -90,6 +90,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
             loopAdditionalSlides: 3,
             slidesPerGroup: 1,
             allowTouchMove: slider.dataset.allowtouchmove || 'true',
+            speed: parseInt(slider.dataset.speed) || 800,
 
             autoplay: slider.dataset.autoplay === 'true' || slider.dataset.autoplay === '1' ? {
                 delay: parseInt(slider.dataset.autoplayDelay) || 10000,

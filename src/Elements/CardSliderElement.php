@@ -21,6 +21,7 @@ class CardSliderElement extends BaseElement
         'Autoplay' => 'Boolean',
         'Loop' => 'Boolean',
         'AutoplaySpeed' => 'Int',
+        'SwipeSpeed' => 'Int',
         'IntroText' => 'HTMLText',
     ];
 
@@ -46,6 +47,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => true,
         'Autoplay' => false,
         'AutoplaySpeed' => 5000,
+        'SwipeSpeed' => 800,
         'Loop' => true,
     ];
 
@@ -55,6 +57,7 @@ class CardSliderElement extends BaseElement
         'ShowArrows' => 'Pfeile anzeigen',
         'Autoplay' => 'Automatisches Abspielen',
         'AutoplaySpeed' => 'Abspielgeschwindigkeit (ms)',
+        'SwipeSpeed' => 'Wischgeschwindigkeit (ms)',
         'Loop' => 'Endlos-Schleife',
         'Cards' => 'Kacheln',
     ];
@@ -82,6 +85,9 @@ class CardSliderElement extends BaseElement
             NumericField::create('AutoplaySpeed', 'Abspielgeschwindigkeit (ms)')
                 ->setDescription('Zeit in Millisekunden zwischen den Folien (z.B. 5000 = 5 Sekunden)')
                 ->setValue(5000),
+            NumericField::create('SwipeSpeed', 'Wischgeschwindigkeit (ms)')
+                ->setDescription('Geschwindigkeit des Folienwechsels beim Wischen (z.B. 800 = 0,8 Sekunden)')
+                ->setValue(800),
         ]);
 
         $fields->addFieldsToTab('Root.Style', [
