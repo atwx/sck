@@ -29,6 +29,7 @@ class TextImageElement extends BaseElement
         "Variant" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
         "LinksTitle" => "Varchar(255)",
+        "VideoLink" => "Varchar(255)",
     ];
 
     private static $has_one = [
@@ -50,6 +51,10 @@ class TextImageElement extends BaseElement
         "Text" => "Text",
         "Image" => "Bild",
         "Button" => "Button",
+        "Variant" => "Bildausrichtung",
+        "ImgWidth" => "Bildbreite",
+        "LinksTitle" => "Titel der Linkliste",
+        "VideoLink" => "Video-Link (Youtube)",
     ];
 
     private static $table_name = 'SCK_TextImageElement';

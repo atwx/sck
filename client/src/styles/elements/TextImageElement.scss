@@ -8,7 +8,7 @@
         align-items: stretch;
         grid-template-columns: 1fr;
 
-        &:has(.section_links), &:has(.section_image) {
+        &:has(.section_links), &:has(.section_image), &:has(.section_video) {
             @include media(">=desktop") {
               grid-template-columns: 50% 50%;
 
@@ -85,6 +85,17 @@
             .section_links_title{
                 margin-top: 0;
             }
+        }
+    }
+
+    .section_video {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 50%;
+        position: relative;
+
+        @include media("<desktop") {
+            aspect-ratio: 16 / 9;
         }
     }
 
