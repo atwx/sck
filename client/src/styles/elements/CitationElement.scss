@@ -28,6 +28,17 @@
         }
     }
 
+    &.--single-item{
+        .citation-list{
+            grid-template-columns: 1fr;
+
+            @include media(">medium"){
+                max-width: 75%;
+                margin: 0 auto;
+            }
+        }
+    }
+
     .citation-quote{
         position: relative;
         width: fit-content;
