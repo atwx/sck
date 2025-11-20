@@ -4,7 +4,12 @@
     <% end_if %>
 
     <% if $ShowHeroSection && $HeroSlides.Count > 0 %>
-    <div class="hero_section swiper" data-loop="true" data-slidesPerView="1" data-autoplay="$HeroAutoPlay" style="$HeroHeightStyle" <% if $HeroAutoPlayDelay && $HeroAutoPlayDelay > 0 %>data-autoplay-delay="$HeroAutoPlayDelay"<% end_if %>>
+    <div class="hero_section swiper" data-loop="true" 
+        data-slidesPerView="1" 
+        data-autoplay="$HeroAutoPlay" 
+        data-speed="$SwipeSpeed"
+        <% if $HeroAutoPlayDelay && $HeroAutoPlayDelay > 0 %>data-autoplay-delay="$HeroAutoPlayDelay"<% end_if %>
+        style="$HeroHeightStyle">
         <div class="swiper-wrapper">
             <% loop $HeroSlides %>
                 <div class="swiper-slide">

@@ -25,6 +25,7 @@ class PageExtension extends Extension
         "HeroHeightUnit" => "Enum('px,vh,vw','vh')",
         "HeroAutoPlay" => "Boolean",
         "HeroAutoPlayDelay" => "Int",
+        "SwipeSpeed" => "Int",
     ];
 
     private static $has_many = [
@@ -38,7 +39,9 @@ class PageExtension extends Extension
     private static $defaults = [
         'ShowHeroSection' => true,
         'HeroHeight' => 60,
-        'HeroHeightUnit' => 'vh'
+        'HeroHeightUnit' => 'vh',
+        'HeroAutoPlayDelay' => 10000,
+        'SwipeSpeed' => 800,
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -86,9 +89,12 @@ class PageExtension extends Extension
             ])->setDescription('Die Einheit für die Höhenangabe des Hero-Bereichs'),
             CheckboxField::create('HeroAutoPlay', 'Automatisches Abspielen der Hero-Slides')
                 ->setDescription('Aktivieren Sie diese Option, damit die Hero-Slides automatisch wechseln'),
-            NumericField::create('HeroAutoPlayDelay', 'Verzögerung für automatisches Abspielen (in ms)')
-                ->setDescription('Die Verzögerung in Millisekunden zwischen den automatischen Slide-Wechseln')
-                ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),
+            NumericField::create('HeroAutoPlayDelay', 'Abspielgeschwindigkeit (ms)')
+                ->setDescription('Zeit in Millisekunden zwischen den Folien (z.B. 5000 = 5 Sekunden)')
+                ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),            
+            NumericField::create('SwipeSpeed', 'Wischgeschwindigkeit (ms)')
+                ->setDescription('Geschwindigkeit des Folienwechsels beim Wischen (z.B. 800 = 0,8 Sekunden)')
+                ->setValue(800),
         ]);
     }
 
