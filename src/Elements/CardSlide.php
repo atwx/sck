@@ -95,7 +95,6 @@ class CardSlide extends DataObject
                     'bg-color-white' => 'Weiß',
                     'bg-color-primary' => 'Primärfarbe',
                     'bg-color-secondary' => 'Sekundärfarbe',
-                    'bg-color-tertiary' => 'Tertiärfarbe',
                 ])
                 ->setEmptyString('-- Bitte wählen --')
                 ->setDescription('Wählen Sie eine Hintergrundfarbe für die Kachel aus'),

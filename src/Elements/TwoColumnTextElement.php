@@ -31,7 +31,6 @@ class TwoColumnTextElement extends BaseElement
     private static $defaults = [
         'Layout' => 'title-left',
         'TitleVerticalPosition' => 'center',
-        'BackgroundColor' => '',
         'TitleWidth' => 50,
     ];
 
