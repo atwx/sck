@@ -1,0 +1,268 @@
+.section.section--CitationElement {
+
+    .section_content {
+        color: var(--ColorText);
+    }
+
+    .section_title {            
+        font-weight: 500;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        color: var(--ColorHeadline);
+        letter-spacing: -0.02em;
+    }
+
+    .citation-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+
+        @include media("<desktop") {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .citation-item{
+            background-color: var(--ColorWhite);
+            padding-top: 20px;
+        }
+    }
+
+    .citation-quote{
+        position: relative;
+        width: fit-content;
+
+        p{
+            margin: unset;
+        }
+
+        &::before {
+            position: absolute;
+            content: open-quote;
+            font-size: 3rem;
+            line-height: 0;
+            color: var(--ColorPrimary);
+            bottom: 10px;
+            left: -20px;
+        }
+        &::after {
+            position: absolute;
+            content: close-quote;
+            font-size: 3rem;
+            line-height: 0;
+            color: var(--ColorPrimary);
+            top: 5px;
+            right: -20px;
+        }
+    }
+
+    .citation-author{
+        text-align: end;
+        padding: 20px;
+        margin: -20px 0 0 0;
+
+        @include media(">smartphone") {
+            margin: -40px 0 0 0;
+        }
+    }
+    
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+
+        &.primary-white-text {
+            .section_text, .section_title {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+
+        &.secondary-white-text {
+            .section_text, .section_title {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
+    // margin: 0;
+    // padding: 0;
+    // position: relative;
+
+    // .section_content {
+    //     display: grid;
+    //     align-items: stretch;
+    //     grid-template-columns: 1fr;
+
+    //     &:has(.section_links), &:has(.section_image) {
+    //         @include media(">=desktop") {
+    //           grid-template-columns: 50% 50%;
+
+    //           &.image--30{
+    //               grid-template-columns: 70% 30%;
+    //           }
+
+    //           &.image--40{
+    //               grid-template-columns: 60% 40%;
+    //           }
+
+    //           &.image--60{
+    //                grid-template-columns: 40% 60%;
+    //           }
+
+    //           &.image--70{
+    //               grid-template-columns: 30% 70%;
+    //           }
+    //         }
+
+    //     }
+
+    //     .section_text {
+    //         color: var(--ColorText);
+    //         padding: 80px 30px 80px 0px;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         flex: 1;
+    //         width: 100%;
+    //         grid-column: 1 / 2;
+    //         grid-row: 1 / -1;
+    //         height: 100%;
+    //         text-align: left;
+
+    //         .section_title {
+    //             font-weight: 500;
+    //             margin-bottom: 2rem;
+    //             margin-top: 0;
+    //             color: var(--ColorHeadline);
+    //             letter-spacing: -0.02em;
+    //         }
+
+    //         .section_text_content {
+    //             color: var(--ColorText);
+    //             align-self: end;
+
+    //             p {
+    //                 margin-bottom: 1.5rem;
+    //             }
+
+    //             @include media("<desktop") {
+    //                 width: 100%;
+    //             }
+    //         }
+
+    //         @include media("<desktop") {
+    //             grid-column: 1 / -1;
+    //             padding: 20px 20px;
+    //         }
+    //     }
+
+    //     .section_links {
+    //         grid-column: 2/3;
+    //         padding: 80px 20px;
+    //         display: flex;
+    //         flex-direction: column;
+
+    //         @include media("<desktop") {
+    //             grid-column: 1 / -1;
+    //             padding: 20px 20px;
+    //         }
+
+    //         .section_links_title{
+    //             margin-top: 0;
+    //         }
+    //     }
+    // }
+
+    // .section_image {
+    //     flex: 0 0 50%;
+    //     position: relative;
+
+    //     img {
+    //         width: 100%;
+    //         height: 100%;
+    //         object-fit: cover;
+    //         display: block;
+    //     }
+    // }
+
+    // &.image--left {
+    //     .section_content {
+    //         @include media(">=desktop") {
+    //             .section_links {
+    //                 grid-column: 1 / 2;
+    //             }
+
+    //             .section_image {
+    //                 grid-column: 1 / 2;
+    //             }
+
+    //             .section_text {
+    //                 grid-column: 2 / 3;
+    //                 padding: 80px 0 80px 30px;
+    //                 margin-left: unset;
+    //                 margin-right: auto;
+    //             }
+
+    //             &.image--30{
+    //                 grid-template-columns: 30% 70%;
+    //             }
+
+    //             &.image--40{
+    //                 grid-template-columns: 40% 60%;
+    //             }
+
+    //             &.image--60{
+    //                 grid-template-columns: 60% 40%;
+    //             }
+
+    //             &.image--70{
+    //                 grid-template-columns: 70% 30%;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // &:not(.image--left) {
+    //     .section_content {
+    //         flex-direction: row-reverse;
+
+    //         @include media("<desktop") {
+    //             flex-direction: column;
+    //         }
+    //     }
+    // }
+
+    // @include media("<desktop") {
+
+    //     .section_content {
+    //         min-height: auto;
+    //         flex-direction: column;
+    //     }
+
+    //     .section_title{
+    //         width: 100%;
+    //     }
+
+    //     .section_button{
+    //         width: 100%;
+    //     }
+
+    //     .section_text {
+    //         padding: 60px 30px;
+    //         text-align: center;
+    //         order: 1;
+    //         padding: 60px 30px;
+    //     }
+
+    //     .section_image {
+    //         margin: 0 !important;
+    //         order: 2;
+    //         flex: none;
+    //         max-width: none;
+    //         width: 100%;
+    //     }
+    // }
+}

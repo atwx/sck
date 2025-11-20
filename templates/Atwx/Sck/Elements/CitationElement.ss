@@ -1,0 +1,24 @@
+<div class="section section--CitationElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+    <div class="section_content">
+        <h2 class="hl2 section_title">$Title</h2>
+        <% if $Text %>
+            <div class="section_text">
+                $Text
+            </div>
+        <% end_if %>
+        <div class="citation-list">
+            <% loop $CitationItems %>
+                <div class="citation-item">
+                    <% if $Quote %>
+                        <blockquote class="citation-quote">
+                            $Quote
+                        </blockquote>
+                    <% end_if %>
+                    <% if $Author %>
+                        <p class="citation-author">- $Author</p>
+                    <% end_if %>
+                </div>
+            <% end_loop %>
+        </div>
+    </div>
+</div>
