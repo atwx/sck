@@ -1,4 +1,4 @@
-<div class="section section--GalleryElement gallerybackground--$BackgroundColor">
+<section class="section--GalleryElement $BackgroundColor">
     <div class="section_content">
         <h2 class="hl2">$Title</h2>
         <% if $Text %>

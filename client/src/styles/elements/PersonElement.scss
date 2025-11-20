@@ -1,38 +1,38 @@
-.contact-persons-element {
+section.section--PersonElement {
     padding: 80px 0;
     background: var(--ColorPrimary);
     color: white;
     position: relative;
     overflow: hidden;
-    
-    .container {
+
+    .section_content {
         max-width: var(--MaxWidth);
         margin: 0 auto;
         padding: 0 40px;
         position: relative;
         z-index: 2;
-        
+
         @media (max-width: 768px) {
             padding: 0 20px;
         }
     }
-    
+
     .main-title {
         text-align: left;
         margin-bottom: 30px;
         color: white;
-        
+
         @media (max-width: 768px) {
             font-size: 2.5rem;
             margin-bottom: 40px;
         }
     }
-    
+
     .contact-persons-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
-        
+
         @media (max-width: 900px) {
             grid-template-columns: 1fr;
             gap: 60px;
@@ -45,17 +45,17 @@
 
             .contact-photo {
                 flex: 0 0 180px;
-                
+
                 img {
                     width: 200px;
                     height: 200px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
-                
+
                 @media (max-width: 768px) {
                     flex: 0 0 140px;
-                    
+
                     img {
                         width: 140px;
                         height: 140px;
@@ -72,17 +72,17 @@
                     letter-spacing: 0%;
                     margin-top: 0;
                     margin-bottom: 20px;
-                    
+
                     @media (max-width: 768px) {
                         font-size: 1.6rem;
                     }
                 }
-                
+
                 @media (max-width: 768px) {
                     text-align: center;
                 }
             }
-            
+
             @media (max-width: 768px) {
                 flex-direction: column;
                 text-align: center;
@@ -91,7 +91,7 @@
             }
         }
     }
-    
+
     .contact-position {
         font-weight: 500;
         margin-bottom: 12px;
@@ -101,15 +101,15 @@
     .contact-function, .contact-group{
         font-size: 0.9rem;
     }
-    
+
     .contact-department {
         margin-bottom: 20px;
         color: rgba(255, 255, 255, 0.8);
     }
-    
+
     .contact-details {
         margin-bottom: 25px;
-        
+
         > div {
             margin-bottom: 5px;
             font-size: 18px;
@@ -118,21 +118,21 @@
                 margin-bottom: 0;
             }
         }
-        
+
         strong {
             font-weight: 500;
         }
-        
+
         .contact-email a {
             color: white;
             text-decoration: underline;
-            
+
             &:hover {
                 text-decoration: none;
             }
         }
     }
-    
+
     .contact-button {
         .btn-contact {
             display: inline-block;
@@ -142,7 +142,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
-            
+
             &:hover {
                 border-bottom-color: white;
                 transform: translateX(5px);
@@ -152,11 +152,11 @@
 
     @media (max-width: 768px) {
         padding: 60px 0;
-        
+
         .contact-persons-grid {
             gap: 50px;
         }
-        
+
         .contact-person {
             gap: 20px;
         }

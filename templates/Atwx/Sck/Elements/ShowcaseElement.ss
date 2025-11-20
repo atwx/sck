@@ -1,4 +1,4 @@
-<div class="section section--ShowcaseElement">
+<section class="section--ShowcaseElement $BackgroundColor">
     <div class="showcase">
         <% if $Image %>
             <div class="showcase__image">
@@ -30,4 +30,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

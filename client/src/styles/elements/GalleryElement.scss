@@ -1,4 +1,4 @@
-.section.section--GalleryElement {
+section.section--GalleryElement {
     max-width: var(--MaxWidth);
     margin: 0 auto;
     padding: 0 20px;
@@ -68,22 +68,5 @@
                 }
             }
         }
-    }
-
-    &.gallerybackground--transparent {
-        background: transparent;
-        padding: 0;
-    }
-    &.gallerybackground--white {
-        background: white;
-    }
-    &.gallerybackground--black {
-        background: black;
-    }
-    &.gallerybackground--primary {
-        background: var(--ColorPrimary);
-    }
-    &.gallerybackground--secondary {
-        background: var(--ColorSecondary);
     }
 }

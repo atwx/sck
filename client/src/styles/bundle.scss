@@ -12,7 +12,7 @@
 @import "elements/SpacerElement.scss";
 @import "elements/TwoColumnTextElement.scss";
 @import "elements/CardsSliderElement.scss";
-@import "elements/ContactPersonsElement.scss";
+@import "elements/PersonElement.scss";
 @import "elements/ShowcaseElement.scss";
 @import "elements/NewsElement.scss";
 @import "elements/BigPictureElement.scss";
@@ -29,3 +29,24 @@
 @import "variables.scss";
 @import "typography.scss";
 @import "forms.scss";
+
+section {
+
+    //Background Colors
+    &.bgc-transparent {
+        background: transparent;
+        padding: 0;
+    }
+    &.bgc-white {
+        background: white;
+    }
+    &.bgc-black {
+        background: black;
+    }
+    &.bgc-primary {
+        background: var(--ColorPrimary);
+    }
+    &.bgc-secondary {
+        background: var(--ColorSecondary);
+    }
+}

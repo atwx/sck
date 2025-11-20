@@ -1,29 +1,5 @@
-.section.section--TwoColumnTextElement {
+section.section--TwoColumnTextElement {
     padding: 80px 0;
-
-    &.bgc-primary {
-        background-color: var(--ColorPrimary);
-
-        &.primary-white-text {
-            .title-column .element-title,
-            .text-column .element-text,
-            .text-column .element-text p {
-                color: var(--ColorWhite);
-            }
-        }
-    }
-
-    &.bgc-secondary {
-        background-color: var(--ColorSecondary);
-
-        &.secondary-white-text {
-            .title-column .element-title,
-            .text-column .element-text,
-            .text-column .element-text p {
-                color: var(--ColorWhite);
-            }
-        }
-    }
 
     .section_content {
         padding: 0 20px;
@@ -53,7 +29,7 @@
         &.title-vertical-bottom, &.title-vertical-center, &.title-vertical-top {
             justify-content: center;
         }
-        
+
         .element-title {
             margin: 0;
             color: var(--ColorHeadline);
@@ -79,6 +55,32 @@
         }
     }
 
+
+
+    &.bgc-primary {
+        background-color: var(--ColorPrimary);
+
+        &.primary-white-text {
+            .title-column .element-title,
+            .text-column .element-text,
+            .text-column .element-text p {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
+    &.bgc-secondary {
+        background-color: var(--ColorSecondary);
+
+        &.secondary-white-text {
+            .title-column .element-title,
+            .text-column .element-text,
+            .text-column .element-text p {
+                color: var(--ColorWhite);
+            }
+        }
+    }
+
     &.title-right {
         .two-column-content {
             .title-column {
@@ -94,7 +96,7 @@
             .title-column {
                 order: 1;
             }
-            
+
             @include media("<desktop") {
                 grid-template-columns: 1fr;
 

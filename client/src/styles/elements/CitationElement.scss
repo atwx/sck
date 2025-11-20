@@ -1,10 +1,10 @@
-.section.section--CitationElement {
+section.section--CitationElement {
 
     .section_content {
         color: var(--ColorText);
     }
 
-    .section_title {            
+    .section_title {
         font-weight: 500;
         margin-bottom: 2rem;
         margin-top: 0;
@@ -76,7 +76,7 @@
             margin: -40px 0 0 0;
         }
     }
-    
+
 
     &.bgc-primary {
         background-color: var(--ColorPrimary);

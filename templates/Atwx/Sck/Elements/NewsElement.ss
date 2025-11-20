@@ -1,4 +1,4 @@
-<div class="section section--NewsElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+<section class="section--NewsElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <div class="section_intro">
             <% if $Title %>
@@ -41,4 +41,4 @@
             </div>
         <% end_if %>
     </div>
-</div>
+</section>

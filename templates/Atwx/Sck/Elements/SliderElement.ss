@@ -1,4 +1,4 @@
-<section class="section section--SliderElement">
+<section class="section--SliderElement $BackgroundColor">
     <div class="section_content">
         <div class="slider<% if $WidthLevel %> slider--$WidthLevel<% end_if %>">
             <% if $Content %>

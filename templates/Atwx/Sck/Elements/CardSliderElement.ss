@@ -1,4 +1,4 @@
-<div class="section section--CardSliderElement">
+<section class="section--CardSliderElement $BackgroundColor">
     <div class="section_content">
         <% if $SliderTitle %>
             <h2 class="hl2 section_title">$SliderTitle</h2>
@@ -85,4 +85,4 @@
             </div>
         <% end_if %>
     </div>
-</div>
+</section>

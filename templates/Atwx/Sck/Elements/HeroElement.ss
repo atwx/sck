@@ -1,4 +1,4 @@
-<div class="section section--HeroElement">
+<section class="section--HeroElement $BackgroundColor">
     <div class="hero_content">
         <% if $Image %>
             <div class="hero_image">
@@ -26,4 +26,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>
