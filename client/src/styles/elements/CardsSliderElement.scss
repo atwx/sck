@@ -118,21 +118,6 @@
                             }
                         }
                     }
-
-                    &.bg-color-tertiary {
-                        background-color: var(--ColorTertiary);
-                        color: var(--ColorWhite);
-
-                        .link--button{
-                            background-color: var(--ColorWhite);
-                            color: var(--ColorPrimary);
-
-                            &:hover{
-                                background-color: var(--ColorPrimaryLight);
-                                color: var(--ColorWhite);
-                            }
-                        }
-                    }
                 }
             }
 

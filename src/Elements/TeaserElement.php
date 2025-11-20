@@ -69,7 +69,7 @@ class TeaserElement extends BaseElement
     {
         $fields = parent::getCMSFields();
         $fields->addFieldToTab(
-            'Root.Main',
+            'Root.Style',
             DropdownField::create('NumberColumns', 'Anzahl der Spalten', [
                 '1' => '1 Spalte',
                 '2' => '2 Spalten',

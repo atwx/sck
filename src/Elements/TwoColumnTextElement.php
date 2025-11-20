@@ -55,10 +55,13 @@ class TwoColumnTextElement extends BaseElement
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('LeftTitle', 'Titel')
-                ->setDescription('Der große Titel'),
+                ->setDescription('Der große Titel für die Titel Spalte'),
             HTMLEditorField::create('RightText', 'Text')
                 ->setDescription('Der Beschreibungstext für die Text Spalte')
-                ->setRows(5),
+                ->setRows(5)
+        ]);
+
+        $fields->addFieldsToTab('Root.Style', [
             DropdownField::create('Layout', 'Layout', [
                 'title-left' => 'Titel links, Text rechts',
                 'title-right' => 'Titel rechts, Text links'

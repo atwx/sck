@@ -96,12 +96,10 @@ class NewsElement extends BaseElement
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Subtitle', 'Untertitel')
-                ->setDescription('Ein optionaler Untertitel für das Aktuelles-Element'),
+                ->setDescription('Ein optionaler Untertitel'),
             HTMLEditorField::create('Description', 'Beschreibung')
                 ->setRows(3)
                 ->setDescription('Eine optionale Beschreibung, die unter dem Titel angezeigt wird'),
-            TextField::create('NumberOfItems', 'Anzahl der News-Einträge')
-                ->setDescription('Die Anzahl der anzuzeigenden News-Einträge'),
             LinkField::create('MainButton', 'Haupt-Button')
                 ->setDescription('Der "Mehr darüber" Button')
         ]);
@@ -109,6 +107,8 @@ class NewsElement extends BaseElement
         $fields->addFieldsToTab('Root.Style', [
             UploadField::create("PrefixIcon", "Icon-Prefix")
                 ->setDescription('Ein optionales Icon, das vor dem Titel angezeigt wird'),
+            TextField::create('NumberOfItems', 'Anzahl der News-Einträge')
+                ->setDescription('Die Anzahl der anzuzeigenden News-Einträge')
         ]);
 
         return $fields;
