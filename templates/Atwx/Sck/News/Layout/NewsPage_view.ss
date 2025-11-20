@@ -2,7 +2,7 @@
     <div class="section section--News">
         <div class="section_content">
             <div class="section_backlink">
-                <a href="javascript:history.back()" class="backlink_link" aria-label="Zurück zur Übersicht">« Zurück</a>
+                <a href="javascript:history.back()" class="backlink_link ignoreLinkPrefix" aria-label="Zurück zur Übersicht">« Zurück</a>
             </div>
             <div class="news_content">
                 <div class="news_text">
@@ -17,7 +17,7 @@
                 </div>                
                 <% if $Image %>
                     <div class="news_image">
-                        <a href="$Image.URL" class="glightbox" data-gallery="gallery" data-galleryid="$ID" aria-label="Bild öffnen: $Image.Title" data-singleimage="true">
+                        <a href="$Image.URL" class="glightbox ignoreLinkPrefix" data-gallery="gallery" data-galleryid="$ID" aria-label="Bild öffnen: $Image.Title" data-singleimage="true">
                             $Image.ScaleWidth(400)
                         </a>
                     </div>
