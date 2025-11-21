@@ -125,8 +125,9 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
 
         //Add pause functionality for autoplay sliders
-        if (slider.dataset.autoplay === 'true') {
+        if (slider.dataset.autoplay === 'true' || slider.dataset.autoplay === '1') {
             const pauseButton = slider.querySelector('.swiper-button-pause');
+            console.log(pauseButton);
             if (pauseButton) {
                 pauseButton.addEventListener('click', () => {
                     if (swiper.autoplay.running) {
