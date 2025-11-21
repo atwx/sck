@@ -1,5 +1,8 @@
 import Swiper, {Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination} from 'swiper';
 import GLightbox from "glightbox";
+import { animate, scroll } from "motion";
+
+//animate("section", { rotate: 360 }); Test if animations work
 
 /* global window */
 
@@ -50,7 +53,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
     }
 
     const lightboxes = document.querySelectorAll('[data-gallery="gallery"]');
-    
+
     if (lightboxes.length > 0) {
         lightboxes.forEach((lightbox) => {
             const lightboxselector = lightbox.getAttribute('data-galleryid');
