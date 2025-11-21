@@ -68,6 +68,12 @@
                       line-height: normal;
                       font-size: clamp(1.5rem, 0.3333rem + 2.6667vw, 2rem);
                   }
+
+                  @include media("<medium") {
+                      bottom: 60px;
+                      left: 20px;
+                      right: 20px;
+                  }
                 }
 
                 img{
@@ -189,7 +195,7 @@
 
         &.nav_strip--alternative {
             background-color: var(--ColorPrimary);
-            transition: background-color 0.3s ease;            
+            transition: background-color 0.3s ease;
 
             .nav_brand_white {
                 display: block;
