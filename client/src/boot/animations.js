@@ -1,12 +1,36 @@
 
-import { animate, scroll } from "motion";
+import { animate, scroll, inView } from "motion";
 
 
 const fadeins = document.querySelectorAll(".animation--fadein")
 fadeins.forEach((object) => {
-    scroll(animate(object, { opacity: [0, 0, 1, 1] }), {
-        target: object,
-        offset: ["start end", "end end", "center center", "end start"],
-        type: "spring",
+    inView(object, (element) => {
+        animate(
+            element,
+            { opacity: 1 },
+            {
+                duration: 0.6,
+                easing: [0.17, 0.55, 0.55, 1],
+            }
+        )
+
+        return () => animate(element, { opacity: 0 })
+    })
+});
+
+const flyins = document.querySelectorAll(".animation--flyin")
+flyins.forEach((object) => {
+    inView(object, (element) => {
+        animate(
+            element,
+            { opacity: 1, transform: "translateX(0px)" },
+            {
+                duration: 0.6,
+                easing: [0.17, 0.55, 0.55, 1],
+            }
+        )
+
+        return () =>
+            animate(element, { opacity: 0, transform: "translateX(-40px)" })
     })
 });

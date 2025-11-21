@@ -36,7 +36,8 @@ class ElementExtension extends Extension
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
             DropdownField::create('FadeInAnimation', 'Fade-In Animation', [
                 '' => 'Keine',
-                'fade-in' => 'Einblenden',
+                'fadein' => 'Einblenden',
+                'flyin' => 'Hineinfliegen',
             ])->setDescription('Wählen Sie eine Animation aus, die angewendet wird, wenn das Element in den Viewport scrollt.'),
             CheckboxField::create('ShowDecoration', 'Dekoration anzeigen')
                 ->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
