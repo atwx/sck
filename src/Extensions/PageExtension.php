@@ -5,7 +5,6 @@ namespace Atwx\Sck\Extensions;
 use Atwx\Sck\Elements\HeroSlide;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
@@ -91,7 +90,7 @@ class PageExtension extends Extension
                 ->setDescription('Aktivieren Sie diese Option, damit die Hero-Slides automatisch wechseln'),
             NumericField::create('HeroAutoPlayDelay', 'Abspielgeschwindigkeit (ms)')
                 ->setDescription('Zeit in Millisekunden zwischen den Folien (z.B. 5000 = 5 Sekunden)')
-                ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),            
+                ->setValue($this->owner->HeroAutoPlayDelay ?: 10000),
             NumericField::create('SwipeSpeed', 'Wischgeschwindigkeit (ms)')
                 ->setDescription('Geschwindigkeit des Folienwechsels beim Wischen (z.B. 800 = 0,8 Sekunden)')
                 ->setValue(800),

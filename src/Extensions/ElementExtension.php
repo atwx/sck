@@ -2,8 +2,10 @@
 namespace App\Extensions;
 
 use SilverStripe\Core\Extension;
-use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\DropdownField;
+use DNADesign\Elemental\Forms\TextCheckboxGroupField;
 
 class ElementExtension extends Extension
 {
@@ -25,6 +27,12 @@ class ElementExtension extends Extension
                 'bgc-secondary' => 'Sekundärfarbe'
             ])
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
+        );
+
+        $fields->replaceField(
+            'Title',
+            TextCheckboxGroupField::create()
+                ->setName('Title')
         );
 
         //Move Custom CSS Classes field to Style tab

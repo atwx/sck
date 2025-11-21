@@ -55,6 +55,7 @@ class ShowcaseElement extends BaseElement
     private static $table_name = 'SCK_ShowcaseElement';
     private static $icon = 'font-icon-block-promo-2';
     private static $inline_editable = false;
+    private static $show_title = true;
 
     #[Override]
     public function getType()
@@ -107,16 +108,6 @@ class ShowcaseElement extends BaseElement
         ]);
 
         $fields->addFieldsToTab('Root.Style', [
-            DropdownField::create(
-                'ContentPosition',
-                'Position des Textkastens',
-                $this->getContentPositionOptions()
-            ),
-            DropdownField::create(
-                'ContentPosition',
-                'Position des Textkastens',
-                $this->getContentPositionOptions()
-            ),
             DropdownField::create(
                 'ContentPosition',
                 'Position des Textkastens',
