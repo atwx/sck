@@ -1,6 +1,6 @@
 <div class="header_nav_strip nav_strip--$Version">
     <div class="nav_container">
-        <a href="/" class="nav_brand ignoreLinkPrefix">
+        <a href="/" class="nav_brand">
             <img class="nav_brand_white" src="_resources/app/client/images/AfW logo neu weiss.png" alt="Cuxhaven Logo"> <!-- TODO: Make Logo changeable -->
             <img class="nav_brand_color" src="_resources/app/client/images/afw_logo_farbig.svg" alt="Alternative Logo"> <!-- TODO: Make Logo changeable -->
         </a>
@@ -15,12 +15,12 @@
                         <% loop $Menu(1) %>
                             <% if $MenuPosition == "main" %>
                                 <li class="nav_category">
-                                    <a href="$Link" class="nav_category_title ignoreLinkPrefix nav_link--$LinkingMode">$MenuTitle</a>
+                                    <a href="$Link" class="nav_category_title nav_link--$LinkingMode">$MenuTitle</a>
                                     <% if $Children %>
                                         <ul>
                                             <% loop $Children %>
                                                 <li>
-                                                    <a href="$Link" class="nav_sublink ignoreLinkPrefix nav_link--$LinkingMode">$MenuTitle</a>
+                                                    <a href="$Link" class="nav_sublink nav_link--$LinkingMode">$MenuTitle</a>
                                                 </li>
                                             <% end_loop %>
                                         </ul>

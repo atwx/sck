@@ -37,7 +37,7 @@
 
                                 <% if $Email %>
                                     <div class="contact-email">
-                                        <a class="ignoreLinkPrefix" href="mailto:$Email">$Email</a>
+                                        <a href="mailto:$Email">$Email</a>
                                     </div>
                                 <% end_if %>
                             </div>

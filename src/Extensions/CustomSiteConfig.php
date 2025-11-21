@@ -55,7 +55,6 @@ class CustomSiteConfig extends Extension
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
         'ColorBackground' => 'Varchar(7)',
-        'LinkStyle' => 'Varchar(50)',
         'MenuBackgroundColor' => 'Varchar(7)',
         'MenuButtonColor' => 'Varchar(7)',
         'MenuTextColor' => 'Varchar(7)',
@@ -135,12 +134,6 @@ class CustomSiteConfig extends Extension
             ->setAttribute('type', 'color'));
         $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
-        $fields->addFieldToTab("Root.Styling", DropdownField::create('LinkStyle', 'Link Style', [
-            'underline' => 'Unterstrichen',
-            'triangle_primary' => 'Dreieck Primärfarbe',
-            'triangle_secondary' => 'Dreieck Sekundärfarbe',
-        ])
-            ->setDescription("Stil der Links auf der Website"));
 
         // Fonts Tab
         $fields->addFieldToTab("Root.Schriften.Header", DropdownField::create('HeaderFont', 'Header Font', [

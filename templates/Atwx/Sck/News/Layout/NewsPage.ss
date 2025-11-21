@@ -3,7 +3,7 @@
         <h1 class="hl1 text_title">$Title</h1>
         <div class="text_intro">$Intro</div>
         <% loop $getNews %>
-            <a href="$Top.Link/view/$ID" class="news_link_overlay ignoreLinkPrefix" aria-label="Mehr erfahren zu $Title">
+            <a href="$Top.Link/view/$ID" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
                 <div class="news_item">
                     <div class="news_image <% if not $Image %>no-image<% end_if %>">
                         $Image
@@ -20,21 +20,21 @@
         <% if $News.MoreThanOnePage %>
             <div class="section_news_pagination">
                 <% if $News.NotFirstPage %>
-                    <a class="prev-link ignoreLinkPrefix" href="$News.PrevLink">«</a>
+                    <a class="prev-link" href="$News.PrevLink">«</a>
                 <% end_if %>          
                 <% loop $News.PaginationSummary %>
                     <% if $CurrentBool %>
-                        <a class="page-link current ignoreLinkPrefix">$PageNum</a>
+                        <a class="page-link current">$PageNum</a>
                     <% else %>
                         <% if $Link %>
-                            <a class="page-link ignoreLinkPrefix" href="$Link">$PageNum</a>
+                            <a class="page-link" href="$Link">$PageNum</a>
                         <% else %>
                             ...
                         <% end_if %>
                     <% end_if %>
                 <% end_loop %>      
                 <% if $News.NotLastPage %>
-                    <a class="next-link ignoreLinkPrefix" href="$News.NextLink">»</a>
+                    <a class="next-link" href="$News.NextLink">»</a>
                 <% end_if %>
             </div>
         <% end_if %>

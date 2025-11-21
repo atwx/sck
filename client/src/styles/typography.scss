@@ -45,130 +45,34 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: var(--ColorPrimary);
-}
 
-body[data-link-style="underline"]{
-
-    a:not(.link--button):not(.ignoreLinkPrefix) {
+    &:not(.link--button) {
         text-decoration: underline;
-        color: var(--ColorPrimary);
-
         &:hover {
             color: var(--ColorSecondary);
         }
     }
-
-    .bgc-primary a:not(.link--button) {
-        text-decoration: underline;
-        color: var(--ColorWhite);
-
-        &:hover {
-            color: var(--ColorSecondary);
-        }
-    } 
-
-    
-    .bgc-secondary a:not(.link--button) {
-        text-decoration: underline;
-        color: var(--ColorWhite);
-        &:hover {
-            color: var(--ColorPrimary);
-        }
-    }
 }
 
-body[data-link-style="triangle_primary"]{
+.bgc-primary {
+    a {                
+        &:not(.link--button) {
+            text-decoration: underline;
+            color: var(--ColorWhite);
 
-    a:not(.link--button):not(.ignoreLinkPrefix) {
-                
-        &::before {
-            content: "▶ ";
-            color: var(--ColorPrimary);
-            font-size: 1rem;
-            vertical-align: middle;
-        }
-
-        &:hover {
-            color: var(--ColorSecondary);
-            
-            &::before {
+            &:hover {
                 color: var(--ColorSecondary);
             }
         }
     }
-
-    .bgc-primary a:not(.link--button):not(.ignoreLinkPrefix) {
-        color: var(--ColorSecondary);
-
-        &::before {
-            color: var(--ColorSecondary);
-        }
-        
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    
-    .bgc-secondary a:not(.link--button):not(.ignoreLinkPrefix) {
-        color: var(--ColorPrimary);
-        
-        &:hover {
-            text-decoration: underline;
-
-            &::before {
-                color: var(--ColorPrimary);
-            }
-        }
-    }
 }
 
-body[data-link-style="triangle_secondary"]{
-
-    a:not(.link--button):not(.ignoreLinkPrefix) {
-        
-        color: var(--ColorSecondary);
-
-        &::before {
-            content: "▶ ";
-            color: var(--ColorSecondary);
-            font-size: 1rem;
-            vertical-align: middle;
-        }
-
-        &:hover {
-            color: var(--ColorPrimary);
-            
-            &::before {
-                color: var(--ColorPrimary);
-            }
-        }
-    }
-
-    .bgc-primary a:not(.link--button):not(.ignoreLinkPrefix) {
-        color: var(--ColorSecondary);
-
-        &::before {
-            color: var(--ColorSecondary);
-        }
-        
-        &:hover {
+.bgc-secondary {
+    a {                
+        &:not(.link--button) {
             text-decoration: underline;
-        }
-    }
-
-    
-    .bgc-secondary a:not(.link--button):not(.ignoreLinkPrefix) {
-        color: var(--ColorPrimary);
-
-        &::before {
-            color: var(--ColorPrimary);
-        }
-        
-        &:hover {
-            text-decoration: underline;
-
-            &::before {
+            color: var(--ColorWhite);
+            &:hover {
                 color: var(--ColorPrimary);
             }
         }
