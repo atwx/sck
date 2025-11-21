@@ -34,7 +34,16 @@ section.section--NewsElement {
         }
 
         .news_item_prefix{
-            padding-right: 20px;
+            margin-right: 20px;
+            max-width: 40px;
+            max-height: 40px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
         }
 
         .news_list {
