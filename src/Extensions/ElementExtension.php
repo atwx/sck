@@ -11,6 +11,7 @@ class ElementExtension extends Extension
 {
     private static $db = [
         "BackgroundColor" => "Varchar(32)",
+        "FadeInAnimation" => "Varchar(255)",
     ];
 
     private static $defaults = [

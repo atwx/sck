@@ -28,6 +28,21 @@ section.section--ShowcaseElement {
             width: 60%;
             height: auto;
 
+            .section_title{
+                margin-top: 0;
+                color: var(--ColorHeadline);
+            }
+
+            .section_text {
+                color: var(--ColorText);
+
+                p{
+                    &:last-of-type{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
             @include media("<desktop") {
                 width: 100%;
                 height: auto;

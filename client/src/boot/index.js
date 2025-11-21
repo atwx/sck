@@ -1,6 +1,6 @@
 import Swiper, {Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination} from 'swiper';
 import GLightbox from "glightbox";
-import { animate, scroll } from "motion";
+import './animations';
 
 //animate("section", { rotate: 360 }); Test if animations work
 

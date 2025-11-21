@@ -11,7 +11,7 @@
             <% end_if %>
 
             <% if $Content %>
-                <div class="section__text">
+                <div class="section_text">
                     $Content
                 </div>
             <% end_if %>
