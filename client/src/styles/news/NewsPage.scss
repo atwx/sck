@@ -5,6 +5,10 @@
             margin: 20px 0;
             color: var(--ColorText);
 
+            .backlink_link{
+                text-decoration: none;
+            }
+
             &:hover {
                 color: var(--ColorSecondary);
             }

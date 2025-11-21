@@ -11,12 +11,18 @@
         <% end_if %>
         <% if $SideLinks.Count > 0 %>
             <div class="section_links">
-                <% if $LinksTitle %>
-                    <h2 class="section_links_title">$LinksTitle</h2>
-                <% end_if %>
-                <% loop $SideLinks %>
-                    <a href="$URL" class="section_link">$Title</a>
-                <% end_loop %>
+                <ul>
+                    <% if $LinksTitle %>
+                        <li>
+                            <h2 class="section_links_title">$LinksTitle</h2>
+                        </li>
+                    <% end_if %>
+                    <% loop $SideLinks %>
+                        <li>
+                            <a href="$URL" class="section_link">$Title</a>
+                        </li>
+                    <% end_loop %>
+                </ul>
             </div>
         <% end_if %>
 
