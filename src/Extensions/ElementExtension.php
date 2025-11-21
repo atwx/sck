@@ -3,9 +3,9 @@ namespace App\Extensions;
 
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use DNADesign\Elemental\Forms\TextCheckboxGroupField;
+use SilverStripe\Forms\CheckboxField;
 
 class ElementExtension extends Extension
 {
@@ -27,15 +27,20 @@ class ElementExtension extends Extension
 
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->addFieldToTab(
-            'Root.Style',
+        $fields->addFieldsToTab('Root.Style', [
             DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
                 '' => 'Keine',
                 'bgc-primary' => 'Primärfarbe',
                 'bgc-secondary' => 'Sekundärfarbe'
             ])
-            ->setDescription('Bestimmt die Hintergrundfarbe des Elements')
-        );
+            ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
+            DropdownField::create('FadeInAnimation', 'Fade-In Animation', [
+                '' => 'Keine',
+                'fade-in' => 'Einblenden',
+            ])->setDescription('Wählen Sie eine Animation aus, die angewendet wird, wenn das Element in den Viewport scrollt.'),
+            CheckboxField::create('ShowDecoration', 'Dekoration anzeigen')
+                ->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
+            ]);
 
         $fields->replaceField(
             'Title',
