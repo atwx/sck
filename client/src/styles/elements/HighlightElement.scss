@@ -1,0 +1,47 @@
+section.section--HighlightElement {
+    .section_content {
+        .section_content_inner {
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            width: 70%;
+            height: auto;
+
+            .section_title{
+                margin-top: 0;
+            }
+
+            .section_links{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .section_link {
+                    color: var(--ColorText);
+                }
+            }
+
+            @include media("<maxWidth"){
+                padding: 40px 20px 40px 0;
+            }
+
+            @include media("<desktop"){
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @include media("<maxWidth"){
+            padding: 0 0 0 20px;
+        }
+    }
+
+    &.bgc-primary {
+        background: linear-gradient(90deg, var(--ColorPrimary) 0%, var(--ColorPrimary) 50%, transparent 51%, transparent 100%);
+
+        .section_content_inner {
+            background-color: var(--ColorPrimary);
+        }
+    }
+}
