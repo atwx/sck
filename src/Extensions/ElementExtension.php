@@ -12,6 +12,13 @@ class ElementExtension extends Extension
     private static $db = [
         "BackgroundColor" => "Varchar(32)",
         "FadeInAnimation" => "Varchar(255)",
+        "ShowDecoration" => "Boolean",
+    ];
+
+    private static $field_labels = [
+        "BackgroundColor" => "Hintergrundfarbe",
+        "FadeInAnimation" => "Fade-In Animation",
+        "ShowDecoration" => "Dekoration anzeigen",
     ];
 
     private static $defaults = [
