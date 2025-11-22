@@ -1,5 +1,9 @@
 import Swiper, {Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination} from 'swiper';
 import GLightbox from "glightbox";
+import EmblaCarousel from 'embla-carousel'
+import ClassNames from 'embla-carousel-class-names'
+import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
+import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
 import './animations';
 
 //animate("section", { rotate: 360 }); Test if animations work
@@ -74,6 +78,60 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const emblaSliders = document.querySelectorAll('[data-behaviour="embla"]');
+    emblaSliders.forEach((emblaSlider) => {
+      const OPTIONS = { loop: true }
+
+      const emblaNode = emblaSlider
+      const viewportNode = emblaNode.querySelector('.embla__viewport')
+      const prevBtnNode = emblaNode.querySelector('.embla-button__prev')
+      const nextBtnNode = emblaNode.querySelector('.embla-button__next')
+      const dotsNode = emblaNode.querySelector('.embla__dots')
+
+      const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [ClassNames({
+        // snapped: 'embla__slide--in-view',
+      })]);
+
+      const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+        emblaApi,
+        prevBtnNode,
+        nextBtnNode
+      )
+      const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+        emblaApi,
+        dotsNode
+      )
+      const selectSlide = (emblaApi) => {
+        const slideIndex = emblaApi.selectedScrollSnap();
+        // emblaApi.slideNodes()[slideIndex+1].classList.add('embla__slide--in-view');
+        const edgeSlides = emblaApi.slideNodes().filter((slideNode, index) => {
+          const screenWidth = window.innerWidth;
+          if (screenWidth < 768) {
+          // Smartphone: no edge slides
+          return false;
+          } else if (screenWidth < 1024) {
+          // Medium: adjacent slides are edges
+          return Math.abs(index - slideIndex) === 1 || Math.abs(index - slideIndex) === emblaApi.slideNodes().length - 1;
+          } else {
+          // Desktop: slides at distance 2 are edges (3 slides visible, so next ones are edges)
+          return Math.abs(index - slideIndex) === 2 || Math.abs(index - slideIndex) === emblaApi.slideNodes().length - 2;
+          }
+        });
+        emblaApi.slideNodes().forEach((slideNode) => {
+          slideNode.classList.remove('embla__slide--edge');
+        });
+        edgeSlides.forEach((edgeSlide) => {
+          edgeSlide.classList.add('embla__slide--edge');
+        });
+      };
+      emblaApi.on('init', selectSlide);
+      emblaApi.on('select', selectSlide);
+      emblaApi.on('resize', selectSlide);
+      emblaApi.on('destroy', removePrevNextBtnsClickHandlers)
+      emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
+
+    });
+
     // INIT SWIPER
     const sliders = document.querySelectorAll('.swiper');
     sliders.forEach(function (slider) {
@@ -127,7 +185,6 @@ window.document.addEventListener('DOMContentLoaded', () => {
         //Add pause functionality for autoplay sliders
         if (slider.dataset.autoplay === 'true' || slider.dataset.autoplay === '1') {
             const pauseButton = slider.querySelector('.swiper-button-pause');
-            console.log(pauseButton);
             if (pauseButton) {
                 pauseButton.addEventListener('click', () => {
                     if (swiper.autoplay.running) {

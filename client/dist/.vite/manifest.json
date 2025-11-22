@@ -152,5 +152,149 @@
     "file": "assets/bundle.css",
     "isEntry": true,
     "src": "client/src/styles/bundle.scss"
+  },
+  "dm-sans-v17-latin-100.woff2": {
+    "file": "assets/dm-sans-v17-latin-100.woff2",
+    "src": "dm-sans-v17-latin-100.woff2"
+  },
+  "dm-sans-v17-latin-100italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-100italic.woff2",
+    "src": "dm-sans-v17-latin-100italic.woff2"
+  },
+  "dm-sans-v17-latin-200.woff2": {
+    "file": "assets/dm-sans-v17-latin-200.woff2",
+    "src": "dm-sans-v17-latin-200.woff2"
+  },
+  "dm-sans-v17-latin-200italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-200italic.woff2",
+    "src": "dm-sans-v17-latin-200italic.woff2"
+  },
+  "dm-sans-v17-latin-300.woff2": {
+    "file": "assets/dm-sans-v17-latin-300.woff2",
+    "src": "dm-sans-v17-latin-300.woff2"
+  },
+  "dm-sans-v17-latin-300italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-300italic.woff2",
+    "src": "dm-sans-v17-latin-300italic.woff2"
+  },
+  "dm-sans-v17-latin-500.woff2": {
+    "file": "assets/dm-sans-v17-latin-500.woff2",
+    "src": "dm-sans-v17-latin-500.woff2"
+  },
+  "dm-sans-v17-latin-500italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-500italic.woff2",
+    "src": "dm-sans-v17-latin-500italic.woff2"
+  },
+  "dm-sans-v17-latin-600.woff2": {
+    "file": "assets/dm-sans-v17-latin-600.woff2",
+    "src": "dm-sans-v17-latin-600.woff2"
+  },
+  "dm-sans-v17-latin-600italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-600italic.woff2",
+    "src": "dm-sans-v17-latin-600italic.woff2"
+  },
+  "dm-sans-v17-latin-700.woff2": {
+    "file": "assets/dm-sans-v17-latin-700.woff2",
+    "src": "dm-sans-v17-latin-700.woff2"
+  },
+  "dm-sans-v17-latin-700italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-700italic.woff2",
+    "src": "dm-sans-v17-latin-700italic.woff2"
+  },
+  "dm-sans-v17-latin-800.woff2": {
+    "file": "assets/dm-sans-v17-latin-800.woff2",
+    "src": "dm-sans-v17-latin-800.woff2"
+  },
+  "dm-sans-v17-latin-800italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-800italic.woff2",
+    "src": "dm-sans-v17-latin-800italic.woff2"
+  },
+  "dm-sans-v17-latin-900.woff2": {
+    "file": "assets/dm-sans-v17-latin-900.woff2",
+    "src": "dm-sans-v17-latin-900.woff2"
+  },
+  "dm-sans-v17-latin-900italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-900italic.woff2",
+    "src": "dm-sans-v17-latin-900italic.woff2"
+  },
+  "dm-sans-v17-latin-italic.woff2": {
+    "file": "assets/dm-sans-v17-latin-italic.woff2",
+    "src": "dm-sans-v17-latin-italic.woff2"
+  },
+  "dm-sans-v17-latin-regular.woff2": {
+    "file": "assets/dm-sans-v17-latin-regular.woff2",
+    "src": "dm-sans-v17-latin-regular.woff2"
+  },
+  "roboto-v49-latin-100.woff2": {
+    "file": "assets/roboto-v49-latin-100.woff2",
+    "src": "roboto-v49-latin-100.woff2"
+  },
+  "roboto-v49-latin-100italic.woff2": {
+    "file": "assets/roboto-v49-latin-100italic.woff2",
+    "src": "roboto-v49-latin-100italic.woff2"
+  },
+  "roboto-v49-latin-200.woff2": {
+    "file": "assets/roboto-v49-latin-200.woff2",
+    "src": "roboto-v49-latin-200.woff2"
+  },
+  "roboto-v49-latin-200italic.woff2": {
+    "file": "assets/roboto-v49-latin-200italic.woff2",
+    "src": "roboto-v49-latin-200italic.woff2"
+  },
+  "roboto-v49-latin-300.woff2": {
+    "file": "assets/roboto-v49-latin-300.woff2",
+    "src": "roboto-v49-latin-300.woff2"
+  },
+  "roboto-v49-latin-300italic.woff2": {
+    "file": "assets/roboto-v49-latin-300italic.woff2",
+    "src": "roboto-v49-latin-300italic.woff2"
+  },
+  "roboto-v49-latin-500.woff2": {
+    "file": "assets/roboto-v49-latin-500.woff2",
+    "src": "roboto-v49-latin-500.woff2"
+  },
+  "roboto-v49-latin-500italic.woff2": {
+    "file": "assets/roboto-v49-latin-500italic.woff2",
+    "src": "roboto-v49-latin-500italic.woff2"
+  },
+  "roboto-v49-latin-600.woff2": {
+    "file": "assets/roboto-v49-latin-600.woff2",
+    "src": "roboto-v49-latin-600.woff2"
+  },
+  "roboto-v49-latin-600italic.woff2": {
+    "file": "assets/roboto-v49-latin-600italic.woff2",
+    "src": "roboto-v49-latin-600italic.woff2"
+  },
+  "roboto-v49-latin-700.woff2": {
+    "file": "assets/roboto-v49-latin-700.woff2",
+    "src": "roboto-v49-latin-700.woff2"
+  },
+  "roboto-v49-latin-700italic.woff2": {
+    "file": "assets/roboto-v49-latin-700italic.woff2",
+    "src": "roboto-v49-latin-700italic.woff2"
+  },
+  "roboto-v49-latin-800.woff2": {
+    "file": "assets/roboto-v49-latin-800.woff2",
+    "src": "roboto-v49-latin-800.woff2"
+  },
+  "roboto-v49-latin-800italic.woff2": {
+    "file": "assets/roboto-v49-latin-800italic.woff2",
+    "src": "roboto-v49-latin-800italic.woff2"
+  },
+  "roboto-v49-latin-900.woff2": {
+    "file": "assets/roboto-v49-latin-900.woff2",
+    "src": "roboto-v49-latin-900.woff2"
+  },
+  "roboto-v49-latin-900italic.woff2": {
+    "file": "assets/roboto-v49-latin-900italic.woff2",
+    "src": "roboto-v49-latin-900italic.woff2"
+  },
+  "roboto-v49-latin-italic.woff2": {
+    "file": "assets/roboto-v49-latin-italic.woff2",
+    "src": "roboto-v49-latin-italic.woff2"
+  },
+  "roboto-v49-latin-regular.woff2": {
+    "file": "assets/roboto-v49-latin-regular.woff2",
+    "src": "roboto-v49-latin-regular.woff2"
   }
 }
