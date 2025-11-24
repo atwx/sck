@@ -33,33 +33,24 @@
     .nav_category{
         display: flex;
         flex-direction: column;
-        padding: 0 10px;
+        padding: 0 10px 0 0;
         width: 100%;
 
         .nav_category_title{
-            padding: 12px 0;
+            padding: 12px 10px;
             color: var(--ColorWhite);
             font-size: 16px;
             font-weight: bold;
             border-bottom: 1px solid var(--ColorWhite);
-            text-decoration: none;            
+            text-decoration: none;        
 
             &:hover {
                 background-color: var(--ColorSecondary);
-                margin-left: -10px;
-                padding-left: 10px;
-            }
-
-            &.nav_link--section{
-                margin-left: -10px;
-                padding-left: 10px;
             }
 
             &.nav_link--current {
                 background-color: var(--ColorSecondary);
                 color: var(--ColorWhite);
-                margin-left: -10px;
-                padding-left: 10px;
 
                 &:hover {
                     filter: brightness(0.9);
@@ -81,7 +72,6 @@
                 text-decoration: none;
                 font-size: 14px;
                 transition: background-color 0.2s ease;
-                margin-left: -10px;
 
                 &:last-child {
                     border-bottom: none;
