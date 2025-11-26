@@ -10,7 +10,7 @@
                     <div class="contact-person">
                         <% if $Image %>
                             <div class="contact-photo">
-                                <img src="$Image.URL" alt="$Name" loading="lazy" />
+                                <img src="$Image.FocusFill(300,300).URL" alt="$Name" loading="lazy" />
                             </div>
                         <% end_if %>
 

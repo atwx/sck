@@ -109,8 +109,7 @@ section.section--NewsElement {
     }
 
     @include media("<desktop") {
-        padding: 40px 20px;
-        margin: 60px auto;
+        padding: 60px 0;
 
         .section_content {
 
@@ -137,8 +136,7 @@ section.section--NewsElement {
         }
     }
     @include media("<medium") {
-        margin: 40px auto;
-        padding: 30px 15px;
+        padding: 70px 15px;
 
         .section_content {
             .section_intro {

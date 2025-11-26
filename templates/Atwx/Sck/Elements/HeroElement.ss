@@ -2,7 +2,7 @@
     <div class="hero_content">
         <% if $Image %>
             <div class="hero_image">
-                $Image.ScaleWidth(1920)
+                $Image.FocusFillMax(1920,992)
             </div>
         <% end_if %>
         <style>

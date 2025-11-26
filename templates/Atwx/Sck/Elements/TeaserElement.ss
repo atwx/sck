@@ -9,7 +9,7 @@
                     <div class="teaser-item">
                         <% if $Image %>
                             <div class="teaser-item-image">
-                                $Image.ScaleWidth(1200)
+                                $Image.FocusFill(1200,900)
                             </div>
                         <% end_if %>
 
