@@ -43,8 +43,8 @@ class ElementExtension extends Extension
                 '' => 'Keine',
                 'elementdecoration--small' => 'Icon',
                 'elementdecoration--large' => 'großes Icon',
-                'elementdecoration--smallwhite' => 'Icon',
-                'elementdecoration--largewhite' => 'großes Icon',
+                'elementdecoration--smallwhite' => 'Icon weiß',
+                'elementdecoration--largewhite' => 'großes Icon weiß',
             ])->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
             ]);
 
