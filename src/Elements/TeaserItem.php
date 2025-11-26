@@ -12,6 +12,7 @@ use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use TractorCow\Fluent\Extension\FluentExtension;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\LinkField\Form\MultiLinkField;
 
 /**
  * Class \Atwx\Sck\Elements\TeaserItem
@@ -35,20 +36,25 @@ class TeaserItem extends DataObject
 
     private static $has_one = [
         'Image' => Image::class,
-        'Button' => Link::class,
+        // 'Button' => Link::class,
         'TeaserElement' => TeaserElement::class,
+    ];
+
+    private static $has_many = [
+        'Buttons' => Link::class,
     ];
 
     private static $owns = [
         'Image',
-        'Button',
+        // 'Button',
+        'Buttons',
     ];
 
     private static $field_labels = [
         'Title' => 'Überschrift',
         'Content' => 'Text',
         'Image' => 'Bild',
-        'Button' => 'Button',
+        'Buttons' => 'Buttons',
     ];
 
     private static $extensions = [
@@ -71,7 +77,8 @@ class TeaserItem extends DataObject
             TextField::create('Title', 'Title', null, 255),
             HTMLEditorField::create('Content', 'Content'),
             UploadField::create('Image', 'Bild'),
-            LinkField::create('Button', 'Button')
+            // LinkField::create('Button', 'Button')
+            MultiLinkField::create('Buttons', 'Buttons')
         );
 
         // This line is necessary, and only AFTER you have added your fields

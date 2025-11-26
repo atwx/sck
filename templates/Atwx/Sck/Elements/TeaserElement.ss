@@ -24,9 +24,13 @@
                                 </div>
                             <% end_if %>
 
-                            <% if $Button && $Button.exists() %>
-                                <% include Atwx/Sck/Includes/Button Link=$Button %>
-                            <% end_if %>
+                            <div class="teaser-item-buttons">
+                                <% if $Buttons.Count >0 %>
+                                    <% loop $Buttons %>
+                                        <% include Atwx/Sck/Includes/Button Link=$Me %>
+                                    <% end_loop %>
+                                <% end_if %>
+                            </div>
                         </div>
                     </div>
                 <% end_loop %>

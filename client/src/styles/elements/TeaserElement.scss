@@ -23,6 +23,12 @@ section.section--TeaserElement {
         }
     }
 
+    .teaser-item-buttons{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
     .teaser {
         &-title {
             text-align: left;
