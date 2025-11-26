@@ -41,7 +41,7 @@ section.section--CardSliderElement {
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: unset;
   }
 
   .embla__container {
@@ -136,7 +136,9 @@ section.section--CardSliderElement {
     top: calc(50% - 27.5px);
     width: 100%;
     pointer-events: none;
+    max-width: 75%;
   }
+
   .embla-button__next, .embla-button__prev {
     background-color: var(--ColorSecondary);
     color: var(--ColorWhite);
