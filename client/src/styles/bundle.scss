@@ -52,4 +52,10 @@ section {
     &.bgc-secondary {
         background: var(--ColorSecondary);
     }
+
+    .section_content{
+        max-width: var(--MaxWidthContent);
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 }

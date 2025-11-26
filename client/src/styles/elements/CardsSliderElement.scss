@@ -5,205 +5,199 @@ section.section--CardSliderElement {
   position: relative;
   margin: 0 auto;
 
-  .section_content {
-    max-width: none;
-    margin: 0;
-    padding: 0 20px;
+  .section_title {
+    max-width: var(--MaxWidthContent);
+    margin: 0 auto 40px auto;
+    text-align: left;
+    margin-bottom: 40px;
+    color: var(--ColorWhite);
+    padding-left: 0;
 
-    .section_title {
-      max-width: var(--MaxWidthContent);
-      margin: 0 auto 40px auto;
-      text-align: left;
-      margin-bottom: 40px;
-      color: var(--ColorWhite);
-      padding-left: 0;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
 
-      @media (max-width: 768px) {
-        text-align: center;
-      }
+  .section_intro_text {
+    max-width: var(--MaxWidthContent);
+    margin: 0 auto 30px;
+  }
+
+  .embla {
+    position: relative;
+    --slide-spacing: 30px;
+    --slide-size: 100%;
+
+    @include mediasize('medium') {
+      --slide-size: 50%;
     }
 
-    .section_intro_text {
-      max-width: var(--MaxWidthContent);
-      margin: 0 auto 30px;
+    @include mediasize('desktop') {
+      --slide-size: 25%;
+    }
+  }
+
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1920px;
+  }
+
+  .embla__container {
+    display: flex;
+    // gap: 30px;
+  }
+
+  .card-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    transition: opacity 0.3s ease-in-out;
+    height: unset;
+    background-color: var(--ColorWhite);
+    color: var(--ColorPrimary);
+
+    &.embla__slide--edge {
+      opacity: 0.5;
     }
 
-    .embla {
-      position: relative;
-      --slide-spacing: 30px;
-      --slide-size: 100%;
-
-      @include mediasize('medium') {
-        --slide-size: 50%;
-      }
-
-      @include mediasize('desktop') {
-        --slide-size: 25%;
-      }
+    &.swiper-slide-next,
+    &.swiper-slide-prev,
+    &.swiper-slide-active {
+      opacity: 1;
     }
 
-    .embla__viewport {
-      overflow: hidden;
+    .card-slide-image {
       width: 100%;
-      margin: 0 auto;
-      max-width: 1920px;
-    }
-
-    .embla__container {
-      display: flex;
-      // gap: 30px;
-    }
-
-    .card-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch;
-      align-items: stretch;
-      transition: opacity 0.3s ease-in-out;
-      height: unset;
-      background-color: var(--ColorWhite);
-      color: var(--ColorPrimary);
-
-      &.embla__slide--edge {
-        opacity: 0.5;
-      }
-
-      &.swiper-slide-next,
-      &.swiper-slide-prev,
-      &.swiper-slide-active {
-        opacity: 1;
-      }
-
-      .card-slide-image {
+      display: block;
+      img {
         width: 100%;
         display: block;
-        img {
-          width: 100%;
-          display: block;
-        }
       }
+    }
 
-      .card-slide-content {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 1;
-        padding: 20px;
-        font-weight: 400;
+    .card-slide-content {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 1;
+      padding: 20px;
+      font-weight: 400;
 
-        .card-slide-title {
-          font-weight: 500;
-          font-size: 1.625rem;
-          margin-top: 10px;
-          margin-bottom: 20px;
-        }
+      .card-slide-title {
+        font-weight: 500;
+        font-size: 1.625rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
       }
+    }
 
-      &.bg-color-white {
+    &.bg-color-white {
+      background-color: var(--ColorWhite);
+      color: var(--ColorPrimary);
+    }
+
+    &.bg-color-primary {
+      background-color: var(--ColorPrimary);
+      color: var(--ColorWhite);
+
+      .link--button {
         background-color: var(--ColorWhite);
         color: var(--ColorPrimary);
-      }
 
-      &.bg-color-primary {
-        background-color: var(--ColorPrimary);
-        color: var(--ColorWhite);
-
-        .link--button {
-          background-color: var(--ColorWhite);
-          color: var(--ColorPrimary);
-
-          &:hover {
-            background-color: var(--ColorPrimaryLight);
-            color: var(--ColorWhite);
-          }
-        }
-      }
-
-      &.bg-color-secondary {
-        background-color: var(--ColorSecondary);
-        color: var(--ColorWhite);
-
-        .link--button {
-          background-color: var(--ColorWhite);
-          color: var(--ColorPrimary);
-
-          &:hover {
-            background-color: var(--ColorPrimaryLight);
-            color: var(--ColorWhite);
-          }
+        &:hover {
+          background-color: var(--ColorPrimaryLight);
+          color: var(--ColorWhite);
         }
       }
     }
 
-    .embla__buttons {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      top: calc(50% - 27.5px);
-      width: 100%;
-      pointer-events: none;
-    }
-    .embla-button__next, .embla-button__prev {
+    &.bg-color-secondary {
       background-color: var(--ColorSecondary);
       color: var(--ColorWhite);
-      width: 55px;
-      height: 55px;
-      border-radius: 0;
-      border: none;
-      position: relative;
-      pointer-events: all;
 
-      &::after, &::before {
-          content: '';
-          width: 3px;
-          height: 20px;
-          background-color: var(--ColorWhite);
-          top: 50%;
-          left: 50%;
-          position: absolute;
-          transform: translate(-50%, -50%);
+      .link--button {
+        background-color: var(--ColorWhite);
+        color: var(--ColorPrimary);
+
+        &:hover {
+          background-color: var(--ColorPrimaryLight);
+          color: var(--ColorWhite);
+        }
       }
+    }
+  }
 
+  .embla__buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: calc(50% - 27.5px);
+    width: 100%;
+    pointer-events: none;
+  }
+  .embla-button__next, .embla-button__prev {
+    background-color: var(--ColorSecondary);
+    color: var(--ColorWhite);
+    width: 55px;
+    height: 55px;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    pointer-events: all;
+
+    &::after, &::before {
+        content: '';
+        width: 3px;
+        height: 20px;
+        background-color: var(--ColorWhite);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        transform: translate(-50%, -20%) rotate(45deg);
+    }
+
+    &::before {
+        transform: translate(-50%, -80%) rotate(-45deg);
+    }
+
+    &.embla-button__prev {
       &::after {
-          transform: translate(-50%, -20%) rotate(45deg);
+        transform: translate(-50%, -20%) rotate(-45deg);
       }
 
       &::before {
-          transform: translate(-50%, -80%) rotate(-45deg);
-      }
-
-      &.embla-button__prev {
-        &::after {
-          transform: translate(-50%, -20%) rotate(-45deg);
-        }
-
-        &::before {
-          transform: translate(-50%, -80%) rotate(45deg);
-        }
+        transform: translate(-50%, -80%) rotate(45deg);
       }
     }
+  }
 
-    .slider-dots {
-        margin-top: 30px;
-        text-align: center;
+  .slider-dots {
+      margin-top: 30px;
+      text-align: center;
 
-        .embla__dots {
-            position: relative;
-            bottom: auto;
+      .embla__dots {
+          position: relative;
+          bottom: auto;
 
-            .embla__dot {
-                width: 30px;
-                height: 10px;
-                background: var(--ColorWhite);
-                opacity: 1;
-                border-radius: 0;
-                margin: 0 5px;
-                transition: background-color 0.3s ease;
+          .embla__dot {
+              width: 30px;
+              height: 10px;
+              background: var(--ColorWhite);
+              opacity: 1;
+              border-radius: 0;
+              margin: 0 5px;
+              transition: background-color 0.3s ease;
 
-                &.embla__dot--selected {
-                    background: var(--ColorSecondary);
-                }
-            }
-        }
-    }
+              &.embla__dot--selected {
+                  background: var(--ColorSecondary);
+              }
+          }
+      }
   }
 }

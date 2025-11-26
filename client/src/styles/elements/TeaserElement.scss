@@ -81,10 +81,6 @@ section.section--TeaserElement {
         }
     }
 
-    .section_content {
-        max-width: calc(var(--MaxWidthContent) + 20px);
-    }
-
     .teaser-item {
         background: var(--ColorWhite);
         overflow: hidden;

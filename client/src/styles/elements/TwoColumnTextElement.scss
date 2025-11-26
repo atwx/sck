@@ -1,11 +1,6 @@
 section.section--TwoColumnTextElement {
     padding: 60px 0;
 
-    .section_content {
-        padding: 0 20px;
-        max-width: none;
-    }
-
     .two-column-content {
         display: grid;
         grid-template-columns: var(--TitleWidth, 50%) calc(100% - var(--TitleWidth, 50%));
