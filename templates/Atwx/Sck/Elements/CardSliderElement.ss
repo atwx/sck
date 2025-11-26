@@ -1,4 +1,4 @@
-<section class="section--CardSliderElement $BackgroundColor">
+<section class="section--CardSliderElement $BackgroundColor $ElementDecoration">
     <div class="section_content">
         <% if $SliderTitle %>
             <h2 class="hl2 section_title">$SliderTitle</h2>

@@ -12,13 +12,13 @@ class ElementExtension extends Extension
     private static $db = [
         "BackgroundColor" => "Varchar(32)",
         "FadeInAnimation" => "Varchar(255)",
-        "ShowDecoration" => "Boolean",
+        "ElementDecoration" => "Varchar(32)",
     ];
 
     private static $field_labels = [
         "BackgroundColor" => "Hintergrundfarbe",
         "FadeInAnimation" => "Fade-In Animation",
-        "ShowDecoration" => "Dekoration anzeigen",
+        "ElementDecoration" => "Element-Dekoration",
     ];
 
     private static $defaults = [
@@ -39,8 +39,13 @@ class ElementExtension extends Extension
                 'fadein' => 'Einblenden',
                 'flyin' => 'Hineinfliegen',
             ])->setDescription('Wählen Sie eine Animation aus, die angewendet wird, wenn das Element in den Viewport scrollt.'),
-            CheckboxField::create('ShowDecoration', 'Dekoration anzeigen')
-                ->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
+            DropdownField::create('ElementDecoration', 'Element-Dekoration', [
+                '' => 'Keine',
+                'elementdecoration--small' => 'Icon',
+                'elementdecoration--large' => 'großes Icon',
+                'elementdecoration--smallwhite' => 'Icon',
+                'elementdecoration--largewhite' => 'großes Icon',
+            ])->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
             ]);
 
         $fields->replaceField(

@@ -1,4 +1,4 @@
-<section class="section--PersonElement">
+<section class="section--PersonElement $BackgroundColor $ElementDecoration">
     <div class="section_content">
         <% if $Title %>
         <h2 class="hl2 main-title">$Title</h2>

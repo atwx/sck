@@ -1,4 +1,4 @@
-<section class="section--IconCardElement $BackgroundColor">
+<section class="section--IconCardElement $BackgroundColor $ElementDecoration">
     <div class="section_content">
         <div class="align-{$Alignment} vertical-{$VerticalPosition} horizontal-($HorizontalAlignment} <% if $BackgroundImage %> has-bg<% end_if %>">
             <% if $BackgroundImage %>
