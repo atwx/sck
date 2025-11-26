@@ -121,7 +121,7 @@ section.section--TeaserElement {
             margin-top: 25px;
 
             @include media("<medium") {
-                padding: 20px;
+                padding: 20px 0;
             }
         }
 
