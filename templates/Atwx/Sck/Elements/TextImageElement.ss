@@ -25,7 +25,6 @@
                 </ul>
             </div>
         <% end_if %>
-
         <div class="section_text">
             <h2 class="hl2 section_title">$Title</h2>
             <div class="section_text_content">

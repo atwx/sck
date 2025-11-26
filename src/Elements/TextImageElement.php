@@ -118,8 +118,10 @@ class TextImageElement extends BaseElement
                 "image--70" => "70%",
             ]),
             DropdownField::create('Variant', 'Bildausrichtung', [
-                "" => "Bild rechts",
+                "image--right" => "Bild rechts",
                 "image--left" => "Bild links",
+                "image--wideright" => "Breites Bild rechts",
+                "image--wideleft" => "Breites Bild links",
             ]),
         ]);
 
