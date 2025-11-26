@@ -91,6 +91,8 @@ section.section--TeaserElement {
         transition: transform 0.3s ease;
         margin-bottom: 10px;
         padding: 10px;
+        --ColorText: var(--ColorTextOrigin);
+        --ColorHeadline: var(--ColorHeadlineOrigin);
 
         &-image {
             width: 100%;

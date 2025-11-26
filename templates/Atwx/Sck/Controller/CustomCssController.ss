@@ -7,6 +7,8 @@ body {
     --ColorSecondaryFontWhite: $SiteConfig.ColorSecondaryFontWhite;
     --ColorText: $SiteConfig.ColorTextValue;
     --ColorHeadline: $SiteConfig.ColorHeadlineValue;
+    --ColorTextOrigin: $SiteConfig.ColorTextValue;
+    --ColorHeadlineOrigin: $SiteConfig.ColorHeadlineValue;
     <% if $SiteConfig.MenuBackgroundColor %>
         --ColorMenuBand: $SiteConfig.MenuBackgroundColor;
     <% end_if %>
