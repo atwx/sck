@@ -1,12 +1,13 @@
 // Layout Variables - werden zur Kompilezeit gesetzt, können zur Laufzeit durch CSS-Variablen überschrieben werden
-$MaxWidth: 1920px;
-$MaxWidthContent: 1200px;
+$MaxWidth: 1350px;
+$MaxWidthContent: 1350px;
 
 $breakpoints: (
     'smartphone': 480px,
     'medium': 700px,
     'desktop': 1000px,
     'maxWidth': $MaxWidth,
+    'maxWidthContent': $MaxWidthContent,
 );
 
 $HeaderHeight: 120px;

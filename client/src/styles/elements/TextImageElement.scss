@@ -11,46 +11,57 @@ section.section--TextImageElement {
         grid-template-areas: "text"
         "image";
         max-width: unset;
-        --TenthOfMaxWidth: calc(var(--MaxWidth) / 10);
+        --TenthOfMaxWidth: calc(var(--MaxWidthContent) / 10);
 
-        &:has(.section_links), &:has(.section_image), &:has(.section_video) {
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        grid-template-areas: "text image";
 
-            @include media(">=desktop") {
-                grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 5) calc(var(--TenthOfMaxWidth) * 5) 1fr;
-                grid-template-areas: ". text image .";
-
-                &.image--30{
-                    grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 7) calc(var(--TenthOfMaxWidth) * 3) 1fr;
-                }
-
-                &.image--40{
-                    grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 6) calc(var(--TenthOfMaxWidth) * 4) 1fr;
-                }
-
-                &.image--60{
-                    grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 4) calc(var(--TenthOfMaxWidth) * 6) 1fr;
-                }
-
-                &.image--70{
-                    grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 3) calc(var(--TenthOfMaxWidth) * 7) 1fr;
-                }
+        &.image--30{
+            grid-template-columns: calc(70% - 10px) calc(30% - 10px);
+            @include media(">=maxWidth") {
+                grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 7) calc(var(--TenthOfMaxWidth) * 3) 1fr;
             }
+        }
 
+        &.image--40{
+            grid-template-columns: calc(60% - 10px) calc(40% - 10px);
+            @include media(">=maxWidth") {
+                grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 6) calc(var(--TenthOfMaxWidth) * 4) 1fr;
+            }
+        }
+
+        &.image--60{
+            grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+            @include media(">=maxWidth") {
+                grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 4) calc(var(--TenthOfMaxWidth) * 6) 1fr;
+            }
+        }
+
+        &.image--70{
+            grid-template-columns: calc(30% - 10px) calc(70% - 10px);
+            @include media(">=maxWidth") {
+                grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 3) calc(var(--TenthOfMaxWidth) * 7) 1fr;
+            }
+        }
+
+        @include media(">=maxWidth") {
+            grid-template-columns: 1fr calc(var(--TenthOfMaxWidth) * 5) calc(var(--TenthOfMaxWidth) * 5) 1fr;
+            grid-template-areas: ". text image .";
         }
 
         .section_text {
             color: var(--ColorText);
-            padding: 80px 30px 80px 0px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             flex: 1;
-            width: 100%;
+            width: calc(100% - 30px);
             grid-column: 1 / 2;
             grid-row: 1 / -1;
             height: 100%;
             text-align: left;
             grid-area: text;
+            padding: 80px 20px;
 
             .section_title {
                 font-weight: 500;
@@ -66,6 +77,10 @@ section.section--TextImageElement {
 
                 p {
                     margin-bottom: 1.5rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
                 }
 
                 @include media("<desktop") {
@@ -73,13 +88,12 @@ section.section--TextImageElement {
                 }
             }
 
-            @include media("<maxWidth") {
-                padding: 60px 20px 40px 20px;
-            }
-
             @include media("<desktop") {
                 grid-column: 1 / -1;
-                padding: 20px 20px;
+            }
+
+            @include media("<=maxWidth") {
+                padding: 80px 0;
             }
         }
 
@@ -88,14 +102,19 @@ section.section--TextImageElement {
             padding: 80px 20px;
             display: flex;
             flex-direction: column;
+            padding: 80px 20px;
+
+            .section_links_title{
+                margin-top: 0;
+            }
 
             @include media("<desktop") {
                 grid-column: 1 / -1;
                 padding: 20px 20px;
             }
 
-            .section_links_title{
-                margin-top: 0;
+            @include media("<=maxWidth") {
+                padding: 80px 0;
             }
         }
 
@@ -105,9 +124,14 @@ section.section--TextImageElement {
             flex: 0 0 50%;
             position: relative;
             grid-area: image;
+            padding: 80px 20px;
 
             @include media("<desktop") {
                 aspect-ratio: 16 / 9;
+            }
+
+            @include media("<=maxWidth") {
+                padding: 80px 0;
             }
         }
 
@@ -115,12 +139,17 @@ section.section--TextImageElement {
             flex: 0 0 50%;
             position: relative;
             grid-area: image;
+            padding: 80px 20px;
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 display: block;
+            }
+
+            @include media("<=maxWidth") {
+                padding: 80px 0;
             }
         }
     }
@@ -205,10 +234,8 @@ section.section--TextImageElement {
         }
 
         .section_text {
-            padding: 60px 30px;
             text-align: center;
             order: 1;
-            padding: 60px 30px;
         }
 
         .section_image {
