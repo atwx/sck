@@ -10,6 +10,12 @@ section.section--ShowcaseElement {
     align-items: center;
     justify-content: center;
 
+    .section_overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
     .section_content {
         display: flex;
         width: 100%;
