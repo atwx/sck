@@ -12,7 +12,7 @@ section.section--TextImageElement {
         grid-template-areas:
             ". title . image ."
             ". content . image .";
-        grid-template-columns: minmax(20px, 1fr) calc(50% - 25px) 30px calc(50% - 55px) minmax(20px, 1fr);
+        grid-template-columns: minmax(20px, 1fr) calc(50% - 20px) 30px calc(50% - 50px) minmax(20px, 1fr);
         grid-template-rows: auto 1fr;
         --TenthOfMaxWidth: calc(var(--MaxWidthContent) / 10);
 
@@ -88,7 +88,7 @@ section.section--TextImageElement {
 
         // On larger Screens
         @include media(">=maxWidth") {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 25px) 30px calc(var(--TenthOfMaxWidth) * 5 - 55px) minmax(20px, 1fr);
+            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 20px) 30px calc(var(--TenthOfMaxWidth) * 5 - 50px) minmax(20px, 1fr);
         }
     }
 
@@ -117,12 +117,12 @@ section.section--TextImageElement {
                 '. content . image .';
 
             @include media(">=medium") {
-                grid-template-columns: minmax(20px, 1fr) calc(50% - 55px) 30px calc(50% - 25px) minmax(20px, 1fr);
+                grid-template-columns: minmax(20px, 1fr) calc(50% - 50px) 30px calc(50% - 20px) minmax(20px, 1fr);
             }
             
             // On larger Screens
             @include media(">=maxWidth") {
-                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 55px) 30px calc(var(--TenthOfMaxWidth) * 5 - 25px) minmax(20px, 1fr);
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 50px) 30px calc(var(--TenthOfMaxWidth) * 5 - 20px) minmax(20px, 1fr);
             }
         }
 
@@ -159,12 +159,12 @@ section.section--TextImageElement {
 
                 
             @include media(">=medium") {
-                grid-template-columns: minmax(20px, 1fr) calc(50% - 55px) 30px calc(50% - 25px) minmax(20px, 1fr);
+                grid-template-columns: minmax(20px, 1fr) calc(50% - 50px) 30px calc(50% - 20px) minmax(20px, 1fr);
             }
 
             // On larger Screens
             @include media(">=maxWidth") {
-                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 55px) 30px calc(var(--TenthOfMaxWidth) * 5 - 25px) minmax(20px, 1fr);
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 50px) 30px calc(var(--TenthOfMaxWidth) * 5 - 20px) minmax(20px, 1fr);
             }
         }
 
@@ -181,25 +181,50 @@ section.section--TextImageElement {
     //Width Variants
     &.columnratio--3-7{
         .section_content {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 3) 30px calc(var(--TenthOfMaxWidth) * 7) minmax(20px, 1fr);
+
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(30% - 35px) 30px calc(70% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 3 - 35px) 30px calc(var(--TenthOfMaxWidth) * 7 - 35px) minmax(20px, 1fr);
+            }
         }
     }
 
     &.columnratio--4-6{
         .section_content {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 4) 30px calc(var(--TenthOfMaxWidth) * 6) minmax(20px, 1fr);
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(40% - 35px) 30px calc(60% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 4 - 35px) 30px calc(var(--TenthOfMaxWidth) * 6 - 35px) minmax(20px, 1fr);
+            }
         }
     }
 
     &.columnratio--6-4{
         .section_content {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 6) 30px calc(var(--TenthOfMaxWidth) * 4) minmax(20px, 1fr);
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(60% - 35px) 30px calc(40% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 6 - 35px) 30px calc(var(--TenthOfMaxWidth) * 4 - 35px) minmax(20px, 1fr);
+            }
         }
     }
 
     &.columnratio--7-3{
         .section_content {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 7) 30px calc(var(--TenthOfMaxWidth) * 3) minmax(20px, 1fr);
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(70% - 35px) 30px calc(30% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 7 - 35px) 30px calc(var(--TenthOfMaxWidth) * 3 - 35px) minmax(20px, 1fr);
+            }
         }
     }
 
