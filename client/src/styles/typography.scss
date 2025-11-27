@@ -13,7 +13,8 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-    font-size: 35px;
+    font-size: clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem);
+    line-height: 1.1;
 }
 
 .hl2 {
