@@ -12,7 +12,6 @@ use SilverStripe\Core\Validation\ValidationResult;
 /**
  * Class \Atwx\Sck\Elements\TwoColumnTextElement
  *
- * @property string $LeftTitle
  * @property string $RightText
  * @property string $Layout
  * @property string $TitleVerticalPosition
@@ -20,7 +19,6 @@ use SilverStripe\Core\Validation\ValidationResult;
 class TwoColumnTextElement extends BaseElement
 {
     private static $db = [
-        'LeftTitle' => 'Varchar(255)',
         'RightText' => 'HTMLText',
         'Layout' => "Enum('title-left,title-right', 'title-left')",
         'TitleVerticalPosition' => "Enum('top,center,bottom', 'center')",
@@ -35,7 +33,6 @@ class TwoColumnTextElement extends BaseElement
     ];
 
     private static $field_labels = [
-        'LeftTitle' => 'Titel',
         'RightText' => 'Text',
         'Layout' => 'Layout',
         'TitleVerticalPosition' => 'Titel vertikale Position',
@@ -51,11 +48,7 @@ class TwoColumnTextElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName('Title');
-
         $fields->addFieldsToTab('Root.Main', [
-            TextField::create('LeftTitle', 'Titel')
-                ->setDescription('Der große Titel für die Titel Spalte'),
             HTMLEditorField::create('RightText', 'Text')
                 ->setDescription('Der Beschreibungstext für die Text Spalte')
                 ->setRows(5)
@@ -77,6 +70,7 @@ class TwoColumnTextElement extends BaseElement
                 ->setDescription('Bestimmt die Breite der Titel-Spalte in Prozent (z.B. 30 für 30%)')
         ]);
 
+
         return $fields;
     }
 
@@ -87,19 +81,9 @@ class TwoColumnTextElement extends BaseElement
     }
 
     #[Override]
-    public function getTitle()
-    {
-        return $this->LeftTitle ?: 'Zwei-Spalten Text Element';
-    }
-
-    #[Override]
     public function getSummary()
     {
         $summary = [];
-
-        if ($this->LeftTitle) {
-            $summary[] = "Titel: " . $this->LeftTitle;
-        }
 
         if ($this->RightText) {
             $plainText = strip_tags($this->RightText);

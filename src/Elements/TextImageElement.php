@@ -138,6 +138,7 @@ class TextImageElement extends BaseElement
                 ->setDescription('Fügt Links / Downloads neben dem Text hinzu'),
             LinkField::create('Button')
         ]);
+        
         return $fields;
     }
 }
