@@ -72,10 +72,10 @@ section.section--CitationElement {
     .citation-author{
         text-align: end;
         padding: 20px;
-        margin: -20px 0 0 0;
+        margin: -10px 0 0 0;
 
         @include media(">smartphone") {
-            margin: -40px 0 0 0;
+            margin: -20px 0 0 0;
         }
     }
 
