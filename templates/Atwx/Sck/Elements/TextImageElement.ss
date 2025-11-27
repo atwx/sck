@@ -1,5 +1,5 @@
-<section class="section--TextImageElement $Variant $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
-    <div class="section_content $ImgWidth">
+<section class="section--TextImageElement $Variant $BackgroundColor $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+    <div class="section_content">
         <% if $Image %>
             <div class="section_image">
                 $Image.ScaleWidth(800)
@@ -25,11 +25,9 @@
                 </ul>
             </div>
         <% end_if %>
-        <div class="section_text">
-            <h2 class="hl2 section_title">$Title</h2>
-            <div class="section_text_content">
-                $Text
-            </div>
+        <h2 class="hl2 section_title">$Title</h2>
+        <div class="section_text_content">
+            $Text
             <% if $Button %>
                 <div class="section_button">
                     <% include Atwx/Sck/Includes/Button Link=$Button, BackgroundColor=$BackgroundColor %>

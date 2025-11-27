@@ -27,7 +27,7 @@ class TextImageElement extends BaseElement
     private static $db = [
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
-        "ImgWidth" => "Varchar(20)",
+        "ColumnRatio" => "Varchar(30)",
         "LinksTitle" => "Varchar(255)",
         "VideoLink" => "Varchar(255)",
     ];
@@ -52,7 +52,7 @@ class TextImageElement extends BaseElement
         "Image" => "Bild",
         "Button" => "Button",
         "Variant" => "Bildausrichtung",
-        "ImgWidth" => "Bildbreite",
+        "ColumnRatio" => "Spaltenverhältnis",
         "LinksTitle" => "Titel der Linkliste",
         "VideoLink" => "Video-Link (Youtube)",
     ];
@@ -110,12 +110,12 @@ class TextImageElement extends BaseElement
         $fields = parent::getCMSFields();
 
         $fields->addFieldsToTab('Root.Style', [
-            DropdownField::create('ImgWidth', 'Bildbreite', [
-                "image--30" => "30%",
-                "image--40" => "40%",
-                "image--50" => "50%",
-                "image--60" => "60%",
-                "image--70" => "70%",
+            DropdownField::create('ColumnRatio', 'Spaltenverhältnis', [
+                "columnratio--3-7" => "3:7",
+                "columnratio--4-6" => "4:6",
+                "columnratio--1-1" => "1:1",
+                "columnratio--6-4" => "6:4",
+                "columnratio--7-3" => "7:3",
             ]),
             DropdownField::create('Variant', 'Bildausrichtung', [
                 "image--right" => "Bild rechts",
