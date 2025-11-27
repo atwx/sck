@@ -57,6 +57,11 @@ class TextImageElement extends BaseElement
         "VideoLink" => "Video-Link (Youtube)",
     ];
 
+    private static $defaults = [
+        "Variant" => "image--right",
+        "ColumnRatio" => "columnratio--1-1",
+    ];
+
     private static $table_name = 'SCK_TextImageElement';
     private static $icon = 'font-icon-block-promo-3';
     private static $inline_editable = false;
