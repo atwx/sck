@@ -12,7 +12,7 @@ section.section--TextImageElement {
         grid-template-areas:
             ". title . image ."
             ". content . image .";
-        grid-template-columns: minmax(20px, 1fr) calc(50% - 35px) 30px calc(50% - 35px) minmax(20px, 1fr);
+        grid-template-columns: minmax(20px, 1fr) calc(50% - 25px) 30px calc(50% - 55px) minmax(20px, 1fr);
         grid-template-rows: auto 1fr;
         --TenthOfMaxWidth: calc(var(--MaxWidthContent) / 10);
 
@@ -23,7 +23,7 @@ section.section--TextImageElement {
             color: var(--ColorHeadline);
             letter-spacing: -0.02em;
             margin: 0;
-            padding-top: 50px;
+            padding: 50px 0 40px;
         }
 
         .section_text_content {
@@ -85,9 +85,9 @@ section.section--TextImageElement {
             }
         }
 
-        //On larger Screens
+        // On larger Screens
         @include media(">=maxWidth") {
-            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 15px) 30px calc(var(--TenthOfMaxWidth) * 5 - 15px) minmax(20px, 1fr);
+            grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 25px) 30px calc(var(--TenthOfMaxWidth) * 5 - 55px) minmax(20px, 1fr);
         }
     }
 
@@ -114,6 +114,15 @@ section.section--TextImageElement {
             grid-template-areas:
                 '. title . image .'
                 '. content . image .';
+
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(50% - 55px) 30px calc(50% - 25px) minmax(20px, 1fr);
+            }
+            
+            // On larger Screens
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 55px) 30px calc(var(--TenthOfMaxWidth) * 5 - 25px) minmax(20px, 1fr);
+            }
         }
 
         &:has(.section_links) {
@@ -146,6 +155,16 @@ section.section--TextImageElement {
             grid-template-areas:
                 '. title . image image'
                 '. content . image image';
+
+                
+            @include media(">=medium") {
+                grid-template-columns: minmax(20px, 1fr) calc(50% - 55px) 30px calc(50% - 25px) minmax(20px, 1fr);
+            }
+
+            // On larger Screens
+            @include media(">=maxWidth") {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 55px) 30px calc(var(--TenthOfMaxWidth) * 5 - 25px) minmax(20px, 1fr);
+            }
         }
 
         &:has(.section_links) {
@@ -220,8 +239,7 @@ section.section--TextImageElement {
             }
 
             .section_image {
-              margin: 0 -20px 20px -20px;
-              width: calc(100% + 40px);
+                margin: 0 auto 20px;
                 img {
                     position: relative;
                     height: auto;
@@ -232,6 +250,13 @@ section.section--TextImageElement {
 
             .section_title{
               padding: 0;
+            }
+        }
+
+        &.image--wideright, &.image--wideleft {
+            .section_image {
+                margin: 0 -20px 20px -20px;
+                width: calc(100% + 40px);
             }
         }
     }
