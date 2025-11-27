@@ -50,7 +50,7 @@
                     </div>
                 </div>
             <% else %>
-                <% if $Title %>
+                <% if $ShowTitle %>
                     <h2
                         class="slider-title"
                         style="color: $TitleColor;">

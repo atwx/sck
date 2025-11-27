@@ -15,7 +15,6 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 class CardSliderElement extends BaseElement
 {
     private static $db = [
-        'SliderTitle' => 'Varchar(255)',
         'ShowDots' => 'Boolean',
         'ShowArrows' => 'Boolean',
         'Autoplay' => 'Boolean',
@@ -42,7 +41,6 @@ class CardSliderElement extends BaseElement
     ];
 
     private static $defaults = [
-        'SliderTitle' => 'Karten',
         'ShowDots' => true,
         'ShowArrows' => true,
         'Autoplay' => false,
@@ -52,7 +50,6 @@ class CardSliderElement extends BaseElement
     ];
 
     private static $field_labels = [
-        'SliderTitle' => 'Slider Titel',
         'ShowDots' => 'Punkte anzeigen',
         'ShowArrows' => 'Pfeile anzeigen',
         'Autoplay' => 'Automatisches Abspielen',
@@ -73,12 +70,7 @@ class CardSliderElement extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['Title', 'Cards']);
-
-        $fields->addFieldsToTab('Root.Main', [
-            TextField::create('SliderTitle', 'Slider Titel')
-                ->setDescription('Der Haupttitel über dem Slider')
-        ]);
+        $fields->removeByName(['Cards']);
 
         $fields->addFieldsToTab('Root.Style', [
             CheckboxField::create('ShowArrows', 'Pfeile anzeigen')
@@ -129,19 +121,9 @@ class CardSliderElement extends BaseElement
     }
 
     #[Override]
-    public function getTitle()
-    {
-        return $this->SliderTitle ?: 'Karten Slider';
-    }
-
-    #[Override]
     public function getSummary()
     {
         $summary = [];
-
-        if ($this->SliderTitle) {
-            $summary[] = "Titel: " . $this->SliderTitle;
-        }
 
         $slideCount = $this->Cards()->count();
         $summary[] = $slideCount . " Slide" . ($slideCount !== 1 ? "s" : "");

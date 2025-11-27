@@ -16,7 +16,7 @@
                         <% end_if %>
                     </div>
                 <% end_if %>
-                <% if $Title %>
+                <% if $ShowTitle %>
                     <h2 class="title align-{$Alignment}" style="color: {$TitleColor}">$Title</h2>
                 <% end_if %>
                 <% if $Text %>

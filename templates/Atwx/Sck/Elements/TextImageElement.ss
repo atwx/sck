@@ -25,7 +25,9 @@
                 </ul>
             </div>
         <% end_if %>
-        <h2 class="hl2 section_title">$Title</h2>
+        <% if $ShowTitle %>
+            <h2 class="hl2 section_title">$Title</h2>
+        <% end_if %>
         <div class="section_text_content">
             $Text
             <% if $Button %>

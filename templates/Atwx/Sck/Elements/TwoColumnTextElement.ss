@@ -3,7 +3,9 @@
         <div class="two-column-content" style="--TitleWidth: {$TitleWidth}%;<% if $TitleVerticalPositionAlternative %> --TitleVerticalPosition: {$TitleVerticalPositionAlternative};<% end_if %>">
             <% if $Title %>
                 <div class="title-column">
+                    <% if $ShowTitle %>
                         <h2 class="hl2 element-title">$Title</h2>
+                    <% end_if %>
                 </div>
             <% end_if %>
             <% if $RightText %>

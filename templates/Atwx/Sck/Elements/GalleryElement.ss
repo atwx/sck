@@ -1,6 +1,8 @@
 <section class="section--GalleryElement $BackgroundColor $ElementDecoration">
     <div class="section_content">
-        <h2 class="hl2">$Title</h2>
+        <% if $ShowTitle %>
+            <h2 class="hl2">$Title</h2>
+        <% end_if %>
         <% if $Text %>
             $Text
         <% end_if %>
