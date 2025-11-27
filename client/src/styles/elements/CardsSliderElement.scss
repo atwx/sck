@@ -41,7 +41,7 @@ section.section--CardSliderElement {
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    max-width: 1920px;
+    // max-width: 1920px;
   }
 
   .embla__container {
@@ -130,12 +130,20 @@ section.section--CardSliderElement {
   }
 
   .embla__buttons {
-    display: flex;
     justify-content: space-between;
     position: absolute;
-    top: calc(50% - 27.5px);
-    width: 100%;
+    top: 100px;
     pointer-events: none;
+    display: none;
+
+    @include mediasize('medium') {
+      display: flex;
+      width: calc(50% + 85px);
+    }
+
+    @include mediasize('desktop') {
+      width: calc(75% + 145px);
+    }
   }
   .embla-button__next, .embla-button__prev {
     background-color: var(--ColorSecondary);
