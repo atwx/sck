@@ -19,18 +19,16 @@ section.section--TextImageElement {
         .section_title {
             grid-area: title;
             font-weight: 500;
-            margin-top: 0;
             color: var(--ColorHeadline);
             letter-spacing: -0.02em;
             margin: 0;
-            padding: 50px 0 40px;
-            line-height: 1.1;
+            margin: 50px 0 0;
         }
 
         .section_text_content {
             color: var(--ColorText);
             grid-area: content;
-            padding-bottom: 50px;
+            padding: 50px 0;
 
             p {
                 margin-bottom: 1.5rem;
