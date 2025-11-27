@@ -132,16 +132,18 @@ section.section--CardSliderElement {
   .embla__buttons {
     justify-content: space-between;
     position: absolute;
-    top: 100px;
+    top: 0;
     pointer-events: none;
     display: none;
 
     @include mediasize('medium') {
       display: flex;
+      margin-top: calc(50% / 4 * 3 / 2 - 27.5px);
       width: calc(50% + 85px);
     }
 
     @include mediasize('desktop') {
+      margin-top: calc(25% / 4 * 3 / 2 - 27.5px);
       width: calc(75% + 145px);
     }
   }
