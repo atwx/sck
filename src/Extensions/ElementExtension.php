@@ -48,12 +48,6 @@ class ElementExtension extends Extension
             ])->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
             ]);
 
-        $fields->replaceField(
-            'Title',
-            TextCheckboxGroupField::create()
-                ->setName('Title')
-        );
-
         //Move Custom CSS Classes field to Style tab
         $customCSSField = $fields->dataFieldByName('ExtraClass');
         if ($customCSSField) {

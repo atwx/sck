@@ -9,10 +9,14 @@ SilverStripe\Assets\File:
     - Title
 
 DNADesign\Elemental\Models\BaseElement:
-  displays_title_in_template: false
+  displays_title_in_template: true
   extensions:
     - App\Extensions\BaseElementFluentExtension
     - App\Extensions\FluentArchiveAllLocales
   translate:
     - Title
 
+SilverStripe\LinkField\Models\Link:
+  extensions:
+    - TractorCow\Fluent\Extension\FluentExtension
+    - App\Extensions\LinkFluentCleanupExtension
