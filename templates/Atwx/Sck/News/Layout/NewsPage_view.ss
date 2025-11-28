@@ -2,7 +2,7 @@
     <div class="section section--News">
         <div class="section_content">
             <div class="section_backlink">
-                <a href="javascript:history.back()" class="backlink_link" aria-label="Zurück zur Übersicht">« Zurück</a>
+                <a href="javascript:history.back()" class="backlink_link" aria-label="Zurück zur Übersicht"><%t Back "« Zurück" %></a>
             </div>
             <div class="news_content">
                 <div class="news_text">

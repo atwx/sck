@@ -12,7 +12,7 @@
                         <h2 class="news_title">$Title</h2>
                         <div class="news_date">$Date.Nice</div>
                         <div class="news_shortcontent">$ShortContent</div>
-                        <p class="btn link--button">Mehr darüber</p>
+                        <p class="btn link--button"><%t More "Mehr darüber" %></p>
                     </div>
                 </div>
             </a>

@@ -2,8 +2,8 @@
 
 namespace Atwx\Sck\Elements;
 
-use Atwx\Sck\Tags\TaggableDataObject;
 use SilverStripe\ORM\DataObject;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class CitationItem extends DataObject
 {
@@ -27,6 +27,11 @@ class CitationItem extends DataObject
         'Quote.Summary' => 'Zitat Text',
     ];
 
+    
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
     private static $default_sort = 'SortOrder DESC';
     private static $table_name = 'SCK_CitationItem';
     private static $singular_name = 'Zitat';
@@ -46,6 +51,8 @@ class CitationItem extends DataObject
         $fields = parent::getCMSFields();
         $fields->removeByName('SortOrder');
         $fields->removeByName('ParentID');
+        
+        $this->extend('updateCMSFields', $fields);
 
         return $fields;
     }
