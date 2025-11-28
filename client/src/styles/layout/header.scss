@@ -1,5 +1,6 @@
 @use '../variables.scss';
-@use 'NavMenu.scss';
+@use './NavMenus/Nav_MegaMenu.scss';
+@use './NavMenus/Nav_SimpleNavBar.scss';
 
 .site_header {
     width: 100%;
@@ -165,11 +166,17 @@
             .nav_brand {
                 height: 50px;
                 max-width: 50%;
+                text-decoration: none;
 
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: contain;
+                }
+
+                .nav_brand_fallback{
+                    color: var(--ColorPrimary);
+                    text-decoration: none;
                 }
             }
 

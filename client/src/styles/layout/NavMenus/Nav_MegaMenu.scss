@@ -1,0 +1,131 @@
+@use '../../variables.scss' as *;
+
+.nav_strip--mega-menu {
+    //Styling for the Mega Menu navigation
+    .nav_menu {
+        position: fixed;
+        top: 85px;
+        padding-bottom: 20px;
+        left: 0;
+        right: 0;
+        background-color: var(--ColorPrimary);
+        min-width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        z-index: 1000;
+
+        .nav_menu_wrap {
+          margin: 0 auto;
+          padding: 0 50px;
+          list-style: none;
+          display: flex;
+          justify-content: stretch;
+          max-width: var(--MaxWidth);
+
+            @include mediasize(max-desktop) {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            @include mediasize(max-medium) {
+                padding: 0;
+            }
+        }
+
+        .nav_category{
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px 0 0;
+            width: 100%;
+
+            .nav_category_title{
+                padding: 12px 10px;
+                color: var(--ColorWhite);
+                font-size: 16px;
+                font-weight: bold;
+                border-bottom: 1px solid var(--ColorWhite);
+                text-decoration: none;
+
+                &:hover {
+                    background-color: var(--ColorSecondary);
+                }
+
+                &.nav_link--current {
+                    background-color: var(--ColorSecondary);
+                    color: var(--ColorWhite);
+
+                    &:hover {
+                        filter: brightness(0.9);
+                    }
+                }
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+
+                .nav_sublink{
+                    display: block;
+                    padding: 15px 10px;
+                    color: var(--ColorWhite);
+                    text-decoration: none;
+                    font-size: 14px;
+                    transition: background-color 0.2s ease;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    &:hover {
+                        background-color: var(--ColorSecondary);
+                    }
+
+                    &.nav_link--current {
+                        background-color: var(--ColorSecondary);
+                        color: var(--ColorWhite);
+
+                        &:hover {
+                            filter: brightness(0.9);
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav_link {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #f8f9fa;
+            }
+
+            &.nav_link--current {
+                background-color: var(--ColorPrimary);
+                color: var(--ColorWhite);
+
+                &:hover {
+                    filter: brightness(0.9);
+                }
+            }
+        }
+
+        .nav--show & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

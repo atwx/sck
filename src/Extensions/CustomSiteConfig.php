@@ -65,6 +65,7 @@ class CustomSiteConfig extends Extension
         'CustomCSS' => 'Text',
         'HeaderFont' => 'Varchar(100)',
         'BodyFont' => 'Varchar(100)',
+        'HeaderVariant' => 'Varchar(100)',
     ];
 
     private static $has_one = [
@@ -109,6 +110,11 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidthContent", "Maximale Content-Breite")
             ->setDescription("Maximale Breite für Text-Content (z.B. 980px, 800px)")
             ->setAttribute('placeholder', '980px'));
+        $fields->addFieldToTab("Root.Layout", DropdownField::create('HeaderVariant', 'Header Variante', [
+            'Megamenu' => 'Megamenu',
+            'SimpleNavBar' => 'Simple Navigations Leiste',
+            'Sidebar' => 'Seitenleiste',
+        ]));
 
         $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
 

@@ -1,8 +1,18 @@
-<div class="header_nav_strip nav_strip--$Version">
+<div class="header_nav_strip nav_strip--$Version nav_strip--simple-navbar">
     <div class="nav_container">
         <a href="/" class="nav_brand">
-            <img class="nav_brand_white" src="_resources/app/client/images/AfW logo neu weiss.png" alt="Cuxhaven Logo"> <!-- TODO: Make Logo changeable -->
-            <img class="nav_brand_color" src="_resources/app/client/images/afw_logo_farbig.svg" alt="Alternative Logo"> <!-- TODO: Make Logo changeable -->
+            <% if $SiteConfig.WhiteLogo && $SiteConfig.Logo %>
+                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
+                <img class="nav_brand_color" src="$SiteConfig.Logo.URL" alt="Alternative Logo">
+            <% else_if $SiteConfig.Logo %>
+                <img class="nav_brand_color" src="$SiteConfig.Logo.URL" alt="Cuxhaven Logo">
+                <img class="nav_brand_white" src="$SiteConfig.Logo.URL" alt="Cuxhaven Logo">
+            <% else_if $SiteConfig.WhiteLogo %>
+                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
+                <img class="nav_brand_color" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
+            <% else %>
+                <span class="nav_brand_fallback">$SiteConfig.Title</span>
+            <% end_if %>
         </a>
         <div class="nav_right">
             <div class="nav_menu_dropdown">
