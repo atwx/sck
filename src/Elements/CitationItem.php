@@ -2,6 +2,7 @@
 
 namespace Atwx\Sck\Elements;
 
+use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use TractorCow\Fluent\Extension\FluentExtension;
 
@@ -14,7 +15,13 @@ class CitationItem extends DataObject
     ];
 
     private static $has_one = [
+        "Image" => Image::class,
         'Parent' => CitationElement::class,
+    ];
+    
+
+    private static $owns = [
+        "Image",
     ];
 
     private static $field_labels = [
@@ -23,6 +30,7 @@ class CitationItem extends DataObject
     ];
 
     private static $summary_fields = [
+        'Image.CMSThumbnail' => 'Bild',
         'Author' => 'Autor',
         'Quote.Summary' => 'Zitat Text',
     ];

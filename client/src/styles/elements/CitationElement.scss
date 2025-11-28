@@ -73,6 +73,18 @@ section.section--CitationElement {
         text-align: end;
         padding: 20px;
         margin: -10px 0 0 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-end;
+        line-height: 1;
+
+        img{
+            max-height: 50px;
+            width: auto;
+            border-radius: 25px;
+        }
 
         @include media(">smartphone") {
             margin: -20px 0 0 0;

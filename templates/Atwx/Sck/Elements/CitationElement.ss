@@ -17,7 +17,7 @@
                         </blockquote>
                     <% end_if %>
                     <% if $Author %>
-                        <p class="citation-author">- $Author</p>
+                        <p class="citation-author"><% if $Image %>$Image.FocusFill(50,50)<% else %>- <% end_if %>$Author</p>
                     <% end_if %>
                 </div>
             <% end_loop %>
