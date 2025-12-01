@@ -12,6 +12,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\SiteConfig\SiteConfig;
 
 class FooterColumn extends DataObject
@@ -73,7 +74,7 @@ class FooterColumn extends DataObject
         $fields = FieldList::create(
             TextCheckboxGroupField::create('Title', 'Titel')
                 ->setDescription('Der Haupttitel der Spalte im Footer'),
-            TextareaField::create('Content', 'Inhalt')
+            HTMLEditorField::create('Content', 'Inhalt')
                 ->setRows(4)
                 ->setDescription('Inhalt für die Spalte im Footer'),
             UploadField::create('Image', 'Bild')

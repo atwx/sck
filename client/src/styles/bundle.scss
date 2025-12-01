@@ -60,8 +60,16 @@ section {
     }
 }
 
-.area_content {
-    .nav-strip--sticky & {
-        margin-top: 85px;
+.nav-strip--sticky {
+    &:has(.hero_section) {
+        .hero_section {
+            margin-top: 85px;
+        }
+    }
+
+    &:has:not(.hero_section) {
+        .area_content {
+            margin-top: 85px;
+        }
     }
 }

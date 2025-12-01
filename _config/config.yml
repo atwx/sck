@@ -37,13 +37,6 @@ SilverStripe\CMS\Model\SiteTree:
 SilverStripe\Assets\File:
   allowed_extensions:
     - svg
-  app_categories:
-    image:
-      - svg
-    image/supported:
-      - svg
-  class_for_file_extension:
-    svg: SilverStripe\Assets\Image
 
 DNADesign\Elemental\Models\BaseElement:
   extensions:

@@ -18,10 +18,14 @@ window.document.addEventListener('DOMContentLoaded', () => {
         const navStripOffset = navStrip.offsetTop;
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > navStripOffset + 2) {
+            if (window.pageYOffset > navStripOffset) {
                 document.body.classList.add('nav-strip--sticky');
             } else {
                 document.body.classList.remove('nav-strip--sticky');
+            }
+
+            if (navStripOffset <= 10) {
+                document.body.classList.add('nav-strip--sticky-top');
             }
         });
     }
