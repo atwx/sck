@@ -13,6 +13,8 @@ footer {
         align-items: flex-start;
         flex-wrap: wrap;
         gap: 20px;
+        flex: 1;
+        min-width: 300px;
 
         a {
             color: #333;
@@ -22,17 +24,9 @@ footer {
                 text-decoration: underline;
             }
         }
-    }
-
-    .footer_columns {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
+        
         @include media("<medium") {
+            display: flex !important;
             flex-direction: column;
         }
     }
