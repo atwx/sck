@@ -1,5 +1,5 @@
-<section class="section--HighlightElement $BackgroundColor $ElementDecoration animation--$FadeInAnimation" <% if $Image %>style="background-image: url('$Image.URL');"<% end_if %>>
-    <div class="section_content">
+<section class="section--HighlightElement $BackgroundColor $ElementDecoration" <% if $Image %>style="background-image: url('$Image.URL');"<% end_if %>>
+    <div class="section_content animation--$FadeInAnimation">
         <div class="section_content_inner">
             <% if $ShowTitle && $Title %>
                 <h2 class="hl2 section_title">$Title</h2>

@@ -1,5 +1,5 @@
-<section class="section--TextImageElement $Variant $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth animation--$FadeInAnimation <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
-    <div class="section_content">
+<section class="section--TextImageElement $Variant $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+    <div class="section_content animation--$FadeInAnimation">
         <% if $Image %>
             <div class="section_image">
                 $Image.ScaleWidth(800)

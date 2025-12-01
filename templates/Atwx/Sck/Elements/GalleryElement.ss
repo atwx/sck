@@ -1,5 +1,5 @@
-<section class="section--GalleryElement $BackgroundColor $ElementDecoration animation--$FadeInAnimation">
-    <div class="section_content">
+<section class="section--GalleryElement $BackgroundColor $ElementDecoration">
+    <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
             <h2 class="hl2">$Title</h2>
         <% end_if %>

@@ -1,5 +1,5 @@
-<section class="section--CardSliderElement $BackgroundColor $ElementDecoration animation--$FadeInAnimation">
-    <div class="section_content">
+<section class="section--CardSliderElement $BackgroundColor $ElementDecoration">
+    <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
             <h2 class="hl2 section_title">$Title</h2>
         <% end_if %>
