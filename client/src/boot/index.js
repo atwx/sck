@@ -18,7 +18,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
         const navStripOffset = navStrip.offsetTop;
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > navStripOffset) {
+            if (window.pageYOffset > navStripOffset + 2) {
                 document.body.classList.add('nav-strip--sticky');
             } else {
                 document.body.classList.remove('nav-strip--sticky');

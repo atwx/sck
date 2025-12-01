@@ -59,3 +59,9 @@ section {
         padding: 0 20px;
     }
 }
+
+.area_content {
+    .nav-strip--sticky & {
+        margin-top: 85px;
+    }
+}
