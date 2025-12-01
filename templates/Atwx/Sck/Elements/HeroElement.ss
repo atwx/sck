@@ -1,4 +1,4 @@
-<section class="section--HeroElement $BackgroundColor $ElementDecoration">
+<section class="section--HeroElement $BackgroundColor $ElementDecoration $FadeInAnimation">
     <div class="hero_content">
         <% if $Image %>
             <div class="hero_image">

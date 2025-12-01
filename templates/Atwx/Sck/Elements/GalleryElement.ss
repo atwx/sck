@@ -1,4 +1,4 @@
-<section class="section--GalleryElement $BackgroundColor $ElementDecoration">
+<section class="section--GalleryElement $BackgroundColor $ElementDecoration $FadeInAnimation">
     <div class="section_content">
         <% if $ShowTitle %>
             <h2 class="hl2">$Title</h2>

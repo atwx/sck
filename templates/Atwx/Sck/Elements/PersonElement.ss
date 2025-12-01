@@ -1,4 +1,4 @@
-<section class="section--PersonElement $BackgroundColor $ElementDecoration">
+<section class="section--PersonElement $BackgroundColor $ElementDecoration $FadeInAnimation">
     <div class="section_content">
         <% if $ShowTitle %>
         <h2 class="hl2 main-title">$Title</h2>

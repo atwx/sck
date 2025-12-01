@@ -1,4 +1,4 @@
-<section class="section--SliderElement $BackgroundColor $ElementDecoration">
+<section class="section--SliderElement $BackgroundColor $ElementDecoration $FadeInAnimation">
     <div class="section_content">
         <div class="slider<% if $WidthLevel %> slider--$WidthLevel<% end_if %>">
             <% if $Content %>

@@ -1,4 +1,4 @@
-<section class="section--CitationElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %><% if $CitationItems.Count == 1 %> --single-item<% end_if %>">
+<section class="section--CitationElement $BackgroundColor $ElementDecoration $FadeInAnimation <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %><% if $CitationItems.Count == 1 %> --single-item<% end_if %>">
     <div class="section_content">        
         <% if $ShowTitle %>
             <h2 class="hl2 section_title">$Title</h2>
