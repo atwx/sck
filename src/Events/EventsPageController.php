@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\Sck\News;
+namespace Atwx\Sck\Events;
 
 use PageController;
 use Atwx\Sck\Events\Event;
@@ -15,7 +15,7 @@ class EventsPageController extends PageController
     public function getEvents()
     {
         $paginatedList = PaginatedList::create(
-            Event::get()->sort('Date DESC'),
+            Event::get()->filter("Start:GreaterThanOrEqual", date('Y-m-d H:i:s'))->sort('Start ASC'),
             $this->getRequest()
         )->setPageLength(10);
 

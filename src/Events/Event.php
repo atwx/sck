@@ -99,4 +99,31 @@ class Event extends TaggableDataObject
         }
         return null;
     }
+
+    public function RenderDateRange()
+    {
+        $startDate = date('d.m.Y H:i');
+        $endDate = date('d.m.Y H:i');
+
+        if ($this->Start && $this->End) {
+            if (date('d.m.Y', strtotime($this->Start)) === date('d.m.Y', strtotime($this->End))) {
+                // Same day, show only time for end date
+                $endDate = date('H:i', strtotime($this->End));
+            } else {
+                // Different days, show full end date
+                $endDate = date('d.m.Y H:i', strtotime($this->End));
+            }
+            $startDate = date('d.m.Y H:i', strtotime($this->Start));
+            $endDate = date('d.m.Y H:i', strtotime($this->End));
+            return sprintf('%s - %s', $startDate, $endDate);
+        } elseif ($this->Start && !$this->End) {
+            $startDate = date('d.m.Y H:i', strtotime($this->Start));
+            return $startDate;
+        } elseif (!$this->Start && $this->End) {
+            $endDate = date('d.m.Y H:i', strtotime($this->End));
+            return $endDate;
+        } else {
+            return '';
+        }
+    }
 }

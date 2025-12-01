@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\Sck\News;
+namespace Atwx\Sck\Events;
 
 use Page;
 use SilverStripe\Forms\DropdownField;
