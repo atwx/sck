@@ -43,9 +43,15 @@ footer {
     }
 
     .footer_logo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+
         img {
             height: 60px;
             width: auto;
+            max-width: 100%;
             display: block;
         }
     }

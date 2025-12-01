@@ -9,7 +9,7 @@ fadeins.forEach((object) => {
             element,
             { opacity: 1 },
             {
-                duration: 0.6,
+                duration: 1,
                 easing: [0.17, 0.55, 0.55, 1],
             }
         )
@@ -25,7 +25,7 @@ flyins.forEach((object) => {
             element,
             { opacity: 1, transform: "translateX(0px)" },
             {
-                duration: 0.6,
+                duration: 1,
                 easing: [0.17, 0.55, 0.55, 1],
             }
         )
