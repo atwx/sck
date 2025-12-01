@@ -44,6 +44,15 @@
     <% end_if %>
 
     <% if $HeaderNavPosition == "below" %>
-        <% include Atwx/Sck/Includes/NavStrip Version=$NavStripVersion %>
+        <% if $SiteConfig.HeaderVariant == "Megamenu" %>
+            <% include Atwx/Sck/Includes/NavMenus/Nav_MegaMenu Version=$NavStripVersion %>
+        <% else_if $SiteConfig.HeaderVariant == "SimpleNavBar" %>
+            <% include Atwx/Sck/Includes/NavMenus/Nav_SimpleNavBar Version=$NavStripVersion %>
+        <% else_if $SiteConfig.HeaderVariant == "Sidebar" %>
+            <% include Atwx/Sck/Includes/NavMenus/Nav_Sidebar Version=$NavStripVersion %>
+        <% else %>
+            <h1>$SiteConfig.Title</h1>
+            <p>Kein Navigationsmenü ausgewählt. Bitte wähle ein Design in der SiteConfig aus.</p>
+        <% end_if %>
     <% end_if %>
 </header>
