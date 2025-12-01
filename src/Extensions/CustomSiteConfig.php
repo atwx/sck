@@ -69,7 +69,8 @@ class CustomSiteConfig extends Extension
     ];
 
     private static $has_one = [
-        'Logo' => File::class,
+        'HeaderLogo' => File::class,
+        'FooterLogo' => File::class,
         'WhiteLogo' => File::class,
         'FooterLogo' => File::class,
         'Favicon' => File::class,
