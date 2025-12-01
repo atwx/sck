@@ -10,12 +10,14 @@
                 <% end_if %>
             </div>
         <% end_loop %>
-        <div class="footer_logo">
-            <img src="$SiteConfig.FooterLogo.URL" alt="Stadt Cuxhaven Wirtschaftsförderung" />
-        </div>
+        <% if $SiteConfig.FooterLogo %>
+            <div class="footer_logo">
+                <img src="$SiteConfig.FooterLogo.URL" alt="Stadt Cuxhaven Wirtschaftsförderung" />
+            </div>
+        <% end_if %>
     </div>
     <div class="footer_content footer_menu">
-        <ul role="list" class="footer_menu_list w-list-unstyled" style="justify-content: $SiteConfig.FooterMenuAlignment; display: flex; width: 100%;">
+        <ul role="list" class="footer_menu_list w-list-unstyled" style="justify-content: $SiteConfig.FooterMenuAlignment;">
             <li class="footer_menu_item">
                 <a href="/impressum" class="footer_text">Impressum</a>
             </li>
