@@ -1,6 +1,6 @@
 footer {
     display: block;
-    padding: 37px 20px;
+    padding: 37px 0;
     background-color: White;
     border-top: 4px solid $ColorPrimary;
 
@@ -15,6 +15,7 @@ footer {
         gap: 20px;
         flex: 1;
         min-width: 300px;
+        padding: 0 20px;
 
         a {
             color: #333;
