@@ -109,6 +109,7 @@ class CustomSiteConfig extends Extension
 
         // Icons Tab
         $fields->addFieldToTab("Root.Icons", new UploadField("HeaderLogo", "Header Logo"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("WhiteLogo", "Weißes Logo für dunkle Hintergründe"));
         $fields->addFieldToTab("Root.Icons", new UploadField("FooterLogo", "Footer Logo"));
         $fields->addFieldToTab("Root.Icons", new UploadField("Favicon", "Favicon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("AppleTouchIcon", "Apple Touch Icon"));
