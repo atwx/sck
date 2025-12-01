@@ -2,19 +2,23 @@
 
 namespace Atwx\Sck\Extensions;
 
-use SilverStripe\Core\Extension;
-use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\Forms\Tab;
 use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image;
+use SilverStripe\Forms\TabSet;
+use SilverStripe\Core\Extension;
+use Atwx\Sck\Models\FooterColumn;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\TextareaField;
-use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use SilverStripe\Forms\Tab;
-use SilverStripe\Forms\TabSet;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
 /**
  * Class \Atwx\Sck\Extensions\CustomSiteConfig
@@ -66,6 +70,7 @@ class CustomSiteConfig extends Extension
         'HeaderFont' => 'Varchar(100)',
         'BodyFont' => 'Varchar(100)',
         'HeaderVariant' => 'Varchar(100)',
+        'FooterMenuAlignment' => 'Varchar(31)',
     ];
 
     private static $has_one = [
@@ -79,8 +84,12 @@ class CustomSiteConfig extends Extension
         'Arrow' => File::class
     ];
 
+    private static $has_many = [
+        "FooterColumns" => FooterColumn::class,
+    ];
+
     private static $owns = [
-        'Logo',
+        'HeaderLogo',
         'WhiteLogo',
         'FooterLogo',
         'Favicon',
@@ -99,7 +108,8 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Socials", new TextField("LinkDiscord", "Discord"));
 
         // Icons Tab
-        $fields->addFieldToTab("Root.Icons", new UploadField("Logo", "Logo"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("HeaderLogo", "Header Logo"));
+        $fields->addFieldToTab("Root.Icons", new UploadField("FooterLogo", "Footer Logo"));
         $fields->addFieldToTab("Root.Icons", new UploadField("Favicon", "Favicon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("AppleTouchIcon", "Apple Touch Icon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("SocialImage", "Social Image"));
@@ -117,7 +127,21 @@ class CustomSiteConfig extends Extension
             'Sidebar' => 'Seitenleiste',
         ]));
 
-        $fields->addFieldToTab("Root.Main", new HTMLEditorField("FooterText", "Footer Text"));
+        // Footer Tab
+        $footergridConfig = GridFieldConfig_RecordEditor::create();
+        $footergridConfig->addComponent(new GridFieldOrderableRows('SortOrder'));
+        $footergrid = GridField::create(
+            "FooterColumns",
+            "Footer Spalten",
+            $this->owner->FooterColumns(),
+            $footergridConfig
+        );
+        $fields->addFieldToTab("Root.Footer", $footergrid);
+        $fields->addFieldToTab("Root.Footer", DropdownField::create('FooterMenuAlignment', 'Footer Menü Ausrichtung', [
+            'flex-start' => 'Links',
+            'center' => 'Zentriert',
+            'flex-end' => 'Rechts',
+        ]));
 
         // Styling Tab
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")

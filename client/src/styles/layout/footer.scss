@@ -24,16 +24,20 @@ footer {
         }
     }
 
-    .footer_contact {
+    .footer_columns {
         flex: 1;
         min-width: 300px;
         display: flex;
         gap: 40px;
         align-items: flex-start;
+        flex-wrap: wrap;
+
+        @include media("<medium") {
+            flex-direction: column;
+        }
     }
 
-    .footer_contact_info,
-    .footer_contact_details {
+    .footer_column_entry {
         flex: 1;
     }
 
@@ -46,8 +50,9 @@ footer {
 
     .footer_logo {
         img {
-            max-height: 60px;
+            height: 60px;
             width: auto;
+            display: block;
         }
     }
 
@@ -55,8 +60,12 @@ footer {
         text-align: center;
     }
 
+    .footer_column_title {
+        color: var(--ColorHeadline);
+    }
+
     .footer_text {
-        color: #464F54;
+        color: var(--ColorText);
         font-size: 14px;
         line-height: 1.4;
         margin-bottom: 5px;
