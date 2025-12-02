@@ -5,10 +5,9 @@
         <% loop $getEvents %>
             <a href="$Top.Link/view/$ID" class="events_item" aria-label="Mehr erfahren zu $Title">
                 <div class="events_content">
-                    <h2 class="events_title">$Title</h2>
                     <div class="events_date">$RenderDateRange</div>
+                    <h2 class="events_title">$Title</h2>
                     <div class="events_shortcontent">$Description</div>
-                    <p class="btn link--button"><%t More "Mehr darüber" %></p>
                 </div>
             </a>
         <% end_loop %>
