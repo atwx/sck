@@ -8,7 +8,11 @@
                 <div class="event_text">
                     <h2 class="event_title">$Title</h2>
                     <div class="event_datekat">$RenderDateRange</div>
-                    <p class="event_content">$Content</p>
+                    <% if $Content %>
+                        <p class="event_content">$Content</p>
+                    <% else_if $ShortContent %>
+                        <p class="event_content">$ShortContent</p>
+                    <% end_if %>
                     <% loop $Links %>
                         <div class="event_link">
                             <% include Atwx/Sck/Includes/Button Link=$Me %>
