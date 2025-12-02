@@ -9,7 +9,7 @@ section.section--IconCardElement {
         justify-content: center;
         align-items: center;
 
-        @include media("<medium") {
+        @include media(max-medium) {
             flex-direction: column;
             width: 100%;
             padding: 1rem;
@@ -24,7 +24,7 @@ section.section--IconCardElement {
                 left: 0;
                 z-index: 0;
 
-                @include media("<medium") {
+                @include media(max-medium) {
                     width: 100%;
                 }
 
@@ -34,7 +34,7 @@ section.section--IconCardElement {
                     height: 100%;
                     border-radius: 16px;
 
-                    @include media("<medium") {
+                    @include media(max-medium) {
                         border-radius: 10px;
                         min-height: 180px;
                     }
@@ -51,7 +51,7 @@ section.section--IconCardElement {
                 padding: 1.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 
-                @include media("<medium") {
+                @include media(max-medium) {
                     position: static;
                     min-width: 0;
                     max-width: 100%;
@@ -80,7 +80,7 @@ section.section--IconCardElement {
                     top: 50%;
                     transform: translateY(-50%);
 
-                    @include media("<medium") {
+                    @include media(max-medium) {
                         transform: unset;
                     }
                 }
@@ -117,7 +117,7 @@ section.section--IconCardElement {
                         width: 64px;
                         height: 64px;
 
-                        @include media("<medium") {
+                        @include media(max-medium) {
                             width: 48px;
                             height: 48px;
                         }
@@ -138,7 +138,7 @@ section.section--IconCardElement {
                         text-align: right;
                     }
 
-                    @include media("<medium") {
+                    @include media(max-medium) {
                         font-size: 1.15rem;
                     }
                 }

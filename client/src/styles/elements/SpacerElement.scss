@@ -9,10 +9,10 @@ section.section--SpacerElement {
     transition: background-color 0.3s ease;
 
     &[style*="var(--color-primary)"] {
-        background-color: $ColorPrimary;
+        background-color: var(--ColorPrimary);
     }
 
     &[style*="var(--color-secondary)"] {
-        background-color: $ColorSecondary;
+        background-color: var(--ColorSecondary);
     }
 }

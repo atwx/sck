@@ -19,12 +19,12 @@
             gap: 20px;
             color: var(--ColorText);
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 flex-direction: column;
             }
 
             .news_image{
-                @include media(">=medium") {
+                @include media(max-medium) {
                     width: 30%;
                 }
 
@@ -35,7 +35,7 @@
             }
 
             .news_text{
-                @include media(">=medium") {
+                @include media(max-medium) {
                     width: 70%;
                 }
             }

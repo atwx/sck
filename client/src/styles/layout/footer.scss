@@ -2,7 +2,7 @@ footer {
     display: block;
     padding: 37px 0;
     background-color: White;
-    border-top: 4px solid $ColorPrimary;
+    border-top: 4px solid var(--ColorPrimary);
 
     .footer_content {
         max-width: var(--MaxWidthContent);
@@ -25,8 +25,8 @@ footer {
                 text-decoration: underline;
             }
         }
-        
-        @include media("<medium") {
+
+        @include media(max-medium) {
             display: flex !important;
             flex-direction: column;
         }
@@ -72,11 +72,11 @@ footer {
         margin-bottom: 5px;
 
         a[href^="mailto:"] {
-            color: $ColorPrimary;
+            color: var(--ColorPrimary);
             text-decoration: underline;
 
             &:hover {
-                color: darken($ColorPrimary, 30%);
+                color: var(--ColorPrimary);
             }
         }
     }

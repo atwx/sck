@@ -28,11 +28,11 @@ section.section--CardSliderElement {
     --slide-spacing: 30px;
     --slide-size: 100%;
 
-    @include mediasize('medium') {
+    @include media('medium') {
       --slide-size: 50%;
     }
 
-    @include mediasize('desktop') {
+    @include media('desktop') {
       --slide-size: 25%;
     }
   }
@@ -136,13 +136,13 @@ section.section--CardSliderElement {
     pointer-events: none;
     display: none;
 
-    @include mediasize('medium') {
+    @include media('medium') {
       display: flex;
       margin-top: calc(50% / 4 * 3 / 2 - 27.5px);
       width: calc(50% + 85px);
     }
 
-    @include mediasize('desktop') {
+    @include media('desktop') {
       margin-top: calc(25% / 4 * 3 / 2 - 27.5px);
       width: calc(75% + 145px);
     }

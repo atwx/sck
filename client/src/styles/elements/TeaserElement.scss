@@ -36,11 +36,11 @@ section.section--TeaserElement {
             color: var(--ColorHeadline);
             max-width: var(--MaxWidthContent);
 
-            @include media("<desktop") {
+            @include media(max-desktop) {
                 text-align: center;
             }
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 margin: 0 0 30px 0;
             }
         }
@@ -75,7 +75,7 @@ section.section--TeaserElement {
                 }
             }
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 &.columns-1,
                 &.columns-2,
                 &.columns-3,
@@ -108,7 +108,7 @@ section.section--TeaserElement {
                 transition: transform 0.3s ease;
             }
 
-            @include media(">desktop") {
+            @include media(desktop) {
                 height: 450px;
             }
         }
@@ -120,7 +120,7 @@ section.section--TeaserElement {
         &-content {
             margin-top: 25px;
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 padding: 20px 0;
             }
         }
@@ -131,7 +131,7 @@ section.section--TeaserElement {
             color: var(--ColorHeadline);
             hyphens: auto;
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 font-size: 1.3rem;
             }
         }

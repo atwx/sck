@@ -85,7 +85,7 @@ section.section--TextImageElement {
         }
 
         // On larger Screens
-        @include media(">=maxWidth") {
+        @include media(maxwidth) {
             grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 20px) 30px calc(var(--TenthOfMaxWidth) * 5 - 50px) minmax(20px, 1fr);
         }
     }
@@ -114,12 +114,12 @@ section.section--TextImageElement {
                 '. title . image .'
                 '. content . image .';
 
-            @include media(">=medium") {
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(50% - 50px) 30px calc(50% - 20px) minmax(20px, 1fr);
             }
-            
+
             // On larger Screens
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 50px) 30px calc(var(--TenthOfMaxWidth) * 5 - 20px) minmax(20px, 1fr);
             }
         }
@@ -155,13 +155,13 @@ section.section--TextImageElement {
                 '. title . image image'
                 '. content . image image';
 
-                
-            @include media(">=medium") {
+
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(50% - 50px) 30px calc(50% - 20px) minmax(20px, 1fr);
             }
 
             // On larger Screens
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 50px) 30px calc(var(--TenthOfMaxWidth) * 5 - 20px) minmax(20px, 1fr);
             }
         }
@@ -180,11 +180,11 @@ section.section--TextImageElement {
     &.columnratio--3-7{
         .section_content {
 
-            @include media(">=medium") {
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(30% - 35px) 30px calc(70% - 35px) minmax(20px, 1fr);
             }
 
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 3 - 35px) 30px calc(var(--TenthOfMaxWidth) * 7 - 35px) minmax(20px, 1fr);
             }
         }
@@ -192,11 +192,11 @@ section.section--TextImageElement {
 
     &.columnratio--4-6{
         .section_content {
-            @include media(">=medium") {
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(40% - 35px) 30px calc(60% - 35px) minmax(20px, 1fr);
             }
 
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 4 - 35px) 30px calc(var(--TenthOfMaxWidth) * 6 - 35px) minmax(20px, 1fr);
             }
         }
@@ -204,11 +204,11 @@ section.section--TextImageElement {
 
     &.columnratio--6-4{
         .section_content {
-            @include media(">=medium") {
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(60% - 35px) 30px calc(40% - 35px) minmax(20px, 1fr);
             }
 
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 6 - 35px) 30px calc(var(--TenthOfMaxWidth) * 4 - 35px) minmax(20px, 1fr);
             }
         }
@@ -216,11 +216,11 @@ section.section--TextImageElement {
 
     &.columnratio--7-3{
         .section_content {
-            @include media(">=medium") {
+            @include media(max-medium) {
                 grid-template-columns: minmax(20px, 1fr) calc(70% - 35px) 30px calc(30% - 35px) minmax(20px, 1fr);
             }
 
-            @include media(">=maxWidth") {
+            @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 7 - 35px) 30px calc(var(--TenthOfMaxWidth) * 3 - 35px) minmax(20px, 1fr);
             }
         }
@@ -244,7 +244,7 @@ section.section--TextImageElement {
         }
     }
 
-    @include media("<medium") {
+    @include media(max-medium) {
         .section_content {
             grid-template-areas:
                 "image"

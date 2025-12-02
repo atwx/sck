@@ -33,7 +33,7 @@
             </div>
         <% end_if %>
         <% if $ShowPastEvents %>
-            <a href="$Top.Link('past')" class="btn link--button">Vergangene Termine</a>
+            <a href="$URL" class="btn link--button">Aktuelle Termine</a>
         <% end_if %>
     </div>
 </section>

@@ -3,8 +3,11 @@
 namespace Atwx\Sck\Events;
 
 use Override;
+use Atwx\Sck\People\Person;
 use SilverStripe\Assets\Image;
 use Atwx\Sck\Tags\TaggableDataObject;
+use SilverStripe\LinkField\Models\Link;
+use SilverStripe\Forms\SearchableMultiDropdownField;
 
 /**
  * @method Image Image()
@@ -13,7 +16,8 @@ class Event extends TaggableDataObject
 {
     private static $db = [
         "Title" => "Varchar(255)",
-        "Description" => "Text",
+        "Content" => "HTMLText",
+        "ShortContent" => "Text",
         "Start" => "Datetime",
         "End" => "Datetime",
         "Street" => "Varchar(255)",
@@ -26,22 +30,33 @@ class Event extends TaggableDataObject
         "Image" => Image::class,
     ];
 
+    private static $has_many = [
+        "Links" => Link::class,
+    ];
+
+    private static $many_many = [
+        "People" => Person::class,
+    ];
+
     private static $owns = [
         "Image",
+        "Links",
     ];
 
     private static $default_sort = 'Start ASC';
 
     private static $field_labels = [
         'Title' => 'Titel',
-        'Description' => 'Beschreibung',
+        'Content' => 'Inhalt',
+        'ShortContent' => 'Kurzinhalt',
         'Start' => 'Startdatum',
         'End' => 'Enddatum',
     ];
 
     private static $searchable_fields = [
         'Title',
-        'Description',
+        'Content',
+        'ShortContent',
         'Start',
         'End',
         'Tags.Title',
@@ -52,15 +67,26 @@ class Event extends TaggableDataObject
     private static $plural_name = 'Termine';
 
     private static $summary_fields = [
-        'Thumbnail' => 'Bild',
+        'Image.CMSThumbnail' => 'Bild',
         'Title' => 'Titel',
-        'Address' => 'Adresse',
+        'ShortContent' => 'Kurzinhalt',
     ];
 
     #[Override]
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+        $fields->removeByName([
+            'People'
+        ]);
+        $fields->addFieldToTab(
+            'Root.Main', SearchableMultiDropdownField::create(
+                'People',
+                _t(self::class . '.People', 'People'),
+                Person::get(),
+                $this->People()->map('ID', 'ID')->toArray()
+            )
+        );
         return $fields;
     }
 
@@ -125,5 +151,14 @@ class Event extends TaggableDataObject
         } else {
             return '';
         }
+    }
+
+    public function getLink()
+    {
+        $eventspage = EventsPage::get()->first();
+        if ($eventspage) {
+            return $eventspage->Link('view/' . $this->ID);
+        }
+        return null;
     }
 }

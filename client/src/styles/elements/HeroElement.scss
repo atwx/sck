@@ -22,7 +22,7 @@ section.section--HeroElement {
                 object-fit: cover;
                 display: block;
 
-                @include media("<desktop") {
+                @include media(max-desktop) {
                     max-width: 100%;
                 }
             }
@@ -64,7 +64,7 @@ section.section--HeroElement {
         }
     }
 
-    @include media(">desktop") {
+    @include media(desktop) {
         .hero_content {
             text-align: left;
 

@@ -25,7 +25,7 @@
         height: auto;
       }
 
-      @include media(">=medium") {
+      @include media(max-medium) {
         width: 30%;
       }
     }
@@ -39,13 +39,13 @@
       .events_shortcontent{
         margin-top: 10px;
       }
-      @include media(">=medium") {
+      @include media(max-medium) {
         align-self: center;
         width: 70%;
       }
     }
 
-    @include media("<medium") {
+    @include media(max-medium) {
       flex-direction: column;
     }
 

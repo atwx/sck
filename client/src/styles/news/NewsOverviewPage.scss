@@ -28,7 +28,7 @@
         height: auto;
       }
 
-      @include media(">=medium") {
+      @include media(max-medium) {
         width: 30%;
       }
     }
@@ -42,13 +42,13 @@
       .news_shortcontent{
         margin-top: 10px;
       }
-      @include media(">=medium") {
+      @include media(max-medium) {
         align-self: center;
         width: 70%;
       }
     }
 
-    @include media("<medium") {
+    @include media(max-medium) {
       flex-direction: column;
     }
 
@@ -74,7 +74,7 @@
           color: var(--ColorWhite);
       }
     }
-  } 
+  }
 
   &.bgc-primary, &.bgc-secondary {
       .news_item {
@@ -92,7 +92,7 @@
       .page-link.current{
         background-color: var(--ColorSecondary);
       }
-      
+
     background-color: var(--ColorPrimary);
   }
 

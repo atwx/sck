@@ -3,6 +3,7 @@
 namespace Atwx\Sck\People;
 
 use Override;
+use Atwx\Sck\Events\Event;
 use SilverStripe\Assets\Image;
 use Atwx\Sck\People\PersonGroup;
 use Atwx\Sck\Elements\PersonElement;
@@ -36,6 +37,7 @@ class Person extends TaggableDataObject
 
     private static $belongs_many_many = [
         'Elements' => PersonElement::class,
+        'Events' => Event::class,
     ];
 
     private static $owns = [
@@ -59,6 +61,14 @@ class Person extends TaggableDataObject
         'OfficeHours' => 'Sprechzeiten',
         'Image' => 'Bild',
         'Groups' => 'Personengruppen',
+    ];
+
+    private static $searchable_fields = [
+        'FirstName',
+        'LastName',
+        'Email',
+        'Function',
+        'Groups.Title',
     ];
 
     private static $table_name = 'SCK_Person';

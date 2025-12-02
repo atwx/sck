@@ -57,7 +57,7 @@ a {
 }
 
 .bgc-primary {
-    a {                
+    a {
         &:not(.link--button) {
             text-decoration: underline;
             color: var(--ColorWhite);
@@ -70,7 +70,7 @@ a {
 }
 
 .bgc-secondary {
-    a {                
+    a {
         &:not(.link--button) {
             text-decoration: underline;
             color: var(--ColorWhite);
@@ -160,7 +160,7 @@ a {
     }
 
 
-    @include media("<desktop") {
+    @include media(max-desktop) {
         overflow-wrap: break-word;
         white-space: normal;
     }

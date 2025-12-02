@@ -28,17 +28,17 @@ section.section--HighlightElement {
                 }
             }
 
-            @include media("<maxWidth"){
+            @include media(maxwidth){
                 padding: 40px 20px 40px 0;
             }
 
-            @include media("<desktop"){
+            @include media(desktop){
                 width: 100%;
                 height: auto;
             }
         }
 
-        @include media("<maxWidth"){
+        @include media(maxwidth){
             padding: 0 0 0 20px;
         }
     }

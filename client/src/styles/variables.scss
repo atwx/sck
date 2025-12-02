@@ -1,68 +1,4 @@
-// Layout Variables - werden zur Kompilezeit gesetzt, können zur Laufzeit durch CSS-Variablen überschrieben werden
-$MaxWidth: 1350px;
-$MaxWidthContent: 1350px;
-
-$breakpoints: (
-    'smartphone': 480px,
-    'medium': 700px,
-    'desktop': 1000px,
-    'maxWidth': $MaxWidth,
-    'maxWidthContent': $MaxWidthContent,
-);
-
-$HeaderHeight: 120px;
-
-$ColorPrimary: #03395E;
-$ColorSecondary: #63819C;
-$ColorMenuBand: #F7F7F7;
-
-$ColorBlack: #131F42;
-$ColorBlackTrans: #131f42b4;
-$ColorWhite: #F7F7F7;
-
-$ColorGrey: #666;
-$ColorLightGrey: #999;
-
-//Set CSS Variables to modify at runtime
-:root {
-    --MaxWidth: #{$MaxWidth};
-    --MaxWidthContent: #{$MaxWidthContent};
-    --ColorPrimary: #{$ColorPrimary};
-    --ColorSecondary: #{$ColorSecondary};
-    --ColorMenuBand: #{$ColorMenuBand};
-    --ColorMenuButton: #{$ColorMenuBand};
-    --ColorMenuText: #{$ColorWhite};
-    --ColorMenuTextHover: #{$ColorGrey};
-    --ColorPrimaryFontWhite: false;
-    --ColorSecondaryFontWhite: false;
-
-    --ColorPrimaryTextDark: #193860;
-
-    --ColorBlack: #{$ColorBlack};
-    --ColorWhite: #{$ColorWhite};
-    --ColorLightGrey: #{$ColorLightGrey};
-    --ColorGrey: #{$ColorGrey};
-
-    --ColorFont: #000000;
-    --ColorButton: var(--ColorPrimary);
-    --ColorButtonText: var(--ColorWhite);
-    --ColorPrimaryHover: #0f1d30;
-    --ColorSecondaryHover: #806934;
-
-    --HeroDarkness: rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    max-width: var(--MaxWidth);
-    margin: 0 auto;
-}
-
-.container-content {
-    max-width: var(--MaxWidthContent);
-    margin: 0 auto;
-}
-
-@mixin mediasize($size) {
+@mixin media($size) {
     @if $size ==smartphone {
         @media (max-width: 480px) {
             @content;
@@ -94,7 +30,7 @@ $ColorLightGrey: #999;
     }
 
     @else if $size ==max-smartphone {
-        @media (max-width: 480px) {
+        @media (min-width: 480px) {
             @content;
         }
     }
@@ -114,4 +50,34 @@ $ColorLightGrey: #999;
     @else {
         @error "Unknown media size: #{$size}. Please use one of the defined breakpoints: smartphone, medium, desktop, large, maxwidth, max-medium, max-smartphone, max-desktop, max-large, max-maxwidth.";
     }
+}
+
+// Layout Variables - werden zur Kompilezeit gesetzt, können zur Laufzeit durch CSS-Variablen überschrieben werden
+//Set CSS Variables to modify at runtime
+:root {
+    --MaxWidth: 1350px;
+    --MaxWidthContent: 1350px;
+    --ColorPrimary: #03395E;
+    --ColorSecondary: #63819C;
+    --ColorMenuBand: #F7F7F7;
+    --ColorMenuButton: #F7F7F7;
+    --ColorMenuText: #F7F7F7;
+    --ColorMenuTextHover: #666;
+    --ColorPrimaryFontWhite: false;
+    --ColorSecondaryFontWhite: false;
+
+    --ColorPrimaryTextDark: #193860;
+
+    --ColorBlack: #131F42;
+    --ColorWhite: #F7F7F7;
+    --ColorLightGrey: #999;
+    --ColorGrey: #666;
+
+    --ColorFont: #000000;
+    --ColorButton: var(--ColorPrimary);
+    --ColorButtonText: var(--ColorWhite);
+    --ColorPrimaryHover: #0f1d30;
+    --ColorSecondaryHover: #806934;
+
+    --HeroDarkness: rgba(0, 0, 0, 0.2);
 }

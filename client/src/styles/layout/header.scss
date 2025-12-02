@@ -6,6 +6,41 @@
     width: 100%;
     position: relative;
 
+    .header_nav_strip {
+        color: var(--ColorWhite);
+        background-color: var(--ColorPrimary);
+        width: 100%;
+        position: relative;
+
+        .nav-strip--sticky & {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--ColorWhite);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+
+            .nav_brand_white {
+                display: none;
+            }
+
+            .nav_brand_color {
+                display: block;
+            }
+        }
+
+        .nav_brand_fallback{
+            color: var(--ColorWhite);
+            text-decoration: none;
+
+            .nav-strip--sticky & {
+                color: var(--ColorText);
+            }
+        }
+    }
+
     .hero_section {
         position: relative;
         height: 60vh;
@@ -70,7 +105,7 @@
                       font-size: clamp(1.5rem, 0.3333rem + 2.6667vw, 2rem);
                   }
 
-                  @include media("<medium") {
+                  @include media(max-medium) {
                       bottom: 60px;
                       left: 20px;
                       right: 20px;
@@ -145,135 +180,6 @@
                   border-radius: 2px;
                 }
               }
-            }
-        }
-    }
-
-    .header_nav_strip {
-        background-color: var(--ColorPrimary);
-        width: 100%;
-        position: relative;
-
-        .nav_container {
-            max-width: var(--MaxWidthContent);
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 85px;
-            padding: 0 20px;
-
-            .nav_brand {
-                height: 50px;
-                max-width: 50%;
-                text-decoration: none;
-                padding-right: 20px;
-
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: contain;
-                }
-
-                .nav_brand_fallback{
-                    color: var(--ColorPrimary);
-                    text-decoration: none;
-                }
-            }
-
-            .nav_right {
-                display: flex;
-                align-items: center;
-                //gap: 20px;
-            }
-        }
-
-        &.nav_strip--default {
-            background-color: var(--ColorWhite);
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
-            .nav_brand_white {
-                display: none;
-            }
-
-            .nav_brand_color {
-                display: block;
-            }
-        }
-
-        &.nav_strip--alternative {
-            background-color: var(--ColorPrimary);
-            transition: background-color 0.3s ease;
-
-            .nav_brand_white {
-                display: block;
-            }
-
-            .nav_brand_color {
-                display: none;
-            }
-
-            .nav--show & {
-              background-color: var(--ColorWhite);
-
-              position: fixed;
-              top: 0;
-              left: 0;
-              right: 0;
-              z-index: 1000;
-
-              .nav_brand_color {
-                  display: block;
-              }
-
-              .nav_brand_white {
-                  display: none;
-              }
-            }
-        }
-
-        .nav-strip--sticky & {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background-color: var(--ColorWhite);
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-
-            .nav_brand_white {
-                display: none;
-            }
-
-            .nav_brand_color {
-                display: block;
-            }
-        }
-    }
-
-    .nav_menu_dropdown {
-        position: relative;
-
-        .nav_menu_button {
-            background-color: var(--ColorPrimary);
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            height: 40px;
-            min-width: 80px;
-
-            &:hover {
-                filter: brightness(0.9);
-            }
-
-            .nav_menu_icon {
-                font-size: 16px;
             }
         }
     }

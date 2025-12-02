@@ -64,7 +64,7 @@ section.section--NewsElement {
                 transition: 0.2s ease-in-out;
                 color: var(--ColorText);
 
-                @include media(">=medium") {
+                @include media(max-medium) {
                     margin-left: -15px;
                     padding-left: 15px;
                 }
@@ -108,7 +108,7 @@ section.section--NewsElement {
         }
     }
 
-    @include media("<desktop") {
+    @include media(max-desktop) {
         padding: 60px 0;
 
         .section_content {
@@ -135,7 +135,7 @@ section.section--NewsElement {
             }
         }
     }
-    @include media("<medium") {
+    @include media(max-medium) {
         padding: 70px 15px;
 
         .section_content {

@@ -31,7 +31,7 @@ section.section--SliderElement {
             color: var(--ColorPrimary);
             margin-bottom: 1rem;
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 font-size: 1.3rem;
             }
         }
@@ -48,7 +48,7 @@ section.section--SliderElement {
                 width: 50%;
             }
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 flex-direction: column;
 
                 .section_text {
@@ -118,7 +118,7 @@ section.section--SliderElement {
                 text-align: center;
                 box-sizing: border-box;
 
-                @include media("<medium") {
+                @include media(max-medium) {
                     font-size: 0.95rem;
                     padding: 0.7rem 0.5rem;
                 }
@@ -168,7 +168,7 @@ section.section--SliderElement {
             }
         }
 
-        @include media("<medium") {
+        @include media(max-medium) {
             max-width: 100%;
         }
     }

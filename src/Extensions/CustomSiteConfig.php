@@ -70,7 +70,9 @@ class CustomSiteConfig extends Extension
         'HeaderFont' => 'Varchar(100)',
         'BodyFont' => 'Varchar(100)',
         'HeaderVariant' => 'Varchar(100)',
+        'HeaderMenuAlignment' => 'Varchar(31)',
         'FooterMenuAlignment' => 'Varchar(31)',
+        'LanguageToggleVariant' => 'Varchar(100)',
     ];
 
     private static $has_one = [
@@ -115,17 +117,35 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Icons", new UploadField("AppleTouchIcon", "Apple Touch Icon"));
         $fields->addFieldToTab("Root.Icons", new UploadField("SocialImage", "Social Image"));
 
-        // Layout Tab
-        $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidth", "Maximale Breite")
+        // LAYOUT Tab
+        //Create a Layout Tab with Subtabs "General", "Header" and "Footer"
+        $fields->addFieldToTab("Root.Layout", new TabSet("LayoutTabs",
+            new Tab("General", "Allgemein"),
+            new Tab("Header", "Header"),
+            new Tab("Footer", "Footer")
+        ));
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.General", TextField::create("MaxWidth", "Maximale Breite")
             ->setDescription("Maximale Breite des Contents (z.B. 1200px, 100%, 1400px)")
             ->setAttribute('placeholder', '1200px'));
-        $fields->addFieldToTab("Root.Layout", TextField::create("MaxWidthContent", "Maximale Content-Breite")
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.General", TextField::create("MaxWidthContent", "Maximale Content-Breite")
             ->setDescription("Maximale Breite für Text-Content (z.B. 980px, 800px)")
             ->setAttribute('placeholder', '980px'));
-        $fields->addFieldToTab("Root.Layout", DropdownField::create('HeaderVariant', 'Header Variante', [
+
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.Header", DropdownField::create('HeaderVariant', 'Header Variante', [
             'Megamenu' => 'Megamenu',
             'SimpleNavBar' => 'Simple Navigations Leiste',
             'Sidebar' => 'Seitenleiste',
+        ]));
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.Header", DropdownField::create('LanguageToggleVariant', 'Sprachumschalter Variante', [
+            'sharpdropdown' => 'Dropdown',
+            'roundeddropdown' => 'Abgerundetes Dropdown',
+            'flags' => 'Flaggen',
+            'list' => 'Liste',
+        ]));
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.Header", DropdownField::create('HeaderMenuAlignment', 'Header Menü Ausrichtung', [
+            'flex-start' => 'Links',
+            'center' => 'Zentriert',
+            'flex-end' => 'Rechts',
         ]));
 
         // Footer Tab
@@ -137,8 +157,8 @@ class CustomSiteConfig extends Extension
             $this->owner->FooterColumns(),
             $footergridConfig
         );
-        $fields->addFieldToTab("Root.Footer", $footergrid);
-        $fields->addFieldToTab("Root.Footer", DropdownField::create('FooterMenuAlignment', 'Footer Menü Ausrichtung', [
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.Footer", $footergrid);
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.Footer", DropdownField::create('FooterMenuAlignment', 'Footer Menü Ausrichtung', [
             'flex-start' => 'Links',
             'center' => 'Zentriert',
             'flex-end' => 'Rechts',

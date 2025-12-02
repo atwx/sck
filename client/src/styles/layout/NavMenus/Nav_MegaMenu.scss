@@ -2,6 +2,107 @@
 
 .nav_strip--mega-menu {
     //Styling for the Mega Menu navigation
+
+    .nav_container {
+        max-width: var(--MaxWidthContent);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 85px;
+        padding: 0 20px;
+
+        .nav_brand {
+            height: 50px;
+            max-width: 50%;
+            text-decoration: none;
+            padding-right: 20px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .nav_right {
+            display: flex;
+            align-items: center;
+            //gap: 20px;
+        }
+    }
+
+    &.nav_strip--default {
+        background-color: var(--ColorWhite);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+        .nav_brand_white {
+            display: none;
+        }
+
+        .nav_brand_color {
+            display: block;
+        }
+    }
+
+    &.nav_strip--alternative {
+        background-color: var(--ColorPrimary);
+        transition: background-color 0.3s ease;
+
+        .nav_brand_white {
+            display: block;
+        }
+
+        .nav_brand_color {
+            display: none;
+        }
+
+        .nav--show & {
+          background-color: var(--ColorWhite);
+
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+
+          .nav_brand_color {
+              display: block;
+          }
+
+          .nav_brand_white {
+              display: none;
+          }
+        }
+    }
+
+    .nav_menu_dropdown {
+        position: relative;
+
+        .nav_menu_button {
+            background-color: var(--ColorPrimary);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 40px;
+            min-width: 80px;
+
+            &:hover {
+                filter: brightness(0.9);
+            }
+
+            .nav_menu_icon {
+                font-size: 16px;
+            }
+        }
+    }
+
+
     .nav_menu {
         position: fixed;
         top: 85px;
@@ -23,11 +124,11 @@
           justify-content: stretch;
           max-width: var(--MaxWidth);
 
-            @include mediasize(max-desktop) {
+            @include media(max-desktop) {
                 flex-direction: column;
                 padding: 0 20px;
             }
-            @include mediasize(max-medium) {
+            @include media(max-medium) {
                 padding: 0;
             }
         }

@@ -50,7 +50,7 @@ section.section--ShowcaseElement {
                 }
             }
 
-            @include media("<desktop") {
+            @include media(max-desktop) {
                 width: 100%;
                 height: auto;
             }

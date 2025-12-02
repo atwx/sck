@@ -1,4 +1,4 @@
-.section.section--Events{
+.section.section--Event{
     .section_content{
         .section_backlink{
             width: fit-content;
@@ -14,17 +14,17 @@
             }
         }
 
-        .events_content{
+        .event_content{
             display: flex;
             gap: 20px;
             color: var(--ColorText);
 
-            @include media("<medium") {
+            @include media(max-medium) {
                 flex-direction: column;
             }
 
-            .events_image{
-                @include media(">=medium") {
+            .event_image{
+                @include media(max-medium) {
                     width: 30%;
                 }
 
@@ -34,19 +34,58 @@
                 }
             }
 
-            .events_text{
-                @include media(">=medium") {
+            .event_text{
+                @include media(max-medium) {
                     width: 70%;
                 }
             }
-            .events_title{
+            .event_title{
                 margin-top: unset;
                 font-size: clamp(1.7rem, -0.1667rem + 4.2667vw, 2.5rem);
                 color: var(--ColorHeadline);
             }
 
-            .events_link{
+            .event_link{
                 margin: 10px 0;
+            }
+
+            .event_peoples{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+                margin-top: 50px;
+
+                .event_person {
+                    display: grid;
+                    align-items: center;
+                    gap: 10px;
+                    grid-template-columns: 100px 1fr;
+                    grid-template-rows: repeat(4, auto);
+
+                    .event_person_image{
+                        width: 100%;
+                        height: auto;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        grid-column: 1 / 2;
+                        grid-row: 1 / -1;
+
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .event_person_name{
+                        font-weight: bold;
+                        margin: 0;
+                    }
+
+                    .event_person_function{
+                        font-size: 0.9rem;
+                        color: var(--ColorTextSecondary);
+                    }
+                }
             }
         }
     }
