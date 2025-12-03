@@ -28,7 +28,7 @@
         height: auto;
       }
 
-      @include media(max-medium) {
+      @include media(medium) {
         width: 30%;
       }
     }
@@ -42,7 +42,7 @@
       .news_shortcontent{
         margin-top: 10px;
       }
-      @include media(max-medium) {
+      @include media(medium) {
         align-self: center;
         width: 70%;
       }

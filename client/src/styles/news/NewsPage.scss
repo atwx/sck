@@ -24,7 +24,7 @@
             }
 
             .news_image{
-                @include media(max-medium) {
+                @include media(medium) {
                     width: 30%;
                 }
 
@@ -35,7 +35,7 @@
             }
 
             .news_text{
-                @include media(max-medium) {
+                @include media(medium) {
                     width: 70%;
                 }
             }
