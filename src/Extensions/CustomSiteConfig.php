@@ -12,6 +12,7 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\ReadonlyField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\Forms\GridField\GridField;
@@ -19,6 +20,7 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Core\Manifest\ModuleLoader;
 
 /**
  * Class \Atwx\Sck\Extensions\CustomSiteConfig
@@ -203,8 +205,27 @@ class CustomSiteConfig extends Extension
             'Open Sans' => 'Open Sans',
         ]));
 
+        //Add Version number of the SCK module in a new tab
+        $fields->addFieldToTab("Root.ProjectInfo", new ReadonlyField("SCKVersion", "SCK Version", $this->getSCKVersion()));
+
         // Custom Tab
         $fields->addFieldToTab("Root.Custom", new TextareaField("CustomCSS", "Custom CSS"));
+    }
+
+    /**
+     * Get the version of the SCK module from composer.json
+     */
+    public function getSCKVersion()
+    {
+        $module = ModuleLoader::inst()->getManifest()->getModule('atwx/sck');
+        if ($module) {
+            $composerPath = $module->getPath() . '/composer.json';
+            if (file_exists($composerPath)) {
+                $composerData = json_decode(file_get_contents($composerPath), true);
+                return $composerData['version'] ?? 'Unknown';
+            }
+        }
+        return 'Unknown';
     }
 
     public function getMaxWidthValue()

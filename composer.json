@@ -2,6 +2,7 @@
     "name": "atwx/sck",
     "description": "A creator kit for silverstripe",
     "type": "silverstripe-vendormodule",
+    "version": "0.1.2",
     "keywords": [
         "silverstripe",
         "SCK"
