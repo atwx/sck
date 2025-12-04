@@ -1,15 +1,15 @@
 <div class="header_nav_strip nav_strip--$Version nav_strip--simple-navbar">
     <div class="nav_container">
         <a href="/" class="nav_brand">
-            <% if $SiteConfig.WhiteLogo && $SiteConfig.Logo %>
-                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
-                <img class="nav_brand_color" src="$SiteConfig.Logo.URL" alt="Alternative Logo">
-            <% else_if $SiteConfig.Logo %>
-                <img class="nav_brand_color" src="$SiteConfig.Logo.URL" alt="Cuxhaven Logo">
-                <img class="nav_brand_white" src="$SiteConfig.Logo.URL" alt="Cuxhaven Logo">
+            <% if $SiteConfig.WhiteLogo && $SiteConfig.HeaderLogo %>
+                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="$SiteConfig.Title Logo">
+                <img class="nav_brand_color" src="$SiteConfig.HeaderLogo.URL" alt="$SiteConfig.Title Logo">
+            <% else_if $SiteConfig.HeaderLogo %>
+                <img class="nav_brand_color" src="$SiteConfig.HeaderLogo.URL" alt="$SiteConfig.Title Logo">
+                <img class="nav_brand_white" src="$SiteConfig.HeaderLogo.URL" alt="$SiteConfig.Title Logo">
             <% else_if $SiteConfig.WhiteLogo %>
-                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
-                <img class="nav_brand_color" src="$SiteConfig.WhiteLogo.URL" alt="Cuxhaven Logo">
+                <img class="nav_brand_white" src="$SiteConfig.WhiteLogo.URL" alt="$SiteConfig.Title Logo">
+                <img class="nav_brand_color" src="$SiteConfig.WhiteLogo.URL" alt="$SiteConfig.Title Logo">
             <% else %>
                 <span class="nav_brand_fallback">$SiteConfig.Title</span>
             <% end_if %>
