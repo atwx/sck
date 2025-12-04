@@ -37,11 +37,21 @@
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
         .nav_brand_white {
-            display: none;
+            display: block;
         }
 
         .nav_brand_color {
-            display: block;
+            display: none;
+        }
+
+        .nav-strip--sticky & {
+            .nav_brand_white {
+                display: none;
+            }
+
+            .nav_brand_color {
+                display: block;
+            }
         }
     }
 
