@@ -9,7 +9,7 @@
                     <h2 class="event_title">$Title</h2>
                     <div class="event_datekat">$RenderDateRange</div>
                     <% if $Content %>
-                        <p class="event_content">$Content</p>
+                        <div class="event_content">$Content</div>
                     <% else_if $ShortContent %>
                         <p class="event_content">$ShortContent</p>
                     <% end_if %>

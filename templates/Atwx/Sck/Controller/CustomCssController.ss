@@ -1,6 +1,7 @@
 body {
     --MaxWidth: $SiteConfig.MaxWidthValue;
     --MaxWidthContent: $SiteConfig.MaxWidthContentValue;
+    --MaxWidthBlockText: $SiteConfig.MaxWidthBlockTextValue;
     --ColorPrimary: $SiteConfig.ColorPrimaryValue;
     --ColorSecondary: $SiteConfig.ColorSecondaryValue;
     --ColorPrimaryFontWhite: $SiteConfig.ColorPrimaryFontWhite;

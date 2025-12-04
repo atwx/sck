@@ -1,7 +1,8 @@
 <style>
 :root {
-    --maxWidth: $SiteConfig.MaxWidthValue;
-    --maxWidthContent: $SiteConfig.MaxWidthContentValue;
+    --MaxWidth: $SiteConfig.MaxWidthValue;
+    --MaxWidthContent: $SiteConfig.MaxWidthContentValue;
+    --MaxWidthBlockText: $SiteConfig.MaxWidthBlockTextValue;
     --ColorPrimary: $SiteConfig.ColorPrimaryValue;
     --ColorSecondary: $SiteConfig.ColorSecondaryValue;
     --ColorPrimaryFontWhite: $SiteConfig.ColorPrimaryFontWhite;
@@ -22,6 +23,6 @@
     <% end_if %>
 }
 <% if $SiteConfig.CustomCSS %>
-$SiteConfig.CustomCSS
+    $SiteConfig.CustomCSS
 <% end_if %>
 </style>

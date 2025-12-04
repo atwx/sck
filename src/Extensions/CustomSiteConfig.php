@@ -65,6 +65,7 @@ class CustomSiteConfig extends Extension
         'MenuTextHoverColor' => 'Varchar(7)',
         'MaxWidth' => 'Varchar(10)',
         'MaxWidthContent' => 'Varchar(10)',
+        'MaxWidthBlockText' => 'Varchar(10)',
         'FooterText' => 'HTMLText',
         'CustomCSS' => 'Text',
         'HeaderFont' => 'Varchar(100)',
@@ -130,6 +131,9 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Layout.LayoutTabs.General", TextField::create("MaxWidthContent", "Maximale Content-Breite")
             ->setDescription("Maximale Breite für Text-Content (z.B. 980px, 800px)")
             ->setAttribute('placeholder', '980px'));
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.General", TextField::create("MaxWidthBlockText", "Maximale Block-Text-Breite")
+            ->setDescription("Maximale Breite für Block-Text (z.B. 500px)")
+            ->setAttribute('placeholder', '500px'));
 
         $fields->addFieldToTab("Root.Layout.LayoutTabs.Header", DropdownField::create('HeaderVariant', 'Header Variante', [
             'Megamenu' => 'Megamenu',
@@ -211,6 +215,11 @@ class CustomSiteConfig extends Extension
     public function getMaxWidthContentValue()
     {
         return $this->owner->MaxWidthContent ?: '980px';
+    }
+
+    public function getMaxWidthBlockTextValue()
+    {
+        return $this->owner->MaxWidthBlockText ?: '500px';
     }
 
     public function getColorPrimaryValue()
