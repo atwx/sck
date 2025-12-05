@@ -1,0 +1,20 @@
+section.section--Breadcrumbs {
+    padding: 10px 0;
+
+    .section_content {
+        max-width: var(--MaxWidthContent);
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 14px;
+        color: var(--ColorText);
+
+        a {
+            color: var(--ColorPrimary);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--ColorText);
+            }
+        }
+    }
+}

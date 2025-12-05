@@ -40,6 +40,9 @@
             <% include Atwx/Sck/Includes/SCKHeader %>
         </div>
         <main class="area_content main">
+            <% if $SiteConfig.ShowBreadcrumbs %>
+                $Breadcrumbs
+            <% end_if %>
             $Layout
         </main>
         <script type="module" src="$Vite("app/client/src/js/main.js")"></script>

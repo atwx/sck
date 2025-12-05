@@ -68,6 +68,7 @@ class CustomSiteConfig extends Extension
         'MaxWidth' => 'Varchar(10)',
         'MaxWidthContent' => 'Varchar(10)',
         'MaxWidthBlockText' => 'Varchar(10)',
+        'ShowBreadcrumbs' => 'Boolean',
         'FooterText' => 'HTMLText',
         'CustomCSS' => 'Text',
         'HeaderFont' => 'Varchar(100)',
@@ -136,6 +137,7 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Layout.LayoutTabs.General", TextField::create("MaxWidthBlockText", "Maximale Block-Text-Breite")
             ->setDescription("Maximale Breite für Block-Text (z.B. 500px)")
             ->setAttribute('placeholder', '500px'));
+        $fields->addFieldToTab("Root.Layout.LayoutTabs.General", CheckboxField::create("ShowBreadcrumbs", "Breadcrumbs anzeigen"));
 
         $fields->addFieldToTab("Root.Layout.LayoutTabs.Header", DropdownField::create('HeaderVariant', 'Header Variante', [
             'Megamenu' => 'Megamenu',
