@@ -38,6 +38,7 @@ class ElementExtension extends Extension
                 '' => 'Keine',
                 'fadein' => 'Einblenden',
                 'flyin' => 'Hineinfliegen',
+                'flyinbig' => 'Hineinfliegen groß'
             ])->setDescription('Wählen Sie eine Animation aus, die angewendet wird, wenn das Element in den Viewport scrollt.'),
             DropdownField::create('ElementDecoration', 'Element-Dekoration', [
                 '' => 'Keine',
