@@ -31,6 +31,13 @@ flyins.forEach((object) => {
         )
 
         return () =>
-            animate(element, { opacity: 0, transform: "translateX(-40px)" })
+            animate(
+            element,
+            { opacity: 1, transform: "translateX(0px)" },
+            {
+                duration: 1.4,
+                easing: [0.17, 0.55, 0.55, 1],
+            }
+        )
     })
 });
