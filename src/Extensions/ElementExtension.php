@@ -34,11 +34,28 @@ class ElementExtension extends Extension
                 'bgc-secondary' => 'Sekundärfarbe'
             ])
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
-            DropdownField::create('FadeInAnimation', 'Fade-In Animation', [
+            DropdownField::create('FadeInAnimation', 'Eingangs Animation', [
                 '' => 'Keine',
                 'fadein' => 'Einblenden',
+                'flyinup' => 'Einblenden von unten',
+                'flyindown' => 'Einblenden von oben',
+                'flyinleft' => 'Einblenden von links',
+                'flyinright' => 'Einblenden von rechts',
+                'flyindownbig' => 'Einblenden von oben groß',
+                'flyinupbig' => 'Einblenden von unten groß',
+                'flyinleftbig' => 'Einblenden von links groß',
+                'flyinrightbig' => 'Einblenden von rechts groß',
+                'flyintopleft' => 'Einblenden von oben links',
+                'flyintopright' => 'Einblenden von oben rechts',
+                'flyinbottomleft' => 'Einblenden von unten links',
+                'flyinbottomright' => 'Einblenden von unten rechts',
                 'flyin' => 'Hineinfliegen',
-                'flyinbig' => 'Hineinfliegen groß'
+                'flyinbig' => 'Hineinfliegen groß',
+                'bouncein' => 'Hineinspringen',
+                'bounceinleft' => 'Hineinspringen von links',
+                'bounceinright' => 'Hineinspringen von rechts',
+                'backinleft' => 'Hineinziehen von links',
+                'backinright' => 'Hineinziehen von rechts',
             ])->setDescription('Wählen Sie eine Animation aus, die angewendet wird, wenn das Element in den Viewport scrollt.'),
             DropdownField::create('ElementDecoration', 'Element-Dekoration', [
                 '' => 'Keine',
