@@ -37,7 +37,8 @@
 
     .events_content{
       .events_shortcontent{
-        margin-top: 10px;
+          margin-top: 10px;
+          max-width: var(--MaxWidthBlockText);
       }
       @include media(max-medium) {
         align-self: center;
