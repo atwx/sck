@@ -72,8 +72,8 @@ bounceInLeft.forEach((object) => {
             {
                 opacity: [0, 0, 1, 1, 1, 1],
                 transform: [
-                    "translate3d(-3000px, 0, 0) scaleX(3)",
-                    "translate3d(-3000px, 0, 0) scaleX(3)",
+                    "translate3d(-150vw, 0, 0) scaleX(3)",
+                    "translate3d(-150vw, 0, 0) scaleX(3)",
                     "translate3d(25px, 0, 0) scaleX(1)",
                     "translate3d(-10px, 0, 0) scaleX(0.98)",
                     "translate3d(5px, 0, 0) scaleX(0.995)",
@@ -89,7 +89,7 @@ bounceInLeft.forEach((object) => {
 
         return () => animate(
             element,
-            { opacity: 0, transform: "translate3d(-3000px, 0, 0) scaleX(3)" },
+            { opacity: 0, transform: "translate3d(-150vw, 0, 0) scaleX(3)" },
             { duration: 0.3 }
         )
     })
@@ -103,7 +103,7 @@ backInLeft.forEach((object) => {
             {
                 opacity: [0.7, 0.7, 1],
                 transform: [
-                    "translateX(-2000px) scale(0.7)",
+                    "translateX(-120vw) scale(0.7)",
                     "translateX(0px) scale(0.7)",
                     "scale(1)"
                 ]
@@ -117,7 +117,7 @@ backInLeft.forEach((object) => {
 
         return () => animate(
             element,
-            { opacity: 0.7, transform: "translateX(-2000px) scale(0.7)" },
+            { opacity: 0.7, transform: "translateX(-120vw) scale(0.7)" },
             { duration: 0 }
         )
     })
@@ -131,7 +131,7 @@ backInRight.forEach((object) => {
             {
                 opacity: [0.7, 0.7, 1],
                 transform: [
-                    "translateX(2000px) scale(0.7)",
+                    "translateX(120vw) scale(0.7)",
                     "translateX(0px) scale(0.7)",
                     "scale(1)"
                 ]
@@ -145,7 +145,7 @@ backInRight.forEach((object) => {
 
         return () => animate(
             element,
-            { opacity: 0.7, transform: "translateX(2000px) scale(0.7)" },
+            { opacity: 0.7, transform: "translateX(120vw) scale(0.7)" },
             { duration: 0 }
         )
     })
@@ -190,8 +190,8 @@ bounceInRight.forEach((object) => {
             {
                 opacity: [0, 0, 1, 1, 1, 1],
                 transform: [
-                    "translate3d(3000px, 0, 0) scaleX(3)",
-                    "translate3d(3000px, 0, 0) scaleX(3)",
+                    "translate3d(150vw, 0, 0) scaleX(3)",
+                    "translate3d(150vw, 0, 0) scaleX(3)",
                     "translate3d(-25px, 0, 0) scaleX(1)",
                     "translate3d(10px, 0, 0) scaleX(0.98)",
                     "translate3d(-5px, 0, 0) scaleX(0.995)",
@@ -207,7 +207,7 @@ bounceInRight.forEach((object) => {
 
         return () => animate(
             element,
-            { opacity: 0, transform: "translate3d(3000px, 0, 0) scaleX(3)" },
+            { opacity: 0, transform: "translate3d(150vw, 0, 0) scaleX(3)" },
             { duration: 0 }
         )
     })
@@ -231,10 +231,10 @@ flyInDownBig.forEach((object) => {
     inView(object, (element) => {
         animate(
             element,
-            { opacity: [0, 1], transform: ["translate3d(0, -2000px, 0)", "translate3d(0, 0, 0)"] },
+            { opacity: [0, 1], transform: ["translate3d(0, -120vh, 0)", "translate3d(0, 0, 0)"] },
             { duration: 1.2, easing: [0.17, 0.55, 0.55, 1] }
         )
-        return () => animate(element, { opacity: 0, transform: "translate3d(0, -2000px, 0)" }, { duration: 0 })
+        return () => animate(element, { opacity: 0, transform: "translate3d(0, -120vh, 0)" }, { duration: 0 })
     })
 });
 
@@ -255,10 +255,10 @@ flyInLeftBig.forEach((object) => {
     inView(object, (element) => {
         animate(
             element,
-            { opacity: [0, 1], transform: ["translate3d(-2000px, 0, 0)", "translate3d(0, 0, 0)"] },
+            { opacity: [0, 1], transform: ["translate3d(-120vw, 0, 0)", "translate3d(0, 0, 0)"] },
             { duration: 1.2, easing: [0.17, 0.55, 0.55, 1] }
         )
-        return () => animate(element, { opacity: 0, transform: "translate3d(-2000px, 0, 0)" }, { duration: 0 })
+        return () => animate(element, { opacity: 0, transform: "translate3d(-120vw, 0, 0)" }, { duration: 0 })
     })
 });
 
@@ -279,10 +279,10 @@ flyInRightBig.forEach((object) => {
     inView(object, (element) => {
         animate(
             element,
-            { opacity: [0, 1], transform: ["translate3d(2000px, 0, 0)", "translate3d(0, 0, 0)"] },
+            { opacity: [0, 1], transform: ["translate3d(120vw, 0, 0)", "translate3d(0, 0, 0)"] },
             { duration: 1.2, easing: [0.17, 0.55, 0.55, 1] }
         )
-        return () => animate(element, { opacity: 0, transform: "translate3d(2000px, 0, 0)" }, { duration: 0 })
+        return () => animate(element, { opacity: 0, transform: "translate3d(120vw, 0, 0)" }, { duration: 0 })
     })
 });
 
@@ -303,10 +303,10 @@ flyInUpBig.forEach((object) => {
     inView(object, (element) => {
         animate(
             element,
-            { opacity: [0, 1], transform: ["translate3d(0, 2000px, 0)", "translate3d(0, 0, 0)"] },
+            { opacity: [0, 1], transform: ["translate3d(0, 120vh, 0)", "translate3d(0, 0, 0)"] },
             { duration: 1.2, easing: [0.17, 0.55, 0.55, 1] }
         )
-        return () => animate(element, { opacity: 0, transform: "translate3d(0, 2000px, 0)" }, { duration: 0 })
+        return () => animate(element, { opacity: 0, transform: "translate3d(0, 120vh, 0)" }, { duration: 0 })
     })
 });
 
