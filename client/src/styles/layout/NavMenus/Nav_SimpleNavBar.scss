@@ -1,7 +1,15 @@
 @use '../../variables.scss' as *;
 
-.nav_strip--simple-navbar {
+.header_nav_strip.nav_strip--simple-navbar {
     //Styling for the simple NavBar menu
+    .site_header & {
+      background-color: var(--ColorMenuBackground);
+      color: var(--ColorMenuText);
+
+      .nav_brand_white {
+        display: none;
+      }
+    }
 
     .nav_container {
         max-width: var(--MaxWidth);
@@ -23,22 +31,18 @@
             }
 
             .nav_link{
-                color: var(--ColorWhite);
+                color: var(--ColorMenuText);
                 font-size: 16px;
                 font-weight: bold;
                 text-decoration: none;
                 padding: 8px 12px;
 
-                .nav-strip--sticky & {
-                    color: var(--ColorText);
-                }
-
                 &:hover {
-                    background-color: var(--ColorSecondary);
+                    color: var(--ColorMenuTextHover);
                 }
 
                 &.nav_link--current {
-                    background-color: var(--ColorSecondary);
+                    background-color: var(--ColorMenuTextHover);
                     color: var(--ColorWhite);
 
                     &:hover {

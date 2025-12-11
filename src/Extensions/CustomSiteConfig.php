@@ -61,10 +61,10 @@ class CustomSiteConfig extends Extension
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
         'ColorBackground' => 'Varchar(7)',
-        'MenuBackgroundColor' => 'Varchar(7)',
+        'ColorMenuBackground' => 'Varchar(7)',
+        'ColorMenuText' => 'Varchar(7)',
+        'ColorMenuTextHover' => 'Varchar(7)',
         'MenuButtonColor' => 'Varchar(7)',
-        'MenuTextColor' => 'Varchar(7)',
-        'MenuTextHoverColor' => 'Varchar(7)',
         'MaxWidth' => 'Varchar(10)',
         'MaxWidthContent' => 'Varchar(10)',
         'MaxWidthBlockText' => 'Varchar(10)',
@@ -190,7 +190,12 @@ class CustomSiteConfig extends Extension
             ->setDescription("Farbe des Fließtextes")
             ->setAttribute('type', 'color'));
         $fields->addFieldToTab("Root.Styling", TextField::create("ColorBackground", "Hintergrundfarbe")
-            ->setDescription("Hintergrundfarbe der Website")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuBackground", "Hintergrundfarbe Navigation")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuText", "Textfarbe Navigation")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuTextHover", "Textfarbe Navigation Hover")
             ->setAttribute('type', 'color'));
         $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
@@ -200,11 +205,13 @@ class CustomSiteConfig extends Extension
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
+            'Sansation' => 'Sansation',
         ]));
         $fields->addFieldToTab("Root.Schriften.Body", DropdownField::create('BodyFont', 'Body Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
+            'Sansation' => 'Sansation',
         ]));
 
         //Add Version number of the SCK module in a new tab

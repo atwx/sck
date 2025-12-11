@@ -10,18 +10,9 @@ body {
     --ColorHeadline: $SiteConfig.ColorHeadlineValue;
     --ColorTextOrigin: $SiteConfig.ColorTextValue;
     --ColorHeadlineOrigin: $SiteConfig.ColorHeadlineValue;
-    <% if $SiteConfig.MenuBackgroundColor %>
-        --ColorMenuBand: $SiteConfig.MenuBackgroundColor;
-    <% end_if %>
-    <% if $SiteConfig.MenuButtonColor %>
-        --ColorMenuButton: $SiteConfig.MenuButtonColor;
-    <% end_if %>
-    <% if $SiteConfig.MenuTextColor %>
-        --ColorMenuText: $SiteConfig.MenuTextColor;
-    <% end_if %>
-    <% if $SiteConfig.MenuTextHoverColor %>
-        --ColorMenuTextHover: $SiteConfig.MenuTextHoverColor;
-    <% end_if %>
+    --ColorMenuBackground: $SiteConfig.ColorMenuBackground;
+    --ColorMenuText: $SiteConfig.ColorMenuText;
+    --ColorMenuTextHover: $SiteConfig.ColorMenuTextHover;
     <% if $SiteConfig.HeaderFont %>
         --FontHeader: '$SiteConfig.HeaderFont', sans-serif;
     <% end_if %>

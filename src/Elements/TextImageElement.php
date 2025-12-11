@@ -27,6 +27,7 @@ class TextImageElement extends BaseElement
     private static $db = [
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
+        "Format" => "Varchar(20)",
         "ColumnRatio" => "Varchar(30)",
         "LinksTitle" => "Varchar(255)",
         "VideoLink" => "Varchar(255)",
@@ -52,6 +53,7 @@ class TextImageElement extends BaseElement
         "Image" => "Bild",
         "Button" => "Button",
         "Variant" => "Bildausrichtung",
+        "Format" => "Bildformat",
         "ColumnRatio" => "Spaltenverhältnis",
         "LinksTitle" => "Titel der Linkliste",
         "VideoLink" => "Video-Link (Youtube)",
@@ -128,6 +130,11 @@ class TextImageElement extends BaseElement
                 "image--wideright" => "Breites Bild rechts",
                 "image--wideleft" => "Breites Bild links",
             ]),
+            DropdownField::create('Format', 'Bildformat', [
+                "format--text" => "Texthöhe",
+                "format--full" => "Vollständig sichtbar",
+                "format--32" => "3:2",
+            ]),
         ]);
 
         $fields->addFieldsToTab('Root.Main', [
@@ -138,7 +145,7 @@ class TextImageElement extends BaseElement
                 ->setDescription('Fügt Links / Downloads neben dem Text hinzu'),
             LinkField::create('Button')
         ]);
-        
+
         return $fields;
     }
 }

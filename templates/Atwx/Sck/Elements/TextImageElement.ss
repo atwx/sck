@@ -1,8 +1,12 @@
-<section class="section--TextImageElement $Variant $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+<section class="section--TextImageElement $Variant $Format $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $Image %>
             <div class="section_image">
-                $Image.ScaleWidth(800)
+                <% if $Format == 'format--32' %>
+                        $Image.FocusFill(800, 533)
+                <% else %>
+                        $Image.ScaleWidth(800)
+                <% end_if %>
             </div>
         <% else_if $VideoLink %>
             <div class="section_video">

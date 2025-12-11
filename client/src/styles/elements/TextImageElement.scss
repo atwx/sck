@@ -72,7 +72,7 @@ section.section--TextImageElement {
             overflow: hidden;
             position: relative;
 
-
+            // Default Text Height
             img {
               position: absolute;
                 top: 0;
@@ -87,6 +87,24 @@ section.section--TextImageElement {
         // On larger Screens
         @include media(maxwidth) {
             grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 20px) 30px calc(var(--TenthOfMaxWidth) * 5 - 50px) minmax(20px, 1fr);
+        }
+    }
+
+    &.format--full {
+        .section_image img {
+            position: static;
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &.format--32 {
+        .section_image img {
+            position: static;
+            height: auto;
+            width: 100%;
+            object-fit: contain;
         }
     }
 

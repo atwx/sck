@@ -11,34 +11,6 @@
         background-color: var(--ColorPrimary);
         width: 100%;
         position: relative;
-
-        .nav-strip--sticky & {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background-color: var(--ColorWhite);
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-
-            .nav_brand_white {
-                display: none;
-            }
-
-            .nav_brand_color {
-                display: block;
-            }
-        }
-
-        .nav_brand_fallback{
-            color: var(--ColorWhite);
-            text-decoration: none;
-
-            .nav-strip--sticky & {
-                color: var(--ColorText);
-            }
-        }
     }
 
     .hero_section {

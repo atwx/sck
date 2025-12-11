@@ -148,6 +148,18 @@
     "file": "assets/roboto-v49-latin-regular.woff2",
     "src": "client/src/fonts/roboto/roboto-v49-latin-regular.woff2"
   },
+  "client/src/fonts/sansation/sansation-v1-latin-700.woff2": {
+    "file": "assets/sansation-v1-latin-700.woff2",
+    "src": "client/src/fonts/sansation/sansation-v1-latin-700.woff2"
+  },
+  "client/src/fonts/sansation/sansation-v1-latin-700italic.woff2": {
+    "file": "assets/sansation-v1-latin-700italic.woff2",
+    "src": "client/src/fonts/sansation/sansation-v1-latin-700italic.woff2"
+  },
+  "client/src/fonts/sansation/sansation-v1-latin-regular.woff2": {
+    "file": "assets/sansation-v1-latin-regular.woff2",
+    "src": "client/src/fonts/sansation/sansation-v1-latin-regular.woff2"
+  },
   "client/src/styles/bundle.scss": {
     "file": "assets/bundle.css",
     "isEntry": true,
