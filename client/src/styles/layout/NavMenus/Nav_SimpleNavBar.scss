@@ -28,6 +28,19 @@
             @include media(max-desktop) {
                 flex-direction: column;
                 align-items: center;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--ColorWhite);
+                transition: opacity 0.3s ease-in-out;
+
+                .nav--show & {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
             }
 
             .nav_link{
@@ -57,7 +70,7 @@
             justify-self: end;
             display: none;
 
-            @include media(max-medium) {
+            @include media(max-desktop) {
                 display: block;
             }
         }
