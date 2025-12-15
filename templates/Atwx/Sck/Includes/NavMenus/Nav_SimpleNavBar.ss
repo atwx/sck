@@ -16,8 +16,10 @@
         </a>
         <div class="nav_button">
             <button class="nav_menu_button" data-behaviour="toggle-navigation">
-                <span class="nav_menu_icon">☰</span>
-                Menü
+                <span class="nav_menu_button_stripe"></span>
+                <span class="nav_menu_button_stripe"></span>
+                <span class="nav_menu_button_stripe"></span>
+                <span class="nav_menu_button_stripe"></span>
             </button>
         </div>
         <ul class="nav_menu" style="justify-content: $SiteConfig.HeaderMenuAlignment;">
@@ -34,12 +36,16 @@
                 <div class="nav-select nav_language_dropdown">
                     <select data-behaviour="select-redirect" class="nav_language_button">
                         <% loop $Locales %>
-                            <option class="$LinkingMode nav_language_item"
+                            <option class="$LinkingMode nav_language_item fib fi-$UrlSegment"
                                     <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link">
                                 $Title.XML
                             </option>
                         <% end_loop %>
                     </select>
+                    <link
+                        rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+                    />
                 </div>
             <% end_if %>
         </div>
