@@ -7,7 +7,7 @@
             <div class="news_content">
                 <div class="news_text">
                     <h1 class="news_title">$Title</h1>
-                    <div class="news_datekat">$Date.Nice<% if $Category %> / $Category.Title<% end_if %></div>
+                    <p class="news_datekat">$Date.Nice<% if $Category %> / $Category.Title<% end_if %></p>
                     <p class="news_content">$Content</p>
                     <% loop $Links %>
                         <div class="news_link">

@@ -6,26 +6,15 @@ section.section--HighlightElement {
             padding: 40px 20px;
             width: 70%;
             height: auto;
-            color: var(--ColorText);
 
             .section_title{
                 margin-top: 0;
-                color: var(--ColorHeadline);
             }
 
             .section_links{
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                color: var(--ColorText);
-
-                .section_link {
-                    color: var(--ColorText);
-
-                    &::before{
-                        color: var(--ColorText);
-                    }
-                }
             }
 
             @include media(maxwidth){

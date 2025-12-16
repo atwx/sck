@@ -27,7 +27,6 @@ section.section--TwoColumnTextElement {
 
         .element-title {
             margin: 0;
-            color: var(--ColorHeadline);
 
             @include media(desktop) {
                 padding-right: 30px;
@@ -37,41 +36,13 @@ section.section--TwoColumnTextElement {
 
     .text-column {
         .element-text {
-            color: var(--ColorHeadline);
 
             p {
-                color: var(--ColorText);
                 margin-bottom: 1rem;
 
                 &:last-child {
                     margin-bottom: 0;
                 }
-            }
-        }
-    }
-
-
-
-    &.bgc-primary {
-        background-color: var(--ColorPrimary);
-
-        &.primary-white-text {
-            .title-column .element-title,
-            .text-column .element-text,
-            .text-column .element-text p {
-                color: var(--ColorWhite);
-            }
-        }
-    }
-
-    &.bgc-secondary {
-        background-color: var(--ColorSecondary);
-
-        &.secondary-white-text {
-            .title-column .element-title,
-            .text-column .element-text,
-            .text-column .element-text p {
-                color: var(--ColorWhite);
             }
         }
     }

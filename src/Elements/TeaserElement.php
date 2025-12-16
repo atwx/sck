@@ -23,6 +23,10 @@ class TeaserElement extends BaseElement
         'NumberColumns' => 'Int',
     ];
 
+    private static $defaults = [
+        'NumberColumns' => 2,
+    ];
+
     private static $has_many = [
         'TeaserItems' => TeaserItem::class,
     ];

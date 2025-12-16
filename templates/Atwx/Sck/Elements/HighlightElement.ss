@@ -1,4 +1,4 @@
-<section class="section--HighlightElement $BackgroundColor $ElementDecoration" <% if $Image %>style="background-image: url('$Image.URL');"<% end_if %>>
+<section class="section--HighlightElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>" <% if $Image %>style="background-image: url('$Image.URL');"<% end_if %>>
     <div class="section_content animation--$FadeInAnimation">
         <div class="section_content_inner">
             <% if $ShowTitle && $Title %>

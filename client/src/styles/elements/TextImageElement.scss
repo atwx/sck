@@ -19,14 +19,12 @@ section.section--TextImageElement {
         .section_title {
             grid-area: title;
             font-weight: 500;
-            color: var(--ColorHeadline);
             letter-spacing: -0.02em;
             margin: 0;
             margin: 50px 0 0;
         }
 
         .section_text_content {
-            color: var(--ColorText);
             grid-area: content;
             padding: 50px 0;
 
@@ -49,7 +47,6 @@ section.section--TextImageElement {
 
             .section_links_title{
                 margin-top: 0;
-                color: var(--ColorPrimary);
             }
         }
 
@@ -240,24 +237,6 @@ section.section--TextImageElement {
 
             @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 7 - 35px) 30px calc(var(--TenthOfMaxWidth) * 3 - 35px) minmax(20px, 1fr);
-            }
-        }
-    }
-
-
-    //Background Color Variants
-    &.bgc-primary {
-        &.primary-white-text {
-            .section_text  .section_text_content, .section_title {
-                color: var(--ColorWhite);
-            }
-        }
-    }
-
-    &.bgc-secondary {
-        &.secondary-white-text {
-            .section_text .section_text_content, .section_title {
-                color: var(--ColorWhite);
             }
         }
     }

@@ -23,7 +23,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        color: white;
+        color: var(--ColorWhite);
 
         .swiper-wrapper {
             z-index: 2;
@@ -48,6 +48,14 @@
                   bottom: 120px;
                   left: 85px;
                   z-index: 2;
+
+                  .hero_text{
+                    color: var(--ColorWhite);
+
+                    h1, h2, h3, h4, h5 {
+                        color: var(--ColorWhite);
+                    }
+                  }
 
                   h2 {
                       margin: 0;

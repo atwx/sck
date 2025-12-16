@@ -1,4 +1,4 @@
-<section class="section--PersonElement $BackgroundColor $ElementDecoration">
+<section class="section--PersonElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
         <h2 class="hl2 main-title">$Title</h2>
@@ -17,28 +17,28 @@
                         <div class="contact-info">
                             <h3 class="contact-name">$getTitle()</h3>
                             <% if $Function %>
-                                <div class="contact-function">$Function</div>
+                            <p class="contact-function">$Function</p>
                             <% end_if %>
 
                             <% if $Groups.Count > 0 %>
-                                <div class="contact-group">
+                                <p class="contact-group">
                                     <% loop $Groups %>$Title<% if not $IsLast %>, <% end_if %><% end_loop %>
-                                </div>
+                                </p>
 
-                                <div class="contact-department">$Department</div>
+                            <p class="contact-department">$Department</p>
                             <% end_if %>
 
                             <div class="contact-details">
                                 <% if $Telephone %>
-                                    <div class="contact-phone">
+                                    <p class="contact-phone">
                                         <strong>Tel.:</strong> $Telephone
-                                    </div>
+                                    </p>
                                 <% end_if %>
 
                                 <% if $Email %>
-                                    <div class="contact-email">
+                                    <p class="contact-email">
                                         <a href="mailto:$Email">$Email</a>
-                                    </div>
+                                    </p>
                                 <% end_if %>
                             </div>
                         </div>

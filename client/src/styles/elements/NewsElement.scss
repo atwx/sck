@@ -15,17 +15,14 @@ section.section--NewsElement {
 
             .section_title {
                 margin: 0 0 15px 0;
-                color: var(--ColorHeadline);
             }
 
             .section_subtitle {
                 font-size: 1.2rem;
                 margin: 0 0 20px 0;
-                color: var(--ColorText);
             }
 
             .section_description {
-                color: var(--ColorText);
 
                 p {
                     margin: 0;
@@ -72,6 +69,10 @@ section.section--NewsElement {
                 &:hover {
                     background-color: var(--ColorSecondary);
                     color: var(--ColorWhite);
+
+                    p{
+                        color: var(--ColorWhite);
+                    }
                 }
 
                 .news_item_content {
@@ -157,25 +158,7 @@ section.section--NewsElement {
         }
     }
 
-    &.bgc-primary {
-        background-color: var(--ColorPrimary);
-
-        &.primary-white-text {
-            .section_title, .section_subtitle, .section_description, .news_item {
-                color: var(--ColorWhite);
-            }
-        }
-    }
-
     &.bgc-secondary {
-        background-color: var(--ColorSecondary);
-
-        &.secondary-white-text {
-            .section_title, .section_subtitle, .section_description, .news_item {
-                color: var(--ColorWhite);
-            }
-        }
-
         .news_list {
             .news_item {
                 &:hover {

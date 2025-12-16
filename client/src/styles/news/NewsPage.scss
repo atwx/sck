@@ -3,7 +3,6 @@
         .section_backlink{
             width: fit-content;
             margin: 20px 0;
-            color: var(--ColorText);
 
             .backlink_link{
                 text-decoration: none;
@@ -14,10 +13,13 @@
             }
         }
 
+        .news_datekat{
+            margin: 0;
+        }
+
         .news_content{
             display: flex;
             gap: 20px;
-            color: var(--ColorText);
 
             @include media(max-medium) {
                 flex-direction: column;
@@ -42,7 +44,6 @@
             .news_title{
                 margin-top: unset;
                 font-size: clamp(1.7rem, -0.1667rem + 4.2667vw, 2.5rem);
-                color: var(--ColorHeadline);
             }
 
             .news_link{
