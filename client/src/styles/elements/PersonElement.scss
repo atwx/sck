@@ -124,6 +124,12 @@ section.section--PersonElement {
 
         .contact-email a {
             text-decoration: underline;
+            margin-left: 0;
+            
+            
+            &:before {
+                display: none;
+            }
 
             &:hover {
                 text-decoration: none;
