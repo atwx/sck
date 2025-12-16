@@ -47,6 +47,16 @@
                 text-decoration: none;
                 padding-right: 20px;
 
+                .nav-strip--sticky-top & {
+                    .nav_brand_white {
+                        display: none;
+                    }
+
+                    .nav_brand_color {
+                        display: block;
+                    }
+                }
+
                 img {
                     height: 100%;
                     width: 100%;
