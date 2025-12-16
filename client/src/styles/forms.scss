@@ -178,7 +178,9 @@ form{
     }
 
     label{
+        display: inline-block;
         margin-bottom: 10px;
+        color: var(--ColorHeadline);
     }
 
     input[type="text"]{
