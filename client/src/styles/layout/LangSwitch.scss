@@ -77,3 +77,30 @@
         }
     }
 }
+
+.nav_language--rounded-dropdown {
+    .nav_language_dropdown {
+        .langswitch--languages {
+            border-radius: 40px;
+            padding: 10px;
+            height: 30px;
+            min-width: unset;
+            max-width: 100px;
+            width: auto;
+            color: var(--ColorPrimary);
+            gap: 5px;
+
+            .ss-values {
+                width: 100%;
+
+                .ss-single {
+                    max-width: unset;
+                }
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
