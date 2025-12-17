@@ -59,7 +59,7 @@ section.section--HighlightElement {
     &.variant--half {
         .section_content_inner {
             width: 50%;
-            @include media(max-medium){
+            @include media(max-desktop){
                 width: 100%;
             }
         }
