@@ -28,7 +28,7 @@ class HTMLElement extends BaseElement
     ];
 
     private static $table_name = 'SCK_HTMLElement';
-    private static $icon = 'font-icon-html';
+    private static $icon = 'font-icon-clipboard-pencil';
     private static $inline_editable = true;
 
     #[Override]

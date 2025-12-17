@@ -4,6 +4,7 @@ namespace Atwx\Sck\Elements;
 
 use Override;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\LinkField\Form\MultiLinkField;
 use SilverStripe\LinkField\Models\Link;
@@ -12,6 +13,7 @@ class HighlightElement extends BaseElement
 {
     private static $db = [
         "Content" => "HTMLText",
+        "Variant" => "Varchar(255)",
     ];
 
     private static $has_many = [
@@ -62,6 +64,14 @@ class HighlightElement extends BaseElement
                     $this->fieldLabel('Buttons'),
                     $this->Buttons()
                 )->setDescription('Fügen Sie hier Buttons hinzu'),
+            DropdownField::create(
+                'Variant',
+                'Variante',
+                [
+                    'default' => 'Volle Breite',
+                    'half' => 'Halbe Breite',
+                ]
+            ),
         ]);
 
         return $fields;

@@ -46,7 +46,7 @@ class HeroElement extends BaseElement
     ];
 
     private static $table_name = 'SCK_HeroElement';
-    private static $icon = 'font-icon-block-promo-3';
+    private static $icon = 'font-icon-home';
     private static $inline_editable = false;
 
     #[Override]
