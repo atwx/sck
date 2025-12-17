@@ -34,10 +34,6 @@ section.section--HighlightElement {
                 height: auto;
             }
         }
-
-        @include media(maxwidth){
-            padding: 0 0 0 20px;
-        }
     }
 
     &.bgc-primary {
