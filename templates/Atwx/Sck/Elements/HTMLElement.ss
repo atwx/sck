@@ -6,6 +6,11 @@
 
         <div class="html-content">
             $HTMLContent.Raw
+            <style>
+                html > body {
+                    font-family: var(--FontBody);
+                }
+            </style>
         </div>
     </div>
 </section>
