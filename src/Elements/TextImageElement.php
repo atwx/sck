@@ -10,6 +10,7 @@ use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\LinkField;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\LinkField\Form\MultiLinkField;
+use StevenPaw\SilverstripeStyleguide\Extensions\PlaceholderHelper;
 
 /**
  * Class \Atwx\Sck\Elements\TextImageElement
@@ -147,5 +148,22 @@ class TextImageElement extends BaseElement
         ]);
 
         return $fields;
+    }
+
+    /**
+     * Custom placeholder data for TextImageElement
+     */
+    public function providePlaceholderData()
+    {
+        $image = PlaceholderHelper::createPlaceholderImage(600, 400);
+        $button = PlaceholderHelper::createPlaceholderButton('Jetzt entdecken', '/services', false);
+
+        return [
+            'Title' => 'Text+Bild Element',
+            'ShowTitle' => true,
+            'Text' =>  PlaceholderHelper::createPlaceholderText(180),
+            'PlaceholderImage' => $image,
+            'PlaceholderButton' => $button,
+        ];
     }
 }
