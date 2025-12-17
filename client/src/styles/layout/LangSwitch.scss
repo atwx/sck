@@ -28,6 +28,20 @@
 }
 
 .nav_language_dropdown {
+
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        right: 5%;
+        top: 43%;
+        border-top: 2px solid var(--ColorWhite);
+        border-right: 2px solid var(--ColorWhite);
+        position: absolute;
+        transform: rotate(135deg) translateY(75%);
+        pointer-events: none;
+    }
+
     .ss-arrow {
         path {
             fill: var(--ColorPrimary);

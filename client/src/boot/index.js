@@ -46,21 +46,23 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    $languageSelect = document.querySelector('#LanguageSelect');
-    //Get all options from select
-    const $languageOptions = Array.from($languageSelect.options).map(option => ({
-        value: option.value,
-        html: option.innerHTML,
-        text: option.text
-    }));
-    new SlimSelect({
-        select: '#LanguageSelect',
-        data: $languageOptions,
-        settings: {
-            showSearch: false, // Show search input
-            ariaLabel: 'Sprache', // ARIA label for accessibility
-        }
-    });
+    const $languageSelect = document.querySelector('#LanguageSelect');
+    if ($languageSelect) {
+        //Get all options from select
+        const $languageOptions = Array.from($languageSelect.options).map(option => ({
+            value: option.value,
+            html: option.innerHTML,
+            text: option.text
+        }));
+        new SlimSelect({
+            select: '#LanguageSelect',
+            data: $languageOptions,
+            settings: {
+                showSearch: false, // Show search input
+                ariaLabel: 'Sprache', // ARIA label for accessibility
+            }
+        });
+    }
 
     // INIT MENUBUTTON (old functionality - keeping for compatibility)
     const menu_button = document.querySelector('[data-behaviour="toggle-navigation"]');
