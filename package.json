@@ -15,6 +15,7 @@
     "glightbox": "^3.0.9",
     "include-media": "^1.4.10",
     "motion": "^12.23.24",
+    "slim-select": "^3.3.0",
     "swiper": "^9.0.4"
   },
   "devDependencies": {

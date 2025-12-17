@@ -1,9 +1,10 @@
 import Swiper, {Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination} from 'swiper';
 import GLightbox from "glightbox";
-import EmblaCarousel from 'embla-carousel'
-import ClassNames from 'embla-carousel-class-names'
-import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
-import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
+import EmblaCarousel from 'embla-carousel';
+import ClassNames from 'embla-carousel-class-names';
+import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons';
+import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton';
+import SlimSelect from 'slim-select';
 import './animations';
 
 //animate("section", { rotate: 360 }); Test if animations work
@@ -44,6 +45,22 @@ window.document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    $languageSelect = document.querySelector('#LanguageSelect');
+    //Get all options from select
+    const $languageOptions = Array.from($languageSelect.options).map(option => ({
+        value: option.value,
+        html: option.innerHTML,
+        text: option.text
+    }));
+    new SlimSelect({
+        select: '#LanguageSelect',
+        data: $languageOptions,
+        settings: {
+            showSearch: false, // Show search input
+            ariaLabel: 'Sprache', // ARIA label for accessibility
+        }
+    });
 
     // INIT MENUBUTTON (old functionality - keeping for compatibility)
     const menu_button = document.querySelector('[data-behaviour="toggle-navigation"]');

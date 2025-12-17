@@ -31,23 +31,6 @@
                 <% end_if %>
             <% end_loop %>
         </ul>
-        <div class="nav_language">
-            <% if $Locales %>
-                <div class="nav-select nav_language_dropdown">
-                    <select data-behaviour="select-redirect" class="nav_language_button">
-                        <% loop $Locales %>
-                            <option class="$LinkingMode nav_language_item fib fi-$UrlSegment"
-                                    <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link">
-                                $Title.XML
-                            </option>
-                        <% end_loop %>
-                    </select>
-                    <link
-                        rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
-                    />
-                </div>
-            <% end_if %>
-        </div>
+        <% include Atwx\Sck\Includes\LanguageSwitch\LangSwitch %>
     </div>
 </div>

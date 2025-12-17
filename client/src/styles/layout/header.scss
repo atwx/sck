@@ -168,19 +168,6 @@
         position: relative;
         cursor: pointer;
 
-        &::after {
-            content: "";
-            width: 10px;
-            height: 10px;
-            right: 5%;
-            top: 43%;
-            border-top: 2px solid var(--ColorWhite);
-            border-right: 2px solid var(--ColorWhite);
-            position: absolute;
-            transform: rotate(135deg) translateY(75%);
-            pointer-events: none;
-        }
-
         .nav_language_button {
             background-color: var(--ColorSecondary);
             border: none;
@@ -196,21 +183,8 @@
             appearance: none;
             border-radius: 0;
 
-            &::after {
-                transform: translate(-50%, -20%) rotate(45deg);
-            }
-
-            &::before {
-                transform: translate(-50%, -80%) rotate(-45deg);
-            }
-
             &:hover {
                 filter: brightness(0.9);
-            }
-
-            .nav_language_arrow {
-                transition: transform 0.2s ease;
-                font-size: 10px;
             }
 
             &.active .nav_language_arrow {

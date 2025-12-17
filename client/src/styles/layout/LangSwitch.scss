@@ -1,0 +1,65 @@
+.langswitch--languages {
+    /* Use CSS variables for consistent styling */
+    --ss-main-height: 50px;
+    --ss-option-height: 40px;
+    --ss-spacing-l: 12px;
+    --ss-spacing-m: 8px;
+    --ss-spacing-s: 4px;
+    --ss-border-radius: 8px;
+}
+
+/* Enhanced styling for the main element */
+.langswitch--languages.ss-main .ss-single {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Target the class on the img */
+.langswitch--languages.ss-main .ss-single .country,
+.langswitch--languages.ss-content .ss-option .country {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30px;
+    padding: 0 8px 0 8px;
+}
+
+.nav_language_dropdown {
+    .ss-arrow {
+        path {
+            fill: var(--ColorPrimary);
+            stroke: var(--ColorPrimary);
+        }
+    }
+}
+
+
+.nav_language--flags {
+    .nav_language_dropdown {
+        .langswitch--languages {
+            border-radius: 40px;
+            padding: 10px;
+            height: 30px;
+            min-width: unset;
+            max-width: 100px;
+            width: auto;
+            color: var(--ColorPrimary);
+            gap: 5px;
+
+            .ss-values {
+                width: 100%;
+
+                .ss-single {
+                    max-width: unset;
+                }
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
