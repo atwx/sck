@@ -1,20 +1,30 @@
 section.section--Breadcrumbs {
-    padding: 10px 0;
+    padding: 12px 0;
 
     .section_content {
         max-width: var(--MaxWidthContent);
         margin: 0 auto;
         padding: 0 20px;
         font-size: 14px;
-        color: var(--ColorText);
+        color: var(--ColorPrimary);
 
         a {
-            color: var(--ColorPrimary);
-            text-decoration: underline;
+            color: var(--ColorGrey);
+            text-decoration: none;
+            margin: 0 5px;
+
+            &:first-child {
+                margin-left: 0;
+            }
 
             &:hover {
                 color: var(--ColorText);
             }
+        }
+
+        .breadcrumb-current{
+            display: inline;
+            margin: 0 5px;
         }
     }
 }

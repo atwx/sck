@@ -4,12 +4,12 @@
             <a href="" class="breadcrumb-0">Startseite</a> &raquo; 
             <% loop $Pages %>
                 <% if $IsLast %>
-                    $MenuTitle.XML
+                    <div class="breadcrumb-current">$MenuTitle.XML</div>
                 <% else %>
                     <% if not Up.Unlinked %>
                         <a href="$Link" class="breadcrumb-$Pos">
                     <% end_if %>
-                        $MenuTitle.XML
+                    $MenuTitle.XML
                     <% if not Up.Unlinked %>
                         </a>
                     <% end_if %> 
