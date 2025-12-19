@@ -72,7 +72,7 @@ class TextImageElement extends BaseElement
     #[Override]
     public function getType()
     {
-        return "Text+Bild";
+        return "Bild + Text (2 Spalten)";
     }
 
     #[Override]

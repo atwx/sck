@@ -87,7 +87,7 @@ class IconCardElement extends BaseElement
     #[Override]
     public function getType()
     {
-        return "Icon Card";
+        return "Icon Karte";
     }
 
     #[Override]

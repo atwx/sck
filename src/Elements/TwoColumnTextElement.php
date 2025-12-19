@@ -40,8 +40,8 @@ class TwoColumnTextElement extends BaseElement
 
     private static $table_name = 'SCK_TwoColumnTextElement';
     private static $icon = 'font-icon-block-content';
-    private static $singular_name = 'Zwei-Spalten Text Element';
-    private static $plural_name = 'Zwei-Spalten Text Elemente';
+    private static $singular_name = 'Titel + Text Element';
+    private static $plural_name = 'Titel + Text Elemente';
 
     #[Override]
     public function getCMSFields()
@@ -77,7 +77,7 @@ class TwoColumnTextElement extends BaseElement
     #[Override]
     public function getType()
     {
-        return 'Zwei-Spalten Text';
+        return 'Titel + Text (2 Spalten)';
     }
 
     #[Override]
