@@ -42,6 +42,7 @@ class LinkExtension extends Extension
                     'warning' => 'Warnung',
                     'info' => 'Info',
                     'text' => 'Text',
+                    'readmore' => 'Mehr Lesen',
                 ]
             )
         );

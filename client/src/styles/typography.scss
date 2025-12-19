@@ -173,6 +173,98 @@ a {
         }
     }
 
+    &.buttonvariant--readmore{
+        background-color: transparent;
+        color: var(--ColorPrimary);
+        padding: 6px 10px 5px 45px;
+        text-decoration: none;
+        position: relative;
+        left: 0px;
+        transition: 0.3s ease-in-out;
+
+        &::before {
+            content: "";
+            background-color: var(--ColorPrimary);
+            border: 2px solid var(--ColorPrimary);
+            border-radius: 50%;
+            display: block;
+            height: 31px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.3s ease-in-out;
+            width: 31px;
+        }
+
+        &::after {
+            border-right: 2px solid var(--ColorWhite);
+            border-top: 2px solid var(--ColorWhite);
+            content: "";
+            display: block;
+            height: 8px;
+            left: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transform-origin: center;
+            transition: 0.3s ease-in-out;
+            width: 8px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            left: 5px;
+
+            &::before {
+                left: 5px;
+            }
+
+            &::after {
+                left: 15px;
+            }
+        }
+
+        &.bgc-primary, &.bgc-primary-dark, &.bgc-primary-light {
+            color: var(--ColorWhite);
+
+            &::before {
+                background-color: var(--ColorWhite);
+                border-color: var(--ColorWhite);
+            }
+
+            &::after {
+                border-right: 2px solid var(--ColorPrimary);
+                border-top: 2px solid var(--ColorPrimary);
+            }
+
+            &:hover {
+                color: var(--ColorWhite);
+            }
+        }
+
+        &.bgc-secondary, &.bgc-secondary-dark, &.bgc-secondary-light {
+            color: var(--ColorWhite);
+
+            &::before {
+                background-color: var(--ColorWhite);
+                border-color: var(--ColorWhite);
+            }
+
+            &::after {
+                border-right: 2px solid var(--ColorSecondary);
+                border-top: 2px solid var(--ColorSecondary);
+            }
+
+            &:hover {
+                color: var(--ColorWhite);
+            }
+        }
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
 
     @include media(max-desktop) {
         overflow-wrap: break-word;
