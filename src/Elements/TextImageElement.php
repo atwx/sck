@@ -119,11 +119,15 @@ class TextImageElement extends BaseElement
 
         $fields->addFieldsToTab('Root.Style', [
             DropdownField::create('ColumnRatio', 'Spaltenverhältnis', [
+                "columnratio--1-9" => "1:9",
+                "columnratio--2-8" => "2:8",
                 "columnratio--3-7" => "3:7",
                 "columnratio--4-6" => "4:6",
-                "columnratio--1-1" => "1:1",
+                "columnratio--5-5" => "5:5",
                 "columnratio--6-4" => "6:4",
                 "columnratio--7-3" => "7:3",
+                "columnratio--8-2" => "8:2",
+                "columnratio--9-1" => "9:1",
             ]),
             DropdownField::create('Variant', 'Bildausrichtung', [
                 "image--right" => "Bild rechts",

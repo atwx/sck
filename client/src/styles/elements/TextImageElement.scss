@@ -190,6 +190,32 @@ section.section--TextImageElement {
 
 
     //Width Variants
+    &.columnratio--1-9{
+        .section_content {
+
+            @include media(max-medium) {
+                grid-template-columns: minmax(20px, 1fr) calc(10% - 35px) 30px calc(90% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(maxwidth) {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 1 - 35px) 30px calc(var(--TenthOfMaxWidth) * 9 - 35px) minmax(20px, 1fr);
+            }
+        }
+    }
+
+    &.columnratio--2-8{
+        .section_content {
+
+            @include media(max-medium) {
+                grid-template-columns: minmax(20px, 1fr) calc(20% - 35px) 30px calc(80% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(maxwidth) {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 2 - 35px) 30px calc(var(--TenthOfMaxWidth) * 8 - 35px) minmax(20px, 1fr);
+            }
+        }
+    }
+
     &.columnratio--3-7{
         .section_content {
 
@@ -235,6 +261,30 @@ section.section--TextImageElement {
 
             @include media(maxwidth) {
                 grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 7 - 35px) 30px calc(var(--TenthOfMaxWidth) * 3 - 35px) minmax(20px, 1fr);
+            }
+        }
+    }
+
+    &.columnratio--8-2{
+        .section_content {
+            @include media(max-medium) {
+                grid-template-columns: minmax(20px, 1fr) calc(80% - 35px) 30px calc(20% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(maxwidth) {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 8 - 35px) 30px calc(var(--TenthOfMaxWidth) * 2 - 35px) minmax(20px, 1fr);
+            }
+        }
+    }
+
+    &.columnratio--9-1{
+        .section_content {
+            @include media(max-medium) {
+                grid-template-columns: minmax(20px, 1fr) calc(90% - 35px) 30px calc(10% - 35px) minmax(20px, 1fr);
+            }
+
+            @include media(maxwidth) {
+                grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 9 - 35px) 30px calc(var(--TenthOfMaxWidth) * 1 - 35px) minmax(20px, 1fr);
             }
         }
     }
