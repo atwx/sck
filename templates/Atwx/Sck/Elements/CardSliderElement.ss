@@ -1,4 +1,4 @@
-<section class="section--CardSliderElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+<section class="section--CardSliderElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
             <h2 class="hl2 section_title">$Title</h2>

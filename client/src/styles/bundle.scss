@@ -53,8 +53,20 @@ section {
     &.bgc-primary {
         background: var(--ColorPrimary);
     }
+    &.bgc-primary-dark {
+        background: var(--ColorPrimaryDark);
+    }
+    &.bgc-primary-light {
+        background: var(--ColorPrimaryLight);
+    }
     &.bgc-secondary {
         background: var(--ColorSecondary);
+    }
+    &.bgc-secondary-dark {
+        background: var(--ColorSecondaryDark);
+    }
+    &.bgc-secondary-light {
+        background: var(--ColorSecondaryLight);
     }
 
     .section_content{

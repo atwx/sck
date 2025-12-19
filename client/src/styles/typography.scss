@@ -58,7 +58,7 @@ a {
     }
 }
 
-.bgc-primary {
+.bgc-primary, .bgc-primary-dark, .bgc-primary-light {
     a {
         &:not(.link--button) {
             text-decoration: underline;
@@ -68,8 +68,8 @@ a {
                 color: var(--ColorSecondary);
             }
         }
-    }  
-    
+    }
+
     &.primary-white-text {
         h1, h2, h3, h4, h5, p{
             color: var(--ColorWhite);
@@ -77,7 +77,7 @@ a {
     }
 }
 
-.bgc-secondary {
+.bgc-secondary, .bgc-secondary-dark, .bgc-secondary-light {
     a {
         &:not(.link--button) {
             text-decoration: underline;
@@ -86,7 +86,7 @@ a {
                 color: var(--ColorPrimary);
             }
         }
-    }    
+    }
 
     &.secondary-white-text {
         h1, h2, h3, h4, h5, p{

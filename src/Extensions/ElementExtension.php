@@ -31,7 +31,11 @@ class ElementExtension extends Extension
             DropdownField::create('BackgroundColor', 'Hintergrundfarbe', [
                 '' => 'Keine',
                 'bgc-primary' => 'Primärfarbe',
-                'bgc-secondary' => 'Sekundärfarbe'
+                'bgc-primary-dark' => 'Dunkle Primärfarbe',
+                'bgc-primary-light' => 'Helle Primärfarbe',
+                'bgc-secondary' => 'Sekundärfarbe',
+                'bgc-secondary-dark' => 'Dunkle Sekundärfarbe',
+                'bgc-secondary-light' => 'Helle Sekundärfarbe',
             ])
             ->setDescription('Bestimmt die Hintergrundfarbe des Elements'),
             DropdownField::create('FadeInAnimation', 'Eingangs Animation', [

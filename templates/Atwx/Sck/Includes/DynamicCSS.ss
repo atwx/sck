@@ -4,7 +4,11 @@
     --MaxWidthContent: $SiteConfig.MaxWidthContentValue;
     --MaxWidthBlockText: $SiteConfig.MaxWidthBlockTextValue;
     --ColorPrimary: $SiteConfig.ColorPrimaryValue;
+    --ColorPrimaryDark: $SiteConfig.ColorPrimaryDarkValue;
+    --ColorPrimaryLight: $SiteConfig.ColorPrimaryLightValue;
     --ColorSecondary: $SiteConfig.ColorSecondaryValue;
+    --ColorSecondaryDark: $SiteConfig.ColorSecondaryDarkValue;
+    --ColorSecondaryLight: $SiteConfig.ColorSecondaryLightValue;
     --ColorPrimaryFontWhite: $SiteConfig.ColorPrimaryFontWhite;
     --ColorSecondaryFontWhite: $SiteConfig.ColorSecondaryFontWhite;
     --ColorText: $SiteConfig.ColorTextValue;

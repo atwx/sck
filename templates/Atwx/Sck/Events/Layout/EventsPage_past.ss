@@ -1,4 +1,4 @@
-<section class="section section--EventsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+<section class="section section--EventsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <h1 class="hl1 text_title">$Title</h1>
         <div class="text_intro">$Intro</div>

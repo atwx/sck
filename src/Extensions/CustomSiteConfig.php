@@ -55,8 +55,12 @@ class CustomSiteConfig extends Extension
         'LinkTwitter' => 'Varchar(255)',
         'LinkDiscord' => 'Varchar(255)',
         'ColorPrimary' => 'Varchar(7)',
+        'ColorPrimaryLight' => 'Varchar(7)',
+        'ColorPrimaryDark' => 'Varchar(7)',
         'ColorPrimaryFontWhite' => 'Boolean',
         'ColorSecondary' => 'Varchar(7)',
+        'ColorSecondaryLight' => 'Varchar(7)',
+        'ColorSecondaryDark' => 'Varchar(7)',
         'ColorSecondaryFontWhite' => 'Boolean',
         'ColorText' => 'Varchar(7)',
         'ColorHeadline' => 'Varchar(7)',
@@ -173,31 +177,51 @@ class CustomSiteConfig extends Extension
         ]));
 
         // Styling Tab
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorPrimary", "Primärfarbe")
+        $fields->addFieldToTab("Root.Styling", new TabSet("StylingTabs",
+            new Tab("Primary", "Primärfarben"),
+            new Tab("Secondary", "Sekundärfarben"),
+            new Tab("Text", "Textfarben"),
+            new Tab("Other", "Sonstiges"),
+        ));
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Primary", TextField::create("ColorPrimary", "Primärfarbe")
             ->setDescription("Hauptfarbe der Website")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorPrimaryFontWhite", "Weiße Schrift auf Primärfarbe")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Primary", TextField::create("ColorPrimaryLight", "Helle Primärfarbe")
+            ->setDescription("Helle Primärfarbe der Website")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Primary", TextField::create("ColorPrimaryDark", "Dunkle Primärfarbe")
+            ->setDescription("Dunkle Primärfarbe der Website")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Primary", CheckboxField::create("ColorPrimaryFontWhite", "Weiße Schrift auf Primärfarbe")
             ->setDescription("Überschreibt die Textfarben mit weiß, wenn sie auf der Primärfarbe liegen"));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorSecondary", "Sekundärfarbe")
+
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Secondary", TextField::create("ColorSecondary", "Sekundärfarbe")
             ->setDescription("Sekundärfarbe der Website")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", CheckboxField::create("ColorSecondaryFontWhite", "Weiße Schrift auf Sekundärfarbe")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Secondary", TextField::create("ColorSecondaryLight", "Helle Sekundärfarbe")
+            ->setDescription("Helle Sekundärfarbe der Website")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Secondary", TextField::create("ColorSecondaryDark", "Dunkle Sekundärfarbe")
+            ->setDescription("Dunkle Sekundärfarbe der Website")
+            ->setAttribute('type', 'color'));
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Secondary", CheckboxField::create("ColorSecondaryFontWhite", "Weiße Schrift auf Sekundärfarbe")
             ->setDescription("Überschreibt die Textfarben mit weiß, wenn sie auf der Sekundärfarbe liegen"));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorHeadline", "Überschriftfarbe")
+
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Text", TextField::create("ColorHeadline", "Überschriftfarbe")
             ->setDescription("Farbe der Überschriften")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorText", "Textfarbe")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Text", TextField::create("ColorText", "Textfarbe")
             ->setDescription("Farbe des Fließtextes")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorBackground", "Hintergrundfarbe")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Other", TextField::create("ColorBackground", "Hintergrundfarbe")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuBackground", "Hintergrundfarbe Navigation")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Other", TextField::create("ColorMenuBackground", "Hintergrundfarbe Navigation")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuText", "Textfarbe Navigation")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Other", TextField::create("ColorMenuText", "Textfarbe Navigation")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", TextField::create("ColorMenuTextHover", "Textfarbe Navigation Hover")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Other", TextField::create("ColorMenuTextHover", "Textfarbe Navigation Hover")
             ->setAttribute('type', 'color'));
-        $fields->addFieldToTab("Root.Styling", UploadField::create("Arrow", "Pfeil nach rechts")
+        $fields->addFieldToTab("Root.Styling.StylingTabs.Other", UploadField::create("Arrow", "Pfeil nach rechts")
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
 
         // Fonts Tab
@@ -257,9 +281,29 @@ class CustomSiteConfig extends Extension
         return $this->owner->ColorPrimary ?: '#03395E';
     }
 
+    public function getColorPrimaryDarkValue()
+    {
+        return $this->owner->ColorPrimaryDark ?: '#022E4D';
+    }
+
+    public function getColorPrimaryLightValue()
+    {
+        return $this->owner->ColorPrimaryLight ?: '#055A81';
+    }
+
     public function getColorSecondaryValue()
     {
         return $this->owner->ColorSecondary ?: '#63819C';
+    }
+
+    public function getColorSecondaryDarkValue()
+    {
+        return $this->owner->ColorSecondaryDark ?: '#4A6273';
+    }
+
+    public function getColorSecondaryLightValue()
+    {
+        return $this->owner->ColorSecondaryLight ?: '#7D9ABF';
     }
 
     public function getColorTextValue()

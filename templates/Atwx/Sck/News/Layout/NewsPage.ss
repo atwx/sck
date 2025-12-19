@@ -1,4 +1,4 @@
-<section class="section section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite && $BackgroundColor == 'bgc-primary' %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite && $BackgroundColor == 'bgc-secondary' %>secondary-white-text<% end_if %>">
+<section class="section section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <h1 class="hl1 text_title">$Title</h1>
         <div class="text_intro">$Intro</div>
@@ -21,7 +21,7 @@
             <div class="section_news_pagination">
                 <% if $News.NotFirstPage %>
                     <a class="prev-link" href="$News.PrevLink">«</a>
-                <% end_if %>          
+                <% end_if %>
                 <% loop $News.PaginationSummary %>
                     <% if $CurrentBool %>
                         <a class="page-link current">$PageNum</a>
@@ -32,7 +32,7 @@
                             ...
                         <% end_if %>
                     <% end_if %>
-                <% end_loop %>      
+                <% end_loop %>
                 <% if $News.NotLastPage %>
                     <a class="next-link" href="$News.NextLink">»</a>
                 <% end_if %>
