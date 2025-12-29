@@ -14,7 +14,7 @@
             <% if $Buttons.Count > 0 %>
                 <div class="section_links">
                     <% loop $Buttons %>
-                        <a href="$URL" class="section_link">$Title</a>
+                        <% include Atwx/Sck/Includes/Button Link=$Me, BackgroundColor=$Top.BackgroundColor %>
                     <% end_loop %>
                 </div>
             <% end_if %>
