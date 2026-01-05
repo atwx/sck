@@ -49,11 +49,15 @@ window.document.addEventListener('DOMContentLoaded', () => {
     const $languageSelect = document.querySelector('#LanguageSelect');
     if ($languageSelect) {
         //Get all options from select
-        const $languageOptions = Array.from($languageSelect.options).map(option => ({
+        const $languageOptions = Array.from($languageSelect.options).map(option => {
+          const image = option.getAttribute('data-image');
+          const html = image ? `${option.text} <img src="${image}" alt="${option.text}" class="country">` : option.text;
+          return {
             value: option.value,
-            html: option.innerHTML,
+            html: html,
             text: option.text
-        }));
+          }}
+        );
         new SlimSelect({
             select: '#LanguageSelect',
             data: $languageOptions,
