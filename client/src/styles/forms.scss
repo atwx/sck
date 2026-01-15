@@ -159,7 +159,17 @@ form{
         display: flex;
         width: fit-content;
         padding: 0;
-        flex-wrap: wrap;
+        flex-wrap: wrap;        
+
+        div > div{
+            display: flex;
+            align-items: start;
+
+            input[type="checkbox"]{
+                margin-top: 5px;
+                margin-right: 10px;
+            }
+        }
     }
 
     input[type="submit"] {
@@ -170,6 +180,14 @@ form{
 
     .field{
         margin: 10px 10px 0 0;
+
+        &.requiredField{
+            label::after{
+                content: '*';
+                color: var(--ColorError);
+                margin-left: 5px;
+            }
+        }
 
         @include media(max-medium){
             width: 100%;
@@ -183,13 +201,16 @@ form{
         color: var(--ColorHeadline);
     }
 
-    input[type="text"]{
-        width: 100%;
-        border: 1px solid var(--ColorPrimary); 
-        border-radius: 6px;
-        height: 47px;
-        box-sizing: border-box;
-        padding: 13px;
+    input{
+        &:not([type="checkbox"],[type="radio"],[type="submit"]){
+            width: 100%;
+            border: 1px solid var(--ColorPrimary); 
+            border-radius: 6px;
+            height: 47px;
+            box-sizing: border-box;
+            padding: 13px;
+            background-color: var(--ColorWhite);
+        }
     }
 
     .btn-toolbar{
