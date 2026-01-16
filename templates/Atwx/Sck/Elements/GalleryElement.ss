@@ -46,4 +46,4 @@
             <% end_loop %>
         </div>
     </div>
-</div>
+</section>
