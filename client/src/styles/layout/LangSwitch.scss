@@ -43,6 +43,7 @@
     }
 
     .ss-arrow {
+        
         path {
             fill: var(--ColorPrimary);
             stroke: var(--ColorPrimary);
@@ -74,6 +75,10 @@
                     display: block;
                 }
             }
+        }
+
+        &::after {
+            display: none;
         }
     }
 }

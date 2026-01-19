@@ -55,7 +55,8 @@ window.document.addEventListener('DOMContentLoaded', () => {
           return {
             value: option.value,
             html: html,
-            text: option.text
+            text: option.text,
+            selected: option.selected
           }}
         );
         new SlimSelect({
