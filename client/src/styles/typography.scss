@@ -175,6 +175,74 @@ a {
     &.buttonvariant--readmore{
         background-color: transparent;
         color: var(--ColorPrimary);
+        padding: 20px 10px 20px 45px;
+        text-decoration: none;
+        position: relative;
+        left: 0px;
+        
+        &::after, &::before {
+            content: '';
+            width: 3px;
+            height: 20px;
+            background-color: var(--ColorPrimary);
+            top: 50%;
+            left: 10px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            transform: translate(-50%, -20%) rotate(45deg);
+        }
+
+        &::before {
+            transform: translate(-50%, -80%) rotate(-45deg);
+        }
+
+        &:hover {
+            background-color: var(--ColorSecondary);
+            color: var(--ColorWhite);
+
+            &::after, &::before {
+                background-color: var(--ColorWhite);
+            }
+        }
+
+        &.bgc-primary, &.bgc-primary-dark, &.bgc-primary-light {
+            color: var(--ColorWhite);
+
+            
+            &::after, &::before {
+                background-color: var(--ColorWhite);
+            }
+
+            &:hover {
+                color: var(--ColorWhite);
+            }
+        }
+
+        &.bgc-secondary, &.bgc-secondary-dark, &.bgc-secondary-light {
+            color: var(--ColorWhite);
+
+            &::after, &::before {
+                background-color: var(--ColorWhite);
+            }
+
+            &:hover {
+                background-color: var(--ColorPrimary);
+                color: var(--ColorWhite);
+            }
+        }
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
+
+
+    &.buttonvariant--readmore_round{
+        background-color: transparent;
+        color: var(--ColorPrimary);
         padding: 6px 10px 5px 45px;
         text-decoration: none;
         position: relative;

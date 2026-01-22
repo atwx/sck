@@ -37,12 +37,13 @@ class LinkExtension extends Extension
                 [
                     'primary' => 'Primärer Button',
                     'secondary' => 'Sekundärer Button',
-                    'success' => 'Erfolg',
-                    'danger' => 'Gefahr',
-                    'warning' => 'Warnung',
-                    'info' => 'Info',
-                    'text' => 'Text',
-                    'readmore' => 'Mehr Lesen',
+                    // 'success' => 'Erfolg',
+                    // 'danger' => 'Gefahr',
+                    // 'warning' => 'Warnung',
+                    // 'info' => 'Info',
+                    // 'text' => 'Text',
+                    'readmore' => 'Pfeilprefix',
+                    'readmore_round' => 'Pfeilprefix rund',
                 ]
             )
         );
