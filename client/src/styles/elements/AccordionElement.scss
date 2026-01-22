@@ -1,0 +1,95 @@
+section.section--AccordionElement{
+    padding: 60px 0;
+
+    .section_accordion{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+
+        &.columns--three{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &.columns--four{
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include media(max-medium){
+            grid-template-columns: 1fr;
+        }
+        .accordion_item{
+
+            .accordion_item_image{
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .section_item_expand{
+                position: relative;
+                margin-bottom: 10px;
+                padding: 20px 10px 20px 35px;
+
+                &::after, &::before {
+                    content: '';
+                    width: 3px;
+                    height: 20px;
+                    background-color: var(--ColorPrimary);
+                    top: 50%;
+                    left: 10px;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+
+                &::after {
+                    transform: translate(-50%, -20%) rotate(45deg);
+                }
+
+                &::before {
+                    transform: translate(-50%, -80%) rotate(-45deg);
+                }
+            }
+
+            .accordion_item_intro{
+                p {
+                    margin: 0;
+                }
+            }
+            
+            details{
+                summary{
+                    &::-webkit-details-marker {
+                        display: none;
+                    }
+                    cursor: pointer;
+                    p{
+                        margin: 0;
+                    }
+                }
+                
+                &[open]{
+                    .section_item_expand{
+                        &::before {
+                            transform: translate(200%, -50%) rotate(45deg);
+                        }
+                        &::after {
+                            transform: translate(-200%, -50%) rotate(135deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.bgc-primary, &.bgc-primary-dark, &.bgc-primary-light,
+    &.bgc-secondary, &.bgc-secondary-dark, &.bgc-secondary-light{
+        &.primary-white-text, &.secondary-white-text{
+            .section_accordion{
+                .section_item_expand{
+                    &::after, &::before {
+                        background-color: var(--ColorWhite);
+                    }
+                }
+            }
+        }
+    }
+}
