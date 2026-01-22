@@ -176,6 +176,8 @@
             visibility: hidden;
             transition: all 0.2s ease;
             z-index: 1000;
+            max-height: calc(100vh - 85px);
+            overflow-y: auto;
 
             .nav_menu_wrap {
               margin: 0 auto;
@@ -188,9 +190,6 @@
                 @include media(max-desktop) {
                     flex-direction: column;
                     padding: 0 20px;
-                }
-                @include media(max-medium) {
-                    padding: 0;
                 }
             }
 
@@ -231,7 +230,7 @@
 
                     .nav_sublink, .nav_subsublink {
                         display: block;
-                        padding: 15px 10px;
+                        padding: 5px 10px;
                         color: var(--ColorWhite);
                         text-decoration: none;
                         font-size: 14px;
@@ -256,9 +255,7 @@
                     }
 
                     .nav_subsublink {
-                        margin-left: 20px;
-                        padding-left: 20px;
-                        border-left: 1px solid white;
+                        margin-left: 10px;
                     }
                 }
             }
