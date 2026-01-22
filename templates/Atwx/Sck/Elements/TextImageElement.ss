@@ -39,6 +39,24 @@
                     <% include Atwx/Sck/Includes/Button Link=$Button, BackgroundColor=$BackgroundColor %>
                 </div>
             <% end_if %>
+            <% if $MoreText %>
+                <div class="accordion_item">
+                    <details>
+                        <summary class="section_item_expand">
+                            <% if $ExpandText %>
+                                <p>$ExpandText</p>
+                            <% else %>
+                                <p>Weitere Informationen</p>
+                            <% end_if %>
+                        </summary>
+                        <div class="section_item_content<% if $Image %> --withImage<% end_if %>">
+                            <div class="section_item_text">
+                                $MoreText
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            <% end_if %>
         </div>
     </div>
 </section>

@@ -27,6 +27,8 @@ class TextImageElement extends BaseElement
 
     private static $db = [
         "Text" => "HTMLText",
+        "MoreText" => "HTMLText",
+        "ExpandText" => "Varchar(255)",
         "Variant" => "Varchar(20)",
         "Format" => "Varchar(20)",
         "ColumnRatio" => "Varchar(30)",

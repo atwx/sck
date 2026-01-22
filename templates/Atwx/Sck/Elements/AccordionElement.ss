@@ -35,9 +35,7 @@
                                 <div class="section_item_text">
                                     $Text
                                     <% if $Button %>
-                                        <% with $Button %>
-                                            <% include Components/Button VariantStandard="TextButton", ButtonType=$Variant, ButtonTitle=$Title, ButtonLink=$URL, ButtonOpenInNew=$OpenInNew %>
-                                        <% end_with %>
+                                        <% include Atwx/Sck/Includes/Button Link=$Button, BackgroundColor=$Up.BackgroundColor %>
                                     <% end_if %>
                                 </div>
                             </div>

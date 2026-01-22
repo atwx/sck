@@ -34,7 +34,7 @@
                                                 </li>
                                                  <% loop $Children %>
                                                     <li>
-                                                        <a href="$Link" class="nav_subsublink nav_link--$LinkingMode">- $MenuTitle</a>
+                                                        <a href="$Link" class="nav_subsublink nav_link--$LinkingMode">$MenuTitle</a>
                                                     </li>
                                                 <% end_loop %>
                                             <% end_loop %>
