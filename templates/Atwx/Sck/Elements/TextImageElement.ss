@@ -29,10 +29,10 @@
                 </ul>
             </div>
         <% end_if %>
-        <% if $ShowTitle %>
-            <h2 class="hl2 section_title">$Title</h2>
-        <% end_if %>
         <div class="section_text_content">
+            <% if $ShowTitle %>
+                <h2 class="hl2 section_title">$Title</h2>
+            <% end_if %>
             $Text
             <% if $Button %>
                 <div class="section_button">
