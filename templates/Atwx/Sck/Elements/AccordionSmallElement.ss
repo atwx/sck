@@ -2,7 +2,7 @@
     <div class="section_content">
         <div class="section_intro">
             <% if $ShowTitle %>
-                <h2>$Title</h2>
+                <h2 class="hl2">$Title</h2>
             <% end_if %>
             <% if $Text %>
                 <p>$Text</p>

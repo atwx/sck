@@ -1,8 +1,8 @@
 body{
     font-family: var(--FontBody);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.75;
+    font-size: var(--TextFontSize, 18px);
+    font-weight: var(--TextFontWeight, 400);
+    line-height: var(--TextLineHeight, 1.75);
 }
 
 h1, h2, h3, h4, h5{
@@ -14,14 +14,21 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-    font-size: clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem);
-    line-height: 1.1;
+    font-size: var(--Headline1FontSize, clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem));
+    line-height: var(--Headline1LineHeight, 1.1);
+    font-weight: var(--Headline1FontWeight, 700);
 }
 
 .hl2 {
-    font-size: clamp(2.125rem, 1.7083rem + 1.6667vw, 2.75rem);
-    font-weight: 500;
-    line-height: 1.05;
+    font-size: var(--Headline2FontSize, clamp(2.125rem, 1.7083rem + 1.6667vw, 2.75rem));
+    font-weight: var(--Headline2FontWeight, 500);
+    line-height: var(--Headline2LineHeight, 1.05);
+}
+
+.hl3 {
+    font-size: var(--Headline3FontSize);
+    font-weight: var(--Headline3FontWeight, 700);
+    line-height: var(--Headline3LineHeight, normal);
 }
 
 p {

@@ -11,6 +11,7 @@ use Atwx\Sck\Models\FooterColumn;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\ReadonlyField;
 use SilverStripe\Forms\TextareaField;
@@ -81,6 +82,18 @@ class CustomSiteConfig extends Extension
         'HeaderMenuAlignment' => 'Varchar(31)',
         'FooterMenuAlignment' => 'Varchar(31)',
         'LanguageToggleVariant' => 'Varchar(100)',
+        'Headline1FontSize' => 'Varchar(50)',
+        'Headline1LineHeight' => 'Varchar(50)',
+        'Headline1FontWeight' => 'Varchar(50)',
+        'Headline2FontSize' => 'Varchar(50)',
+        'Headline2LineHeight' => 'Varchar(50)',
+        'Headline2FontWeight' => 'Varchar(50)',
+        'Headline3FontSize' => 'Varchar(50)',
+        'Headline3LineHeight' => 'Varchar(50)',
+        'Headline3FontWeight' => 'Varchar(50)',
+        'TextFontSize' => 'Varchar(50)',
+        'TextLineHeight' => 'Varchar(50)',
+        'TextFontWeight' => 'Varchar(50)',
     ];
 
     private static $has_one = [
@@ -225,18 +238,36 @@ class CustomSiteConfig extends Extension
             ->setDescription("Ein Pfeil zur Navigation in Slidern"));
 
         // Fonts Tab
-        $fields->addFieldToTab("Root.Schriften.Header", DropdownField::create('HeaderFont', 'Header Font', [
+        $fields->addFieldToTab("Root.Schriften.Fonts", DropdownField::create('HeaderFont', 'Header Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
             'Sansation' => 'Sansation',
         ]));
-        $fields->addFieldToTab("Root.Schriften.Body", DropdownField::create('BodyFont', 'Body Font', [
+        $fields->addFieldToTab("Root.Schriften.Fonts", DropdownField::create('BodyFont', 'Body Font', [
             'Roboto' => 'Roboto',
             'DM Sans' => 'DM Sans',
             'Open Sans' => 'Open Sans',
             'Sansation' => 'Sansation',
         ]));
+        //Zwischenüberschriften "H1"
+        $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("H1Info", "<br><h3>H1 Überschrift</h3>"));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1FontSize', 'H1 Schriftgröße'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1LineHeight', 'H1 Line-Height'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1FontWeight', 'H1 Schriftstärke'));
+        $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("H2Info", "<br><h3>H2 Überschrift</h3>"));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2FontSize', 'H2 Schriftgröße'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2LineHeight', 'H2 Line-Height'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2FontWeight', 'H2 Schriftstärke'));
+        $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("H3Info", "<br><h3>H3 Überschrift</h3>"));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3FontSize', 'H3 Schriftgröße'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3LineHeight', 'H3 Line-Height'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3FontWeight', 'H3 Schriftstärke'));        
+        $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("TextInfo", "<br><h3>Fließtext</h3>"));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('TextFontSize', 'Text Schriftgröße'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('TextLineHeight', 'Text Line-Height'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('TextFontWeight', 'Text Schriftstärke'));
+
 
         //Add Version number of the SCK module in a new tab
         $fields->addFieldToTab("Root.ProjectInfo", new ReadonlyField("SCKVersion", "SCK Version", $this->getSCKVersion()));
