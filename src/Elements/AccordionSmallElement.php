@@ -10,40 +10,34 @@ use StevenPaw\SilverstripeStyleguide\Extensions\PlaceholderHelper;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use SilverStripe\Forms\DropdownField;
 
-class AccordionElement extends BaseElement
+class AccordionSmallElement extends BaseElement
 {
 
     private static $db = [
         "Text" => "HTMLText",
-        "Columns" => "Varchar(20)",
     ];
 
     private static $has_many = [
-        "Items" => AccordionItem::class,
-    ];
-
-    private static $field_exclude = [
-        'Columns',
+        "Items" => AccordionSmallItem::class,
     ];
 
     private static $field_labels = [
         'Text' => 'Text',
         'Items' => 'Accordion Items',
-        'Columns' => 'Spaltenanzahl',
     ];
 
     private static $owns = [
         "Items",
     ];
 
-    private static $table_name = 'AccordionElement';
+    private static $table_name = 'AccordionSmallElement';
     private static $icon = 'font-icon-down-open-big';
     private static $inline_editable = false;
 
     #[Override]
     public function getType()
     {
-        return "Akkordeon (2 Spalten mit Introtext)";
+        return "Akkordeon (klein)";
     }
 
     #[Override]
@@ -66,12 +60,6 @@ class AccordionElement extends BaseElement
         $fields = parent::getCMSFields();
         $fields->removeByName('Items');
 
-        $fields->addFieldToTab('Root.Main', DropdownField::create('Columns', 'Spaltenanzahl', [
-            '' => '2',
-            'columns--three' => '3',
-            'columns--four' => '4',
-        ]));
-
         $gridfield = GridField::create(
             "Items",
             $this->fieldLabel('Items'),
@@ -89,7 +77,7 @@ class AccordionElement extends BaseElement
     }
 
     /**
-     * Custom placeholder data for TextImageElement
+     * Custom placeholder data for AccordionSmallElement
      */
     public function providePlaceholderData()
     {
