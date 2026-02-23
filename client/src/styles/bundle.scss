@@ -39,7 +39,7 @@
 @import "typography.scss";
 @import "forms.scss";
 
-section {
+section, .section {
 
     //Background Colors
     &.bgc-transparent {

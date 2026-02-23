@@ -31,7 +31,7 @@ section.section--AccordionSmallElement{
         .section_item_expand{
             position: relative;
             margin-bottom: 10px;
-            padding: 10px 50px 10px 10px;
+            padding: 10px 70px 10px 10px;
             background-color: var(--ColorPrimaryLight);
 
             p{
@@ -66,6 +66,7 @@ section.section--AccordionSmallElement{
 
             .section_item_content{
                 max-width: 80%;
+                padding-left: 10px;
 
                 @include media(max-medium){
                     max-width: 100%;
