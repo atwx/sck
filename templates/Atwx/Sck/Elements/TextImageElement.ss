@@ -1,7 +1,7 @@
 <section class="section--TextImageElement $Variant $Format $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $Image %>
-            <div class="section_image">
+            <div class="section_image $ImageAlignment">
                 <% if $Format == 'format--32' %>
                         $Image.FocusFill(800, 533)
                 <% else %>

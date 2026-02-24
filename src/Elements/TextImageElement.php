@@ -30,6 +30,7 @@ class TextImageElement extends BaseElement
         "MoreText" => "HTMLText",
         "ExpandText" => "Varchar(255)",
         "Variant" => "Varchar(20)",
+        "ImageAlignment" => "Varchar(30)",
         "Format" => "Varchar(20)",
         "ColumnRatio" => "Varchar(30)",
         "LinksTitle" => "Varchar(255)",
@@ -55,7 +56,8 @@ class TextImageElement extends BaseElement
         "Text" => "Text",
         "Image" => "Bild",
         "Button" => "Button",
-        "Variant" => "Bildausrichtung",
+        "Variant" => "Bildformat & -ausrichtung",
+        "ImageAlignment" => "Bildausrichtung (vertikal)",
         "Format" => "Bildformat",
         "ColumnRatio" => "Spaltenverhältnis",
         "LinksTitle" => "Titel der Linkliste",
@@ -131,11 +133,16 @@ class TextImageElement extends BaseElement
                 "columnratio--8-2" => "8:2",
                 "columnratio--9-1" => "9:1",
             ]),
-            DropdownField::create('Variant', 'Bildausrichtung', [
+            DropdownField::create('Variant', 'Bildformat & -ausrichtung', [
                 "image--right" => "Bild rechts",
                 "image--left" => "Bild links",
                 "image--wideright" => "Breites Bild rechts",
                 "image--wideleft" => "Breites Bild links",
+            ]),
+            DropdownField::create('ImageAlignment', 'Bildausrichtung (vertikal)', [
+                "align--top" => "Oben",
+                "" => "Mittig",
+                "align--bottom" => "Unten",
             ]),
             DropdownField::create('Format', 'Bildformat', [
                 "format--text" => "Texthöhe",
