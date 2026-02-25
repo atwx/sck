@@ -13,19 +13,19 @@ h1, h2, h3, h4, h5{
     color: var(--ColorHeadline);
 }
 
-h1{
+h1, .hl1{
     font-size: var(--Headline1FontSize, clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem));
     line-height: var(--Headline1LineHeight, 1.1);
     font-weight: var(--Headline1FontWeight, 700);
 }
 
-.hl2 {
+h2, .hl2 {
     font-size: var(--Headline2FontSize, clamp(2.125rem, 1.7083rem + 1.6667vw, 2.75rem));
     font-weight: var(--Headline2FontWeight, 500);
     line-height: var(--Headline2LineHeight, 1.05);
 }
 
-.hl3 {
+h3, .hl3 {
     font-size: var(--Headline3FontSize);
     font-weight: var(--Headline3FontWeight, 700);
     line-height: var(--Headline3LineHeight, normal);
@@ -344,4 +344,8 @@ a {
         overflow-wrap: break-word;
         white-space: normal;
     }
+}
+
+ul {
+    margin-top: 0;
 }
