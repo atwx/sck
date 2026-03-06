@@ -5,7 +5,7 @@
                 <h2 class="hl2">$Title</h2>
             <% end_if %>
             <% if $Text %>
-                <p>$Text</p>
+                $Text
             <% end_if %>
         </div>
         <div class="section_accordion">
