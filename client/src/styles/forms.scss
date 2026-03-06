@@ -202,7 +202,7 @@ form{
         color: var(--ColorHeadline);
     }
 
-    input{
+    input, textarea{
         &:not([type="checkbox"],[type="radio"],[type="submit"]){
             width: 100%;
             border: 1px solid var(--ColorPrimary);
@@ -212,6 +212,11 @@ form{
             padding: 13px;
             background-color: var(--ColorWhite);
         }
+    }
+
+    textarea{
+        height: auto;
+        min-height: 100px;
     }
 
     .btn-toolbar{
