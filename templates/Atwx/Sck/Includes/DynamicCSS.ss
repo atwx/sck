@@ -35,6 +35,9 @@
     <% if $SiteConfig.Headline1FontWeight %>
         --Headline1FontWeight: $SiteConfig.Headline1FontWeight;
     <% end_if %>
+    <% if $SiteConfig.Headline1BottomMargin %>
+        --Headline1BottomMargin: $SiteConfig.Headline1BottomMargin;
+    <% end_if %>
 
     <% if $SiteConfig.Headline2FontSize %>
         --Headline2FontSize: $SiteConfig.Headline2FontSize;
@@ -45,6 +48,9 @@
     <% if $SiteConfig.Headline2FontWeight %>
         --Headline2FontWeight: $SiteConfig.Headline2FontWeight;
     <% end_if %>
+    <% if $SiteConfig.Headline2BottomMargin %>
+        --Headline2BottomMargin: $SiteConfig.Headline2BottomMargin;
+    <% end_if %>
 
     <% if $SiteConfig.Headline3FontSize %>
         --Headline3FontSize: $SiteConfig.Headline3FontSize;
@@ -54,6 +60,9 @@
     <% end_if %>
     <% if $SiteConfig.Headline3FontWeight %>
         --Headline3FontWeight: $SiteConfig.Headline3FontWeight;
+    <% end_if %>
+    <% if $SiteConfig.Headline3BottomMargin %>
+        --Headline3BottomMargin: $SiteConfig.Headline3BottomMargin;
     <% end_if %>
 
     <% if $SiteConfig.TextFontSize %>

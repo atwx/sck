@@ -85,12 +85,15 @@ class CustomSiteConfig extends Extension
         'Headline1FontSize' => 'Varchar(50)',
         'Headline1LineHeight' => 'Varchar(50)',
         'Headline1FontWeight' => 'Varchar(50)',
+        'Headline1BottomMargin' => 'Varchar(50)',
         'Headline2FontSize' => 'Varchar(50)',
         'Headline2LineHeight' => 'Varchar(50)',
         'Headline2FontWeight' => 'Varchar(50)',
+        'Headline2BottomMargin' => 'Varchar(50)',
         'Headline3FontSize' => 'Varchar(50)',
         'Headline3LineHeight' => 'Varchar(50)',
         'Headline3FontWeight' => 'Varchar(50)',
+        'Headline3BottomMargin' => 'Varchar(50)',
         'TextFontSize' => 'Varchar(50)',
         'TextLineHeight' => 'Varchar(50)',
         'TextFontWeight' => 'Varchar(50)',
@@ -255,14 +258,17 @@ class CustomSiteConfig extends Extension
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1FontSize', 'H1 Schriftgröße'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1LineHeight', 'H1 Line-Height'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1FontWeight', 'H1 Schriftstärke'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline1BottomMargin', 'H1 Abstand unten'));
         $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("H2Info", "<br><h3>H2 Überschrift</h3>"));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2FontSize', 'H2 Schriftgröße'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2LineHeight', 'H2 Line-Height'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2FontWeight', 'H2 Schriftstärke'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline2BottomMargin', 'H2 Abstand unten'));
         $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("H3Info", "<br><h3>H3 Überschrift</h3>"));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3FontSize', 'H3 Schriftgröße'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3LineHeight', 'H3 Line-Height'));
-        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3FontWeight', 'H3 Schriftstärke'));        
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3FontWeight', 'H3 Schriftstärke'));
+        $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('Headline3BottomMargin', 'H3 Abstand unten'));
         $fields->addFieldToTab("Root.Schriften.Größen", new LiteralField("TextInfo", "<br><h3>Fließtext</h3>"));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('TextFontSize', 'Text Schriftgröße'));
         $fields->addFieldToTab("Root.Schriften.Größen", TextField::create('TextLineHeight', 'Text Line-Height'));
