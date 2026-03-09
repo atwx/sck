@@ -1,7 +1,11 @@
 <section class="section--PersonElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
-        <h2 class="hl2 main-title">$Title</h2>
+            <% if $UseH1ForTitle %>
+                <h1 class="hl1 main-title">$Title</h1>
+            <% else %>
+                <h2 class="hl2 main-title">$Title</h2>
+            <% end_if %>
         <% end_if %>
 
         <div class="contact-persons-grid">

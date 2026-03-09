@@ -4,12 +4,12 @@
             <% if $Content %>
                 <div class="element-content">
                     <div class="section_text">
-                        <% if $Title %>
-                            <h2
-                                class="slider-title"
-                                style="color: $TitleColor;">
-                                $Title
-                            </h2>
+                        <% if $Title %>                            
+                            <% if $UseH1ForTitle %>
+                                <h1 class="hl1 slider-title" style="color: $TitleColor;">$Title</h1>
+                            <% else %>
+                                <h2 class="hl2 slider-title" style="color: $TitleColor;">$Title</h2>
+                            <% end_if %>
                         <% end_if %>
                         $Content
                         <% if $Button %>

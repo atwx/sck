@@ -31,7 +31,11 @@
         <% end_if %>
         <div class="section_text_content">
             <% if $ShowTitle %>
-                <h2 class="hl2 section_title">$Title</h2>
+                <% if $UseH1ForTitle %>
+                    <h1 class="hl1 section_title">$Title</h1>
+                <% else %>
+                    <h2 class="hl2 section_title">$Title</h2>
+                <% end_if %>
             <% end_if %>
             $Text
             <% if $Button %>

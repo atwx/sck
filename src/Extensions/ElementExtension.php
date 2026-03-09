@@ -13,6 +13,7 @@ class ElementExtension extends Extension
         "BackgroundColor" => "Varchar(32)",
         "FadeInAnimation" => "Varchar(255)",
         "ElementDecoration" => "Varchar(32)",
+        'UseH1ForTitle' => 'Boolean',
     ];
 
     private static $field_labels = [

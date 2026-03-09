@@ -4,7 +4,11 @@
             <% if $Title %>
                 <div class="title-column">
                     <% if $ShowTitle %>
-                        <h2 class="hl2 element-title">$Title</h2>
+                        <% if $UseH1ForTitle %>
+                            <h1 class="hl1 element-title">$Title</h1>
+                        <% else %>
+                            <h2 class="hl2 element-title">$Title</h2>
+                        <% end_if %>
                     <% end_if %>
                 </div>
             <% end_if %>

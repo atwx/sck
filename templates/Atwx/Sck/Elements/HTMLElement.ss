@@ -1,7 +1,11 @@
 <section class="section section--HTMLElement">
     <div class="section_content">
         <% if $Title %>
-            <h2 class="element-title">$Title</h2>
+            <% if $UseH1ForTitle %>
+                <h1 class="hl1 element-title">$Title</h1>
+            <% else %>
+                <h2 class="hl2 element-title">$Title</h2>
+            <% end_if %>
         <% end_if %>
 
         <div class="html-content">

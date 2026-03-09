@@ -7,7 +7,11 @@
     <div class="section_content boxposition--$ContentPosition">
         <div class="section_content_inner animation--$FadeInAnimation">
             <% if $ShowTitle && $Title %>
-                <h2 class="hl2 section_title">$Title</h2>
+                <% if $UseH1ForTitle %>
+                    <h1 class="hl1 section_title">$Title</h1>
+                <% else %>
+                    <h2 class="hl2 section_title">$Title</h2>
+                <% end_if %>
             <% end_if %>
 
             <% if $Content %>
