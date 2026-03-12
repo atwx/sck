@@ -75,8 +75,8 @@ class SpacerElement extends BaseElement
     public function getHeightStyle()
     {
         if ($this->Height && $this->HeightUnit) {
-            return "height: {$this->Height}{$this->HeightUnit};";
+            return "min-height: {$this->Height}{$this->HeightUnit};";
         }
-        return "height: 50px;";
+        return "min-height: 50px;";
     }
 }
