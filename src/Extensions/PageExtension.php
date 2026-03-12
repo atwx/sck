@@ -138,46 +138,54 @@ class PageExtension extends Extension
 
     public function checkForH1()
     {
-        $h1Count = 0;
+        $locations = [];
 
-        // H1 aus dem Hero-Bereich (Seiten-Einstellung)
+        // H1 aus dem Seiten-Titel (UseH1ForTitle)
         if ($this->owner->UseH1ForTitle) {
-            $h1Count++;
+            $locations[] = 'Seiten-Titel: „' . $this->owner->Title . '"';
         }
 
-        // h1-Tags in HTMLText-Feldern der HeroSlides
+        // H1-Tags in HTMLText-Feldern der HeroSlides
         foreach ($this->owner->HeroSlides() as $slide) {
-            $h1Count += $this->countH1InHTMLFields($slide);
+            $found = $this->findH1InHTMLFields($slide);
+            foreach ($found as $fieldName) {
+                $locations[] = 'Hero Slide ' . $this->recordLabel($slide);
+            }
         }
 
         // H1 aus Elementen (UseH1ForTitle + h1-Tags in HTMLText-Feldern)
-        $h1Count += $this->countH1InElementalArea();
+        $locations = array_merge($locations, $this->findH1InElementalArea());
 
-        if ($h1Count > 1) {
-            return "ACHTUNG: Diese Seite hat " . $h1Count . " H1-Überschriften. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.";
-        } elseif ($h1Count === 0) {
-            return "ACHTUNG: Diese Seite verwendet keine H1-Überschrift. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.";
+        $count = count($locations);
+
+        if ($count > 1) {
+            $list = '<ul><li>' . implode('</li><li>', array_map('htmlspecialchars', $locations)) . '</li></ul>';
+            return 'ACHTUNG: Diese Seite hat ' . $count . ' H1-Überschriften. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.' . $list;
+        } elseif ($count === 0) {
+            return 'ACHTUNG: Diese Seite verwendet keine H1-Überschrift. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.';
         }
 
         return null;
     }
 
-    private function countH1InElementalArea(): int
+    private function findH1InElementalArea(): array
     {
-        $count = 0;
+        $locations = [];
 
         if (!$this->owner->hasMethod('ElementalArea') || !$this->owner->ElementalArea()) {
-            return 0;
+            return [];
         }
 
         foreach ($this->owner->ElementalArea()->Elements() as $element) {
             // UseH1ForTitle rendert den Element-Titel als h1
             if ($element->UseH1ForTitle) {
-                $count++;
+                $locations[] = 'Element ' . $this->recordLabel($element);
             }
 
             // h1-Tags in HTMLText-Feldern des Elements selbst
-            $count += $this->countH1InHTMLFields($element);
+            foreach ($this->findH1InHTMLFields($element) as $fieldName) {
+                $locations[] = 'Element ' . $this->recordLabel($element) . ' (Feld: ' . $fieldName . ')';
+            }
 
             // h1-Tags in HTMLText-Feldern von Child-Items (has_many)
             $hasManyRelations = $element->config()->get('has_many');
@@ -187,7 +195,9 @@ class PageExtension extends Extension
                         $items = $element->$relationName();
                         if ($items && $items->exists()) {
                             foreach ($items as $item) {
-                                $count += $this->countH1InHTMLFields($item);
+                                foreach ($this->findH1InHTMLFields($item) as $fieldName) {
+                                    $locations[] = 'Element ' . $this->recordLabel($element) . ' → ' . $relationName . ' ' . $this->recordLabel($item) . ' (Feld: ' . $fieldName . ')';
+                                }
                             }
                         }
                     } catch (\Exception) {
@@ -197,16 +207,24 @@ class PageExtension extends Extension
             }
         }
 
-        return $count;
+        return $locations;
     }
 
-    private function countH1InHTMLFields($record): int
+    private function recordLabel($record): string
     {
-        $count = 0;
+        if (!empty($record->Title)) {
+            return '„' . $record->Title . '"';
+        }
+        return get_class($record) . ' #' . $record->ID;
+    }
+
+    private function findH1InHTMLFields($record): array
+    {
+        $fields = [];
         $dbFields = $record->config()->get('db');
 
         if (!$dbFields) {
-            return 0;
+            return [];
         }
 
         foreach ($dbFields as $fieldName => $fieldType) {
@@ -214,11 +232,13 @@ class PageExtension extends Extension
                 $content = $record->$fieldName;
                 if ($content) {
                     preg_match_all('/<h1[\s\/>]/i', $content, $matches);
-                    $count += count($matches[0]);
+                    for ($i = 0; $i < count($matches[0]); $i++) {
+                        $fields[] = $fieldName;
+                    }
                 }
             }
         }
 
-        return $count;
+        return $fields;
     }
 }
