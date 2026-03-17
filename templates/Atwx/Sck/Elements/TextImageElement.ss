@@ -23,7 +23,7 @@
                     <% end_if %>
                     <% loop $SideLinks %>
                         <li>
-                            <a href="$URL" class="section_link">$Title</a>
+                            <a href="$URL" <% if $OpenInNew %>target="_blank" rel="noopener noreferrer"<% end_if %> class="section_link">$Title</a>
                         </li>
                     <% end_loop %>
                 </ul>
