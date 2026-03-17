@@ -9,7 +9,7 @@ section.section--CitationElement {
         letter-spacing: -0.02em;
     }
 
-    .citation-list{
+    .citation__list{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
@@ -19,7 +19,7 @@ section.section--CitationElement {
             gap: 20px;
         }
 
-        .citation-item{
+        .list__item{
             background-color: var(--ColorWhite);
             padding-top: 20px;
 
@@ -30,7 +30,7 @@ section.section--CitationElement {
     }
 
     &.--single-item{
-        .citation-list{
+        .citation__list{
             grid-template-columns: 1fr;
 
             @include media(medium){
@@ -40,7 +40,7 @@ section.section--CitationElement {
         }
     }
 
-    .citation-quote{
+    .quote{
         position: relative;
         width: fit-content;
 
@@ -68,7 +68,7 @@ section.section--CitationElement {
         }
     }
 
-    .citation-author{
+    .citation__author{
         text-align: end;
         padding: 20px;
         margin: -10px 0 0 0;
@@ -87,6 +87,71 @@ section.section--CitationElement {
 
         @include media(max-smartphone) {
             margin: -20px 0 0 0;
+        }
+    }
+
+    &.variant--fullwidth{
+        .citation__list{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+
+            @include media(max-medium) {
+                width: 100%;
+            }
+        }
+    }
+
+    &.variant--highlight{
+        .citation__list{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+
+            @include media(max-medium) {
+                width: 100%;
+            }
+        }
+
+        .list__item{
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            gap: 10px 20px;
+            grid-template-areas: "image quote"
+                                 "image author";
+
+            .quote{
+                grid-area: quote;
+            }
+
+            .author__name{
+                grid-area: author;
+                margin-left: 2em;
+            }
+
+            .author__image{
+                grid-area: image;
+                display: flex;
+                align-items: center;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+
+            @include media(max-medium) {
+                grid-template-columns: 1fr 2fr;
+                grid-template-areas: "quote quote"
+                                     "image author";
+
+                .author__name{
+                    margin-left: 0;
+                    display: flex;
+                    align-items: center;
+                }
+            }
         }
     }
 }

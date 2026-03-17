@@ -1,4 +1,4 @@
-<section class="section--CitationElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+<section class="section--CitationElement $BackgroundColor $ElementDecoration $Variant <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
         <% if $ShowTitle %>
             <% if $UseH1ForTitle %>
@@ -12,16 +12,25 @@
                 $Text
             </div>
         <% end_if %>
-        <div class="citation-list">
+        <div class="citation__list">
             <% loop $CitationItems %>
-                <div class="citation-item">
+                <div class="list__item">
                     <% if $Quote %>
-                        <blockquote class="citation-quote">
+                        <blockquote class="quote">
                             $Quote
                         </blockquote>
                     <% end_if %>
                     <% if $Author %>
-                        <p class="citation-author"><% if $Image %>$Image.FocusFill(50,50)<% else %>- <% end_if %>$Author</p>
+                        <% if $Top.Variant == 'variant--highlight' %>
+                            <% if $Image %>
+                                <div class="author__image">$Image.FocusFill(400,400)</div>
+                            <% end_if %>
+                            <% if $Author %>
+                                <div class="author__name"><p>$Author</p></div>
+                            <% end_if %>
+                        <% else %>
+                            <p class="citation__author"><% if $Image %>$Image.FocusFill(50,50)<% else %>- <% end_if %>$Author</p>
+                        <% end_if %>
                     <% end_if %>
                 </div>
             <% end_loop %>

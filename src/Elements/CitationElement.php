@@ -26,6 +26,7 @@ class CitationElement extends BaseElement
 
     private static $db = [
         "Text" => "HTMLText",
+        "Variant" => "Varchar(255)",
     ];
 
     private static $has_one = [];
@@ -84,6 +85,17 @@ class CitationElement extends BaseElement
     {
         $fields = parent::getCMSFields();
         $fields->removeByName('CitationItems');
+
+        $fields->addFieldToTab('Root.Main', DropdownField::create(
+            'Variant',
+            'Variante',
+            [
+                '' => 'Zwei Spalten',
+                'variant--fullwidth' => 'Vollbreite',
+                'variant--highlight' => 'Hervorgehoben',
+            ]
+        ));
+
         $fields->addFieldsToTab('Root.Main', [
             GridField::create(
                 'CitationItems',
