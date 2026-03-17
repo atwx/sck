@@ -19,6 +19,7 @@ section.section--TextImageElement {
         .section_title {
             grid-area: title;
             letter-spacing: -0.02em;
+            margin-top: 30px;
         }
 
         .section_text_content {
@@ -40,10 +41,12 @@ section.section--TextImageElement {
 
         .section_links {
             grid-area: links;
-            padding: 50px 0;
+            padding: 20px 0;
 
             .section_links_title{
                 margin-top: 0;
+                font-size: 27px;
+                margin-bottom: 0.83em;
             }
         }
 

@@ -17,21 +17,21 @@ h1, .hl1{
     font-size: var(--Headline1FontSize, clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem));
     line-height: var(--Headline1LineHeight, 1.1);
     font-weight: var(--Headline1FontWeight, 700);
-    margin-bottom: var(--Headline1BottomMargin);
+    margin-bottom: var(--Headline1BottomMargin), 50px;
 }
 
 h2, .hl2 {
     font-size: var(--Headline2FontSize, clamp(2.125rem, 1.7083rem + 1.6667vw, 2.75rem));
     font-weight: var(--Headline2FontWeight, 500);
     line-height: var(--Headline2LineHeight, 1.05);
-    margin-bottom: var(--Headline2BottomMargin);
+    margin-bottom: var(--Headline2BottomMargin, 40px);
 }
 
 h3, .hl3 {
     font-size: var(--Headline3FontSize);
     font-weight: var(--Headline3FontWeight, 700);
     line-height: var(--Headline3LineHeight, normal);
-    margin-bottom: var(--Headline3BottomMargin);
+    margin-bottom: var(--Headline3BottomMargin, 30px);
 }
 
 p {
@@ -57,6 +57,7 @@ p {
 
 ul {
     margin: 0 0 30px 0;
+    color: var(--ColorText);
 }
 
 a {
@@ -85,7 +86,7 @@ a {
     }
 
     &.primary-white-text {
-        h1, h2, h3, h4, h5, p, td{
+        h1, h2, h3, h4, h5, p, td, ul{
             color: var(--ColorWhite);
         }
     }
@@ -103,7 +104,7 @@ a {
     }
 
     &.secondary-white-text {
-        h1, h2, h3, h4, h5, p{
+        h1, h2, h3, h4, h5, p, ul{
             color: var(--ColorWhite);
         }
     }

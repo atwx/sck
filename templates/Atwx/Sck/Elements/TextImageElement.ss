@@ -18,7 +18,7 @@
                 <ul>
                     <% if $LinksTitle %>
                         <li>
-                            <h2 class="section_links_title">$LinksTitle</h2>
+                            <h3 class="section_links_title">$LinksTitle</h3>
                         </li>
                     <% end_if %>
                     <% loop $SideLinks %>
@@ -29,7 +29,6 @@
                 </ul>
             </div>
         <% end_if %>
-        <div class="section_text_content">
             <% if $ShowTitle %>
                 <% if $UseH1ForTitle %>
                     <h1 class="hl1 section_title">$Title</h1>
@@ -37,6 +36,7 @@
                     <h2 class="hl2 section_title">$Title</h2>
                 <% end_if %>
             <% end_if %>
+        <div class="section_text_content">
             $Text
             <% if $Button %>
                 <div class="section_button">
