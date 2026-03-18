@@ -21,20 +21,7 @@
         <% if $NewsItems %>
             <div class="news_list">
                 <% loop $NewsItems %>
-                    <a href="$Link" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
-                        <div class="news_item">
-                            <% if $Top.PrefixIcon %>
-                                <div class="news_item_prefix">
-                                    <img src="$Top.PrefixIcon.URL" alt="$Top.PrefixIcon.Title" />
-                                </div>
-                            <% end_if %>
-                            <div class="news_item_content">
-                                <% if $Title %>
-                                    <p class="news_item_title">$Title</p>
-                                <% end_if %>
-                            </div>
-                        </div>
-                    </a>
+                    <a href="$Link" class="btn link--button buttonvariant--readmore $Top.BackgroundColor">$Title</a>
                 <% end_loop %>
             </div>
         <% end_if %>
