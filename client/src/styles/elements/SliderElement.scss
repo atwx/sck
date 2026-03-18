@@ -1,6 +1,6 @@
 section.section--SliderElement {
     .section_content {
-        max-width: var(--MaxWidth);
+        max-width: var(--MaxWidthContent);
     }
 
     .slider {
@@ -18,7 +18,7 @@ section.section--SliderElement {
             max-width: var(--MaxWidthContent);
         }
         &--medium {
-            max-width: var(--MaxWidth);
+            max-width: var(--MaxWidthContent);
         }
         &--wide {
             max-width: none;
