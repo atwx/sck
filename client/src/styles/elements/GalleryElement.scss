@@ -11,6 +11,10 @@ section.section--GalleryElement {
             color: var(--ColorHeadline);
         }
 
+        .youtube-disclaimer{
+            margin-bottom: 15px;
+        }
+
         .gallery{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
