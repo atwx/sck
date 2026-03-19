@@ -105,6 +105,10 @@ section.section--TextImageElement {
             pointer-events: none;
         }
 
+        summary{
+            margin: 20px 0;
+        }
+
         // On larger Screens
         @include media(maxwidth) {
             grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 20px) 30px calc(var(--TenthOfMaxWidth) * 5 - 50px) minmax(20px, 1fr);

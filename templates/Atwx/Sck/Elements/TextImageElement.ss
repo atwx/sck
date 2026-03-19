@@ -25,7 +25,7 @@
                         </li>
                     <% end_if %>
                     <% loop $SideLinks %>
-                        <li>
+                        <li class="arrow-prefix">
                             <a href="$URL" <% if $OpenInNew %>target="_blank" rel="noopener noreferrer"<% end_if %> class="section_link">$Title</a>
                         </li>
                     <% end_loop %>
@@ -48,7 +48,7 @@
             <% end_if %>
             <% if $MoreText %>
                 <div class="accordion_item">
-                    <details>
+                    <details class="arrow-prefix">
                         <summary class="section_item_expand">
                             <% if $ExpandText %>
                                 <p>$ExpandText</p>
