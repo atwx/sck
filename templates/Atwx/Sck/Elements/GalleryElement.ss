@@ -53,16 +53,15 @@
                     <% if $Up.ActivateLightbox %>
                         <a href="$EmbedURL" class="glightbox gallery-item gallery-item--video" data-gallery="gallery" data-type="video" data-galleryid="$Up.ID"<% if $Title %> data-glightbox="title: $Title"<% end_if %>>
                             <img src="$ThumbnailURL" alt="$Title" loading="lazy">
-                            <span class="gallery-item__play-icon" aria-hidden="true"></span>
                             <% if $Title %>
-                                <h3>$Title</h3>
+                                <h3 class="video-title">$Title</h3>
                             <% end_if %>
                         </a>
                     <% else %>
                         <div class="gallery-item gallery-item--video">
-                            <img src="$ThumbnailURL" alt="$Title" loading="lazy">
+                            <iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/$VideoID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             <% if $Title %>
-                                <h3>$Title</h3>
+                                <h3 class="video-title">$Title</h3>
                             <% end_if %>
                         </div>
                     <% end_if %>
