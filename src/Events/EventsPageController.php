@@ -16,7 +16,7 @@ class EventsPageController extends PageController
     public function index()
     {
         $paginatedList = PaginatedList::create(
-            Event::get()->filter("Start:GreaterThanOrEqual", date('Y-m-d H:i:s'))->sort('Start ASC'),
+            Event::get()->filter("End:GreaterThanOrEqual", date('Y-m-d H:i:s'))->sort('Start ASC'),
             $this->getRequest()
         )->setPageLength(10);
 
