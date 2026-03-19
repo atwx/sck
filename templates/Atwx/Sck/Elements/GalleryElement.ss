@@ -48,6 +48,26 @@
                     <% end_if %>
                 <% end_if %>
             <% end_loop %>
+            <% loop $GalleryVideos %>
+                <% if $VideoID %>
+                    <% if $Up.ActivateLightbox %>
+                        <a href="$EmbedURL" class="glightbox gallery-item gallery-item--video" data-gallery="gallery" data-type="video" data-galleryid="$Up.ID"<% if $Title %> data-glightbox="title: $Title"<% end_if %>>
+                            <img src="$ThumbnailURL" alt="$Title" loading="lazy">
+                            <span class="gallery-item__play-icon" aria-hidden="true"></span>
+                            <% if $Title %>
+                                <h3>$Title</h3>
+                            <% end_if %>
+                        </a>
+                    <% else %>
+                        <div class="gallery-item gallery-item--video">
+                            <img src="$ThumbnailURL" alt="$Title" loading="lazy">
+                            <% if $Title %>
+                                <h3>$Title</h3>
+                            <% end_if %>
+                        </div>
+                    <% end_if %>
+                <% end_if %>
+            <% end_loop %>
         </div>
     </div>
 </section>
