@@ -1,6 +1,6 @@
-<section class="section--SpacerElement $BackgroundColor $ElementDecoration animation--$FadeInAnimation spacer-element" style="<% if $HeightStyle && not $ShowTitle %>$HeightStyle<% end_if %>">
+<section class="section--SpacerElement $BackgroundColor animation--$FadeInAnimation spacer-element" style="<% if $HeightStyle && not $ShowTitle %>$HeightStyle<% end_if %>">
     <% if $ShowTitle %>
-        <div class="section_content animation--$FadeInAnimation">
+        <div class="section_content animation--$FadeInAnimation $ElementDecoration">
             <% if $UseH1ForTitle %>
                 <h1 class="hl1 section_title">$Title</h1>
             <% else %>

@@ -95,6 +95,16 @@ section.section--TextImageElement {
             }
         }
 
+        .section_decordummy {
+            position: absolute;
+            width: 100%;
+            max-width: var(--MaxWidthContent);
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%);
+            pointer-events: none;
+        }
+
         // On larger Screens
         @include media(maxwidth) {
             grid-template-columns: minmax(20px, 1fr) calc(var(--TenthOfMaxWidth) * 5 - 20px) 30px calc(var(--TenthOfMaxWidth) * 5 - 50px) minmax(20px, 1fr);

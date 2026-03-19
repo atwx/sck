@@ -1,5 +1,5 @@
-<section class="section--HeroElement $BackgroundColor $ElementDecoration">
-    <div class="hero_content animation--$FadeInAnimation">
+<section class="section--HeroElement $BackgroundColor">
+    <div class="hero_content animation--$FadeInAnimation $ElementDecoration">
         <% if $Image %>
             <div class="hero_image">
                 $Image.FocusFillMax(1920,992)

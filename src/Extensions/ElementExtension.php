@@ -57,9 +57,9 @@ class ElementExtension extends Extension
             DropdownField::create('ElementDecoration', 'Element-Dekoration', [
                 '' => 'Keine',
                 'elementdecoration--small' => 'Icon',
-                'elementdecoration--large' => 'großes Icon',
+                'elementdecoration--large' => 'Großes Icon',
                 'elementdecoration--smallwhite' => 'Icon weiß',
-                'elementdecoration--largewhite' => 'großes Icon weiß',
+                'elementdecoration--largewhite' => 'Großes Icon weiß',
             ])->setDescription('Fügt dem Element eine dekorative Grafik hinzu.')
             ]);
 

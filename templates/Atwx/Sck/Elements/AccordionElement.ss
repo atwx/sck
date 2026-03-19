@@ -1,5 +1,5 @@
-<section class="section--AccordionElement $BackgroundColor $ElementDecoration animation--$FadeInAnimation <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
-    <div class="section_content">
+<section class="section--AccordionElement $BackgroundColor animation--$FadeInAnimation <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+    <div class="section_content $ElementDecoration">
         <div class="section_intro">
             <% if $ShowTitle %>
                 <% if $UseH1ForTitle %>

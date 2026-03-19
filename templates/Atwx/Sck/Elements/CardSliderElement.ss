@@ -1,5 +1,5 @@
-<section class="section--CardSliderElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
-    <div class="section_content animation--$FadeInAnimation">
+<section class="section--CardSliderElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+    <div class="section_content animation--$FadeInAnimation $ElementDecoration">
         <% if $ShowTitle %>
             <% if $UseH1ForTitle %>
                 <h1 class="hl1 section_title">$Title</h1>

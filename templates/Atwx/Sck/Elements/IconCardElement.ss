@@ -1,5 +1,5 @@
-<section class="section--IconCardElement $BackgroundColor $ElementDecoration">
-    <div class="section_content animation--$FadeInAnimation">
+<section class="section--IconCardElement $BackgroundColor">
+    <div class="section_content animation--$FadeInAnimation $ElementDecoration">
         <div class="align-{$Alignment} vertical-{$VerticalPosition} horizontal-($HorizontalAlignment} <% if $BackgroundImage %> has-bg<% end_if %>">
             <% if $BackgroundImage %>
                 <div class="background_image">

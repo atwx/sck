@@ -1,5 +1,5 @@
-<section class="section--NewsElement $BackgroundColor $ElementDecoration <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
-    <div class="section_content animation--$FadeInAnimation">
+<section class="section--NewsElement $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+    <div class="section_content animation--$FadeInAnimation $ElementDecoration">
         <div class="section_intro">
             <% if $ShowTitle %>
                 <% if $UseH1ForTitle %>

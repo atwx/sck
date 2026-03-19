@@ -1,5 +1,8 @@
-<section class="section--TextImageElement $Variant $Format $BackgroundColor $ColumnRatio $ElementDecoration $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+<section class="section--TextImageElement $Variant $Format $BackgroundColor $ColumnRatio $ImgWidth <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content animation--$FadeInAnimation">
+        <% if $ElementDecoration %>
+            <div class="section_decordummy $ElementDecoration"></div>
+        <% end_if %>
         <% if $Image %>
             <div class="section_image $ImageAlignment">
                 <% if $Format == 'format--32' %>
