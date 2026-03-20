@@ -90,9 +90,9 @@ class CitationElement extends BaseElement
             'Variant',
             'Variante',
             [
-                '' => 'Zwei Spalten',
-                'variant--fullwidth' => 'Vollbreite',
-                'variant--highlight' => 'Hervorgehoben',
+                '' => 'Zwei Zitate nebeneinander',
+                'variant--fullwidth' => 'Ein großes Zitat',
+                'variant--highlight' => 'Zitat mit großem Profilbild',
             ]
         ));
 

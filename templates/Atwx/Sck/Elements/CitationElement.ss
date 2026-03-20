@@ -29,7 +29,7 @@
                                 <div class="author__name"><p>$Author</p></div>
                             <% end_if %>
                         <% else %>
-                            <p class="citation__author"><% if $Image %>$Image.FocusFill(50,50)<% else %>- <% end_if %>$Author</p>
+                            <p class="citation__author"><% if $Image %>$Image.FocusFill(100,100)<% else %>- <% end_if %>$Author</p>
                         <% end_if %>
                     <% end_if %>
                 </div>
