@@ -1,4 +1,4 @@
-.section.section--Event{
+section.section--Event{
     .section_content{
         .section_backlink{
             width: fit-content;
@@ -15,10 +15,9 @@
         }
 
         .event_content{
-            //display: flex;
+            display: flex;
             gap: 20px;
             color: var(--ColorText);
-            max-width: var(--MaxWidthBlockText);
 
             @include media(max-medium) {
                 flex-direction: column;
@@ -32,10 +31,12 @@
                 img{
                     width: 100%;
                     height: auto;
+                    display: block;
                 }
             }
 
             .event_text{
+                max-width: var(--MaxWidthBlockText);
                 @include media(max-medium) {
                     width: 70%;
                 }
@@ -59,7 +60,7 @@
                 .event_person {
                     display: grid;
                     align-items: center;
-                    gap: 10px;
+                    gap: 0 10px;
                     grid-template-columns: 100px 1fr;
                     grid-template-rows: repeat(4, auto);
 

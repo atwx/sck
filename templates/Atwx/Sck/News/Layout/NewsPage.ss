@@ -1,5 +1,5 @@
 $ElementalArea
-<section class="section section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
+<section class="section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <% loop $getNews %>
             <a href="$Top.Link/view/$ID" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
@@ -8,7 +8,7 @@ $ElementalArea
                         $Image
                     </div>
                     <div class="news_content">
-                        <h2 class="news_title hl3">$Title</h2>
+                        <h1 class="news_title hl2">$Title</h1>
                         <div class="news_date">$Date.Nice</div>
                         <div class="news_shortcontent">$ShortContent</div>
                         <p class="btn link--button"><%t More "Mehr darüber" %></p>

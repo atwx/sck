@@ -1,4 +1,4 @@
-.section.section--NewsOverview {
+section.section--NewsOverview {
   margin: 0 auto;
 
   .text_title{
@@ -34,7 +34,7 @@
     }
 
     .news_title{
-      margin: 0;
+      margin-bottom: 10px;
       color: var(--ColorHeadline);
     }
 

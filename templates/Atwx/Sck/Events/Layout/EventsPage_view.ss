@@ -1,5 +1,5 @@
 <% with $Event %>
-    <div class="section section--Event">
+    <section class="section--Event">
         <div class="section_content">
             <div class="section_backlink">
                 <a href="javascript:history.back()" class="backlink_link" aria-label="Zurück zur Übersicht"><%t Back "« Zurück" %></a>
@@ -33,7 +33,14 @@
                         <% end_loop %>
                     </div>
                 </div>
+                <% if $Image %>
+                    <div class="event_image">
+                        <a href="$Image.URL" class="glightbox" data-gallery="gallery" data-galleryid="$ID" aria-label="Bild öffnen: $Image.Title" data-singleimage="true">
+                            $Image.ScaleWidth(600)
+                        </a>
+                    </div>
+                <% end_if %>
             </div>
         </div>
-    </div>
+    </section>
 <% end_with %>

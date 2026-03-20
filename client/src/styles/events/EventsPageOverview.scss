@@ -1,4 +1,4 @@
-.section.section--EventsOverview {
+section.section--EventsOverview {
   margin: 0 auto;
 
   .text_title{
@@ -12,6 +12,12 @@
     gap: 20px;
     color: var(--ColorText);
     text-decoration: none;
+
+    &:hover {
+      color: var(--ColorText);
+      text-decoration: none;
+    }
+      
 
     .events_image{
 
