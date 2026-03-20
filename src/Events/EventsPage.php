@@ -9,7 +9,6 @@ class EventsPage extends Page
 {
     private static $db = [
         "BackgroundColor" => "Varchar(32)",
-        "Intro" => "HTMLText",
         "ShowPastEvents" => "Boolean",
     ];
 
@@ -23,7 +22,6 @@ class EventsPage extends Page
     private static $class_description = 'Seite für Termine';
 
     private static $field_labels = [
-        'Intro' => 'Einleitungstext',
         'ShowPastEvents' => 'Vergangene Termine anzeigen',
     ];
 

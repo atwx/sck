@@ -1,7 +1,6 @@
+$ElementalArea
 <section class="section section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
-        <h1 class="hl1 text_title">$Title</h1>
-        <div class="text_intro">$Intro</div>
         <% loop $getNews %>
             <a href="$Top.Link/view/$ID" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
                 <div class="news_item">
@@ -40,4 +39,3 @@
         <% end_if %>
     </div>
 </section>
-$ElementalArea

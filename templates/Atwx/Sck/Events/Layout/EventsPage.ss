@@ -1,7 +1,6 @@
+$ElementalArea
 <section class="section section--EventsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
-        <h1 class="hl1 text_title">$Title</h1>
-        <div class="text_intro">$Intro</div>
         <% loop $Events %>
             <a href="$Link" class="events_item" aria-label="Mehr erfahren zu $Title">
                 <div class="events_content">
@@ -37,4 +36,3 @@
         <% end_if %>
     </div>
 </section>
-$ElementalArea

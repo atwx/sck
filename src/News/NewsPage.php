@@ -10,7 +10,6 @@ class NewsPage extends Page
 
     private static $db = [
         "BackgroundColor" => "Varchar(32)",
-        "Intro" => "HTMLText",
     ];
 
     private static $table_name = 'NewsPage';
