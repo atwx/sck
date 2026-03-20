@@ -59,10 +59,8 @@
                         </a>
                     <% else %>
                         <div class="gallery-item gallery-item--video">
-                            <iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/$VideoID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <% if $Title %>
-                                <h3 class="video-title">$Title</h3>
-                            <% end_if %>
+                            <div data-service="youtube" data-id="$VideoID" data-autoscale></div>
+                            <% if $Title %> <h3 class="video-title">$Title</h3><% end_if %>
                         </div>
                     <% end_if %>
                 <% end_if %>
