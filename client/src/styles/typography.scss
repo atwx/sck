@@ -17,7 +17,7 @@ h1, .hl1{
     font-size: var(--Headline1FontSize, clamp(2.375rem, 1.0417rem + 5.3333vw, 4.375rem));
     line-height: var(--Headline1LineHeight, 1.1);
     font-weight: var(--Headline1FontWeight, 700);
-    margin-bottom: var(--Headline1BottomMargin), 50px;
+    margin-bottom: var(--Headline1BottomMargin, 50px);
 }
 
 h2, .hl2 {
