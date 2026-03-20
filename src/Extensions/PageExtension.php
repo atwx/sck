@@ -160,9 +160,9 @@ class PageExtension extends Extension
 
         if ($count > 1) {
             $list = '<ul><li>' . implode('</li><li>', array_map('htmlspecialchars', $locations)) . '</li></ul>';
-            return 'ACHTUNG: Diese Seite hat ' . $count . ' H1-Überschriften. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.' . $list;
+            return 'ACHTUNG: Diese Seite hat ' . $count . ' H1-Überschriften. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben. Es sollte genau eine H1 pro Seite vorhanden sein.' . $list;
         } elseif ($count === 0) {
-            return 'ACHTUNG: Diese Seite verwendet keine H1-Überschrift. Es sollte genau eine H1 pro Seite vorhanden sein. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben.';
+            return 'ACHTUNG: Diese Seite verwendet keine H1-Überschrift. Dies kann einen negativen Effekt auf SEO und Barrierefreiheit haben. Es sollte genau eine H1 pro Seite vorhanden sein.';
         }
 
         return null;
