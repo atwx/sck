@@ -222,8 +222,7 @@ section.section--TextImageElement {
     //Width Variants
     &.columnratio--1-9{
         .section_content {
-
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(10% - 35px) 30px calc(90% - 35px) minmax(20px, 1fr);
             }
 
@@ -235,8 +234,7 @@ section.section--TextImageElement {
 
     &.columnratio--2-8{
         .section_content {
-
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(20% - 35px) 30px calc(80% - 35px) minmax(20px, 1fr);
             }
 
@@ -248,8 +246,7 @@ section.section--TextImageElement {
 
     &.columnratio--3-7{
         .section_content {
-
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(30% - 35px) 30px calc(70% - 35px) minmax(20px, 1fr);
             }
 
@@ -261,7 +258,7 @@ section.section--TextImageElement {
 
     &.columnratio--4-6{
         .section_content {
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(40% - 35px) 30px calc(60% - 35px) minmax(20px, 1fr);
             }
 
@@ -273,7 +270,7 @@ section.section--TextImageElement {
 
     &.columnratio--6-4{
         .section_content {
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(60% - 35px) 30px calc(40% - 35px) minmax(20px, 1fr);
             }
 
@@ -285,7 +282,7 @@ section.section--TextImageElement {
 
     &.columnratio--7-3{
         .section_content {
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(70% - 35px) 30px calc(30% - 35px) minmax(20px, 1fr);
             }
 
@@ -297,7 +294,7 @@ section.section--TextImageElement {
 
     &.columnratio--8-2{
         .section_content {
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(80% - 35px) 30px calc(20% - 35px) minmax(20px, 1fr);
             }
 
@@ -309,7 +306,7 @@ section.section--TextImageElement {
 
     &.columnratio--9-1{
         .section_content {
-            @include media(max-medium) {
+            @media (min-width: 700px) and (max-width: 1200px) {
                 grid-template-columns: minmax(20px, 1fr) calc(90% - 35px) 30px calc(10% - 35px) minmax(20px, 1fr);
             }
 
@@ -334,11 +331,12 @@ section.section--TextImageElement {
             .section_image, .section_video, .section_links {
                 height: auto;
                 width: 100%;
-                margin-bottom: 20px;
+                margin-bottom: 0px;
+                padding: 0;
             }
 
             .section_image {
-                margin: 0 auto 20px;
+                // margin: 0 auto 20px;
                 img {
                     position: relative;
                     height: auto;
@@ -354,7 +352,7 @@ section.section--TextImageElement {
 
         &.image--wideright, &.image--wideleft {
             .section_image {
-                margin: 0 -20px 20px -20px;
+                margin: 0 -20px 0 -20px;
                 width: calc(100% + 40px);
             }
         }
