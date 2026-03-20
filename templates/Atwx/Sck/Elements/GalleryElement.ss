@@ -10,9 +10,6 @@
         <% if $Text %>
             $Text
         <% end_if %>
-            <% if $GalleryVideos.Count > 0 %>
-                <div class="youtube-disclaimer">Hinweis: Die Videos werden auf YouTube abgespielt; Beim Abspielen können Daten an Google übertragen werden.</div>
-            <% end_if %>
         <div class="gallery gallerysize--$ImageSize galleryformat--$ImageFormat">
             <% loop $PhotoGalleryImages %>
                 <% if $Image %>
