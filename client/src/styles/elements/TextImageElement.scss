@@ -62,6 +62,10 @@ section.section--TextImageElement {
             flex: 0 0 50%;
         }
 
+        .section_item_expand{
+            cursor: pointer;
+        }
+
         .section_image {
             grid-area: image;
 
