@@ -18,6 +18,7 @@ section.section--Event{
             display: flex;
             gap: 20px;
             color: var(--ColorText);
+            margin-bottom: 20px;
 
             @include media(max-medium) {
                 flex-direction: column;
