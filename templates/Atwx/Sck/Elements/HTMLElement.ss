@@ -1,4 +1,4 @@
-<section class="section section--HTMLElement">
+<section class="section--HTMLElement">
     <div class="section_content">
         <% if $Title %>
             <% if $UseH1ForTitle %>
