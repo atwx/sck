@@ -2,11 +2,17 @@ $ElementalArea
 <section class="section--EventsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <% loop $Events %>
-            <a href="$Link" class="events_item" aria-label="Mehr erfahren zu $Title">
-                <div class="events_content">
-                    <div class="events_date">$RenderDateRange</div>
-                    <h2 class="events_title">$Title</h2>
-                    <div class="events_shortcontent">$ShortContent</div>
+            <a href="$Link" class="event_link_overlay" aria-label="Mehr erfahren zu $Title">
+                <div class="event_item">
+                    <div class="event_image <% if not $Image %>no-image<% end_if %>">
+                        $Image.ScaleWidth(500)
+                    </div>
+                    <div class="event_content">
+                        <div class="event_date">$RenderDateRange</div>
+                        <h2 class="event_title">$Title</h2>
+                        <div class="event_shortcontent">$ShortContent</div>
+                        <p class="btn link--button"><%t More "Mehr darüber" %></p>
+                    </div>
                 </div>
             </a>
         <% end_loop %>

@@ -5,21 +5,19 @@ section.section--EventsOverview {
     color: var(--ColorHeadline);
   }
 
-  .events_item {
+  .event_link_overlay {
+    text-decoration: none;
+  }
+
+  .event_item {
     padding: 10px 0;
-    margin: 10px 0;
+    margin: 30px 0;
     display: flex;
     gap: 20px;
     color: var(--ColorText);
     text-decoration: none;
 
-    &:hover {
-      color: var(--ColorText);
-      text-decoration: none;
-    }
-      
-
-    .events_image{
+    .event_image{
 
       &.no-image{
         background-color: var(--ColorPrimary);
@@ -31,22 +29,21 @@ section.section--EventsOverview {
         height: auto;
       }
 
-      @include media(max-medium) {
+      @include media(medium) {
         width: 30%;
       }
     }
 
-    .events_title{
-      margin: 0;
+    .event_title{
+      margin-bottom: 10px;
       color: var(--ColorHeadline);
     }
 
-    .events_content{
-      .events_shortcontent{
-          margin-top: 10px;
-          max-width: var(--MaxWidthBlockText);
+    .event_content{
+      .event_shortcontent{
+        margin-top: 10px;
       }
-      @include media(max-medium) {
+      @include media(medium) {
         align-self: center;
         width: 70%;
       }
@@ -81,7 +78,7 @@ section.section--EventsOverview {
   }
 
   &.bgc-primary, &.bgc-secondary {
-      .events_item {
+      .event_item {
         background-color: var(--ColorWhite);
         padding: 10px;
       }

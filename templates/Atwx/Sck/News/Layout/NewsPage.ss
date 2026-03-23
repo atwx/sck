@@ -5,7 +5,7 @@ $ElementalArea
             <a href="$Top.Link/view/$ID" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
                 <div class="news_item">
                     <div class="news_image <% if not $Image %>no-image<% end_if %>">
-                        $Image
+                        $Image.ScaleWidth(500)
                     </div>
                     <div class="news_content">
                         <h1 class="news_title hl2">$Title</h1>
