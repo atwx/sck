@@ -7,13 +7,11 @@ use Override;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\TextareaField;
-use SilverStripe\LinkField\Form\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\SiteConfig\SiteConfig;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 class FooterColumn extends DataObject
 {
@@ -50,6 +48,10 @@ class FooterColumn extends DataObject
         'Image' => 'Bild',
         'SortOrder' => 'Reihenfolge',
         'Width' => 'Breite',
+    ];
+
+    private static $extensions = [
+        FluentExtension::class,
     ];
 
     private static $table_name = 'SCK_FooterColumn';

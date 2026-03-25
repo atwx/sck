@@ -1,13 +1,7 @@
 ---
-Name: mysitefluent
+Name: sckfluent
 After: '#versionedfiles'
 ---
-SilverStripe\Assets\File:
-  extensions:
-    - TractorCow\Fluent\Extension\FluentVersionedExtension
-  translate:
-    - Title
-
 DNADesign\Elemental\Models\BaseElement:
   displays_title_in_template: true
   extensions:

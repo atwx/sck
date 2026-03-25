@@ -8,9 +8,6 @@ use SilverStripe\Forms\SearchableMultiDropdownField;
 
 class TaggableDataObject extends DataObject
 {
-    private static $db = [
-    ];
-
     private static $many_many = [
         'Tags' => Tag::class,
     ];
@@ -18,6 +15,12 @@ class TaggableDataObject extends DataObject
     private static $field_labels = [
         'Tags' => 'Tags',
     ];
+
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
+    private static $table_name = 'SCK_TaggableDataObject';
 
     /**
      * CMS Fields
@@ -35,10 +38,4 @@ class TaggableDataObject extends DataObject
         ));
         return $fields;
     }
-
-    private static $extensions = [
-        FluentExtension::class,
-    ];
-
-    private static $table_name = 'SCK_TaggableDataObject';
 }

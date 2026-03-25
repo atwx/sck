@@ -5,6 +5,7 @@ namespace Atwx\Sck\Models;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\TextField;
 use Atwx\Sck\Elements\GalleryElement;
+use TractorCow\Fluent\Extension\FluentExtension;
 
 /**
  * Class \Atwx\Sck\Models\GalleryVideo
@@ -28,6 +29,11 @@ class GalleryVideo extends DataObject
     ];
 
     private static $default_sort = 'SortOrder ASC';
+
+    private static $extensions = [
+        FluentExtension::class,
+    ];
+
 
     private static $table_name = 'SCK_GalleryVideo';
 
