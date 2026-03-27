@@ -47,6 +47,10 @@ class GalleryVideo extends DataObject
         'Title'   => 'Titel',
     ];
 
+    private static $field_exclude = [
+        'VideoID',
+    ];
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
