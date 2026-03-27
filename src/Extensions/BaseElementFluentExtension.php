@@ -29,4 +29,9 @@ class BaseElementFluentExtension extends FluentVersionedExtension
         print_r($fields);
         die();
     }
+    
+    public function isLiveVersion()
+    {
+        return !$this->getOwner()->stagesDifferInLocale();
+    }
 }
