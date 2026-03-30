@@ -77,7 +77,7 @@ class TextImageElement extends BaseElement
 
     private static $defaults = [
         "Variant" => "image--right",
-        "ColumnRatio" => "columnratio--1-1",
+        "ColumnRatio" => "columnratio--5-5",
     ];
 
     private static $table_name = 'SCK_TextImageElement';
