@@ -37,6 +37,17 @@ class TextImageElement extends BaseElement
         "VideoLink" => "Varchar(255)",
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'Variant',
+        'ImageAlignment',
+        'Format',
+        'ColumnRatio',
+        'VideoLink',
+    ];
+
     private static $has_one = [
         "Image" => Image::class,
         "Button" => Link::class,

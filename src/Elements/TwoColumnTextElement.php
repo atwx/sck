@@ -26,6 +26,13 @@ class TwoColumnTextElement extends BaseElement
         'TitleWidth' => 'Int',
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'TitleVerticalPositionAlternative',
+    ];
+
     private static $defaults = [
         'Layout' => 'title-left',
         'TitleVerticalPosition' => 'center',

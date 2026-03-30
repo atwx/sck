@@ -23,6 +23,13 @@ class CardSlide extends DataObject
         'SortOrder' => 'Int',
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'BackgroundColor',
+    ];
+
     private static $has_one = [
         'BackgroundImage' => Image::class,
         'CardSliderElement' => CardSliderElement::class,

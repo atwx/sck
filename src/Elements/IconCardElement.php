@@ -48,6 +48,16 @@ class IconCardElement extends BaseElement
         "BackgroundContentColor" => "Varchar(7)",
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'ButtonColor',
+        'TextColor',
+        'TitleColor',
+        'BackgroundContentColor',
+    ];
+
     private static $has_one = [
         "BackgroundImage" => Image::class,
         "Button" => Link::class,

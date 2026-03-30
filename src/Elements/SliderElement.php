@@ -45,6 +45,13 @@ class SliderElement extends BaseElement
         'TitleColor' => 'Varchar(7)',
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'TitleColor',
+    ];
+
     private static $field_labels = [
         'ShowArrows' => 'Pfeile anzeigen',
         'ArrowsPosition' => 'Position der Pfeile',

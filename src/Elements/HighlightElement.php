@@ -16,6 +16,13 @@ class HighlightElement extends BaseElement
         "Variant" => "Varchar(255)",
     ];
 
+    /**
+     * @config
+     */
+    private static $field_exclude = [
+        'Variant',
+    ];
+
     private static $has_many = [
         'Buttons' => Link::class,
     ];
