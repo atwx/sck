@@ -5,7 +5,7 @@ $ElementalArea
             <a href="$Link" class="event_link_overlay" aria-label="Mehr erfahren zu $Title">
                 <div class="event_item">
                     <div class="event_image <% if not $Image %>no-image<% end_if %>">
-                        $Image.ScaleWidth(500)
+                        $Image.FocusFillMax(1920, 1080)
                     </div>
                     <div class="event_content">
                         <div class="event_date">$RenderDateRange</div>
