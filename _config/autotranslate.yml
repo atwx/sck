@@ -1,0 +1,114 @@
+---
+Name: autotranslate
+After:
+  - '#sckfluent'
+Only:
+  moduleexists: 'wernerkrauss/silverstripe-fluent-export-import'
+---
+
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    autotranslate: Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  translate_ignore:
+    - URLSegment
+
+SilverStripe\LinkField\Models\Link:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_exclude:
+    - OwnerRelation
+    - OwnerClass
+    - Owner
+
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  translate:
+    - Title
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Tags\TaggableDataObject:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Tags\Tag:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Models\FooterColumn:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Models\GalleryVideo:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\News\NewsCategory:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\People\PersonGroup:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\AccordionItem:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\AccordionSmallItem:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\CardSlide:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\CitationItem:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\HeroSlide:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
+Atwx\Sck\Elements\TeaserItem:
+  extensions:
+    - Netwerkstatt\FluentExIm\Extension\AutoTranslate
+  field_include:
+    - IsAutoTranslated
+    - LastTranslation
+
