@@ -17,7 +17,8 @@
         "symbiote/silverstripe-gridfieldextensions": "^5.0",
         "purplespider/silverstripe-basic-gallery-extension": "^5.0",
         "tractorcow/silverstripe-fluent": "^8.0",
-        "dnadesign/silverstripe-elemental-userforms": "^5.0"
+        "dnadesign/silverstripe-elemental-userforms": "^5.0",
+        "pixelpoems/silverstripe-vanilla-cookieconsent": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.3",

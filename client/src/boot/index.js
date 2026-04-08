@@ -77,12 +77,13 @@ window.document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const lightboxes = document.querySelectorAll('[data-gallery="gallery"]');
+    const lightboxNodes = document.querySelectorAll('[data-gallery="gallery"]');
 
-    if (lightboxes.length > 0) {
-        lightboxes.forEach((lightbox) => {
-            const lightboxselector = lightbox.getAttribute('data-galleryid');
-            if (lightbox.getAttribute('data-singleimage') === 'true') {
+    if (lightboxNodes.length > 0) {
+        lightboxNodes.forEach((lightboxNode) => {
+            const lightboxselector = lightboxNode.getAttribute('data-galleryid');
+            let lightbox = null;
+            if (lightboxNode.getAttribute('data-singleimage') === 'true') {
                 lightbox = GLightbox({
                     selector: '[data-galleryid="' + lightboxselector + '"]',
                     draggable: false,
@@ -96,6 +97,23 @@ window.document.addEventListener('DOMContentLoaded', () => {
                     loop: true,
                 });
             }
+            lightbox.on('slide_after_load', (data) => {
+              console.log('slide_after_load', data);
+              const slide = data.slide;
+              // Replace div with data-id with iframe
+              const videoInfoElement = slide.querySelector('[data-id]');
+              const videoId = videoInfoElement?.getAttribute('data-id');
+              if (videoId) {
+                const div = document.createElement('div');
+                div.id = `video-${videoId}`;
+                div.setAttribute('data-service', 'youtube');
+                div.setAttribute('data-id', videoId);
+                div.setAttribute('data-autoscale', '');
+                videoInfoElement.replaceWith(div);
+              }
+              iframemanager().reset();
+              window.initIFrameManager();
+            });
         });
     }
 

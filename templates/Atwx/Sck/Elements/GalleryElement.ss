@@ -51,11 +51,12 @@
             <% loop $GalleryVideos %>
                 <% if $VideoID %>
                     <% if $Up.ActivateLightbox %>
-                        <a href="$EmbedURL" class="glightbox gallery-item gallery-item--video" data-gallery="gallery" data-type="video" data-galleryid="$Up.ID"<% if $Title %> data-glightbox="title: $Title"<% end_if %>>
+                        <a href="#video-$ID" class="glightbox gallery-item gallery-item--video" data-gallery="gallery" data-type="inline" data-galleryid="$Up.ID"<% if $Title %> data-glightbox="title: $Title"<% end_if %>>
                             <img src="$ThumbnailURL" alt="$Title" loading="lazy">
                             <% if $Title %>
                                 <h3 class="video-title">$Title</h3>
                             <% end_if %>
+                            <div id="video-$ID" data-id="$VideoID"></div>
                         </a>
                     <% else %>
                         <div class="gallery-item gallery-item--video">

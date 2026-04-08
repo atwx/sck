@@ -13,7 +13,7 @@
             </div>
         <% else_if $VideoLink %>
             <div class="section_video">
-                <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/$VideoLink?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div data-service="youtube" data-id="$VideoLink" data-autoscale></div>
             </div>
         <% end_if %>
         <% if $SideLinks.Count > 0 %>
