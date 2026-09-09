@@ -42,10 +42,11 @@ Atwx\Sck\Tags\Tag:
     - IsAutoTranslated
     - LastTranslation
 
+# Declares `translate` in PHP, which wins over `field_include`, so extend that list.
 Atwx\Sck\Models\FooterColumn:
   extensions:
     - S2Hub\AutoTranslate\Extension\AutoTranslate
-  field_include:
+  translate:
     - IsAutoTranslated
     - LastTranslation
 
@@ -84,10 +85,11 @@ Atwx\Sck\Elements\AccordionSmallItem:
     - IsAutoTranslated
     - LastTranslation
 
+# Declares `translate` in PHP, which wins over `field_include`, so extend that list.
 Atwx\Sck\Elements\CardSlide:
   extensions:
     - S2Hub\AutoTranslate\Extension\AutoTranslate
-  field_include:
+  translate:
     - IsAutoTranslated
     - LastTranslation
 
@@ -98,10 +100,11 @@ Atwx\Sck\Elements\CitationItem:
     - IsAutoTranslated
     - LastTranslation
 
+# Declares `translate` in PHP, which wins over `field_include`, so extend that list.
 Atwx\Sck\Elements\HeroSlide:
   extensions:
     - S2Hub\AutoTranslate\Extension\AutoTranslate
-  field_include:
+  translate:
     - IsAutoTranslated
     - LastTranslation
 
