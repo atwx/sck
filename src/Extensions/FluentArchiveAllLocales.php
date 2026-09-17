@@ -41,7 +41,8 @@ class FluentArchiveAllLocales extends Extension
             return;
         }
 
-        $defaultLocale = Locale::singleton()->getDefaultLocale();
+        // Fluent's default locale, not i18n.default_locale (which is en_US)
+        $defaultLocale = Locale::getDefault()?->getLocale();
         if ($owner->Locale !== $defaultLocale) {
             return;
         }
