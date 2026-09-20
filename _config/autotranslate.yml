@@ -9,8 +9,6 @@ Only:
 SilverStripe\CMS\Model\SiteTree:
   extensions:
     autotranslate: S2Hub\AutoTranslate\Extension\AutoTranslate
-  translate_ignore:
-    - URLSegment
 
 SilverStripe\LinkField\Models\Link:
   extensions:
