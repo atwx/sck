@@ -2,7 +2,7 @@
     <section class="section--Event">
         <div class="section_content">
             <div class="section_backlink">
-                <a href="javascript:history.back()" class="backlink_link" aria-label="Zurück zur Übersicht"><%t Back "« Zurück" %></a>
+                <a href="javascript:history.back()" class="backlink_link" aria-label="<%t BackToOverview "Zurück zur Übersicht" %>"><%t Back "« Zurück" %></a>
             </div>
             <div class="event_content">
                 <div class="event_text">
