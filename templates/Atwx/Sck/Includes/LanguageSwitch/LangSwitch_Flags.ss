@@ -4,9 +4,9 @@
             <select id="LanguageSelect" data-behaviour="select-redirect" class="langswitch--languages nav_language_button">
                 <% loop $Locales %>
                     <option class="$LinkingMode nav_language_item"
-                        <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link" data-image="$resourceURL('atwx/sck:/client/flags')/{$UrlSegment}.svg">
+                        <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link" data-image="$FlagURL">
                         $Title.XML
-                        <img src="$resourceURL('atwx/sck:/client/flags')/{$UrlSegment}.svg" class="country"/>
+                        <img src="$FlagURL" class="country"/>
                     </option>
                 <% end_loop %>
             </select>

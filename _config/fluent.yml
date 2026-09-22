@@ -23,3 +23,7 @@ SilverStripe\LinkField\Models\Link:
   field_exclude:
     - OwnerRelation
     - OwnerClass
+
+TractorCow\Fluent\Model\RecordLocale:
+  extensions:
+    - Atwx\Sck\Extensions\RecordLocaleFlagExtension

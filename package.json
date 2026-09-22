@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "flags": "cp node_modules/flag-icons/flags/4x3/*.svg client/flags/"
   },
   "dependencies": {
     "embla-carousel": "^8.6.0",

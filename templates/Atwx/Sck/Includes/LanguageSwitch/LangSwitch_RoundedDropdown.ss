@@ -5,7 +5,7 @@
                 <div class="select-options">
                 <% loop $Locales %>
                     <option class="$LinkingMode nav_language_item"
-                        <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link" data-image="https://flagcdn.com/{$UrlSegment}.svg">
+                        <% if $LinkingMode == "current" %>selected<% end_if %> value="$Link" data-image="https://flagcdn.com/{$FlagCode}.svg">
                         $Title.XML
                     </option>
                 <% end_loop %>
