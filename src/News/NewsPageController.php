@@ -21,9 +21,27 @@ class NewsPageController extends PageController
         return $paginatedList;
     }
 
-    public function view() {
-        $id = $this->getRequest()->param("ID");
-        $article = NewsEntry::get()->byId($id);
+    public function view()
+    {
+        $segment = (string) $this->getRequest()->param("ID");
+        if ($segment === '') {
+            return $this->httpError(404);
+        }
+
+        $article = NewsEntry::get()->filter('URLSegment', $segment)->first();
+
+        // Old links used the numeric ID; send them to the current URL.
+        if (!$article && ctype_digit($segment)) {
+            $article = NewsEntry::get()->byID((int) $segment);
+            if ($article && $article->URLSegment) {
+                return $this->redirect($article->Link(), 301);
+            }
+        }
+
+        if (!$article) {
+            return $this->httpError(404);
+        }
+
         return [
             "News" => $article,
         ];

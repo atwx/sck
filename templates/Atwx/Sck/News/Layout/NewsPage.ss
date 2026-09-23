@@ -2,7 +2,7 @@ $ElementalArea
 <section class="section--NewsOverview $BackgroundColor <% if $SiteConfig.ColorPrimaryFontWhite %>primary-white-text<% end_if %> <% if $SiteConfig.ColorSecondaryFontWhite %>secondary-white-text<% end_if %>">
     <div class="section_content">
         <% loop $getNews %>
-            <a href="$Top.Link/view/$ID" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
+            <a href="$Link" class="news_link_overlay" aria-label="Mehr erfahren zu $Title">
                 <div class="news_item">
                     <div class="news_image <% if not $Image %>no-image<% end_if %>">
                         $Image.FocusFillMax(1920, 1080)
